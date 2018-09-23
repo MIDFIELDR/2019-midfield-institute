@@ -20,18 +20,12 @@ The goal of the workshop is to make MIDFIELD more accessible to the FIE communit
 
 - Describe key variables in the MIDFIELD data 
 - Select academic programs and populations to study
-- Compute persistence metrics (e.g.\ graduation rate) 
-- Graph persistence metrics
+- Use R to compute and graph persistence metrics (e.g., graduation rate) 
 - Explain key features of effective data displays 
-
+- Continue using **midfieldr** to study additional persistence metrics
 
 Participants should be sufficiently familiar with their operating systems to install software and navigate directories, but prior experience with R is not required. 
 
-Participants work on self-paced software tutorials, learning some basic R plus the specialized **midfieldr** functions for turning raw MIDFIELD data into persistence metrics. In the graduation rate tutorial for example, we select specific academic programs to study, determine the numbers of students who matriculate and graduate in a program, compute graduation rates, and graphically compare the results across different programs, disaggregating by sex and race/ethnicity. Participants learn some basic R, but the majority of the analysis is performed using functions in the package specialized for this data and type of analysis. 
-
-The agenda also includes an interactive session demonstrating contemporary principles of effective data display. The goal of this segment is to provide the rationale underlying the default graph types used in the package. 
-
-The workshop aligns with FIE faculty development goals by improving participants’ abilities to explore data and communicate findings using an intersectional approach. The workshop goals also align with the 2018 FIE conference theme of ``Fostering Innovation through Diversity.'' 
 
 ## Agenda  {-}
 
@@ -67,12 +61,6 @@ The rows of this graph are ordered by the mean graduation rate of each student g
 
 Data of this type are *multiway data* and the graph is a *multiway dot plot* [@Cleveland1993]. Because persistence data often have a multiway structure, we regularly use this graph type for data exploration and presentation [@LaytonLord2009] and we include it as a default graph type in **midfieldr**. 
 
-## Summary {-}
 
-Participants leave with the knowledge and skills to access a MIDFIELD student-record data sample and to determine persistence metrics such as graduation rates through a lens of intersectionality. 
-
-Participants who are new to R will take away the ability to use R at a basic level to import data, transform data, and graph results. They will have ``made a start'' with R.
-
-Once introduced to **midfieldr**, participants can continue to learn about data and tools for investigating undergraduate persistence metrics using additional self-paced tutorials publicly available on GitHub [@midfieldr_github]. 
 
 

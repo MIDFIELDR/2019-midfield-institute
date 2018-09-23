@@ -56,7 +56,7 @@ R is an open source language and environment for statistical computing and graph
 
 RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control  [@2016rstudio]. 
 
-The fundamental unit of shareable code in R is the *package.* A package bundles code, data, documentation, and tests, and is easily shared with others [wickham2014advanced]. In this workshop, we work with the open-source **midfieldr** package and associated data packages, all of which are available for Windows, MacOSX, and Linux platforms from CRAN [@cranweb]. 
+The fundamental unit of shareable code in R is the *package.* A package bundles code, data, documentation, and tests, and is easily shared with others [@wickham2014advanced]. In this workshop, we work with the open-source **midfieldr** package and associated data packages, all of which are available for Windows, MacOSX, and Linux platforms from CRAN [@cranweb]. 
 
 
 ## Facilitators {-}
