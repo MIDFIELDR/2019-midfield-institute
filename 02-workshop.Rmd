@@ -5,4 +5,59 @@ library(knitr)
 opts_chunk$set(echo=FALSE)
 ```
 
-This workshop introduces data and tools for investigating undergraduate persistence metrics using R.  Student record data are from MIDFIELD, a database of registrars' data from US institutions. The stratified data sample includes demographic, term, course, and degree information for 98,000 students from 1987 to 2016. The **midfieldr** package provides functions for determining persistence metrics such as graduation rates or program stickiness and for grouping findings by institution, program, sex, and race/ethnicity. The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
+This workshop introduces data and tools for investigating undergraduate persistence metrics using R.  Student record data are from MIDFIELD, a database of registrars' data from US institutions. The stratified data sample includes demographic, term, course, and degree information for 98,000 students from 1987 to 2016. 
+
+The **midfieldr** package provides functions for determining persistence metrics such as graduation rates or program stickiness and for grouping findings by institution, program, sex, and race/ethnicity. The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
+
+## Introduction
+
+The Multiple-Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) is a student record data set for studying how undergraduate students maneuver through their curricula [@2016ohlandlong]. The MIDFIELD database includes approximately one million undergraduate students at sixteen US institutions from 1987 to 2016. 
+
+The R package **midfieldr** and its associated data packages provide a stratified sample of MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity. 
+
+## Description
+
+The goal of the workshop is to make MIDFIELD more accessible to the FIE community via **midfieldr**. On completing the workshop, participants should be able to 
+
+- Describe key variables in the MIDFIELD data 
+- Select academic programs and populations to study
+- Compute persistence metrics (e.g.\ graduation rate) 
+- Graph persistence metrics
+- Explain key features of effective data displays 
+
+
+Participants should be sufficiently familiar with their operating systems to install software and navigate directories, but prior experience with R is not required. 
+
+Participants work on self-paced software tutorials, learning some basic R plus the specialized **midfieldr** functions for turning raw MIDFIELD data into persistence metrics. In the graduation rate tutorial for example, we select specific academic programs to study, determine the numbers of students who matriculate and graduate in a program, compute graduation rates, and graphically compare the results across different programs, disaggregating by sex and race/ethnicity. Participants learn some basic R, but the majority of the analysis is performed using functions in the package specialized for this data and type of analysis. 
+
+The agenda also includes an interactive session demonstrating contemporary principles of effective data display. The goal of this segment is to provide the rationale underlying the default graph types used in the package. 
+
+The workshop aligns with FIE faculty development goals by improving participants’ abilities to explore data and communicate findings using an intersectional approach. The workshop goals also align with the 2018 FIE conference theme of ``Fostering Innovation through Diversity.'' 
+
+## Outline
+
+Workshop activities include think-pair share, active learning, demonstration, discussion, and self-paced software tutorials. Our 3-hour agenda includes: 
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+df <- tribble(
+  ~ Min, ~Topic, 
+   10, "Introductions", 
+   30, "Designing effective data displays (interactive)", 
+   20," Getting started with R (interactive)", 
+   20, "Break", 
+   20, "Exploring the structure of the MIDFIELD data sample", 
+   45, "Using R for persistence metrics (self-paced tutorial)", 
+   15, "Additional persistence metrics using R", 
+   20, "Discussing next steps and assessing the workshop"
+  )
+kable(df)
+```
+
+
+
+
+
+
+
+

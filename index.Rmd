@@ -41,3 +41,39 @@ The software environment for statistical computing and graphics is R [-@2018rcor
 - **midfieldr** is a R package that provides functions for turning raw MIDFIELD data into persistence metrics.  
 - **midfielddata** is an R package  that provides a stratified sample of the MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity.  
 
+
+## Why R? {-}
+
+R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], currently ranked by IEEE as the 6th most popular programming language (Python, C, and Java are the top three) [@2017Cass]. If you are new to R, some of its best features, paraphrasing Wickham [-@wickham2014advanced], are: 
+
+
+- R is free, open source, and available on every major platform, making it easy for others to replicate your work.
+- More than 12,500 open-source R packages are available (April 2018). Many are cutting-edge tools. 
+- R packages provide deep-seated support for data analysis, e.g., missing values, data frames, and subsetting.
+- R packages provide powerful tools for communicating results via html, pdf, docx, or interactive websites.
+- It is easy to get help from experts in the R community.
+
+
+RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control[@2016rstudio]. 
+
+The fundamental unit of shareable code in R is the *package.* A package bundles code, data, documentation, and tests, and is easily shared with others [wickham2014advanced]. In this workshop, we work with the open-source **midfieldr** package and associated data packages, all of which are available for Windows, MacOSX, and Linux platforms from the Comprehensive R Archive Network (CRAN)[@cranweb]. 
+
+
+## Facilitators {-}
+
+Richard Layton is the MIDFIELD Director of Data Display and Professor of Mechanical Engineering at Rose-Hulman. He is the lead developer of the R packages used in this workshop. Dr. Layton has considerable experience facilitating workshops for data visualization, including a workshop for R beginners at the 2014 FIE in Madrid.
+
+Russell Long is MIDFIELD Managing Director and Data Steward. He developed the stratified data sample for the R packages used in this workshop. Mr. Long is a SAS expert with over twenty years of experience in institutional research and assessment. 
+
+Susan Lord is Director of the MIDFIELD Institute and Professor and Chair of Engineering and Professor of Electrical Engineering at the University of San Diego. She is a Fellow of the IEEE and the ASEE. Dr. Lord has considerable experience facilitating workshops including the National Effective Teaching Institute (NETI) and special sessions at FIE.
+
+Matthew Ohland is the MIDFIELD Director and Principal Investigator. He is Professor and Associate Head of Engineering Education at Purdue University and a Fellow of IEEE, ASEE, and AAAS. Dr. Ohland has considerable experience facilitating workshops including the NETI and CATME training.
+
+Marisa Orr is the MIDFIELD Associate Director and Assistant Professor in Engineering and Science Education with a joint appointment in Mechanical Engineering at Clemson university. She is a recipient of the 2009 Helen Plants Award for the best nontraditional session at FIE (Enhancing Student Learning Using SCALE-UP Format).
+
+
+## Acknowledgment {-}
+
+Funding provided by the National Science Foundation Grant 1545667 "Expanding Access to and Participation in the Multiple-Institution Database for Investigating Engineering Longitudinal Development." 
+
+
