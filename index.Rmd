@@ -11,7 +11,6 @@ github-repo: MIDFIELDR/workshops
 description: "A public site for workshops for access to MIDFIELD"
 ---
 
-
 ```{r include=FALSE}
 # create a bib database for R packages
 library(knitr)
@@ -29,7 +28,7 @@ opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp =
 htmltools::img(src = 
 knitr::include_graphics("images/midfield-grad-logo.png"), 
                alt = 'logo', 
-               style = 'position:absolute; top:0; right:0; padding:20px;',
+               style = 'position:absolute; top:50px; right:30px; padding:0px;',
                width = 150)
 ```
 
