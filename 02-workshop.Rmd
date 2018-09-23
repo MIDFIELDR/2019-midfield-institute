@@ -11,7 +11,7 @@ The goal of the workshop is to share our data, methods, and metrics for intersec
 
 See the Preface for a general introduction. 
 
-See [Getting started](\ref{#getting-started}) for pre-workshop softweare installation indstructions. 
+See [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop softweare installation indstructions. 
 
 
 ## Description  {-}
