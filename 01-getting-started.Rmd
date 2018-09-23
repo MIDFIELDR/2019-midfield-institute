@@ -1,4 +1,4 @@
-# Getting started {#getting-started}
+# Getting started {- #getting-started}
 
 ```{r include=FALSE}
 library(knitr)
@@ -8,7 +8,7 @@ opts_chunk$set(echo=FALSE)
 
 Unless noted otherwise, we assume throughout that the workshop attendee is an R novice. Thus the first steps are to install R and RStudio. 
 
-## Install R and RStudio
+## Install R and RStudio {-}
 
 Windows users may have to login as an Administrator (localmgr) before installing the software. 
 
@@ -23,9 +23,9 @@ If you need additional assistance for Mac OS or Linux, these links might be usef
 - [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can Google more recent instructions)  
 
 
-## Installing an R package
+## Installing an R package {-}
 
-If you know how to install R packages, you can go directly to section \@ref(install-midfield-packages).  
+If you know how to install R packages, you can go directly to the next section.  
 
 For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R. To install a package using RStudio,  
 
@@ -74,7 +74,7 @@ If you successfully negotiated this section, you can skip the next section becau
 
   
 
-## Install the MIDFIELD packages {#install-midfield-packages}
+## Install the MIDFIELD packages {- #install-midfield-packages}
 
 If you know how to install R package, follow the instructions at 
 <https://midfieldr.github.io/midfieldr>  to install  

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MIDFIELD Workshops</title>
+  <meta name="description" content="A public site for workshops for access to MIDFIELD">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="MIDFIELD Workshops" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A public site for workshops for access to MIDFIELD" />
+  <meta name="github-repo" content="MIDFIELDR/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MIDFIELD Workshops" />
+  
+  <meta name="twitter:description" content="A public site for workshops for access to MIDFIELD" />
+  
+
+
+
+<meta name="date" content="2018-09-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="getting-started.html">
+<link rel="next" href="references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MIDFIELD Workshops</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i>Why R?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#facilitators"><i class="fa fa-check"></i>Facilitators</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting started</a><ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#installing-an-r-package"><i class="fa fa-check"></i>Installing an R package</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-midfield-packages"><i class="fa fa-check"></i>Install the MIDFIELD packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html"><i class="fa fa-check"></i>2018 FIE Workshop</a><ul>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#description"><i class="fa fa-check"></i>Description</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#agenda"><i class="fa fa-check"></i>Agenda</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MIDFIELD Workshops</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="fie-workshop" class="section level1 unnumbered">
+<h1>2018 FIE Workshop</h1>
+<p>Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in San Jose, CA.</p>
+<p>This workshop introduces data and tools for investigating undergraduate persistence metrics using R. Student record data are from MIDFIELD, a database of registrars’ data from US institutions. The stratified data sample includes demographic, term, course, and degree information for 98,000 students from 1987 to 2016.</p>
+<p>The <strong>midfieldr</strong> package provides functions for determining persistence metrics such as graduation rates or program stickiness and for grouping findings by institution, program, sex, and race/ethnicity. The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.</p>
+<div id="introduction" class="section level2 unnumbered">
+<h2>Introduction</h2>
+<p>The Multiple-Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) is a student record data set for studying how undergraduate students maneuver through their curricula <span class="citation">(Ohland and Long <a href="#ref-2016ohlandlong">2016</a>)</span>. The MIDFIELD database includes approximately one million undergraduate students at sixteen US institutions from 1987 to 2016.</p>
+<p>The R package <strong>midfieldr</strong> and its associated data packages provide a stratified sample of MIDFIELD data: registrars’ student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity.</p>
+</div>
+<div id="description" class="section level2 unnumbered">
+<h2>Description</h2>
+<p>The goal of the workshop is to make MIDFIELD more accessible to the FIE community via <strong>midfieldr</strong>. On completing the workshop, participants should be able to</p>
+<ul>
+<li>Describe key variables in the MIDFIELD data</li>
+<li>Select academic programs and populations to study</li>
+<li>Compute persistence metrics (e.g. graduation rate)</li>
+<li>Graph persistence metrics</li>
+<li>Explain key features of effective data displays</li>
+</ul>
+<p>Participants should be sufficiently familiar with their operating systems to install software and navigate directories, but prior experience with R is not required.</p>
+<p>Participants work on self-paced software tutorials, learning some basic R plus the specialized <strong>midfieldr</strong> functions for turning raw MIDFIELD data into persistence metrics. In the graduation rate tutorial for example, we select specific academic programs to study, determine the numbers of students who matriculate and graduate in a program, compute graduation rates, and graphically compare the results across different programs, disaggregating by sex and race/ethnicity. Participants learn some basic R, but the majority of the analysis is performed using functions in the package specialized for this data and type of analysis.</p>
+<p>The agenda also includes an interactive session demonstrating contemporary principles of effective data display. The goal of this segment is to provide the rationale underlying the default graph types used in the package.</p>
+<p>The workshop aligns with FIE faculty development goals by improving participants’ abilities to explore data and communicate findings using an intersectional approach. The workshop goals also align with the 2018 FIE conference theme of ``Fostering Innovation through Diversity.’’</p>
+</div>
+<div id="agenda" class="section level2 unnumbered">
+<h2>Agenda</h2>
+<p>Workshop activities include think-pair share, active learning, demonstration, discussion, and self-paced software tutorials. Our 3-hour agenda includes:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Min</th>
+<th align="left">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">10</td>
+<td align="left">Introductions</td>
+</tr>
+<tr class="even">
+<td align="right">30</td>
+<td align="left">Designing effective data displays (interactive)</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="left">Getting started with R (interactive)</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">Break</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="left">Exploring the structure of the MIDFIELD data sample</td>
+</tr>
+<tr class="even">
+<td align="right">45</td>
+<td align="left">Using R for persistence metrics (self-paced tutorial)</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">Additional persistence metrics using R</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">Discussing next steps and assessing the workshop</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-2016ohlandlong">
+<p>Ohland, Matthew, and Russell Long. 2016. “The Multiple-Institution Database For Investigating Engineering Longitudinal Development: An Experiential Case Study of Data Sharing and Reuse.” <em>Advances in Engng Educ</em> 5 (2).</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-workshop.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
