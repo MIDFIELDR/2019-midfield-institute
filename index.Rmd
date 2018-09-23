@@ -34,7 +34,7 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using data from the MIDFIELD project [@2016ohlandlong].  
 
-The software environment for statistical computing and graphics is R [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
+The software environment for statistical computing and graphics is R  [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
 
 
 - **MIDFIELD** is the *Multiple-Institution Database for Investigating Engineering Longitudinal Development*---a student record database with approximately one million undergraduate students at sixteen US institutions from 1987 to 2016.  
@@ -44,7 +44,7 @@ The software environment for statistical computing and graphics is R [-@2018rcor
 
 ## Why R? {-}
 
-R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], currently ranked by IEEE as the 6th most popular programming language (Python, C, and Java are the top three) [@2017Cass]. If you are new to R, some of its best features, paraphrasing Wickham [-@wickham2014advanced], are: 
+R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], currently ranked by IEEE as the 6th most popular programming language (Python, C, and Java are the top three) [@2017Cass]. If you are new to R, some of its best features, paraphrasing Wickham  [-@wickham2014advanced], are: 
 
 
 - R is free, open source, and available on every major platform, making it easy for others to replicate your work.
@@ -54,9 +54,9 @@ R is an open source language and environment for statistical computing and graph
 - It is easy to get help from experts in the R community.
 
 
-RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control[@2016rstudio]. 
+RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control  [@2016rstudio]. 
 
-The fundamental unit of shareable code in R is the *package.* A package bundles code, data, documentation, and tests, and is easily shared with others [wickham2014advanced]. In this workshop, we work with the open-source **midfieldr** package and associated data packages, all of which are available for Windows, MacOSX, and Linux platforms from the Comprehensive R Archive Network (CRAN)[@cranweb]. 
+The fundamental unit of shareable code in R is the *package.* A package bundles code, data, documentation, and tests, and is easily shared with others [wickham2014advanced]. In this workshop, we work with the open-source **midfieldr** package and associated data packages, all of which are available for Windows, MacOSX, and Linux platforms from CRAN [@cranweb]. 
 
 
 ## Facilitators {-}
