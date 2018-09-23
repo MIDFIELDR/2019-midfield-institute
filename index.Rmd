@@ -15,10 +15,12 @@ description: "A public site for workshops for access to MIDFIELD"
 
 ```{r include=FALSE}
 # create a bib database for R packages
-knitr::write_bib(
+library(knitr)
+write_bib(
   c(.packages(), 'bookdown', 'knitr', 'rmarkdown')
   , 'packages.bib'
   )
+opts_chunk$set(echo=FALSE)
 ```
 
 

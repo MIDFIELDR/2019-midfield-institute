@@ -9,12 +9,12 @@ Windows users may have to login as an Administrator (localmgr) before installing
 - Install R for your OS: <https://cloud.r-project.org> 
 - Install RStudio, a user interface for R:  <https://www.rstudio.com/products/rstudio/#Desktop> 
 
-If you already have R and RStudio installed, please update to the most recent releases and update your R packiages as well. 
+If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well. 
 
 If you need additional assistance for Mac OS or Linux, these links might be useful 
 
-- [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4) by Michael Galarnyk (or you can google more recent instructions)    
-- [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can google more recent instructions)  
+- [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4) by Michael Galarnyk (or you can Google more recent instructions)    
+- [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can Google more recent instructions)  
 
 
 ## Installing an R package
@@ -40,7 +40,7 @@ Find the window pane with the *Packages* tab.
 In the dialog box, 
 
 - Type the name of the package, for example, *drat*  (a package we use to access the midfield data) 
-- Select the *Install dependencies* checkbox 
+- Select the *Install dependencies* check-box 
 - Click *Install*   
 
 This approach is suitable for any package that resides in the Comprehensive R Archive Network ([CRAN](https://cran.r-project.org/)) package repository. 
@@ -63,7 +63,7 @@ install.packages("devtools")
 devtools::install_github("MIDFIELDR/midfieldr") 
 ```
 
-If you successfully negotiated this section, you can skip the next section because you have installed the pacakges we need to get started. 
+If you successfully negotiated this section, you can skip the next section because you have installed the packages we need to get started. 
 
 
   
@@ -78,4 +78,4 @@ If you know how to install R package, follow the instructions at
 - midfielddata
 - midfieldr 
 
-
+At the moment, **midfieldr** is only available from GitHub. Once the package has been submitted to CRAN, you can download it and update it from CRAN. 
