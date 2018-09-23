@@ -114,20 +114,42 @@
 </div>
 <div id="installing-an-r-package" class="section level2">
 <h2><span class="header-section-number">1.2</span> Installing an R package</h2>
-<p>If you already know how to install an R package, you can go directly to the section <a href="getting-started.html#install-midfield-packages">1.3</a>.</p>
-<p>For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R. To use RStudio to install a package,</p>
+<p>If you know how to install R packages, you can go directly to section <a href="getting-started.html#install-midfield-packages">1.3</a>.</p>
+<p>For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R. To install a package using RStudio,</p>
 <ul>
 <li>Launch RStudio</li>
 </ul>
-<p>The RStudio interface has several panes. Find the one with he <em>Packages</em> tab.</p>
-<p><img src="images/open-rstudio-packages.png" width="646" /></p>
+<p>The RStudio interface has several panes.</p>
+<p><img src="images/open-rstudio-packages.png" width="564" /></p>
+<p>Find the window pane with the <em>Packages</em> tab.</p>
+<ul>
+<li>Select the <em>Packages</em> tab</li>
+<li>Click <em>Install</em></li>
+</ul>
+<p>In the dialog box,</p>
+<ul>
+<li>Type the name of the package, for example, <em>drat</em> (a package we use to access the midfield data)</li>
+<li>Select the <em>Install dependencies</em> checkbox</li>
+<li>Click <em>Install</em></li>
+</ul>
+<p>This approach is suitable for any package that resides in the Comprehensive R Archive Network (<a href="https://cran.r-project.org/">CRAN</a>) package repository.</p>
+<p>Some packages, like <strong>midfielddata</strong> are too large to be stored in CRAN, so we use a special “drat-repository” to make the package source files available.</p>
+<p>To install the packages, click your cursor in the RStudio <em>Console</em> pane.</p>
+<p><img src="images/open-rstudio-console.png" width="571" /></p>
+<p>In the console, at the cursor (indicated by <code>&gt;</code>), type each of the following lines of code and press <em>Enter</em> from your keyboard, one line at a time. Alternatively, you can copy a line of code from this page, paste it in the console, and press <em>Enter</em>.</p>
+<pre><code>drat::addRepo(&quot;midfieldr&quot;) 
+install.packages(&quot;midfielddata&quot;) 
+install.packages(&quot;devtools&quot;) 
+devtools::install_github(&quot;MIDFIELDR/midfieldr&quot;) </code></pre>
+<p>If you successfully negotiated this section, you can skip the next section because you have installed the pacakges we need to get started.</p>
 </div>
 <div id="install-midfield-packages" class="section level2">
 <h2><span class="header-section-number">1.3</span> Install the MIDFIELD packages</h2>
-<p>Once you know how to install R package, follow the instructions at
+<p>If you know how to install R package, follow the instructions at
 <a href="https://midfieldr.github.io/midfieldr" class="uri">https://midfieldr.github.io/midfieldr</a> to install</p>
 <ul>
 <li>drat</li>
+<li>devtools</li>
 <li>midfielddata</li>
 <li>midfieldr</li>
 </ul>
