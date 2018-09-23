@@ -7,15 +7,8 @@ opts_chunk$set(echo=FALSE)
 
 Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in San Jose, CA. 
 
-This workshop introduces data and tools for investigating undergraduate persistence metrics using R.  Student record data are from MIDFIELD, a database of registrars' data from US institutions. The stratified data sample includes demographic, term, course, and degree information for 98,000 students from 1987 to 2016. 
+The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
 
-The **midfieldr** package provides functions for determining persistence metrics such as graduation rates or program stickiness and for grouping findings by institution, program, sex, and race/ethnicity. The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
-
-## Introduction {-}
-
-The Multiple-Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) is a student record data set for studying how undergraduate students maneuver through their curricula [@2016ohlandlong]. The MIDFIELD database includes approximately one million undergraduate students at sixteen US institutions from 1987 to 2016. 
-
-The R package **midfieldr** and its associated data packages provide a stratified sample of MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity. 
 
 ## Description  {-}
 
