@@ -25,6 +25,15 @@ For the R novice, an R package is like an "app" for R---a collection of function
 
 - Launch RStudio 
 
+The RStudio interface has several panes. Find the one with he *Packages* tab. 
+
+```{r echo=FALSE}
+knitr::include_graphics("images/open-rstudio-packages.png")
+```
+
+
+
+
 ## Install the MIDFIELD packages {#install-midfield-packages}
 
 Once you know how to install R package, follow the instructions at 
