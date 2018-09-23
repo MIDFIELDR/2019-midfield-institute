@@ -3,6 +3,7 @@
 ```{r include=FALSE}
 library(knitr)
 opts_chunk$set(echo=FALSE)
+opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
 ```
 
 Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in San Jose, CA. 
@@ -55,8 +56,24 @@ kable(df)
 
 
 
+## Sample result {-}
 
+A common example of a persistence metric is graduation rate: the fraction of starters in a major who graduate in the major. The figure shows graduation rates for students in three majors---Industrial Engineering (ISE), Mechanical Engineering (MCE), and Electrical Engineering (ELE)---disaggregated by sex and race/ethnicity. 
 
+```{r out.width = "50%", fig.cap = "Graduation rates of students in three engineering majors."}
+knitr::include_graphics("images/fig2_fie1.png")
+```
 
+The rows of this graph are ordered by the mean graduation rate of each student group across all three panels, allowing us to detect visual anomalies. For example, Hispanic Female students in ISE graduate at a much higher rate than expected given their average rate across all three majors.
+
+Data of this type are *multiway data* and the graph is a *multiway dot plot* [@Cleveland1993]. Because persistence data often have a multiway structure, we regularly use this graph type for data exploration and presentation [@LaytonLord2009] and we include it as a default graph type in **midfieldr**. 
+
+## Summary {-}
+
+Participants leave with the knowledge and skills to access a MIDFIELD student-record data sample and to determine persistence metrics such as graduation rates through a lens of intersectionality. 
+
+Participants who are new to R will take away the ability to use R at a basic level to import data, transform data, and graph results. They will have ``made a start'' with R.
+
+Once introduced to **midfieldr**, participants can continue to learn about data and tools for investigating undergraduate persistence metrics using additional self-paced tutorials publicly available on GitHub [@midfieldr_github]. 
 
 

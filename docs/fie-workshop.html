@@ -78,6 +78,8 @@
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html"><i class="fa fa-check"></i>2018 FIE Workshop</a><ul>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#description"><i class="fa fa-check"></i>Description</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#agenda"><i class="fa fa-check"></i>Agenda</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#sample-result"><i class="fa fa-check"></i>Sample result</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#summary"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -166,7 +168,37 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div id="sample-result" class="section level2 unnumbered">
+<h2>Sample result</h2>
+<p>A common example of a persistence metric is graduation rate: the fraction of starters in a major who graduate in the major. The figure shows graduation rates for students in three majors—Industrial Engineering (ISE), Mechanical Engineering (MCE), and Electrical Engineering (ELE)—disaggregated by sex and race/ethnicity.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="images/fig2_fie1.png" alt="Graduation rates of students in three engineering majors." width="50%" />
+<p class="caption">
+Figure 1: Graduation rates of students in three engineering majors.
+</p>
+</div>
+<p>The rows of this graph are ordered by the mean graduation rate of each student group across all three panels, allowing us to detect visual anomalies. For example, Hispanic Female students in ISE graduate at a much higher rate than expected given their average rate across all three majors.</p>
+<p>Data of this type are <em>multiway data</em> and the graph is a <em>multiway dot plot</em> <span class="citation">(Cleveland <a href="#ref-Cleveland1993">1993</a>)</span>. Because persistence data often have a multiway structure, we regularly use this graph type for data exploration and presentation <span class="citation">(Layton, Lord, and Ohland <a href="#ref-LaytonLord2009">2009</a>)</span> and we include it as a default graph type in <strong>midfieldr</strong>.</p>
+</div>
+<div id="summary" class="section level2 unnumbered">
+<h2>Summary</h2>
+<p>Participants leave with the knowledge and skills to access a MIDFIELD student-record data sample and to determine persistence metrics such as graduation rates through a lens of intersectionality.</p>
+<p>Participants who are new to R will take away the ability to use R at a basic level to import data, transform data, and graph results. They will have ``made a start’’ with R.</p>
+<p>Once introduced to <strong>midfieldr</strong>, participants can continue to learn about data and tools for investigating undergraduate persistence metrics using additional self-paced tutorials publicly available on GitHub <span class="citation">(<em>Midfieldr: R Tools for Investigating Longitudinal Us Student Record Data</em>, <a href="#ref-midfieldr_github">n.d.</a>)</span>.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Cleveland1993">
+<p>Cleveland, William S. 1993. <em>Visualizing Data</em>. Hobart Press.</p>
+</div>
+<div id="ref-LaytonLord2009">
+<p>Layton, Richard, Susan Lord, and Matthew Ohland. 2009. “Reasoning About Categorical Data: Multiway Plots as Useful Research Tools.” In <em>ASEE Annual Conference</em>. Austin.</p>
+</div>
+<div id="ref-midfieldr_github">
+<p><em>Midfieldr: R Tools for Investigating Longitudinal Us Student Record Data</em>. n.d. <a href="https://midfieldr.github.io/midfieldr/" class="uri">https://midfieldr.github.io/midfieldr/</a>.</p>
 </div>
 </div>
             </section>
