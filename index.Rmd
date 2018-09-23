@@ -22,7 +22,7 @@ opts_chunk$set(echo=FALSE)
 opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
 ```
 
-# Preface {-}
+# Preface {- #preface}
 
 ```{r}
 htmltools::img(src = 
