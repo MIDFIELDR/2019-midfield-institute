@@ -34,15 +34,21 @@ holding
 *.vrb
 */*.vrb
 
+# specific to bookdown
+_publish.R
+_book
+_bookdown_files
+rsconnect
+
 # various R things
 .Renviron
+.Rproj.user
 .Rhistory
-.Rapp.history
 .RData
+.Rapp.history
 *-Ex.R
 /*.tar.gz
 /*.Rcheck/
-.Rproj.user/
 
 # produced vignettes
 vignettes/*.html
