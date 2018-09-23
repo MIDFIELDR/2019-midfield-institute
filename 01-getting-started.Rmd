@@ -1,5 +1,10 @@
 # Getting started {#getting-started}
 
+```{r include=FALSE}
+library(knitr)
+opts_chunk$set(echo=FALSE)
+```
+
 Unless noted otherwise, we assume throughout that the workshop attendee is an R novice. Thus the first steps are to install R and RStudio. 
 
 ## Install R and RStudio
@@ -28,8 +33,8 @@ For the R novice, an R package is like an "app" for R---a collection of function
 The RStudio interface has several panes. 
 
 
-```{r echo=FALSE}
-knitr::include_graphics("images/open-rstudio-packages.png")
+```{r}
+include_graphics("images/open-rstudio-packages.png")
 ```
 
 Find the window pane with the *Packages* tab.
@@ -49,8 +54,8 @@ Some packages, like **midfielddata** are too large to be stored in CRAN, so we u
 
 To install the packages, click your cursor in the RStudio *Console* pane. 
 
-```{r echo=FALSE}
-knitr::include_graphics("images/open-rstudio-console.png")
+```{r}
+include_graphics("images/open-rstudio-console.png")
 ```
 
 In the console, at the cursor (indicated by  `>`), type each of the following lines of code and press *Enter* from your keyboard, one line at a time. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. 
