@@ -1,20 +1,47 @@
-# History files
+# project management directories
+manage
+holding
+*/holding
+*/*/holding
+
+# misc output formats
+*.pptx
+*/*.pptx
+*.docx
+*/*.docx
+*.html
+*/*.html
+
+# LaTeX byproducts
+*.tex
+*/*.tex
+*.toc
+*/*.toc
+*concordance*
+*/*concordance*
+*.snm
+*/*.snm
+*.nav
+*/*.nav
+*.gz
+*/*.gz
+*.log
+*/*.log
+*.aux
+*/*.aux
+*.out
+*/*.out
+*.vrb
+*/*.vrb
+
+# various R things
+.Renviron
 .Rhistory
 .Rapp.history
-
-# Session Data files
 .RData
-
-# Example code in package build process
 *-Ex.R
-
-# Output files from R CMD build
 /*.tar.gz
-
-# Output files from R CMD check
 /*.Rcheck/
-
-# RStudio files
 .Rproj.user/
 
 # produced vignettes
@@ -34,3 +61,4 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+.Rproj.user
