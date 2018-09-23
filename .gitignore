@@ -9,8 +9,6 @@ holding
 */*.pptx
 *.docx
 */*.docx
-*.html
-*/*.html
 
 # LaTeX byproducts
 *.tex
