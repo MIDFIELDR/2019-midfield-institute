@@ -23,7 +23,7 @@ opts_chunk$set(echo=FALSE)
 ```
 
 
-# Preface <img src="images/midfield-grad-logo.png" alt="midfield logo" height="70" align="right"/> {-}
+# Preface {-}
 
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using data from the MIDFIELD project [@2016ohlandlong].  
@@ -35,6 +35,6 @@ The software environment for statistical computing and graphics is R [-@2018rcor
 - **midfielddata** is an R package  that provides a stratified sample of the MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity.  
 
 
-
+<img src="images/midfield-grad-logo.png" alt="midfield logo" height="70" align="center"/>
 
 
