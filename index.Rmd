@@ -1,6 +1,5 @@
 --- 
 title: "MIDFIELD Workshops"
-author: "Richard Layton"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -25,6 +24,9 @@ opts_chunk$set(echo=FALSE)
 
 
 # Preface {-}
+
+<img src="images/midfield-grad-logo.png" alt="bookdown logo" height="120" align="left"/>
+
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using data from the MIDFIELD project [@2016ohlandlong] and the R [-@2018rcoreteam] and RStudio [-@2016rstudio] software environments for statistical computing and graphics. 
 
