@@ -1,0 +1,3 @@
+This repository contains the source code for the website at <https://midfieldr.github.io/workshops> that provides access to workshop materials using the R packages **midfieldr** and **midfielddata** to explore data provided by the MIDFIELD project.
+
+
