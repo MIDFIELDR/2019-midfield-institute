@@ -2,8 +2,36 @@
 
 Unless noted otherwise, we assume throughout that the workshop attendee is an R novice. Thus the first steps are to install R and RStudio. 
 
+## Install R and RStudio
+
+Windows users may have to login as an Administrator (localmgr) before installing the software. 
+
 - Install R for your OS: <https://cloud.r-project.org> 
 - Install RStudio, a user interface for R:  <https://www.rstudio.com/products/rstudio/#Desktop> 
 
-If you already have R and RStudio installed, please update to the most recent release and update your R packiages as well. 
+If you already have R and RStudio installed, please update to the most recent releases and update your R packiages as well. 
+
+If you need additional assistance for Mac OS or Linux, these links might be useful 
+
+- [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4) by Michael Galarnyk (or you can google more recent instructions)    
+- [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can google more recent instructions)  
+
+
+## Installing an R package
+
+If you already know how to install an R package, you can go directly to the section \@ref(install-midfield-packages).  
+
+For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R. To use RStudio to install a package, 
+
+- Launch RStudio 
+
+## Install the MIDFIELD packages {#install-midfield-packages}
+
+Once you know how to install R package, follow the instructions at 
+<https://midfieldr.github.io/midfieldr>  to install  
+
+- drat 
+- midfielddata
+- midfieldr 
+
 
