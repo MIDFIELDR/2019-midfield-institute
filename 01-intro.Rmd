@@ -1,5 +1,3 @@
 # Introduction {#intro}
 
-The Multiple-Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) is a student record data set for studying how undergraduate students maneuver through their curricula [@2016ohlandlong]. The MIDFIELD database includes approximately one million undergraduate students at sixteen US institutions from 1987 to 2016. 
-
-The R package midfieldr and its associated data packages provide a stratified sample of MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity. 
+stuff
