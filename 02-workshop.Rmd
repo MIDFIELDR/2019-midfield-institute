@@ -9,7 +9,7 @@ Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in
 
 The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
 
-See the [Preface](https://midfieldr.github.io/workshops/preface.html) for an introduction to MIDFIELD and the workshop facilitators. 
+See the [Preface](https://midfieldr.github.io/workshops/index.html) for an introduction to MIDFIELD and the workshop facilitators. 
 
 See [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop software installation instructions. 
 
