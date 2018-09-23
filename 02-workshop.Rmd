@@ -1,3 +1,16 @@
 # Workshop
 
+```{r include=FALSE}
+library(knitr)
+opts_chunk$set(echo=FALSE)
+```
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/midfield-grad-logo.png"), 
+               alt = 'logo', 
+               style = 'position:absolute; top:50px; right:50px; padding:0px;',
+               width = 150)
+```
+
 stuff
