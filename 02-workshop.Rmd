@@ -9,6 +9,10 @@ Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in
 
 The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
 
+See the Preface for a general introduction. 
+
+See [Getting started](\ref{#getting-started}) for pre-workshop softweare installation indstructions. 
+
 
 ## Description  {-}
 
