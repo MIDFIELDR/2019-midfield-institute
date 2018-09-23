@@ -25,13 +25,18 @@ opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp =
 
 # Preface {-}
 
-```{r out.width = "20%"}
-include_graphics("images/midfield-grad-logo.png")
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/midfield-grad-logo.png"), 
+               alt = 'logo', 
+               style = 'position:absolute; top:0; right:0; padding:20px;',
+               width = 150)
 ```
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using data from the MIDFIELD project [@2016ohlandlong].  
 
 The software environment for statistical computing and graphics is R [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
+
 
 - **MIDFIELD** is the *Multiple-Institution Database for Investigating Engineering Longitudinal Development*---a student record database with approximately one million undergraduate students at sixteen US institutions from 1987 to 2016.  
 - **midfieldr** is a R package that provides functions for turning raw MIDFIELD data into persistence metrics.  
