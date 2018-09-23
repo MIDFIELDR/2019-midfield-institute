@@ -23,7 +23,7 @@ opts_chunk$set(echo=FALSE)
 ```
 
 
-# Preface <img src="images/midfield-grad-logo.png" alt="midfield logo" height="70" align="left"/> {-}
+# Preface <img src="images/midfield-grad-logo.png" alt="midfield logo" height="70" align="right"/> {-}
 
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using data from the MIDFIELD project [@2016ohlandlong].  
