@@ -52,7 +52,7 @@ This approach is suitable for any package that resides in the Comprehensive R Ar
 
 Some packages, like **midfielddata** are too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available.
 
-To install the packages, click your cursor in the RStudio *Console* pane. 
+To install the packages, place your cursor in the RStudio *Console* pane. 
 
 ```{r}
 include_graphics("images/open-rstudio-console.png")
