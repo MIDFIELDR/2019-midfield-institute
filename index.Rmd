@@ -44,7 +44,7 @@ The software environment for statistical computing and graphics is R  [-@2018rco
 
 ## Why R? {-}
 
-R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], currently ranked by IEEE as the 6th most popular programming language (Python, C, and Java are the top three) [@2017Cass]. If you are new to R, some of its best features, paraphrasing Wickham  [-@wickham2014advanced], are: 
+R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], ranked by IEEE (2018 July) as the 7th most popular programming language (Python, C++, and Java are the top three) [@2018Cass]. If you are new to R, some of its best features, paraphrasing Wickham  [-@wickham2014advanced], are: 
 
 
 - R is free, open source, and available on every major platform, making it easy for others to replicate your work.
