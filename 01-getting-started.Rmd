@@ -7,7 +7,11 @@ opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp =
 ```
 
 
-Unless noted otherwise, we assume throughout that the workshop attendee is an R novice. Thus the first steps are to install R and RStudio. 
+
+
+If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up. 
+
+Unless noted otherwise, we assume the reader is an R novice. Thus the first steps are to install R and RStudio. 
 
 ## Install R and RStudio {-}
 
@@ -86,3 +90,8 @@ If you know how to install R package, follow the instructions at
 - midfieldr 
 
 At the moment, **midfieldr** is only available from GitHub. Once the package has been submitted to CRAN, you can download it and update it from CRAN. 
+
+
+---
+
+If you have successfully installed the software and packages, you are ready for the workshop! 

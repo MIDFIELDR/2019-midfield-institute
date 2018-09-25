@@ -17,7 +17,7 @@ The goal of the workshop is to share our data, methods, and metrics for intersec
  
 
 
-## Description  {-}
+## Description {-}
 
 The goal of the workshop is to make MIDFIELD more accessible to the FIE community via **midfieldr**. On completing the workshop, participants should be able to 
 
