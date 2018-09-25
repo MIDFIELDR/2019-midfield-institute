@@ -1,18 +1,21 @@
 ---
-title: "Making MIDFIELD Accessible<br>A workshop for R beginners"
-author: "<br>Richard Layton<br>Russell Long<br>Susan Lord<br>Matthew Ohland"
-date: "<br>FIE 2018-10-03"
-output:
-  revealjs::revealjs_presentation:
-    theme: simple
-    highlight: tango
-    transition: none
-    self_contained: true
-    css: slides.css
-    reveal_options:
-      slideNumber: true
-      previewLinks: true
+title: "Making MIDFIELD Accessible"
+subtitle: "A workshop for R beginners"
+author: "<br>Richard Layton<br>Russell Long<br>Matthew Ohland"
+date: "<br>Frontiers in Education 2018-10-03"
+output: ioslides_presentation
 ---
+
+<!-- output: -->
+<!--   revealjs::revealjs_presentation: -->
+<!--     theme: simple -->
+<!--     highlight: tango -->
+<!--     transition: none -->
+<!--     self_contained: true -->
+<!--     css: slides.css -->
+<!--     reveal_options: -->
+<!--       slideNumber: true -->
+<!--       previewLinks: true -->
 
 ## Warm up: Side effects
 
