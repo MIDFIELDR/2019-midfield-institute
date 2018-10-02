@@ -52,18 +52,17 @@ kable(df)
 
 
 
-## Sample result {-}
+## Tutorial: Getting started with R  {-}
 
-A common example of a persistence metric is graduation rate: the fraction of starters in a major who graduate in the major. The figure shows graduation rates for students in three majors---Industrial Engineering (ISE), Mechanical Engineering (MCE), and Electrical Engineering (ELE)---disaggregated by sex and race/ethnicity. 
+Open RStudio. 
 
-```{r out.width = "50%", fig.cap = "Graduation rates of students in three engineering majors."}
-knitr::include_graphics("images/fig2_fie1.png")
-```
+In RStudio,
 
-The rows of this graph are ordered by the mean graduation rate of each student group across all three panels, allowing us to detect visual anomalies. For example, Hispanic Female students in ISE graduate at a much higher rate than expected given their average rate across all three majors.
-
-Data of this type are *multiway data* and the graph is a *multiway dot plot* [@Cleveland1993]. Because persistence data often have a multiway structure, we regularly use this graph type for data exploration and presentation [@LaytonLord2009] and we include it as a default graph type in **midfieldr**. 
-
+- File > New Project > New Directory > New Project 
+- Fill in the text box Directory Name with 2018-FIE-R-Workshop
+- Choose and directory on your computer to save the new project 
+Select a location on your computer to save the project
+Click Create Project to create a new directory
 
 
 
