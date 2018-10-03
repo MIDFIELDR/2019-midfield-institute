@@ -6,6 +6,15 @@ opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, collapse = TRUE)
 opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
 ```
 
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/midfield-grad-logo.png"), 
+               alt = 'logo', 
+               style = 'position:absolute; top:50px; right:50px; padding:0px;',
+               width = 90)
+```
+
 Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in San Jose, CA. 
 
 The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.
@@ -53,6 +62,14 @@ kable(df)
 
 
 ## Tutorial: Getting started with R  {-}
+
+This is a self-paced tutorial. 
+
+- Don't worry about the pace of your  work. 
+- Everyone works and learns new material at a different pace. 
+- Please ask questions of your neighbors as well as the facilitators 
+- If you finish early, ask if anyone near you needs assistance 
+- Save your work regularly 
 
 **1. Create an R project**
 
@@ -140,34 +157,36 @@ x dplyr::lag()    masks stats::lag()
 
 **3. Look at a tibble**
 
-The tidyverse comes with several data sets. We will use the one called diamonds. 
+The tidyverse comes with several data sets. We will use the one called mpg. 
 
-To get a glimpse of the data, just type its name in the script and run it. 
+To get a glimpse of the data, just type its name in the script and run it. In this tutorial, R output is indicated by a double hashtag (`##`). 
 
 ```{r echo = TRUE}
 mpg
 ```
 
-In this tutorial, R output is indicated by a double hashtag (`##`). The result tells us that the data has 
+The result tells us that the data has 
 
-- `r ncol(mpg)` variables (columns)  
 - `r nrow(mpg)` observations (rows) 
+- `r ncol(mpg)` variables (columns)  
 - `r names(mpg)[1]` is a variable of type  "`r typeof(mpg[[1]])`" 
 - `r names(mpg)[3]` is a variable of type  "`r typeof(mpg[[3]])`" 
 - `r names(mpg)[4]` is a variable of type  "`r typeof(mpg[[4]])`" 
 
-In a tidy data frame, every column is a variable and every row is an observation. The `mpg` data is in tidy form. 
 
-A data frame is 2-dimensional data structure with columns of equal lengths. Columns can be of different types (numeric, character, logical, etc.) but all values in a column are the same type. Data frames are the most common way of storing data in R. Optional reading: [Data frames](http://adv-r.had.co.nz/Data-structures.html#data-frames). 
 
-For the sake of our R beginners, we will not belabor the differences between a data frame and a tibble. Tibbles are data frames, but they tweak some older behaviors to make life a little easier. Optional reading: [Tibbles](http://r4ds.had.co.nz/tibbles.html).
+*Data frames* are the most common way of storing data in R: a 2-dimensional data structure with columns of equal lengths. Columns can be of different types (numeric, character, logical, etc.) but all values in a column are the same type. Optional reading: [Data frames](http://adv-r.had.co.nz/Data-structures.html#data-frames). 
+
+In a *tidy* data frame, every column is a variable and every row is an observation. The `mpg` data is in tidy form. 
+
+The output above tells us that `mpg` is a *tibble*. Tibbles are data frames, but they tweak some older behaviors to make life a little easier.  Optional reading: [Tibbles](http://r4ds.had.co.nz/tibbles.html).
 
 
 
 
 **4. Assignment operator**
 
-In R we assign values to objects with the assignment operator, `<-`. For example, suppose we want to assign the value $\pi/4$ to the object $x$. 
+In R we assign values to objects with the assignment operator, `<-`. For example, suppose we want to assign the value $\pi$ to the object $x$. 
 
 ```{r echo = TRUE}
 # an angle in radians
@@ -176,7 +195,7 @@ x <- pi
 
 Type the object name `x` to see it's value. 
 
-```{r}
+```{r echo = TRUE}
 x
 ```
 
@@ -198,7 +217,7 @@ A function from the tidyverse that we will use regularly is `glimpse()`. It give
 For example, 
 
 ```{r echo = TRUE}
-glimpse(diamonds)
+glimpse(mpg)
 ```
 
 The general form of a function is 
@@ -222,10 +241,11 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point()
 ```
 
-These lines are instructions to the `ggplot()` function to 
+`ggplot()` arguments:
 
-- use the `mpg` data frame 
-- map the the `displ` and `hwy` variables from the data frame as the x and y variables of the scatter plot 
+- argument is `data` to which we assign the data frame `mpg`  
+- argument `mapping` to which we assign the aesthetics `aes()` function 
+- arguments of `aes()` are `x` and `y` to which we assign the value of the `displ` and `hwy` variables from the data frame 
 - `+` adds a new layer to the graph 
 - `geom_point()` assigns points as the data markers 
 
@@ -245,18 +265,19 @@ To save a data frame as a CSV file,
     write_csv(mpg, "mpg_data.csv")
 
 
-Add these lines to your scrupt and run it. If you examine your project folder you will find the PNG and CSV files your just made.  Your directory should look like this now, 
+Add these lines to your script and run it. If you examine your project folder you will find the PNG and CSV files your just made.  Your directory should look like this now, 
 
 
     2018-FIE-midfieldr-workshop/
+        |-- get-started.R
         |-- mpg_data.csv
         |-- mileage.png
         `-- 2018-FIE-midfieldr-workshop.Rproj
 
 
-**8. More graph stuff** 
+**8. Small multiple graphs** 
 
-We can use a 3rd variable in the data frame, the variable `class`, as a conditioning variable to graph a separate x-y graph for each class of vehivle, using the `facet_wrap()` function as a new layer to the graph. 
+We can use a 3rd variable from the data frame, the variable `class`, as a conditioning variable to create a set of small multiples (called *facets* in ggplot). The new graph layer is created using the `facet_wrap()` function. 
 
 
 ```{r echo = TRUE, fig.asp = 1, out.width = "100%"}
@@ -266,7 +287,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 ```
 
 
-Or, instaed of class, we could condition using the number of cylinders in the engine. 
+Or, instead of class, we could condition using the number of cylinders in the engine. 
 
 
 ```{r echo = TRUE, fig.asp = 1, out.width = "100%"}
@@ -275,7 +296,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   facet_wrap(vars(cyl))
 ```
 
-If we aren't intersested in 5-cylinder cars (?), we omit them from the data frame with the filter() function. 
+If we aren't interested in 5-cylinder cars (?), we omit them from the data frame with the `filter()` function. Filter is a row-operation.  The following code could be stated, "Start with `mpg`, assign it to the new object `mpg_rev`, then, filter to keep all rows in which the `cyl` variable is not equal to 5."
 
 
 ```{r  echo=TRUE}
@@ -293,8 +314,104 @@ ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) +
   facet_wrap(vars(cyl), nrow = 1)
 ```
 
+The  `nrow = 1` argument places the panels of the graphs all in one row. 
 
 
 
 
 
+**8. Smooth curve** 
+
+Adding the `geom_smooth()` layer adds a loess curve (a local regression) to each panel. 
+
+```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
+ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  facet_wrap(vars(cyl), nrow = 1) + 
+  geom_smooth()
+```
+
+
+If we want to try a linear regression , add the argument  `method - "lm"`
+
+
+```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
+ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  facet_wrap(vars(cyl), nrow = 1) + 
+  geom_smooth(method = "lm")
+```
+
+The shaded area around the regression is the confidence interval. We can remove it using the argument `se = FALSE`. 
+
+```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
+ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  facet_wrap(vars(cyl), nrow = 1) + 
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+
+
+
+
+**9. Labels** 
+
+We can change the axis labels and add a title (above the figure)  and a caption (below the figure) using the `labs()` layer. Type `?mpg` to find out that the engine displacement is in liters. 
+
+
+```{r echo=TRUE, fig.asp = 6/12, out.width = "100%"}
+ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  facet_wrap(vars(cyl), nrow = 1) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Engine displacement (liters)", 
+       y = "Highway mileage (mpg)",
+       title = "Fuel economy of popular cars, 1199--2008",
+       caption = "EPA http://fueleconomy.gov")
+```
+
+
+
+
+**10. Wrap-up**
+
+This concludes our brief introduction to R. You learned to 
+
+- Create an R project 
+- Create an R script 
+- Save and run an R script  
+
+Regarding R syntax you should be able to 
+
+- Describe a data frame 
+- Describe the attributes of a tidy data frame 
+- Use the assignment operator 
+- Describe basic components of an R function 
+- Draw a simple scatterplot 
+- Create small multiples 
+- Add a smooth loess curve to a graph 
+- Add a linear regression to a graph 
+- Save a graph as a PNG file 
+- Save a data frame as a CSV file 
+
+
+## Tutorial: Using midfieldr  {-}
+
+This is a self-paced tutorial illustrating functions in the midfieldr package.
+
+- Don't worry about the pace of your  work. 
+- Everyone works and learns new material at a different pace. 
+- Please ask questions of your neighbors as well as the facilitators 
+- If you finish early, ask if anyone near you needs assistance 
+- Save your work regularly 
+
+The tutorial located at https://midfieldr.github.io/midfieldr/index.html , part of the midfieldr website. Select the *Getting started* tab and scroll down to *Select programs to study*.  
+
+![](visuals/tutorial-screen-4.png)
+
+- Start a new R script
+- Add a line of code 
+- Run it 
+- Examine the result
+- Repeat

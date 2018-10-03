@@ -145,6 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#description"><i class="fa fa-check"></i>Description</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#agenda"><i class="fa fa-check"></i>Agenda</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-getting-started-with-r"><i class="fa fa-check"></i>Tutorial: Getting started with R</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-using-midfieldr"><i class="fa fa-check"></i>Tutorial: Using midfieldr</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -169,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="fie-workshop" class="section level1 unnumbered">
 <h1>2018 FIE Workshop</h1>
+<img src="images/midfield-grad-logo.png" alt="logo" style="position:absolute; top:50px; right:50px; padding:0px;" width="90"/>
 <p>Workshop conducted at the 2018 Frontiers in Education Conference (2018-10-03) in San Jose, CA.</p>
 <p>The goal of the workshop is to share our data, methods, and metrics for intersectional research in student persistence. The workshop is designed for R beginners.</p>
 <div id="pre-workshop-setup" class="section level2 unnumbered">
@@ -238,6 +240,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="tutorial-getting-started-with-r" class="section level2 unnumbered">
 <h2>Tutorial: Getting started with R</h2>
+<p>This is a self-paced tutorial.</p>
+<ul>
+<li>Don’t worry about the pace of your work.</li>
+<li>Everyone works and learns new material at a different pace.</li>
+<li>Please ask questions of your neighbors as well as the facilitators</li>
+<li>If you finish early, ask if anyone near you needs assistance</li>
+<li>Save your work regularly</li>
+</ul>
 <p><strong>1. Create an R project</strong></p>
 <p>Open RStudio.</p>
 <ul>
@@ -300,8 +310,8 @@ x dplyr::filter() masks stats::filter()
 x dplyr::lag()    masks stats::lag()
 </code></pre>
 <p><strong>3. Look at a tibble</strong></p>
-<p>The tidyverse comes with several data sets. We will use the one called diamonds.</p>
-<p>To get a glimpse of the data, just type its name in the script and run it.</p>
+<p>The tidyverse comes with several data sets. We will use the one called mpg.</p>
+<p>To get a glimpse of the data, just type its name in the script and run it. In this tutorial, R output is indicated by a double hashtag (<code>##</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">mpg
 ## # A tibble: 234 x 11
 ##    manufacturer model displ  year   cyl trans drv     cty   hwy fl    cla~
@@ -317,24 +327,25 @@ x dplyr::lag()    masks stats::lag()
 ##  9 audi         a4 q~   1.8  1999     4 auto~ 4        16    25 p     com~
 ## 10 audi         a4 q~   2    2008     4 manu~ 4        20    28 p     com~
 ## # ... with 224 more rows</code></pre>
-<p>In this tutorial, R output is indicated by a double hashtag (<code>##</code>). The result tells us that the data has</p>
+<p>The result tells us that the data has</p>
 <ul>
+<li>234 observations (rows)</li>
 <li>11 variables (columns)<br />
 </li>
-<li>234 observations (rows)</li>
 <li>manufacturer is a variable of type “character”</li>
 <li>displ is a variable of type “double”</li>
 <li>year is a variable of type “integer”</li>
 </ul>
-<p>In a tidy data frame, every column is a variable and every row is an observation. The <code>mpg</code> data is in tidy form.</p>
-<p>A data frame is 2-dimensional data structure with columns of equal lengths. Columns can be of different types (numeric, character, logical, etc.) but all values in a column are the same type. Data frames are the most common way of storing data in R. Optional reading: <a href="http://adv-r.had.co.nz/Data-structures.html#data-frames">Data frames</a>.</p>
-<p>For the sake of our R beginners, we will not belabor the differences between a data frame and a tibble. Tibbles are data frames, but they tweak some older behaviors to make life a little easier. Optional reading: <a href="http://r4ds.had.co.nz/tibbles.html">Tibbles</a>.</p>
+<p><em>Data frames</em> are the most common way of storing data in R: a 2-dimensional data structure with columns of equal lengths. Columns can be of different types (numeric, character, logical, etc.) but all values in a column are the same type. Optional reading: <a href="http://adv-r.had.co.nz/Data-structures.html#data-frames">Data frames</a>.</p>
+<p>In a <em>tidy</em> data frame, every column is a variable and every row is an observation. The <code>mpg</code> data is in tidy form.</p>
+<p>The output above tells us that <code>mpg</code> is a <em>tibble</em>. Tibbles are data frames, but they tweak some older behaviors to make life a little easier. Optional reading: <a href="http://r4ds.had.co.nz/tibbles.html">Tibbles</a>.</p>
 <p><strong>4. Assignment operator</strong></p>
-<p>In R we assign values to objects with the assignment operator, <code>&lt;-</code>. For example, suppose we want to assign the value <span class="math inline">\(\pi/4\)</span> to the object <span class="math inline">\(x\)</span>.</p>
+<p>In R we assign values to objects with the assignment operator, <code>&lt;-</code>. For example, suppose we want to assign the value <span class="math inline">\(\pi\)</span> to the object <span class="math inline">\(x\)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># an angle in radians</span>
 x &lt;-<span class="st"> </span>pi</code></pre>
 <p>Type the object name <code>x</code> to see it’s value.</p>
-<pre><code>## [1] 3.141593</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x
+## [1] 3.141593</code></pre>
 <p><strong>5. Functions</strong></p>
 <p>Functions are fundamental building blocks in R. Functions carry out specified tasks, typically operating on one or more arguments. For example, the cosine function, <code>cos()</code>, has one argument,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cos</span>(x)
@@ -342,19 +353,20 @@ x &lt;-<span class="st"> </span>pi</code></pre>
 <p>The help page for a function is found by typing (in the RStudio console pane) a question mark followed by the function name. For example, <code>?cos()</code>.</p>
 <p>A function from the tidyverse that we will use regularly is <code>glimpse()</code>. It gives us a useful glimpse of a data frame, showing all the variables (column names) but written down the page, and data runs across the page. making it possible to see every column in a data frame.</p>
 <p>For example,</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(diamonds)
-## Observations: 53,940
-## Variables: 10
-## $ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, ...
-## $ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very G...
-## $ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, ...
-## $ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI...
-## $ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, ...
-## $ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54...
-## $ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339,...
-## $ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, ...
-## $ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, ...
-## $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, ...</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(mpg)
+## Observations: 234
+## Variables: 11
+## $ manufacturer &lt;chr&gt; &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;...
+## $ model        &lt;chr&gt; &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4 qua...
+## $ displ        &lt;dbl&gt; 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0,...
+## $ year         &lt;int&gt; 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1...
+## $ cyl          &lt;int&gt; 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6...
+## $ trans        &lt;chr&gt; &quot;auto(l5)&quot;, &quot;manual(m5)&quot;, &quot;manual(m6)&quot;, &quot;auto(av)...
+## $ drv          &lt;chr&gt; &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;4&quot;, &quot;4&quot;, &quot;4&quot;,...
+## $ cty          &lt;int&gt; 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 1...
+## $ hwy          &lt;int&gt; 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 2...
+## $ fl           &lt;chr&gt; &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;,...
+## $ class        &lt;chr&gt; &quot;compact&quot;, &quot;compact&quot;, &quot;compact&quot;, &quot;compact&quot;, &quot;comp...</code></pre>
 <p>The general form of a function is</p>
 <pre><code>function_name(arg1 = value, arg2 = value, ... )</code></pre>
 <p><strong>6. Graphs</strong></p>
@@ -362,11 +374,13 @@ x &lt;-<span class="st"> </span>pi</code></pre>
 <p>For example, add the following lines to your script and run the code.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>()</code></pre>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>These lines are instructions to the <code>ggplot()</code> function to</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><code>ggplot()</code> arguments:</p>
 <ul>
-<li>use the <code>mpg</code> data frame</li>
-<li>map the the <code>displ</code> and <code>hwy</code> variables from the data frame as the x and y variables of the scatter plot</li>
+<li>argument is <code>data</code> to which we assign the data frame <code>mpg</code><br />
+</li>
+<li>argument <code>mapping</code> to which we assign the aesthetics <code>aes()</code> function</li>
+<li>arguments of <code>aes()</code> are <code>x</code> and <code>y</code> to which we assign the value of the <code>displ</code> and <code>hwy</code> variables from the data frame</li>
 <li><code>+</code> adds a new layer to the graph</li>
 <li><code>geom_point()</code> assigns points as the data markers</li>
 </ul>
@@ -375,23 +389,24 @@ x &lt;-<span class="st"> </span>pi</code></pre>
 <pre><code>ggsave(&quot;mileage.png&quot;)</code></pre>
 <p>To save a data frame as a CSV file,</p>
 <pre><code>write_csv(mpg, &quot;mpg_data.csv&quot;)</code></pre>
-<p>Add these lines to your scrupt and run it. If you examine your project folder you will find the PNG and CSV files your just made. Your directory should look like this now,</p>
+<p>Add these lines to your script and run it. If you examine your project folder you will find the PNG and CSV files your just made. Your directory should look like this now,</p>
 <pre><code>2018-FIE-midfieldr-workshop/
+    |-- get-started.R
     |-- mpg_data.csv
     |-- mileage.png
     `-- 2018-FIE-midfieldr-workshop.Rproj</code></pre>
-<p><strong>8. More graph stuff</strong></p>
-<p>We can use a 3rd variable in the data frame, the variable <code>class</code>, as a conditioning variable to graph a separate x-y graph for each class of vehivle, using the <code>facet_wrap()</code> function as a new layer to the graph.</p>
+<p><strong>8. Small multiple graphs</strong></p>
+<p>We can use a 3rd variable from the data frame, the variable <code>class</code>, as a conditioning variable to create a set of small multiples (called <em>facets</em> in ggplot). The new graph layer is created using the <code>facet_wrap()</code> function.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(class))</code></pre>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p>Or, instaed of class, we could condition using the number of cylinders in the engine.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Or, instead of class, we could condition using the number of cylinders in the engine.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(cyl))</code></pre>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p>If we aren’t intersested in 5-cylinder cars (?), we omit them from the data frame with the filter() function.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>If we aren’t interested in 5-cylinder cars (?), we omit them from the data frame with the <code>filter()</code> function. Filter is a row-operation. The following code could be stated, “Start with <code>mpg</code>, assign it to the new object <code>mpg_rev</code>, then, filter to keep all rows in which the <code>cyl</code> variable is not equal to 5.”</p>
 <pre class="sourceCode r"><code class="sourceCode r">mpg_rev &lt;-<span class="st"> </span>mpg <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">filter</span>(cyl <span class="op">!=</span><span class="st"> </span><span class="dv">5</span>)</code></pre>
 <ul>
@@ -401,7 +416,78 @@ x &lt;-<span class="st"> </span>pi</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg_rev, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(cyl), <span class="dt">nrow =</span> <span class="dv">1</span>)</code></pre>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>The <code>nrow = 1</code> argument places the panels of the graphs all in one row.</p>
+<p><strong>8. Smooth curve</strong></p>
+<p>Adding the <code>geom_smooth()</code> layer adds a loess curve (a local regression) to each panel.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg_rev, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(cyl), <span class="dt">nrow =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>()</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>If we want to try a linear regression , add the argument <code>method - &quot;lm&quot;</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg_rev, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(cyl), <span class="dt">nrow =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>The shaded area around the regression is the confidence interval. We can remove it using the argument <code>se = FALSE</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg_rev, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(cyl), <span class="dt">nrow =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><strong>9. Labels</strong></p>
+<p>We can change the axis labels and add a title (above the figure) and a caption (below the figure) using the <code>labs()</code> layer. Type <code>?mpg</code> to find out that the engine displacement is in liters.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg_rev, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(cyl), <span class="dt">nrow =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Engine displacement (liters)&quot;</span>, 
+       <span class="dt">y =</span> <span class="st">&quot;Highway mileage (mpg)&quot;</span>,
+       <span class="dt">title =</span> <span class="st">&quot;Fuel economy of popular cars, 1199--2008&quot;</span>,
+       <span class="dt">caption =</span> <span class="st">&quot;EPA http://fueleconomy.gov&quot;</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><strong>10. Wrap-up</strong></p>
+<p>This concludes our brief introduction to R. You learned to</p>
+<ul>
+<li>Create an R project</li>
+<li>Create an R script</li>
+<li>Save and run an R script</li>
+</ul>
+<p>Regarding R syntax you should be able to</p>
+<ul>
+<li>Describe a data frame</li>
+<li>Describe the attributes of a tidy data frame</li>
+<li>Use the assignment operator</li>
+<li>Describe basic components of an R function</li>
+<li>Draw a simple scatterplot</li>
+<li>Create small multiples</li>
+<li>Add a smooth loess curve to a graph</li>
+<li>Add a linear regression to a graph</li>
+<li>Save a graph as a PNG file</li>
+<li>Save a data frame as a CSV file</li>
+</ul>
+</div>
+<div id="tutorial-using-midfieldr" class="section level2 unnumbered">
+<h2>Tutorial: Using midfieldr</h2>
+<p>This is a self-paced tutorial illustrating functions in the midfieldr package.</p>
+<ul>
+<li>Don’t worry about the pace of your work.</li>
+<li>Everyone works and learns new material at a different pace.</li>
+<li>Please ask questions of your neighbors as well as the facilitators</li>
+<li>If you finish early, ask if anyone near you needs assistance</li>
+<li>Save your work regularly</li>
+</ul>
+<p>The tutorial located at <a href="https://midfieldr.github.io/midfieldr/index.html" class="uri">https://midfieldr.github.io/midfieldr/index.html</a> , part of the midfieldr website. Select the <em>Getting started</em> tab and scroll down to <em>Select programs to study</em>.</p>
+<p><img src="visuals/tutorial-screen-4.png" /></p>
+<ul>
+<li>Start a new R script</li>
+<li>Add a line of code</li>
+<li>Run it</li>
+<li>Examine the result</li>
+<li>Repeat</li>
+</ul>
 
 </div>
 </div>

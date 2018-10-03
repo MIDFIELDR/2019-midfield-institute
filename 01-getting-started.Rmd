@@ -6,8 +6,13 @@ opts_chunk$set(echo=FALSE)
 opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
 ```
 
-
-
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/midfield-grad-logo.png"), 
+               alt = 'logo', 
+               style = 'position:absolute; top:50px; right:50px; padding:0px;',
+               width = 90)
+```
 
 If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up. 
 
