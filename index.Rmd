@@ -9,6 +9,8 @@ biblio-style: apalike
 link-citations: yes
 github-repo: MIDFIELDR/workshops
 description: "A public site for workshops for access to MIDFIELD"
+resource_files:
+  - visuals/rstudio-workspace.png
 ---
 
 ```{r include=FALSE}
