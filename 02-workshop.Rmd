@@ -1,3 +1,9 @@
+---
+resource_files:
+  - visuals/rstudio-workspace.png
+---
+
+
 # 2018 FIE Workshop {-}
 
 ```{r include=FALSE}
