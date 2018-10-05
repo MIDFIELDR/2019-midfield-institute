@@ -9,13 +9,15 @@ biblio-style: apalike
 link-citations: yes
 github-repo: MIDFIELDR/workshops
 description: "A public site for workshops for access to MIDFIELD"
+nocite: | 
+  @R-binb, @R-knitr, @R-seplyr, @R-tidyverse
 ---
 
-```{r include=FALSE}
+```{r echo=FALSE}
 # create a bib database for R packages
 library(knitr)
 write_bib(
-  c(.packages(), 'bookdown', 'knitr', 'rmarkdown')
+  c(.packages(), 'tidyverse', 'binb', 'seplyr')
   , 'packages.bib'
   )
 opts_chunk$set(echo=FALSE)
