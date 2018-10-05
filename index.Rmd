@@ -76,4 +76,13 @@ Marisa Orr is the MIDFIELD Associate Director and Assistant Professor in Enginee
 
 Funding provided by the National Science Foundation Grant 1545667 "Expanding Access to and Participation in the Multiple-Institution Database for Investigating Engineering Longitudinal Development." 
 
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/NSF_4-Color_bitmap_Logo.png"), 
+               alt = 'NSF logo', 
+               width = 90)
+```
+
+
+
 

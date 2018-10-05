@@ -504,3 +504,6 @@ knitr::include_graphics("images/tutorial-screen-4.png")
 ```
 
 
+## Acknowledgements {-}
+
+Our sincere thanks to our "R-bar" volunteers Hossein Ebrahiminejad and Matt Scheidt, without whom the software tutorials could not have as smoothly as they did. 

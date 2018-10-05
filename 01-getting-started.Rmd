@@ -53,9 +53,9 @@ Find the window pane with the *Packages* tab.
 - Select the *Packages*  tab 
 - Click *Install* 
 
-In the dialog box, 
+In the dialog box 
 
-- Type the name of the package, for example, *drat*  (a package we use to access the midfield data) 
+- Type the name of the package, *drat* (we use the package later) 
 - Select the *Install dependencies* check-box 
 - Click *Install*   
 
@@ -79,6 +79,9 @@ install.packages("devtools")
 devtools::install_github("MIDFIELDR/midfieldr") 
 ```
 
+We only run these lines of code once, so you do not have to type the lines into a script. 
+
+
 If you successfully negotiated this section, you can skip the next section because you have installed the packages we need to get started. 
 
 
@@ -94,7 +97,7 @@ If you know how to install R package, follow the instructions at
 - midfielddata
 - midfieldr 
 
-At the moment, **midfieldr** is only available from GitHub. Once the package has been submitted to CRAN, you can download it and update it from CRAN. 
+At the moment, **midfieldr** is only available from GitHub. 
 
 
 ---
