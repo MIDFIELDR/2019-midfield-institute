@@ -1,9 +1,3 @@
----
-resource_files:
-  - visuals/rstudio-workspace.png
----
-
-
 # 2018 FIE Workshop {-}
 
 ```{r include=FALSE}
@@ -16,7 +10,7 @@ opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp =
 ```{r}
 htmltools::img(src = 
 knitr::include_graphics("images/midfield-grad-logo.png"), 
-               alt = 'logo', 
+               alt = 'midfield logo', 
                style = 'position:absolute; top:50px; right:50px; padding:0px;',
                width = 90)
 ```
@@ -47,20 +41,21 @@ Participants should be sufficiently familiar with their operating systems to ins
 
 ## Agenda  {-}
 
-Workshop activities include think-pair share, active learning, demonstration, discussion, and self-paced software tutorials. Our 3-hour agenda includes: 
+Workshop activities include active learning, discussion, and self-paced software tutorials. Our 3-hour agenda includes: 
 
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
 df <- tribble(
   ~Min, ~Topic, 
   10, "Introductions", 
-  30, "Elements of effective graphs", 
-  20, "Getting started with R (tutorial)", 
-  10, "Accessing the MIDFIELD data", 
+  20, "Elements of effective graphs", 
+  30, "Getting started with R (tutorial)", 
+  20, "Accessing the MIDFIELD data", 
   20, "--- break ---", 
-  50, "Using midfieldr (tutorial)", 
-  20, "Extending your repertoire",
-  20, "Next steps"
+  40, "Using midfieldr (tutorial)", 
+  10, "Extending your repertoire",
+  10, "Next steps", 
+  20, "Conversations"
   )
 kable(df)
 ```
@@ -95,7 +90,7 @@ The new project directory will be all of these things:
 On your computer, if you navigate to the new project folder, you should have at least the following folders and files,
 
     2018-FIE-midfieldr-workshop/
-        `-- 2018-FIE-midfieldr-workshop.Rproj
+        |-- 2018-FIE-midfieldr-workshop.Rproj
 
 Always begin an R work session by opening the project's Rproj file. Let's practice:
 
@@ -105,13 +100,21 @@ Always begin an R work session by opening the project's Rproj file. Let's practi
 
 We work within an R project because it automatically sets project directory as the R *working directory*. 
 
-Set project options 
+Set project options from the Tools pulldown menu
 
-- Tools > Global Options.
+- Tools > Global Options 
+- *Restore RData into workspace at startup*:  Uncheck this box 
+- *Save workspace to RData on exit*:  Set to Never
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/rstudio-workspace.png"), 
+               alt = 'rstudio tools global options window', 
+               width = 500)
+```
 
 
-![](visuals/rstudio-workspace.png)
-Figure from [R for Data Science](http://r4ds.had.co.nz/workflow-projects.html) Optional reading: To read all about R Projects, see the [RStudio support page](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
+Optional reading: To read all about R Projects, see the [RStudio support page](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
 
 
@@ -140,10 +143,18 @@ To run the script,
 - Click the *Run* button to run a selected line or lines of code
 - Click *Source* to run the entire script 
 
-![](visuals/run-or-source-screen.png)
 
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/run-source.png"), 
+               alt = 'showing the run and source buttons', 
+               width = 600)
+```
 
-If you get an error statement that the package does not exist, you probably have to install the package. In the RStudio, console, just type `install.packages("tidyverse")` 
+Notes 
+
+- If you get an error statement that the package does not exist, you probably have to install the package. In the RStudio, console, just type `install.packages("tidyverse")` 
+- Sometimes when clicking Source, a plot is not sent to the output. If that happens, 
 
 When the script runs correctly, you should see set of messages like this, 
 
@@ -161,13 +172,47 @@ x dplyr::lag()    masks stats::lag()
 ```
 
 
+Getting help: To see the help page for an R package or function, in your Console type a question mark followed by the object name, e.g., 
+
+    ? tidyverse
+    ? library
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/library-help-page.png") 
+  , alt = 'help page for the library function' 
+  , width = 600
+)
+```
+
+```
+
+```
+
+
+
 **3. Look at a tibble**
 
 The tidyverse comes with several data sets. We will use the one called mpg. 
 
+The help page for the data set tells us its source package and explains the variables. 
+
+    ? mpg
+
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/sample-help-page.png") 
+  , alt = 'help page for the mpg dataset' 
+  , width = 600
+)
+```
+
+
 To get a glimpse of the data, just type its name in the script and run it. In this tutorial, R output is indicated by a double hashtag (`##`). 
 
 ```{r echo = TRUE}
+# mpg is a data frame included in the tidyverse package
 mpg
 ```
 
@@ -242,6 +287,8 @@ We use the `ggplot()` function from the tidyverse for creating graphs.
 
 For example, add the following lines to your script and run the code. 
 
+- Sometimes when clicking Source, a plot is not sent to the output. If that happens, select all the code lines and press Run
+
 ```{r echo = TRUE}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   geom_point()
@@ -278,7 +325,7 @@ Add these lines to your script and run it. If you examine your project folder yo
         |-- get-started.R
         |-- mpg_data.csv
         |-- mileage.png
-        `-- 2018-FIE-midfieldr-workshop.Rproj
+        |-- 2018-FIE-midfieldr-workshop.Rproj
 
 
 **8. Small multiple graphs** 
@@ -402,6 +449,10 @@ Regarding R syntax you should be able to
 - Save a data frame as a CSV file 
 
 
+
+
+
+
 ## Tutorial: Using midfieldr  {-}
 
 This is a self-paced tutorial illustrating functions in the midfieldr package.
@@ -412,12 +463,42 @@ This is a self-paced tutorial illustrating functions in the midfieldr package.
 - If you finish early, ask if anyone near you needs assistance 
 - Save your work regularly 
 
-The tutorial located at https://midfieldr.github.io/midfieldr/index.html , part of the midfieldr website. Select the *Getting started* tab and scroll down to *Select programs to study*.  
 
-![](visuals/tutorial-screen-4.png)
+**Create a new R script**
 
-- Start a new R script
-- Add a line of code 
-- Run it 
-- Examine the result
-- Repeat
+If you closed the project, then open `2018-FIE-midfieldr-workshop.Rproj` 
+
+- File > New File > R Script 
+- An Untitled script will open 
+- File > Save As 
+- Type in a new file name, for example, `start-with-midfieldr.R`
+- Save 
+
+
+Your directory should look like this now, 
+
+
+    2018-FIE-midfieldr-workshop/
+        |-- get-started.R
+        |-- start-with-midfieldr.R
+        |-- mpg_data.csv
+        |-- mileage.png
+        |-- 2018-FIE-midfieldr-workshop.Rproj 
+
+
+When you naviagte to the tutorial website, you will   
+
+- Follow the instructions, adding lines of code to your new script 
+- Run the script after adding each line of code 
+- The URL is https://midfieldr.github.io/midfieldr/index.html 
+- Select the *Getting started* tab 
+- Scroll down to *Select programs to study* 
+
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/tutorial-screen-4.png")
+  , alt = 'the midfieldr getting started web page')
+```
+
+
