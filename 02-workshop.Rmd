@@ -36,9 +36,7 @@ The goal of the workshop is to make MIDFIELD more accessible to the FIE communit
 - Explain key features of effective data displays 
 - Continue using **midfieldr** to study additional persistence metrics
 
-Participants should be sufficiently familiar with their operating systems to install software and navigate directories, but prior experience with R is not required. 
-
-Workshop slides can be viewed on [Speaker Deck](https://speakerdeck.com/graphdr/making-midfield-more-accessible-a-workshop-for-r-beginners-8ce7b993-6625-470f-9ca3-35d12b61f05c). 
+Participants should be sufficiently familiar with their operating systems to install software and navigate directories, but prior experience with R is not required. Workshop slides can be viewed on [Speaker Deck](https://speakerdeck.com/graphdr/making-midfield-more-accessible-a-workshop-for-r-beginners-8ce7b993-6625-470f-9ca3-35d12b61f05c). 
 
 
 ## Agenda  {-}
@@ -507,3 +505,7 @@ knitr::include_graphics("images/tutorial-screen-4.png")
 ## Acknowledgements {-}
 
 Our sincere thanks to our "R-bar" volunteers Hossein Ebrahiminejad and Matt Scheidt, without whom the software tutorials could not have as smoothly as they did. 
+
+
+
+## References {-}

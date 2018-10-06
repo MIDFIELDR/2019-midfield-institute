@@ -40,9 +40,8 @@ The software environment for statistical computing and graphics is R  [-@2018rco
 
 
 - **MIDFIELD** is the *Multiple-Institution Database for Investigating Engineering Longitudinal Development*---a student record database with approximately one million undergraduate students at sixteen US institutions from 1987 to 2016.  
-- **midfieldr** is a R package that provides functions for turning raw MIDFIELD data into persistence metrics.  
-- **midfielddata** is an R package  that provides a stratified sample of the MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity.  
-
+- **midfielddata** is an R package that provides a stratified sample of the MIDFIELD data: registrars' student records for 98,000 undergraduate students with proportional representation by institution, program, transfer status, sex, and race/ethnicity---student record data for practicing with the midfieldr package.  
+- **midfieldr** is a R package that provides functions for turning student-record data into persistence metrics. 
 
 ## Why R? {-}
 
