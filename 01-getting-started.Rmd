@@ -45,25 +45,29 @@ If you need additional assistance for Mac OS or Linux, these links might be usef
 
 ## Installing an R package {-}
 
-For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R. Most packages are obtained from the [CRAN](https://cran.r-project.org/) website (the Comprehensive R Archive Network). 
+The fundamental unit of shareable code in R is the *package.* 
+For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R that is easily shared with others  [@wickham2014advanced]. 
+
+Most packages are obtained from the [CRAN](https://cran.r-project.org/) website [@cranweb]. To install a package using RStudio:
 
 - Launch RStudio 
 
-The RStudio interface has several panes. 
+The RStudio interface has several panes. We want the Files/Plots/Packages pane. 
 
-
-```{r}
-include_graphics("images/open-rstudio-packages.png")
-```
-
-We use the RStudio *Packages* feature to install packages from CRAN. 
-
-- Select the *Packages*  tab 
+- Select the *Packages*  tab (circled in the image below). 
 - Click *Install* on the ribbon 
 - In the dialog box, type **drat** (a package we'll use in a moment) 
 - Check the *Install dependencies* box 
 - Click the  *Install* button 
-- Repeat to install the package **devtools**
+- Repeat to install the package **devtools** 
+- Repeat to install the package **tidyverse**
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/open-rstudio-packages.png"), 
+               alt = 'rstudio files-plots-packages pane', 
+               width = 700)
+```
 
 
 
@@ -72,29 +76,35 @@ We use the RStudio *Packages* feature to install packages from CRAN.
 
 ## Installing midfielddata and midfieldr {-}
 
-The **midfielddata** package is too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available.
+In this workshop, we work with the **midfieldr** package and  **midfielddata** data-package. The **midfielddata** package is too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available.
 
 To install the packages, place your cursor in the RStudio *Console* pane. 
 
 ```{r}
-include_graphics("images/open-rstudio-console.png")
+htmltools::img(src = 
+knitr::include_graphics("images/open-rstudio-console.png"), 
+               alt = 'rstudio console pane', 
+               width = 700)
 ```
 
 In the console, at the cursor (indicated by  `>`), type each of the following lines of code and press *Enter* from your keyboard, one line at a time. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. We only run these lines of code once, so you do not have to type the lines into a script. 
 
+The **drat** `addRepo()` function adds the **midfieldr** GitHub repository to our current R session. 
  
 ```
-drat::addRepo("midfieldr") 
+addRepo("midfieldr") 
 ```
+
+**midfielddata**  must be installed before **midfieldr**. 
 
 ```
 install.packages("midfielddata") 
 ```
 
-We use the devtools `install_github()` function to install midfieldr from it's GitHub repository because  midfieldr has not yet been submitted to CRAN. 
+The **devtools**  `install_github()` function installs  **midfieldr** from it's GitHub repository.  
 
 ```
-devtools::install_github("MIDFIELDR/midfieldr") 
+install_github("MIDFIELDR/midfieldr") 
 ```
 
 

@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-10-05">
+<meta name="date" content="2018-10-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -79,8 +79,8 @@
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#pre-workshop-setup"><i class="fa fa-check"></i>Pre-workshop setup</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#description"><i class="fa fa-check"></i>Description</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#agenda"><i class="fa fa-check"></i>Agenda</a></li>
-<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-getting-started-with-r"><i class="fa fa-check"></i>Tutorial: Getting started with R</a></li>
-<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-using-midfieldr"><i class="fa fa-check"></i>Tutorial: Using midfieldr</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-start-with-r"><i class="fa fa-check"></i>Tutorial: Start with R</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-start-with-midfieldr"><i class="fa fa-check"></i>Tutorial: Start with midfieldr</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
@@ -106,11 +106,11 @@
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">MIDFIELD Workshops</h1>
-<p class="date"><em>2018-10-05</em></p>
+<p class="date"><em>2018-10-06</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<img src="images/midfield-grad-logo.png" alt="logo" style="position:absolute; top:50px; right:50px; padding:0px;" width="150"/>
+<img src="images/midfield-grad-logo.png" alt="midfield logo" style="position:absolute; top:50px; right:50px; padding:0px;" width="90"/>
 <p>This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using data from the MIDFIELD project <span class="citation">(Ohland and Long <a href="#ref-2016ohlandlong">2016</a>)</span>.</p>
 <p>The software environment for statistical computing and graphics is R <span class="citation">(<a href="#ref-2018rcoreteam">2018</a>)</span> and RStudio <span class="citation">(<a href="#ref-2016rstudio">2016</a>)</span>.</p>
 <ul>
@@ -125,21 +125,20 @@
 <p>R is an open source language and environment for statistical computing and graphics <span class="citation">(R Core Team <a href="#ref-2018rcoreteam">2018</a>)</span>, ranked by IEEE (2018 July) as the 7th most popular programming language (Python, C++, and Java are the top three) <span class="citation">(Cass <a href="#ref-2018Cass">2018</a>)</span>. If you are new to R, some of its best features, paraphrasing Wickham <span class="citation">(<a href="#ref-wickham2014advanced">2014</a>)</span>, are:</p>
 <ul>
 <li>R is free, open source, and available on every major platform, making it easy for others to replicate your work.</li>
-<li>More than 12,500 open-source R packages are available (April 2018). Many are cutting-edge tools.</li>
+<li>More than 13,000 open-source R packages are available (October 2018). Many are cutting-edge tools.</li>
 <li>R packages provide deep-seated support for data analysis, e.g., missing values, data frames, and subsetting.</li>
 <li>R packages provide powerful tools for communicating results via html, pdf, docx, or interactive websites.</li>
 <li>It is easy to get help from experts in the R community.</li>
 </ul>
 <p>RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control <span class="citation">(RStudio Team <a href="#ref-2016rstudio">2016</a>)</span>.</p>
-<p>The fundamental unit of shareable code in R is the <em>package.</em> A package bundles code, data, documentation, and tests, and is easily shared with others <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>. In this workshop, we work with the open-source <strong>midfieldr</strong> package and associated data packages, all of which are available for Windows, MacOSX, and Linux platforms from CRAN <span class="citation">(<em>The Comprehensive R Archive Network</em>, <a href="#ref-cranweb">n.d.</a>)</span>.</p>
 </div>
 <div id="facilitators" class="section level2 unnumbered">
 <h2>Facilitators</h2>
-<p>Richard Layton is the MIDFIELD Director of Data Display and Professor of Mechanical Engineering at Rose-Hulman. He is the lead developer of the R packages used in this workshop. Dr. Layton has considerable experience facilitating workshops for data visualization, including a workshop for R beginners at the 2014 FIE in Madrid.</p>
-<p>Russell Long is MIDFIELD Managing Director and Data Steward. He developed the stratified data sample for the R packages used in this workshop. Mr. Long is a SAS expert with over twenty years of experience in institutional research and assessment.</p>
-<p>Susan Lord is Director of the MIDFIELD Institute and Professor and Chair of Engineering and Professor of Electrical Engineering at the University of San Diego. She is a Fellow of the IEEE and the ASEE. Dr. Lord has considerable experience facilitating workshops including the National Effective Teaching Institute (NETI) and special sessions at FIE.</p>
-<p>Matthew Ohland is the MIDFIELD Director and Principal Investigator. He is Professor and Associate Head of Engineering Education at Purdue University and a Fellow of IEEE, ASEE, and AAAS. Dr. Ohland has considerable experience facilitating workshops including the NETI and CATME training.</p>
-<p>Marisa Orr is the MIDFIELD Associate Director and Assistant Professor in Engineering and Science Education with a joint appointment in Mechanical Engineering at Clemson university. She is a recipient of the 2009 Helen Plants Award for the best nontraditional session at FIE (Enhancing Student Learning Using SCALE-UP Format).</p>
+<p><strong>Matthew Ohland</strong> is the MIDFIELD Director and Principal Investigator. He is Professor and Associate Head of Engineering Education at Purdue University.</p>
+<p><strong>Marisa Orr</strong> is the MIDFIELD Associate Director and Assistant Professor in Engineering and Science Education with a joint appointment in Mechanical Engineering at Clemson University.</p>
+<p><strong>Russell Long</strong> is MIDFIELD Managing Director and Data Steward. He developed the stratified data sample for the R packages used in this workshop.</p>
+<p><strong>Susan Lord</strong> is Director of the MIDFIELD Institute and Professor and Chair of Engineering and Professor of Electrical Engineering at the University of San Diego.</p>
+<p><strong>Richard Layton</strong> is the MIDFIELD Director of Data Display and Professor of Mechanical Engineering at Rose-Hulman. He is the lead developer of the R packages used in this workshop.</p>
 </div>
 <div id="acknowledgment" class="section level2 unnumbered">
 <h2>Acknowledgment</h2>
@@ -164,9 +163,6 @@
 </div>
 <div id="ref-wickham2014advanced">
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman &amp; Hall/Crc the R Series. Taylor &amp; Francis.</p>
-</div>
-<div id="ref-cranweb">
-<p><em>The Comprehensive R Archive Network</em>. n.d. <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>.</p>
 </div>
 </div>
             </section>

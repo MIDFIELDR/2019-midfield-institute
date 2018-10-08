@@ -2,7 +2,7 @@
 
 ```{r include=FALSE}
 library(knitr)
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, collapse = TRUE)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, collapse = FALSE)
 opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
 ```
 
@@ -49,10 +49,10 @@ df <- tribble(
   ~Min, ~Topic, 
   10, "Introductions", 
   20, "Elements of effective graphs", 
-  30, "Getting started with R (tutorial)", 
+  30, "Starting with R (tutorial)", 
   20, "Accessing the MIDFIELD data", 
   20, "--- break ---", 
-  40, "Using midfieldr (tutorial)", 
+  40, "Starting with midfieldr (tutorial)", 
   10, "Extending your repertoire",
   10, "Next steps", 
   20, "Conversations"
@@ -62,7 +62,7 @@ kable(df)
 
 
 
-## Tutorial: Getting started with R  {-}
+## Tutorial: Start with R  {-}
 
 This is a self-paced tutorial. 
 
@@ -126,16 +126,22 @@ If you closed the project, then open `2018-FIE-midfieldr-workshop.Rproj`
 - File > New File > R Script 
 - An Untitled script will open 
 - File > Save As 
-- Type in a file name, for example, `get-started.R`
+- Type in a file name  `start-with-R.R`
 - Save 
 
-In this workshop, all files we create will be saved in the main project folder, with no subdirectories. If you prefer to use subdirectories (folders) inside the project, that's OK. 
+Your project main directory should now have these files, 
 
-In the R file, type 
+    2018-FIE-midfieldr-workshop/
+        |-- start-with-R.R
+        |-- 2018-FIE-midfieldr-workshop.Rproj
+
+
+
+In this workshop, all files we create will be saved in the main project folder, with no subdirectories. If you prefer to use subdirectories (folders) inside the project, that's OK, 
+
+In the R file (not the Console), type 
 
     library(tidyverse)
-
-
 
 To run the script, 
 
@@ -153,21 +159,19 @@ knitr::include_graphics("images/run-source.png"),
 
 Notes 
 
-- If you get an error statement that the package does not exist, you probably have to install the package. In the RStudio, console, just type `install.packages("tidyverse")` 
-- Sometimes when clicking Source, a plot is not sent to the output. If that happens, 
-
-When the script runs correctly, you should see set of messages like this, 
+- If you get an error statement that the package does not exist, you probably have to install the package. 
+- When the script runs correctly, you should see set of messages like this, where in this work, a double hashtag (`##`) indicates R output. 
 
 
 ```
--- Attaching packages --------------------------------------- tidyverse 1.2.1 --
-v ggplot2 3.0.0.9000     v purrr   0.2.5     
-v tibble  1.4.2          v dplyr   0.7.6     
-v tidyr   0.8.1          v stringr 1.3.1     
-v readr   1.1.1          v forcats 0.3.0     
--- Conflicts ------------------------------------------ tidyverse_conflicts() --
-x dplyr::filter() masks stats::filter()
-x dplyr::lag()    masks stats::lag()
+## -- Attaching packages ------------------------------ tidyverse 1.2.1 
+## v ggplot2 3.0.0.9000     v purrr   0.2.5     
+## v tibble  1.4.2          v dplyr   0.7.6     
+## v tidyr   0.8.1          v stringr 1.3.1     
+## v readr   1.1.1          v forcats 0.3.0     
+## -- Conflicts --------------------------------------- tidyverse_conflicts() 
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
 
 ```
 
@@ -185,19 +189,16 @@ knitr::include_graphics("images/library-help-page.png")
 )
 ```
 
-```
 
-```
-
-
+<br>
 
 **3. Look at a tibble**
 
 The tidyverse comes with several data sets. We will use the one called mpg. 
 
-The help page for the data set tells us its source package and explains the variables. 
+The help page for the data set tells us its source package and explains the variables. In the Console, type 
 
-    ? mpg
+ 7   ? mpg
 
 
 ```{r}
@@ -209,7 +210,11 @@ knitr::include_graphics("images/sample-help-page.png")
 ```
 
 
-To get a glimpse of the data, just type its name in the script and run it. In this tutorial, R output is indicated by a double hashtag (`##`). 
+To get a glimpse of the data, just type its name in the script and run it. 
+
+- In an R script, anything after a single hashtag is treated as a comment. 
+- Type the comment in your script. 
+- Type `mpg` in your script and run it. 
 
 ```{r echo = TRUE}
 # mpg is a data frame included in the tidyverse package
@@ -234,17 +239,18 @@ The output above tells us that `mpg` is a *tibble*. Tibbles are data frames, but
 
 
 
+<br>
 
 **4. Assignment operator**
 
-In R we assign values to objects with the assignment operator, `<-`. For example, suppose we want to assign the value $\pi$ to the object $x$. 
+In R we assign values to objects with the assignment operator, `<-`. For example, suppose we want to assign the value $\pi$ to the object $x$.  Type the following in your script and run it. 
 
 ```{r echo = TRUE}
 # an angle in radians
 x <- pi
 ```
 
-Type the object name `x` to see it's value. 
+Type the object name `x` to see it's value.  Type the following in your script and run it. 
 
 ```{r echo = TRUE}
 x
@@ -252,20 +258,22 @@ x
 
 
 
+<br>
 
 **5. Functions** 
 
-Functions are fundamental building blocks in R. Functions carry out specified tasks, typically operating on one or more arguments. For example, the cosine function, `cos()`, has one argument, 
+Functions are fundamental building blocks in R. Functions carry out specified tasks, typically operating on one or more arguments. For example, the cosine function, `cos()`, has one argument. 
+
+ Type the following in your script and run it. 
 
 ```{r echo = TRUE}
+# above, x was assigned the value of pi radians 
 cos(x)
 ```
 
-The help page for a function is found by typing (in the RStudio console pane) a question  mark followed by the function name. For example, `?cos()`. 
-
 A function from the tidyverse that we will use regularly is `glimpse()`. It gives us a useful glimpse of a data frame, showing all the variables (column names) but written down the page, and data runs across the page. making it possible to see every column in a data frame. 
 
-For example, 
+Type the following in your script and run it. 
 
 ```{r echo = TRUE}
 glimpse(mpg)
@@ -277,17 +285,16 @@ The general form of a function is
 function_name(arg1 = value, arg2 = value, ... )
 ```
 
-
+<br>
 
 **6. Graphs** 
 
 
 We use the `ggplot()` function from the tidyverse for creating graphs. 
 
+- Sometimes when clicking Source, a plot is not sent to the output. If that happens, select all the lines of code and press Run. 
 
-For example, add the following lines to your script and run the code. 
-
-- Sometimes when clicking Source, a plot is not sent to the output. If that happens, select all the code lines and press Run
+Type the following in your script and run it. 
 
 ```{r echo = TRUE}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
@@ -296,41 +303,47 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 
 `ggplot()` arguments:
 
-- argument is `data` to which we assign the data frame `mpg`  
-- argument `mapping` to which we assign the aesthetics `aes()` function 
-- arguments of `aes()` are `x` and `y` to which we assign the value of the `displ` and `hwy` variables from the data frame 
+- `data` argument assigns the data frame  
+- `mapping` argument assigns the aesthetics `aes()` function 
+- `x` and `y` arguments assign variables from the data frame for graphing   
 - `+` adds a new layer to the graph 
 - `geom_point()` assigns points as the data markers 
 
 
+<br>
 
 **7. Saving results to a file** 
 
-We can save any result to file, for example, to save the graph we just made as a PNG image, we write 
+We can save any result to file, for example, to save the graph we just made as a PNG image, type the following in your script and run it.
 
 
     ggsave("mileage.png")
 
 
-To save a data frame as a CSV file, 
+with a filename in quotes, here `"mileage.png"`. To save a data frame as a CSV file, we use `write_csv()` (tidyverse).  Type the following in your script and run it. 
 
 
     write_csv(mpg, "mpg_data.csv")
 
+where `mpg` is the data frame to be written and `"mpg_data.csv"` is the filename. Add these lines to your script and run it. 
 
-Add these lines to your script and run it. If you examine your project folder you will find the PNG and CSV files your just made.  Your directory should look like this now, 
+If you examine your project folder you will find the PNG and CSV files your just made.  Your directory should look like this now, 
 
 
     2018-FIE-midfieldr-workshop/
-        |-- get-started.R
+        |-- start-with-R.R
         |-- mpg_data.csv
         |-- mileage.png
         |-- 2018-FIE-midfieldr-workshop.Rproj
 
 
+<br>
+
 **8. Small multiple graphs** 
 
-We can use a 3rd variable from the data frame, the variable `class`, as a conditioning variable to create a set of small multiples (called *facets* in ggplot). The new graph layer is created using the `facet_wrap()` function. 
+We can use a 3rd variable from the data frame, the variable `class`, as a conditioning variable to create a set of small multiples (or *facets*). The new graph layer is created using the `facet_wrap()` function. 
+
+Type the following in your script and run it.
 
 
 ```{r echo = TRUE, fig.asp = 1, out.width = "100%"}
@@ -340,7 +353,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 ```
 
 
-Or, instead of class, we could condition using the number of cylinders in the engine. 
+Or, instead of class, we could condition using the number of cylinders in the engine. Type the following in your script and run it.
 
 
 ```{r echo = TRUE, fig.asp = 1, out.width = "100%"}
@@ -349,17 +362,27 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
   facet_wrap(vars(cyl))
 ```
 
-If we aren't interested in 5-cylinder cars (?), we omit them from the data frame with the `filter()` function. Filter is a row-operation.  The following code could be stated, "Start with `mpg`, assign it to the new object `mpg_rev`, then, filter to keep all rows in which the `cyl` variable is not equal to 5."
+<br>
 
+**9. filter() and the pipe operator** 
+
+If we aren't interested in 5-cylinder cars, we omit them from the data frame with the `filter()` function (tidyverse). Filter is a row-operation, keeping all rows that meet the conditional statement and removing all other rows. Here we'll use the condition `cyl != 5`, that is, keep all rows for which the value of the  `cyl` variable is not equal to 5 (`!` is the negation operator). 
+
+Type the following in your script and run it.
 
 ```{r  echo=TRUE}
 mpg_rev <- mpg %>% 
   filter(cyl != 5)
 ```
 
-- The characters `!=` is "not equal to"
-- the pipe operator `%>%` can be read "then" 
+I've also introduced the pipe operator `%>%` here. After assigning `mpg` to a new object `mpg_rev`, the pipe allows us to operate on the result `mpg_rev` and filter its rows, leaving the original`mpg` data frame unaltered. 
 
+Thus, the pipe operator can be thought of as a "then" statement. Do this, "then" use the result and perform the next operation. 
+
+
+The same graph with the revised data frame has only three facets. The  `nrow = 1` argument places the panels in one row.
+
+Type the following in your script and run it.
 
 ```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
 ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
@@ -367,15 +390,17 @@ ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) +
   facet_wrap(vars(cyl), nrow = 1)
 ```
 
-The  `nrow = 1` argument places the panels of the graphs all in one row. 
 
 
 
 
+<br>
 
-**8. Smooth curve** 
+**10. Smooth curve** 
 
 Adding the `geom_smooth()` layer adds a loess curve (a local regression) to each panel. 
+
+Type the following in your script and run it.
 
 ```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
 ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
@@ -385,7 +410,7 @@ ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) +
 ```
 
 
-If we want to try a linear regression , add the argument  `method - "lm"`
+If we want to try a linear regression , add the argument  `method - "lm"`. Type the following in your script and run it.
 
 
 ```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
@@ -395,7 +420,7 @@ ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) +
   geom_smooth(method = "lm")
 ```
 
-The shaded area around the regression is the confidence interval. We can remove it using the argument `se = FALSE`. 
+The shaded area around the regression is the confidence interval. We can remove it using the argument `se = FALSE`. Type the following in your script and run it.
 
 ```{r echo=TRUE, fig.asp = 5/12, out.width = "100%"}
 ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) + 
@@ -407,10 +432,13 @@ ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) +
 
 
 
+<br>
 
-**9. Labels** 
+**11. Labels** 
 
-We can change the axis labels and add a title (above the figure)  and a caption (below the figure) using the `labs()` layer. Type `?mpg` to find out that the engine displacement is in liters. 
+We can change the axis labels and add a title (above the figure)  and a caption (below the figure) using the `labs()` layer. Type `? mpg` in the Console to find out that the engine displacement is in liters. 
+
+Type the following in your script and run it.
 
 
 ```{r echo=TRUE, fig.asp = 6/12, out.width = "100%"}
@@ -426,8 +454,9 @@ ggplot(data = mpg_rev, mapping = aes(x = displ, y = hwy)) +
 
 
 
+<br>
 
-**10. Wrap-up**
+**12. Wrap-up**
 
 This concludes our brief introduction to R. You learned to 
 
@@ -453,7 +482,7 @@ Regarding R syntax you should be able to
 
 
 
-## Tutorial: Using midfieldr  {-}
+## Tutorial: Start with midfieldr  {-}
 
 This is a self-paced tutorial illustrating functions in the midfieldr package.
 
@@ -479,8 +508,8 @@ Your directory should look like this now,
 
 
     2018-FIE-midfieldr-workshop/
-        |-- get-started.R
         |-- start-with-midfieldr.R
+        |-- start-with-R.R
         |-- mpg_data.csv
         |-- mileage.png
         |-- 2018-FIE-midfieldr-workshop.Rproj 

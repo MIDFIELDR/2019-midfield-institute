@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-10-05">
+<meta name="date" content="2018-10-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -79,8 +79,8 @@
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#pre-workshop-setup"><i class="fa fa-check"></i>Pre-workshop setup</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#description"><i class="fa fa-check"></i>Description</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#agenda"><i class="fa fa-check"></i>Agenda</a></li>
-<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-getting-started-with-r"><i class="fa fa-check"></i>Tutorial: Getting started with R</a></li>
-<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-using-midfieldr"><i class="fa fa-check"></i>Tutorial: Using midfieldr</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-start-with-r"><i class="fa fa-check"></i>Tutorial: Start with R</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-start-with-midfieldr"><i class="fa fa-check"></i>Tutorial: Start with midfieldr</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
@@ -126,35 +126,48 @@
 </div>
 <div id="installing-an-r-package" class="section level2 unnumbered">
 <h2>Installing an R package</h2>
-<p>For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R. Most packages are obtained from the <a href="https://cran.r-project.org/">CRAN</a> website (the Comprehensive R Archive Network).</p>
+<p>The fundamental unit of shareable code in R is the <em>package.</em>
+For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R that is easily shared with others <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>.</p>
+<p>Most packages are obtained from the <a href="https://cran.r-project.org/">CRAN</a> website <span class="citation">(<em>The Comprehensive R Archive Network</em>, <a href="#ref-cranweb">n.d.</a>)</span>. To install a package using RStudio:</p>
 <ul>
 <li>Launch RStudio</li>
 </ul>
-<p>The RStudio interface has several panes.</p>
-<p><img src="images/open-rstudio-packages.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>We use the RStudio <em>Packages</em> feature to install packages from CRAN.</p>
+<p>The RStudio interface has several panes. We want the Files/Plots/Packages pane.</p>
 <ul>
-<li>Select the <em>Packages</em> tab</li>
+<li>Select the <em>Packages</em> tab (circled in the image below).</li>
 <li>Click <em>Install</em> on the ribbon</li>
 <li>In the dialog box, type <strong>drat</strong> (a package we’ll use in a moment)</li>
 <li>Check the <em>Install dependencies</em> box</li>
 <li>Click the <em>Install</em> button</li>
 <li>Repeat to install the package <strong>devtools</strong></li>
+<li>Repeat to install the package <strong>tidyverse</strong></li>
 </ul>
+<img src="images/open-rstudio-packages.png" alt="rstudio files-plots-packages pane" width="700"/>
 </div>
 <div id="installing-midfielddata-and-midfieldr" class="section level2 unnumbered">
 <h2>Installing midfielddata and midfieldr</h2>
-<p>The <strong>midfielddata</strong> package is too large to be stored in CRAN, so we use a special “drat-repository” to make the package source files available.</p>
+<p>In this workshop, we work with the <strong>midfieldr</strong> package and <strong>midfielddata</strong> data-package. The <strong>midfielddata</strong> package is too large to be stored in CRAN, so we use a special “drat-repository” to make the package source files available.</p>
 <p>To install the packages, place your cursor in the RStudio <em>Console</em> pane.</p>
-<p><img src="images/open-rstudio-console.png" width="70%" style="display: block; margin: auto;" /></p>
+<img src="images/open-rstudio-console.png" alt="rstudio console pane" width="700"/>
 <p>In the console, at the cursor (indicated by <code>&gt;</code>), type each of the following lines of code and press <em>Enter</em> from your keyboard, one line at a time. Alternatively, you can copy a line of code from this page, paste it in the console, and press <em>Enter</em>. We only run these lines of code once, so you do not have to type the lines into a script.</p>
-<pre><code>drat::addRepo(&quot;midfieldr&quot;) </code></pre>
+<p>The <strong>drat</strong> <code>addRepo()</code> function adds the <strong>midfieldr</strong> GitHub repository to our current R session.</p>
+<pre><code>addRepo(&quot;midfieldr&quot;) </code></pre>
+<p><strong>midfielddata</strong> must be installed before <strong>midfieldr</strong>.</p>
 <pre><code>install.packages(&quot;midfielddata&quot;) </code></pre>
-<p>We use the devtools <code>install_github()</code> function to install midfieldr from it’s GitHub repository because midfieldr has not yet been submitted to CRAN.</p>
-<pre><code>devtools::install_github(&quot;MIDFIELDR/midfieldr&quot;) </code></pre>
+<p>The <strong>devtools</strong> <code>install_github()</code> function installs <strong>midfieldr</strong> from it’s GitHub repository.</p>
+<pre><code>install_github(&quot;MIDFIELDR/midfieldr&quot;) </code></pre>
 <hr />
 <p>If you have successfully installed the software and packages, you are ready for the workshop!</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-wickham2014advanced">
+<p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman &amp; Hall/Crc the R Series. Taylor &amp; Francis.</p>
+</div>
+<div id="ref-cranweb">
+<p><em>The Comprehensive R Archive Network</em>. n.d. <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>.</p>
 </div>
 </div>
             </section>
