@@ -198,7 +198,7 @@ The tidyverse comes with several data sets. We will use the one called mpg.
 
 The help page for the data set tells us its source package and explains the variables. In the Console, type 
 
- 7   ? mpg
+    ? mpg
 
 
 ```{r}
@@ -223,11 +223,8 @@ mpg
 
 The result tells us that the data has 
 
-- `r nrow(mpg)` observations (rows) 
-- `r ncol(mpg)` variables (columns)  
-- `r names(mpg)[1]` is a variable of type  "`r typeof(mpg[[1]])`" 
-- `r names(mpg)[3]` is a variable of type  "`r typeof(mpg[[3]])`" 
-- `r names(mpg)[4]` is a variable of type  "`r typeof(mpg[[4]])`" 
+- `r nrow(mpg)` observations (rows) and `r ncol(mpg)` variables (columns)  
+- we have variable types   "`r typeof(mpg[[1]])`", "`r typeof(mpg[[3]])`", and "`r typeof(mpg[[4]])`" 
 
 
 

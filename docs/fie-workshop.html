@@ -331,7 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>3. Look at a tibble</strong></p>
 <p>The tidyverse comes with several data sets. We will use the one called mpg.</p>
 <p>The help page for the data set tells us its source package and explains the variables. In the Console, type</p>
-<p>7 ? mpg</p>
+<pre><code>? mpg</code></pre>
 <img src="images/sample-help-page.png" alt="help page for the mpg dataset" width="600"/>
 <p>To get a glimpse of the data, just type its name in the script and run it.</p>
 <ul>
@@ -357,12 +357,9 @@ mpg</code></pre>
 ## # ... with 224 more rows</code></pre>
 <p>The result tells us that the data has</p>
 <ul>
-<li>234 observations (rows)</li>
-<li>11 variables (columns)<br />
+<li>234 observations (rows) and 11 variables (columns)<br />
 </li>
-<li>manufacturer is a variable of type “character”</li>
-<li>displ is a variable of type “double”</li>
-<li>year is a variable of type “integer”</li>
+<li>we have variable types “character”, “double”, and “integer”</li>
 </ul>
 <p><em>Data frames</em> are the most common way of storing data in R: a 2-dimensional data structure with columns of equal lengths. Columns can be of different types (numeric, character, logical, etc.) but all values in a column are the same type. Optional reading: <a href="http://adv-r.had.co.nz/Data-structures.html#data-frames">Data frames</a>.</p>
 <p>In a <em>tidy</em> data frame, every column is a variable and every row is an observation. The <code>mpg</code> data is in tidy form.</p>
