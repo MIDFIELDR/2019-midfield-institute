@@ -224,7 +224,7 @@ mpg
 The result tells us that the data has 
 
 - `r nrow(mpg)` observations (rows) and `r ncol(mpg)` variables (columns)  
-- we have variable types   "`r typeof(mpg[[1]])`", "`r typeof(mpg[[3]])`", and "`r typeof(mpg[[4]])`" 
+- variable types   "`r typeof(mpg[[1]])`", "`r typeof(mpg[[3]])`", and "`r typeof(mpg[[4]])`" 
 
 
 
