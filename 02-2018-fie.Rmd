@@ -226,8 +226,6 @@ The result tells us that the data has
 - `r nrow(mpg)` observations (rows) and `r ncol(mpg)` variables (columns)  
 - variable types   "`r typeof(mpg[[1]])`", "`r typeof(mpg[[3]])`", and "`r typeof(mpg[[4]])`" 
 
-
-
 *Data frames* are the most common way of storing data in R: a 2-dimensional data structure with columns of equal lengths. Columns can be of different types (numeric, character, logical, etc.) but all values in a column are the same type. Optional reading: [Data frames](http://adv-r.had.co.nz/Data-structures.html#data-frames). 
 
 In a *tidy* data frame, every column is a variable and every row is an observation. The `mpg` data is in tidy form. 
