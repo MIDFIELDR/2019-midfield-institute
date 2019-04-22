@@ -15,7 +15,7 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
                width = 90)
 ```
 
-Workshop conducted at the 2019 MIDFIELD Institute at Purdue University, June 3--4, 2019.  Frontiers in Education Conference (2018-10-03) in San Jose, CA. 
+MIDFIELD Institute two-day workshop, conducted at Purdue University, June 3--4, 2019.  
 
 
 ## Pre-workshop setup {-}
