@@ -36,9 +36,21 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using MIDFIELD data  [@2016ohlandlong]. The software environment is R [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
 
-- [**MIDFIELD**](https://engineering.purdue.edu/MIDFIELD) (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
-- [**midfielddata**](https://midfieldr.github.io/midfielddata/) is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
-- [**midfieldr**](https://midfieldr.github.io/midfieldr/) is a R package that provides functions for turning student-record data into persistence metrics. 
+## What is MIDFIELD? {-}
+
+[**MIDFIELD**](https://engineering.purdue.edu/MIDFIELD) (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
+
+
+
+## What is midfieldr? {-}
+
+Analytical tools for research in student pathways are generally scarce. The R package **midfieldr** provides an entry to this type of intersectional research for anyone willing to develop basic proficiency in R. 
+
+[**midfieldr**](https://midfieldr.github.io/midfieldr/) is a R package that provides functions for turning student-record data into persistence metrics. 
+
+[**midfielddata**](https://midfieldr.github.io/midfielddata/) is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
+
+
 
 ## Why R? {-}
 

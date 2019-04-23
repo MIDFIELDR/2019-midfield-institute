@@ -16,7 +16,40 @@ suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("wrapr"))
 ```
 
-MIDFIELD Institute two-day workshop, conducted at Purdue University, June 3--4, 2019.  
+MIDFIELD Institute    
+June 3--4, 2019    
+Purdue University, West Lafayette, Indiana, USA    
+Contact: Russell Long, ralong@purdue.edu    
+
+
+
+
+## Description {-}
+
+We are offering the first MIDFIELD Institute on Monday and Tuesday, June 3--4, 2019, in West Lafayette, Indiana. We welcome faculty, staff, and graduate students.
+
+The cost for the MIDFIELD Institute will be $250 including breakfast and lunch both days and a reception on June 3.  Participants will be responsible for their travel and hotel arrangements.  More details will be available soon.  A limited number of travel stipends might be available.  
+
+Our learning objectives can be categorized in two broad classes: qualitative and computational. Qualitatively, by the end of the workshop participants should be able to: 
+
+1. Describe the variables available in the  MIDFIELD data  
+1. Describe how the MIDFIELD data re organized  
+1. Describe key principles of effective data visualization  
+1. Identify deficiencies of common graph  types 
+1. List potential resources beyond MIDFIELD that can contribute to answering research questions 
+
+Computationally, participants should be able use the **midfieldr** R package to work with the MIDFIELD dataset to:
+
+1. Calculate persistence metrics  
+1. Produce data tables to address a research question  
+1. Graph the metrics  
+1. Use data visualization to explore possible stories in the data  
+
+As statistician and graph designer John Tukey [-@Tukey:1977] said, "The greatest value of a picture is when it forces us to notice what we never expected to see."
+
+
+
+
 
 
 ## Pre-workshop setup {-}
@@ -24,34 +57,6 @@ MIDFIELD Institute two-day workshop, conducted at Purdue University, June 3--4, 
 
 - [Preface](https://midfieldr.github.io/workshops/index.html) for an introduction to MIDFIELD and the workshop facilitators. 
 - [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop software installation instructions.
-
-
-## Description {-}
-
-We are offering the first Multiple Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) Institute on Monday, June 3, and Tuesday, June 4, 2019 in West Lafayette, Indiana. We welcome faculty, staff, and graduate students.
-
-The cost for the MIDFIELD Institute will be $250 including breakfast and lunch both days and a reception on June 3.  Participants will be responsible for their travel and hotel arrangements.  More details will be available soon.  A limited number of travel stipends might be available.  
-
-
-
-Our learning objectives are categorized in two broad classes: qualitative and computational. Qualitatively, by the end of the workshop participants should be able to: 
-
-1. Describe data available in MIDFIELD 
-1. Identify deficiencies of common graph types 
-1. Describe key principles of effective data visualization 
-1. List potential resources beyond MIDFIELD that can contribute to answering research questions 
-
-Computationaly, participants should be able use the **midfieldr** R package to work with the MIDFIELD dataset to:
-
-1. Calculate and evaluate educational metrics 
-1. Explore and tell a story from MIDFIELD data
-1. Produce a table of MIDFIELD data that addresses a research question 
-
-If you are interested, please email Russell Long at ralong@purdue.edu.
-
-
-
-
 
 
 
