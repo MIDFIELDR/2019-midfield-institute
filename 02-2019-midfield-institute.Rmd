@@ -65,7 +65,7 @@ As statistician and graph designer John Tukey [-@Tukey:1977] said, "The greatest
 ## Agenda  {-}
 
 
-Day 1
+Day 1 Under construction
 
 ```{r}
 df <- build_frame(
@@ -75,10 +75,10 @@ df <- build_frame(
   30,    "something" |
   20,    "something"
   )
-kable(df)
+# kable(df)
 ```
 
-Day 2
+Day 2 Under construction
 
 ```{r}
 df <- build_frame(
@@ -88,7 +88,7 @@ df <- build_frame(
   30,    "something" |
   20,    "something"
   )
-kable(df)
+# kable(df)
 ```
 
 
