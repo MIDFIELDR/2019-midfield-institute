@@ -19,76 +19,117 @@ suppressPackageStartupMessages(library("wrapr"))
 MIDFIELD Institute    
 June 3--4, 2019    
 Purdue University, West Lafayette, Indiana, USA    
-Contact: Russell Long, ralong@purdue.edu    
+Contact: Russell Long, ralong@purdue.edu to express interest or with questions    
+
+
 
 
 
 
 ## Description {-}
 
-We are offering the first MIDFIELD Institute on Monday and Tuesday, June 3--4, 2019, in West Lafayette, Indiana. We welcome faculty, staff, and graduate students.
+We are offering the first Multiple Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) Institute on Monday June 3 and Tuesday June 4, 2019 in West Lafayette, Indiana. 
 
-The cost for the MIDFIELD Institute will be $250 including breakfast and lunch both days and a reception on June 3.  Participants will be responsible for their travel and hotel arrangements.  More details will be available soon.  A limited number of travel stipends might be available.  
+We expect Institute attendance to be small this year, so we are reaching out directly to people who might be interested in attending or might know someone who is. Please feel free to forward this to colleagues, including those at other institutions. We welcome faculty, staff, and graduate students.  
 
 Our learning objectives can be categorized in two broad classes: qualitative and computational. Qualitatively, by the end of the workshop participants should be able to: 
 
-1. Describe the variables available in the  MIDFIELD data  
-1. Describe how the MIDFIELD data re organized  
+1. Describe the data available in MIDFIELD  
+1. Describe how the MIDFIELD data are organized  
 1. Describe key principles of effective data visualization  
-1. Identify deficiencies of common graph  types 
-1. List potential resources beyond MIDFIELD that can contribute to answering research questions 
+1. Identify deficiencies of common graph types  
+1. List potential resources beyond MIDFIELD that can contribute to answering research questions  
+ 
+ Computationally, participants should be able use **midfieldr**, an R package specifically designed for use with MIDFIELD, to:
 
-Computationally, participants should be able use the **midfieldr** R package to work with the MIDFIELD dataset to:
+1. Calculate and evaluate educational metrics  
+1. Produce a table of data that addresses a research question  
+1. Explore and tell a story from MIDFIELD data  
 
-1. Calculate persistence metrics  
-1. Produce data tables to address a research question  
-1. Graph the metrics  
-1. Use data visualization to explore possible stories in the data  
-
-As statistician and graph designer John Tukey [-@Tukey:1977] said, "The greatest value of a picture is when it forces us to notice what we never expected to see."
-
+The cost for the MIDFIELD Institute will be $250 including breakfast and lunch both days and a reception on June 3. Participants will be responsible for their travel and hotel arrangements. More details will be available soon. A limited number of travel stipends is available. 
 
 
 
 
 
-## Pre-workshop setup {-}
+## Before you arrive {-}
 
 
 - [Preface](https://midfieldr.github.io/workshops/index.html) for an introduction to MIDFIELD and the workshop facilitators. 
-- [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop software installation instructions.
+- [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop software installation instructions. 
+- Optional: For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our data graphics, you can follow the links in the [publications] section.   
 
 
 
 
 
-## Agenda  {-}
 
 
-Day 1 Under construction
+
+
+
+
+
+
+
+## Day 0 agenda  {-}
+
+Sunday, 2019-06-02. 
+
+This is an optional session designed for R novices or for anyone whose R skills are rusty. We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2. 
+
+To make the best use of our time, please follow the [Getting started](https://midfieldr.github.io/workshops/getting-started.html) instructions before arriving.  
 
 ```{r}
 df <- build_frame(
-  "Min", "Topic" |
-  10,    "Introductions"  |
-  20,    "something" |
-  30,    "something" |
-  20,    "something"
-  )
-# kable(df)
+        "Time", "Activities" |
+          "5:30--6:00 pm", "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." |
+          "6:00--6:50", "*R basics.* The RStudio environment and R objects, functions, and scripts" |
+          "7:00--7:50", "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
+          "8:00--8:50", "*Data basics.* Data import, data structure, and data transformation. Writing data to file." |
+          "9:00", "*Adjourn*"
+)
+kable(df)
 ```
 
-Day 2 Under construction
+
+## Day 1 agenda  {-}
+
+Monday, 2019-06-03
 
 ```{r}
 df <- build_frame(
-  "Min", "Topic" |
-  10,    "Introductions"  |
-  20,    "something" |
-  30,    "something" |
-  20,    "something"
-  )
-# kable(df)
+        "Time", "Activities" |
+        "", "*Breakfast*" |
+        "9:00--9:30", "*Introductions.* Introduce presenters, participants, and objectives. Introduce MIDFIELD." |
+        "9:30--11:30", "*Guided practice.* Explore MIDFIELD data using R packages midfieldr and midfielddata. Answer research questions posed by facilitators." |
+        "11:30--1:00", "*Lunch* provided"  |
+        "1:00--3:00", "*Self-directed practice.* Explore dataset to answer research questions with facilitation. Produce a data table to address participant's research question." |
+        "3:00--4:30", "*Data visualization.* Deficiencies of common graphs. Creating more effective graphs. Practice." |
+        "4:30--5:00", "*Conclusion.* Reflection and discussion" |
+          "5:00--7:00", "*Reception.* Purdue Union Anniversary Drawing Room" |
+          "7:00", "*Adjourn.* Make your own dinner plans."
+)
+kable(df)
+```
+
+## Day 2 agenda   {-}
+
+Tuesday, 2019-06-04
+
+```{r}
+df <- build_frame(
+        "Time", "Activities" |
+        "", "*Breakfast*" |
+        "9:00--9:30", "*Explore data.* Iterative data exploration for finding and presenting stories in the data." |
+        "9:30--11:00", "*Self-directed data visualization.* Activity: display data to address participants' research questions. Goal: produce data displays that address their research question." |
+        "11:00--12:00", "*Poster preparation.* Participants make posters to display their works-in-progress (research question, table, graphs)."| 
+        "12:00--2:00", "*Poster lunch.* Everyone views and critiques posters. Lunch provided." |
+        "2:00--4:00", "*Storytelling with data.* Making sense of your story. Linking MIDFIELD data to qualitative research and other datasets. Participants share their knowledge of resources. Activity: Incorporate non-MIDFIELD data related to research questions." |
+        "4:00--5:00", "*Conclusion.* Plans for FIE Special Session to showcase participants' work. Summarize objectives. Assess MIDFIELD Institute." |
+        "5:00", "*Adjourn*"
+)
+kable(df)
 ```
 
 

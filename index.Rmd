@@ -86,6 +86,22 @@ RStudio, an integrated development environment (IDE) for R, includes a console, 
 
 
 
+
+## Publications {-} 
+
+As statistician and graph designer John Tukey [-@Tukey:1977] said, "The greatest value of a picture is when it forces us to notice what we never expected to see." For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our work, you can follow these links: 
+
+- Lord SM, Ohland MW, Layton RA,and Camacho MM (2019) Beyond pipeline and pathways: Ecosystem metrics. *Journal of Engineering Education*, 108, 32--56,  https://doi.org/10.1002/jee.20250 
+- Lord SM, Layton RA, and Ohland MW (2015) Multi-Institution study of student demographics and outcomes in Electrical and Computer Engineering in the USA, *IEEE Transactions on Education*, 58(3), 141--150,  http://dx.doi.org/10.1109/TE.2014.2344622  
+- Brawner CE, Lord SM,  Layton RA, Ohland MW, and Long RA (2015) Factors affecting women's persistence in chemical engineering, *International Journal of Engineering Education* 31(6A), 1431--1447, https://tinyurl.com/y6jq58xh  
+
+One can visit  the MIDFIELD [papers and presentations](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html) page for a more comprehensive list. 
+
+
+
+
+
+
 ## Facilitators {-}
 
 **Matthew Ohland** is the MIDFIELD Director and Principal Investigator. He is Professor and Associate Head of Engineering Education at Purdue University.

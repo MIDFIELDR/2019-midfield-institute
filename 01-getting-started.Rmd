@@ -112,6 +112,44 @@ install_github("MIDFIELDR/midfieldr")
 
 
 
----
 
-If you have successfully installed the software and packages, you are ready for the workshop! 
+## Create an R project {-}
+
+In RStudio,
+
+  - *File \> New Project... \> New Directory \> New Project* 
+  - Type the workshop name as the directory name, for example, `midfield_institute`,  `fie_workshop`, etc. 
+  - Use the browse button to select a location on your computer to create the project  folder 
+  - Click the *Create Project* button 
+
+The new project directory will be all of these things: a directory or "folder" on your computer and an RStudio Project.  
+
+
+
+
+
+
+
+## Create directories {-}
+
+
+File organization is a matter of personal preference, but we do suggest you plan the organization when you start the project. 
+
+We recommend that you always work within an RStudio Project and that you plan your file organiozation from the start. The minimum file structure is shown below, where  `your_project` is the name you gave the project directory such as `midfield_institute` or `fie_workshop`.
+
+<pre><code class=""><span class="line">your_project/
+</span><span class="line">    ├── data/
+</span><span class="line">    ├── figures/
+</span><span class="line">    ├── R/
+</span><span class="line">    ├── reports/
+</span><span class="line">    └── your_project.Rproj</span></code></pre>
+
+We use the folders as follows: 
+
+- `data` for data files 
+- `R` for R scripts that operate on data to produce output such as tidy data or graphs 
+- `figures` for finished data displays  
+- `reports` for output documents 
+
+
+And that concludes the setup. 
