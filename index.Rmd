@@ -38,7 +38,9 @@ This site provides access to workshop materials for studying how undergraduate s
 
 ## What is MIDFIELD? {-}
 
-[**MIDFIELD**](https://engineering.purdue.edu/MIDFIELD) (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
+**MIDFIELD** (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
+
+[[For more information about MIDFIELD]](https://engineering.purdue.edu/MIDFIELD)
 
 
 
@@ -46,9 +48,15 @@ This site provides access to workshop materials for studying how undergraduate s
 
 Analytical tools for research in student pathways are generally scarce. The R package **midfieldr** provides an entry to this type of intersectional research for anyone willing to develop basic proficiency in R. 
 
-[**midfieldr**](https://midfieldr.github.io/midfieldr/) is a R package that provides functions for turning student-record data into persistence metrics. 
+**midfieldr** is a R package that provides functions for turning student-record data into persistence metrics. 
 
-[**midfielddata**](https://midfieldr.github.io/midfielddata/) is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
+**midfielddata** is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
+
+
+[[For more information about midfieldr]](https://midfieldr.github.io/midfieldr/)    
+[[For more information about midfielddata]](https://midfieldr.github.io/midfielddata/)    
+
+
 
 
 
@@ -86,17 +94,35 @@ RStudio, an integrated development environment (IDE) for R, includes a console, 
 
 
 
+[[For more information about R]](https://www.r-project.org/)     
+
+
+## Why R graphics? {-}
+
+Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in software like Microsoft Excel and PowerPoint creates the **illusion** of flexibility. ... So marvelously malleable are these graphical effects---but for whom and to what end? Paradoxically, then, even as the technology for visualizing data has become more sophisticated, it does not necessarily engender rhetorically sensitive design."
+
+The graphics tools in R provide the means to control every pixel in the service of "rhetorically sensitive design." Designers can craft their visual arguments to balance  logos, ethos, pathos, and kairos as appropriate for a given audience in a given rhetorical situation. 
+
+[[For a gallery of R graphics]](https://www.r-graph-gallery.com/)    
+
+
+
+
+
+
 
 ## Publications {-} 
 
-As statistician and graph designer John Tukey [-@Tukey:1977] said, "The greatest value of a picture is when it forces us to notice what we never expected to see." For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our work, you can follow these links: 
+The power of data visualization is discovering the stories in the data. As John Tukey [-@Tukey:1977] put it, "The greatest value of a picture is when it forces us to notice what we never expected to see." 
+
+The MIDFIELD team has been using R to explore and present the stories in the MIDFIELD data for several years. To see a sample of our work, you can follow these links: 
 
 - Lord SM, Ohland MW, Layton RA,and Camacho MM (2019) Beyond pipeline and pathways: Ecosystem metrics. *Journal of Engineering Education*, 108, 32--56,  https://doi.org/10.1002/jee.20250 
 - Lord SM, Layton RA, and Ohland MW (2015) Multi-Institution study of student demographics and outcomes in Electrical and Computer Engineering in the USA, *IEEE Transactions on Education*, 58(3), 141--150,  http://dx.doi.org/10.1109/TE.2014.2344622  
 - Brawner CE, Lord SM,  Layton RA, Ohland MW, and Long RA (2015) Factors affecting women's persistence in chemical engineering, *International Journal of Engineering Education* 31(6A), 1431--1447, https://tinyurl.com/y6jq58xh  
 
-One can visit  the MIDFIELD [papers and presentations](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html) page for a more comprehensive list. 
 
+[[For more information about MIDFIELD publications]](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html)  
 
 
 
