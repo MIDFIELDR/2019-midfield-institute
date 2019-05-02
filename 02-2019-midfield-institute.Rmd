@@ -56,7 +56,7 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 - [Preface](https://midfieldr.github.io/workshops/index.html) for an introduction to MIDFIELD and the workshop facilitators. 
-- [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop software installation instructions. 
+- Participants are encouraged to bring their own laptops with R and RStudio installed. Follow the instructions on [Getting started](https://midfieldr.github.io/workshops/getting-started.html). If not, we will have computers avaiable in the room. 
 - Optional: For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our data graphics, you can follow the links in the [publications] section.   
 
 
