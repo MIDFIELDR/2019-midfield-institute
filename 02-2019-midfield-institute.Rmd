@@ -56,7 +56,8 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 - [Preface](https://midfieldr.github.io/workshops/index.html) for an introduction to MIDFIELD and the workshop facilitators. 
-- Participants are encouraged to bring their own laptops with R and RStudio installed. Follow the instructions on [Getting started](https://midfieldr.github.io/workshops/getting-started.html). If not, we will have computers avaiable in the room. 
+- Participants are encouraged to bring their own laptops with R and RStudio installed. Follow following the instructions on [Getting started](https://midfieldr.github.io/workshops/getting-started.html). If not, we will have computers avaiable in the room. 
+- [Getting started](https://midfieldr.github.io/workshops/getting-started.html) for pre-workshop software installation instructions if you plan on bringing your own 
 - Optional: For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our data graphics, you can follow the links in the [publications] section.   
 
 
@@ -78,11 +79,16 @@ Sunday, 2019-06-02.
 
 This is an optional session designed for R novices or for anyone whose R skills are rusty. We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2. 
 
+We will provide pizza. 
+
 To make the best use of our time, please follow the [Getting started](https://midfieldr.github.io/workshops/getting-started.html) instructions before arriving.  
+
+You are welcome to attend all or part of this session. 
 
 ```{r}
 df <- build_frame(
         "Time", "Activities" |
+          "4:30--5:30 pm", "*Optional.* Time to help anyone needing assitance with the software installation." |
           "5:30--6:00 pm", "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." |
           "6:00--6:50", "*R basics.* The RStudio environment and R objects, functions, and scripts" |
           "7:00--7:50", "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
