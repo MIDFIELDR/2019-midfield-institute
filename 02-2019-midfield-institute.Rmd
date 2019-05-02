@@ -107,7 +107,7 @@ Monday, 2019-06-03
 ```{r}
 df <- build_frame(
         "Time", "Activities" |
-        "8:00-9:00", "*Breakfast*" |
+        "8:00-9:00", "*Breakfast.* Breakfast provided in the workshop room." |
         "9:00--9:30", "*Introductions.* Introduce presenters, participants, and objectives. Introduce MIDFIELD." |
         "9:30--11:30", "*Guided practice.* Explore MIDFIELD data using R packages midfieldr and midfielddata. Answer research questions posed by facilitators." |
         "11:30--1:00", "*Lunch* provided"  |
@@ -127,7 +127,7 @@ Tuesday, 2019-06-04
 ```{r}
 df <- build_frame(
         "Time", "Activities" |
-        "8:00--9:00", "*Breakfast*" |
+        "8:00--9:00", "*Breakfast.* Breakfast provided in the workshop room." |
         "9:00--9:30", "*Explore data.* Iterative data exploration for finding and presenting stories in the data." |
         "9:30--11:00", "*Self-directed data visualization.* Activity: display data to address participants' research questions. Goal: produce data displays that address their research question." |
         "11:00--12:00", "*Poster preparation.* Participants make posters to display their works-in-progress (research question, table, graphs)."| 
