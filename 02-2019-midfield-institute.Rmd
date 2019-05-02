@@ -19,7 +19,9 @@ suppressPackageStartupMessages(library("wrapr"))
 MIDFIELD Institute    
 June 3--4, 2019    
 Purdue University, West Lafayette, Indiana, USA    
-Contact: Russell Long, ralong@purdue.edu to express interest or with questions    
+Neil Armstrong Hall of Engineering    
+Room B-098 (basement)    
+Contact: Russell Long, ralong@purdue.edu with questions    
 
 
 
