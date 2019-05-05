@@ -1,12 +1,15 @@
 # 2019 MIDFIELD Institute {-}
 
-```{r include=FALSE}
+
+<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+
+```{r include = FALSE}
 library(knitr)
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, collapse = FALSE)
-opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
+opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE)
+opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
 ```
 
-```{r}
+```{r echo = FALSE}
 htmltools::img(src = 
 knitr::include_graphics("images/midfield-grad-logo.png"), 
                alt = 'midfield logo', 
@@ -29,6 +32,11 @@ Contact: Russell Long, ralong@purdue.edu with questions
 
 
 ## Description {-}
+
+
+```{r echo = FALSE}
+opts_chunk$set(echo = FALSE)
+```
 
 We are offering the first Multiple Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) Institute on Monday June 3 and Tuesday June 4, 2019 in West Lafayette, Indiana. 
 
@@ -89,7 +97,7 @@ You are welcome to attend all or part of this session.
 ```{r}
 df <- build_frame(
         "Time", "Activities" |
-          "4:30--5:30 pm", "*Optional.* Time to help anyone needing assitance with the software installation." |
+          "4:30--5:30 pm", "*Optional.* Time to help anyone needing assistance with the software installation." |
           "5:30--6:00 pm", "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." |
           "6:00--6:50", "*R basics.* The RStudio environment and R objects, functions, and scripts" |
           "7:00--7:50", "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
@@ -140,17 +148,21 @@ kable(df)
 ```
 
 
+```{r}
+# so it doesn't show up in the environment later
+rm(df)
+```
 
 
 
 ## Tutorial: R basics {-} 
 
-```{r}
+```{r echo = FALSE}
 opts_chunk$set(echo = TRUE)
 ```
 
 
-An introduction to R  adapted from Chapter 2  from [@Healy:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
+An introduction to R adapted from [@Healy:2019:Ch.2] with extra material from [@Matloff:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
 
 
 
@@ -168,8 +180,35 @@ Packages
 
 Run the following line of code in the RStudio Console to install the **socviz** package. 
 
-    devtools::install_github("kjhealy/socviz")
+```r
+devtools::install_github("kjhealy/socviz")
+```
 
+Script
+
+Use *File &gt; New File &gt; R Script* to create a new R script
+
+- Name the script `01-R-basics.R` (R filenames can begin with numbers) 
+- Save it in the `scripts` directory 
+
+Add a minimal header at the top of the script (if you wish) then use `library()`  to load the packages we will use. Loading all the libraries at the top of a script is conventional practice. 
+
+```{r}
+# workshop R basics 
+# name 
+# date 
+
+library("tidyverse")
+library("socviz")
+```
+
+
+Guidelines 
+
+- In this script type the lines of code in the tutorial below one line at a time.  
+- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
+- Confirm that your result matches the result in the tutorial.  
+- **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
 
 
 
@@ -219,33 +258,39 @@ If the name is in use, a help page appears in the RStudio Help pane.
 
 ### Everything in R is an object  {-}
 
+Origins of R objects  
+
 - Some objects are built in to R 
 - Some objects are loaded with packages 
 - Some objects are created by you 
 
 
+Type this line of code in your script, Save, Source. `c()` is the function to combine or concatenate its elements to create a vector. 
 
-
-`c()` is the function to combine or concatenate its elements to create a vector. For example, the R line of code, 
-
-```{r}
+```{r echo = TRUE, results = "hide"}
 c(1, 2, 3, 1, 3, 25)
 ```
 
-Everything that comes back to us in the Console as the result of typing a command will be shown prefaced by a hash mark and greater-than symbol (`#>`). 
+In these notes, everything that comes back to us in the Console as the result of running a script is shown prefaced by `#>`. For example, after running your script, the Console should show, 
 
+```{r echo = FALSE}
+c(1, 2, 3, 1, 3, 25)
+```
 
-Instead of sending the result to the Console, we can assign the vector to a name. 
+But what is that `[1]` here? It's just a row label. We'll go into that later, not needed yet.
+
+We can assign the vector to a name. 
 
 ```{r}
 x <- c(1, 2, 3, 1, 3, 25)
 y <- c(5, 31, 71, 1, 3, 21, 6)
 ```
 
-To see the result, type the object name in the Console
+To see the result in the Console, type the object name in the script, Save, and Source.  (Remember, type the line of code but not the line prefaced by `#>`---that's the output line so you can check your results.)
 
 ```{r}
 x
+
 y
 ```
 
@@ -255,10 +300,47 @@ You create objects my assigning them names
 - objects exist in your R project workspace, listed in the RStudio Environment pane 
 
 
+```{r echo = FALSE}
+htmltools::img(src = 
+knitr::include_graphics("images/rstudio-environment-x-y.png"), 
+               alt = 'rstudio new folder', 
+               width = 700)
+```
+
+Datasets are also named objects, and a large number of datasets are included in the base R installation. For example,`LakeHuron` contains annual measurements of the lake level, in feet, from 1875--1972. 
+
+```{r}
+LakeHuron
+```
+
+Now you can see how the row labels work. There are 10 numbers per row, here, so the second row starts with the 11th, indicated by `[11]`. The last row starts with the 91st value `[91]` and ends with the 98th value. 
+
+- In the Console, type `? LakeHuron` to see the help page for the data set 
+
+Individual elements of a vector are obtained using `[]` notation. 
+
+For example, the first five lake level readings are extracted with 
+
+```{r}
+LakeHuron[1:5]
+```
+
+The 4th element alone, 
+
+```{r}
+LakeHuron[4]
+```
+
+
+
+
+
 
 
 
 ### Do things in R using functions  {-}
+
+Functions do something useful 
 
 - functions are objects the perform actions for you 
 - functions produce output based on the input it receives 
@@ -268,6 +350,7 @@ The parentheses are where we include the inputs (arguments) to the function
 
 - `c()` concatenates the comma-separated numbers in the parentheses to create a vector 
 - `mean()` computes the mean of a vector of numbers 
+- `sd()` computes the standard deviation of a vector of numbers 
 - `summary()` returns a summary of the object 
 
 If we try `mean()` with no inputs, we get an error statement 
@@ -276,27 +359,55 @@ If we try `mean()` with no inputs, we get an error statement
     mean()
     #> Error in mean.default() : argument "x" is missing, with no default
 
-If we use the `x` or `y` vector as the argument, the mean is computed and displayed. Add these lines to your script and Source. 
+If we use the Lake Huron dataset as the argument, the function is computed and displayed. Add these lines to your script, Save, and Source.
 
 ```{r}
-mean(x)
-mean(y)
-summary(x)
+mean(LakeHuron)
+
+sd(LakeHuron)
+
+summary(LakeHuron)
 ```
 
 
+We can extract subsets of data using functions. For example, If we wanted only the first five even-numbered elements, we use `c()` to create a vector of indices to the desired elements, 
 
+```{r}
+LakeHuron[c(2, 4, 6, 8, 10)]
+```
+
+If we wanted every 5th entry over the full data set, we use `length()` to determine how many entries there are, and the sequence function `seq()` to create the vector of indices, 
+
+```{r}
+n <- length(LakeHuron)
+LakeHuron[seq(from = 5, to = n, by = 5)]
+```
+
+
+Because we will be using the ggplot2 package for graphics, we will not be using the base R `plot()` function very often, but it is useful for a quick look at data. Add these lines to your script, Save, and Source. 
+
+```{r}
+plot(LakeHuron)
+```
+
+The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and *Enter* to see the function help page. 
+
+- `? mean()` 
+- `? sd()` 
+- `? summary()` 
 
 
 
 ### R functions come in packages {-}
 
+Functions are bundled in packages  
+
 - Families of useful functions are bundled into packages that you can install, load, and use 
 - Packages allow you to build on the work of others 
-- You can write you own functions and packages too 
-- The visualizations we will do depend on choosing the right functions and giving those functions the right arguments 
+- You can write your own functions and packages too 
+- A lot of the work in data science consists of choosing the right functions and giving them the right arguments to get our data into the form we need for analysis or visualization 
 
-Functions do something useful with the input you provide and give you back a result. Type the following in tour script and Source. (Comments in R are denoted by a hashtag (`#`). 
+Functions operate on the input you provide and give you back a result. Type the following in your script, Save, and Source.
 
 ```{r}
 table(x) # table of counts
@@ -310,14 +421,9 @@ y + 1    # add a scalar to every element
 x + x    # add elements 
 ```
 
-As you have already seen, once you have installed a package to your machine, you load it into your workspace using the `library()` function 
-
-```{r}
-library("socviz")
-```
+*Comments* are annotations to make the source code easier for humans to understand but are ignored by R. Comments in R are denoted by a hashtag `#`. 
 
 
-Loading all the packages used in a script near the top of the script is good practice.  
 
 
 
@@ -354,16 +460,15 @@ class(titanic)
 
 You can see there are four variables: `r names(titanic)`.  Two variables (columns) are numeric, two are categorical. 
 
-You can pick out a variable using the `$` operator, 
+You can pick variable out of a data frame using the `$` operator, 
 
 ```{r}
 titanic$percent
 ```
 
-From the tidyverse, we will regularly use a augmented data frame called a "tibble. We can convert the titanic data frame to a tibble, using the `as_tibble()` (in the tidyverse package)
+From the tidyverse, we will regularly use a augmented data frame called a *tibble.* We can convert the titanic data frame to a tibble using  `as_tibble()`. 
 
 ```{r}
-library("tidyverse")
 titanic_tb <- as_tibble(titanic)
 
 class(titanic_tb)
@@ -412,18 +517,33 @@ Expect to make errors and don't worry when that happens.  You won't break anythi
 
 - Make sure parentheses are balanced---that every opening `(` has a corresponding closing `)`.  
 - Make sure you complete your expressions. If you see a `+` in the Console instead of the usual prompt `>`, that means that R thinks you haven't written a complete expression. You can hit `Esc` or `Ctrl C` to force your way back to the Console and try correcting the code.  
-- In ggplot specifically, as you will see, we create pllots layer by layer, using a `+` character at the end of the line---not at the beginning of the next line. 
+- In ggplot specifically, as you will see, we create plots layer by layer, using a `+` character at the end of the line---not at the beginning of the next line. 
 
 For example, you would write this, 
 
-    ggplot(data = mpg, aes(x = displ, y = hwy)) +
-      geom_point()
+```r
+ggplot(data = mpg, aes(x = displ, y = hwy)) +
+    geom_point()
+```
 
 not this,  
 
-    ggplot(data = mpg, aes(x = displ, y = hwy))  
-      + geom_point()
+```r  
+# error caused by incorrectly placed +
+ggplot(data = mpg, aes(x = displ, y = hwy))  
+    + geom_point()
+```
 
+Too conclude, let's make bar graph of the `titanic` data, 
+
+```{r fig.asp = 1/3}
+ggplot(data = titanic_tb, mapping = aes(x = sex, y = n, fill = fate)) +
+  geom_col() +
+  coord_flip()
+```
+
+
+> **Your turn.** As shown, color distinguishes those who survived from those who did not and bar length gives totals by sex. Make a small change so that color denotes sex and bar length gives totals of survived and perished. 
 
 
 
@@ -432,24 +552,13 @@ not this,
 In Windows, 
 
 - `Ctrl L` clears the Console  
-- `Ctrl Shift M` creates the pipe operator  
-- `Ctrl Enter` runs the selected lilne(s) of code in an R script  
-- `Ctrl Shift K` knits an Rmd file  
-- `Alt -` creates the assignent operator `<-`  
-- `F7` (or possibly `Fn 7` depending on your keyboard) is a spell check  
+- `Alt -` creates the assignment operator `<-`  
+- `Ctrl Enter` runs the selected line(s) of code in an R script 
 
 
 
 
-### exercises {-}
-
-Use *File &gt; New File &gt; R Script* to create a new R script in your `explore` directory   
-
-    explore/0201-R-basics-explore.R  
-    
-- In this script type the code chunks from the tutorial above one line at a time.  
-- After every line, Save, and hit the Source button to run the code.  
-- Confirm that your result matches the result in the tutorial.   
+ 
     
     
 

@@ -2,10 +2,11 @@
 title: "MIDFIELD Workshops"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook:
+    pandoc_args: ["--csl", "journal-of-glaciology.csl"]
 documentclass: book
-bibliography: [references.bib, packages.bib]
-biblio-style: apalike
+bibliography: [references.bib, references447.bib, packages.bib]
 link-citations: yes
 github-repo: MIDFIELDR/workshops
 description: "A public site for workshops for access to MIDFIELD"
@@ -13,15 +14,15 @@ nocite: |
   @R-binb, @R-knitr, @R-seplyr, @R-tidyverse
 ---
 
-```{r echo=FALSE}
+```{r echo = FALSE}
 # create a bib database for R packages
 library(knitr)
 write_bib(
-  c(.packages(), 'tidyverse', 'binb', 'seplyr')
+  c(.packages(), 'tidyverse', 'binb', 'seplyr', 'wrapr', 'cdata')
   , 'packages.bib'
   )
-opts_chunk$set(echo=FALSE)
-opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
+opts_chunk$set(echo = FALSE)
+opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
 ```
 
 # Preface {- #preface}
@@ -163,4 +164,7 @@ knitr::include_graphics("images/NSF_4-Color_bitmap_Logo.png"),
 
 
 
+## References {-}
+
+<div id="refs"></div>
 

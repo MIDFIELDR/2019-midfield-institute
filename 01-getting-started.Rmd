@@ -1,9 +1,11 @@
 # Getting started {- #getting-started}
 
+<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+
 ```{r include=FALSE}
 library(knitr)
 opts_chunk$set(echo=FALSE)
-opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618)
+opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
 ```
 
 ```{r}
@@ -37,20 +39,23 @@ If you need additional assistance for Mac OS or Linux, these links might be usef
 - [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4) by Michael Galarnyk (or you can Google more recent instructions)    
 - [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can Google more recent instructions)  
 
+Once the installation is complete, you can take a 2-minute tour of the RStudio interface by watching 
+
+- [Let's start (00:57--02:32)](https://www.youtube.com/embed/kfcX5DEMAp4?start=57&end=152) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1]   
+
+The same video includes a longer (7 minute) tour of the four quadrants (panes) in RStudio if you are interested. 
+
+- [The RStudio quadrants (07:21--14:40)](https://www.youtube.com/embed/kfcX5DEMAp4?start=441&end=880) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
 
 
 
-## RStudio interface {-} 
 
 
-R-Ladies Sydney has a wonderful set of introduictory videos. In the first one,thry introduce you to the RStudio 
 
 
-[Basic Basics Lesson 1](https://youtu.be/kfcX5DEMAp4)
 
-
-## Installing an R package {-}
+## Install an R package {-}
 
 The fundamental unit of shareable code in R is the *package.* 
 For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R that is easily shared with others  [@wickham2014advanced]. 
@@ -61,7 +66,18 @@ Most packages are obtained from the [CRAN](https://cran.r-project.org/) website 
 
 The RStudio interface has several panes. We want the Files/Plots/Packages pane. 
 
-- Select the *Packages*  tab (circled in the image below). 
+- Select the *Packages*  tab  
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/rstudio-packages.png"), 
+               alt = 'rstudio packages pane', 
+               width = 700)
+```
+
+<br>
+Next, 
+
 - Click *Install* on the ribbon 
 - In the dialog box, type **drat** (a package we'll use in a moment) 
 - Check the *Install dependencies* box 
@@ -69,37 +85,31 @@ The RStudio interface has several panes. We want the Files/Plots/Packages pane.
 - Repeat to install the package **devtools** 
 - Repeat to install the package **tidyverse**
 
-```{r}
-htmltools::img(src = 
-knitr::include_graphics("images/open-rstudio-packages.png"), 
-               alt = 'rstudio files-plots-packages pane', 
-               width = 700)
-```
 
 
 
 
+## Install midfielddata and midfieldr {-}
+
+In this workshop, we work with the **midfieldr** package and  **midfielddata** data-package. The **midfielddata** package is too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available. We install these packages by typing lines of code in the Console at the prompt. 
 
 
-## Installing midfielddata and midfieldr {-}
-
-In this workshop, we work with the **midfieldr** package and  **midfielddata** data-package. The **midfielddata** package is too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available.
-
-To install the packages, place your cursor in the RStudio *Console* pane. 
+The Console in the default RStudio pane layout is on the left.  The R command prompt in the Console is `>`. 
 
 ```{r}
 htmltools::img(src = 
-knitr::include_graphics("images/open-rstudio-console.png"), 
+knitr::include_graphics("images/rstudio-console.png"), 
                alt = 'rstudio console pane', 
                width = 700)
 ```
 
-In the console, at the cursor (indicated by  `>`), type each of the following lines of code and press *Enter* from your keyboard, one line at a time. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. We only run these lines of code once, so you do not have to type the lines into a script. 
+<br>
+At the prompt, type a line of code and press *Enter* from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. We only run these lines of code once, so you do not have to type the lines into a script. 
 
 The **drat** `addRepo()` function adds the **midfieldr** GitHub repository to our current R session. 
  
 ```
-addRepo("midfieldr") 
+drat::addRepo("midfieldr") 
 ```
 
 **midfielddata**  must be installed before **midfieldr**. 
@@ -111,7 +121,7 @@ install.packages("midfielddata")
 The **devtools**  `install_github()` function installs  **midfieldr** from it's GitHub repository.  
 
 ```
-install_github("MIDFIELDR/midfieldr") 
+devtools::install_github("MIDFIELDR/midfieldr") 
 ```
 
 
@@ -122,27 +132,44 @@ install_github("MIDFIELDR/midfieldr")
 
 ## Create an R project {-}
 
-In RStudio,
+To begin any project, we create an RStudio *Project* file and directory. You can recognize an R project file by its *.Rproj* suffix. 
 
-  - *File \> New Project... \> New Directory \> New Project* 
-  - Type the workshop name as the directory name, for example, `midfield_institute`,  `fie_workshop`, etc. 
-  - Use the browse button to select a location on your computer to create the project  folder 
-  - Click the *Create Project* button 
+We will create a project named after the workshop, for example, `midfield_institute.Rproj`, `fie_workshop.Rproj`, etc. 
 
-The new project directory will be all of these things: a directory or "folder" on your computer and an RStudio Project.  
+If you prefer your instructions with commentary, 
 
+- [Start with a Project (02:34--04:50)](https://www.youtube.com/embed/kfcX5DEMAp4?start=154&end=290) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
 
+If you prefer basic written instructions, 
+
+- RStudio, *File &gt; New Project... &gt; New Directory &gt; New Project* 
+- Or, click the *New Project* button in the Console ribbon, 
+
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/rstudio-new-project.png"), 
+               alt = 'rstudio new project button', 
+               width = 700)
+```
+
+<br>
+In the dialog box that appears, 
+  
+- Type the workshop name as the directory name, for example, `midfield_institute`,  `fie_workshop`, etc.  
+- Use the browse button to select a location on your computer to create the project  folder  
+- Click the *Create Project* button  
+ 
 
 
 
 
 ## Create directories {-}
 
+While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop. 
 
-File organization is a matter of personal preference, but we do suggest you plan the organization when you start the project. 
-
-We recommend that you always work within an RStudio Project and that you plan your file organiozation from the start. The minimum file structure is shown below, where  `your_project` is the name you gave the project directory such as `midfield_institute` or `fie_workshop`.
+Create three folders in the project main directory, where  `your_project` is the name you gave the project, foe example, `midfield_institute` or `fie_workshop`.
 
 <pre><code class=""><span class="line">your_project/
 </span><span class="line">    ├── data/
@@ -150,6 +177,24 @@ We recommend that you always work within an RStudio Project and that you plan yo
 </span><span class="line">    ├── scripts/
 </span><span class="line">    └── your_project.Rproj</span></code></pre>
 
+
+If you prefer your instructions with commentary, 
+
+- [Make some folders  (04:50--06:08)](https://www.youtube.com/embed/kfcX5DEMAp4?start=290&end=368) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
+
+If you prefer basic written instructions, 
+
+- use your usual method of creating new folders on your machine 
+- or you can use the *New Folder* button in the Files pane 
+
+```{r}
+htmltools::img(src = 
+knitr::include_graphics("images/rstudio-new-folder.png"), 
+               alt = 'rstudio new folder', 
+               width = 700)
+```
+
+<br>
 We use the folders as follows: 
 
 - `data` for data files 
@@ -158,4 +203,9 @@ We use the folders as follows:
 
 
 
+
 And that concludes the setup. 
+
+## References {-}
+
+<div id="refs"></div>

@@ -4,3 +4,6 @@ language:
     chapter_name: "Chapter "
 delete_merged_file: true
 output_dir: "docs"
+rmd_files: ["index.Rmd",
+"01-getting-started.Rmd",
+"02-2019-midfield-institute.Rmd"]
