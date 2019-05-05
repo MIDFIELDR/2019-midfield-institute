@@ -143,3 +143,320 @@ kable(df)
 
 
 
+## Tutorial: R basics {-} 
+
+```{r}
+opts_chunk$set(echo = TRUE)
+```
+
+
+An introduction to R  adapted from Chapter 2  from [@Healy:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
+
+
+
+### Prerequisites {-} 
+
+Project setup 
+
+- [Create an R project] instructions  are completed and you have an R project file on your machine called `midfield_institute.Rproj`  
+- [Create directories] instructions are completed  
+- Run `midfield_institute.Rproj` to start work  
+- [Installing an R package] instructions are completed  
+- [Installing midfielddata and midfieldr] instructions are completed  
+
+Packages 
+
+Run the following line of code in the RStudio Console to install the **socviz** package. 
+
+    devtools::install_github("kjhealy/socviz")
+
+
+
+
+
+
+
+
+### Everything in R has a name {-} 
+
+In R, every object has a name. 
+
+- named entities, like `x` or `y`  
+- data you have loaded, like `my_data` 
+- functions you use, like `sin()` 
+
+Some names are forbidden 
+
+- reserved words, like `TRUE` or `FALSE`  
+- programming words, like `Inf`, `for`, `else`, and `function`  
+- special entities, like `NA` and `NaN`  
+
+Some names should not be used because they name commonly used functions 
+
+- `q()`  quit 
+- `c()` combine or concatenate 
+- `mean()` 
+- `range()` 
+- `var()` variance 
+
+Names in R are case-sensitive 
+
+- `my_data` and `My_Data` are different objects 
+- I follow the style guide used in the tidyverse by naming things in lower case,  with words separated by underscores, and no spaces
+
+
+If you want to know if a name has already been used in a package you have loaded, go to the RStudio console, type a question mark followed by the name, e.g., 
+
+- `? c()` 
+- `? mean()`
+
+If the name is in use, a help page appears in the RStudio Help pane.  
+
+
+
+
+
+
+### Everything in R is an object  {-}
+
+- Some objects are built in to R 
+- Some objects are loaded with packages 
+- Some objects are created by you 
+
+
+
+
+`c()` is the function to combine or concatenate its elements to create a vector. For example, the R line of code, 
+
+```{r}
+c(1, 2, 3, 1, 3, 25)
+```
+
+Everything that comes back to us in the Console as the result of typing a command will be shown prefaced by a hash mark and greater-than symbol (`#>`). 
+
+
+Instead of sending the result to the Console, we can assign the vector to a name. 
+
+```{r}
+x <- c(1, 2, 3, 1, 3, 25)
+y <- c(5, 31, 71, 1, 3, 21, 6)
+```
+
+To see the result, type the object name in the Console
+
+```{r}
+x
+y
+```
+
+You create objects my assigning them names 
+
+- `<-` is the assignment operator (keyboard shortcut: ALT --) 
+- objects exist in your R project workspace, listed in the RStudio Environment pane 
+
+
+
+
+
+### Do things in R using functions  {-}
+
+- functions are objects the perform actions for you 
+- functions produce output based on the input it receives 
+- functions are recognized by the parentheses at the end of their names 
+
+The parentheses are where we include the inputs (arguments) to the function 
+
+- `c()` concatenates the comma-separated numbers in the parentheses to create a vector 
+- `mean()` computes the mean of a vector of numbers 
+- `summary()` returns a summary of the object 
+
+If we try `mean()` with no inputs, we get an error statement 
+
+
+    mean()
+    #> Error in mean.default() : argument "x" is missing, with no default
+
+If we use the `x` or `y` vector as the argument, the mean is computed and displayed. Add these lines to your script and Source. 
+
+```{r}
+mean(x)
+mean(y)
+summary(x)
+```
+
+
+
+
+
+
+### R functions come in packages {-}
+
+- Families of useful functions are bundled into packages that you can install, load, and use 
+- Packages allow you to build on the work of others 
+- You can write you own functions and packages too 
+- The visualizations we will do depend on choosing the right functions and giving those functions the right arguments 
+
+Functions do something useful with the input you provide and give you back a result. Type the following in tour script and Source. (Comments in R are denoted by a hashtag (`#`). 
+
+```{r}
+table(x) # table of counts
+
+sd(y)    # standard deviation
+
+x * 5    # multiply every element by a scalar
+
+y + 1    # add a scalar to every element
+
+x + x    # add elements 
+```
+
+As you have already seen, once you have installed a package to your machine, you load it into your workspace using the `library()` function 
+
+```{r}
+library("socviz")
+```
+
+
+Loading all the packages used in a script near the top of the script is good practice.  
+
+
+
+
+### R objects have class {-}
+
+Everything is an object and every object has a class. 
+
+```{r}
+class(x)
+
+class(summary)
+```
+
+Certain actions will change the class of an object. Suppose we try create a vector from the `x` object and a text string, 
+
+```{r}
+new_vector <- c(x, "Apple")
+
+new_vector
+
+class(new_vector)
+```
+
+By adding the word "Apple" to the vector, R changed the class from "numeric" to "character". All the numbers are enclosed in quotes: they are now character strings and cannot be used in calculations. 
+
+The most common class of data object we will use is the data frame. 
+
+```{r}
+titanic # data in the socviz package
+
+class(titanic)
+```
+
+You can see there are four variables: `r names(titanic)`.  Two variables (columns) are numeric, two are categorical. 
+
+You can pick out a variable using the `$` operator, 
+
+```{r}
+titanic$percent
+```
+
+From the tidyverse, we will regularly use a augmented data frame called a "tibble. We can convert the titanic data frame to a tibble, using the `as_tibble()` (in the tidyverse package)
+
+```{r}
+library("tidyverse")
+titanic_tb <- as_tibble(titanic)
+
+class(titanic_tb)
+
+titanic_tb
+```
+
+The tibble includes additional information about the variables
+
+
+
+
+
+
+
+### R objects have structure {-}
+
+
+To see inside an object ask for its structure using the `str()` function. 
+
+```{r}
+str(x)
+
+str(titanic)
+
+str(titanic_tb)
+```
+
+I also like to use the `glimpse()` function from the tidyverse. 
+
+```{r}
+glimpse(x)
+
+glimpse(titanic)
+
+glimpse(titanic_tb) 
+```
+
+
+
+
+
+### R does what you tell it {-}
+
+Expect to make errors and don't worry when that happens.  You won't break anything. Healy [-@Healy:2019] offers this advice for three specific things to watch out for: 
+
+- Make sure parentheses are balanced---that every opening `(` has a corresponding closing `)`.  
+- Make sure you complete your expressions. If you see a `+` in the Console instead of the usual prompt `>`, that means that R thinks you haven't written a complete expression. You can hit `Esc` or `Ctrl C` to force your way back to the Console and try correcting the code.  
+- In ggplot specifically, as you will see, we create pllots layer by layer, using a `+` character at the end of the line---not at the beginning of the next line. 
+
+For example, you would write this, 
+
+    ggplot(data = mpg, aes(x = displ, y = hwy)) +
+      geom_point()
+
+not this,  
+
+    ggplot(data = mpg, aes(x = displ, y = hwy))  
+      + geom_point()
+
+
+
+
+### Keyboard shortcuts {-}
+
+In Windows, 
+
+- `Ctrl L` clears the Console  
+- `Ctrl Shift M` creates the pipe operator  
+- `Ctrl Enter` runs the selected lilne(s) of code in an R script  
+- `Ctrl Shift K` knits an Rmd file  
+- `Alt -` creates the assignent operator `<-`  
+- `F7` (or possibly `Fn 7` depending on your keyboard) is a spell check  
+
+
+
+
+### exercises {-}
+
+Use *File &gt; New File &gt; R Script* to create a new R script in your `explore` directory   
+
+    explore/0201-R-basics-explore.R  
+    
+- In this script type the code chunks from the tutorial above one line at a time.  
+- After every line, Save, and hit the Source button to run the code.  
+- Confirm that your result matches the result in the tutorial.   
+    
+    
+
+
+
+
+## References {-}
+
+<div id="refs"></div>
+

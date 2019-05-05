@@ -41,6 +41,13 @@ If you need additional assistance for Mac OS or Linux, these links might be usef
 
 
 
+## RStudio interface {-} 
+
+
+R-Ladies Sydney has a wonderful set of introduictory videos. In the first one,thry introduce you to the RStudio 
+
+
+[Basic Basics Lesson 1](https://youtu.be/kfcX5DEMAp4)
 
 
 ## Installing an R package {-}
@@ -140,16 +147,15 @@ We recommend that you always work within an RStudio Project and that you plan yo
 <pre><code class=""><span class="line">your_project/
 </span><span class="line">    ├── data/
 </span><span class="line">    ├── figures/
-</span><span class="line">    ├── R/
-</span><span class="line">    ├── reports/
+</span><span class="line">    ├── scripts/
 </span><span class="line">    └── your_project.Rproj</span></code></pre>
 
 We use the folders as follows: 
 
 - `data` for data files 
-- `R` for R scripts that operate on data to produce output such as tidy data or graphs 
 - `figures` for finished data displays  
-- `reports` for output documents 
+- `scripts` for R scripts that operate on data to produce results  
+
 
 
 And that concludes the setup. 

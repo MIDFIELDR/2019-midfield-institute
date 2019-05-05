@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-02">
+<meta name="date" content="2019-05-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,69 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -77,6 +140,7 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting started</a><ul>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#rstudio-interface"><i class="fa fa-check"></i>RStudio interface</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#installing-an-r-package"><i class="fa fa-check"></i>Installing an R package</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#installing-midfielddata-and-midfieldr"><i class="fa fa-check"></i>Installing midfielddata and midfieldr</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#create-an-r-project"><i class="fa fa-check"></i>Create an R project</a></li>
@@ -88,6 +152,19 @@
 <li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#day-0-agenda"><i class="fa fa-check"></i>Day 0 agenda</a></li>
 <li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#day-1-agenda"><i class="fa fa-check"></i>Day 1 agenda</a></li>
 <li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#day-2-agenda"><i class="fa fa-check"></i>Day 2 agenda</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#tutorial-r-basics"><i class="fa fa-check"></i>Tutorial: R basics</a><ul>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#everything-in-r-has-a-name"><i class="fa fa-check"></i>Everything in R has a name</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#everything-in-r-is-an-object"><i class="fa fa-check"></i>Everything in R is an object</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#do-things-in-r-using-functions"><i class="fa fa-check"></i>Do things in R using functions</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#r-functions-come-in-packages"><i class="fa fa-check"></i>R functions come in packages</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#r-objects-have-class"><i class="fa fa-check"></i>R objects have class</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#r-objects-have-structure"><i class="fa fa-check"></i>R objects have structure</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#r-does-what-you-tell-it"><i class="fa fa-check"></i>R does what you tell it</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#keyboard-shortcuts"><i class="fa fa-check"></i>Keyboard shortcuts</a></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#exercises"><i class="fa fa-check"></i>exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html"><i class="fa fa-check"></i>2018 FIE Workshop</a><ul>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#pre-workshop-setup"><i class="fa fa-check"></i>Pre-workshop setup</a></li>
@@ -97,7 +174,7 @@
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-start-with-r"><i class="fa fa-check"></i>Tutorial: Start with R</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#tutorial-start-with-midfieldr"><i class="fa fa-check"></i>Tutorial: Start with midfieldr</a></li>
 <li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#references"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="fie-workshop.html"><a href="fie-workshop.html#references-1"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -298,6 +375,282 @@ Contact: Russell Long, <a href="mailto:ralong@purdue.edu" class="email">ralong@p
 </tr>
 </tbody>
 </table>
+</div>
+<div id="tutorial-r-basics" class="section level2 unnumbered">
+<h2>Tutorial: R basics</h2>
+<p>An introduction to R adapted from Chapter 2 from <span class="citation">(<span class="citeproc-not-found" data-reference-id="Healy:2019"><strong>???</strong></span>)</span>. If you already have R experience, you might still want to browse this section in case you find something new.</p>
+<div id="prerequisites" class="section level3 unnumbered">
+<h3>Prerequisites</h3>
+<p>Project setup</p>
+<ul>
+<li><a href="getting-started.html#create-an-r-project">Create an R project</a> instructions are completed and you have an R project file on your machine called <code>midfield_institute.Rproj</code><br />
+</li>
+<li><a href="getting-started.html#create-directories">Create directories</a> instructions are completed<br />
+</li>
+<li>Run <code>midfield_institute.Rproj</code> to start work<br />
+</li>
+<li><a href="getting-started.html#installing-an-r-package">Installing an R package</a> instructions are completed<br />
+</li>
+<li><a href="getting-started.html#installing-midfielddata-and-midfieldr">Installing midfielddata and midfieldr</a> instructions are completed</li>
+</ul>
+<p>Packages</p>
+<p>Run the following line of code in the RStudio Console to install the <strong>socviz</strong> package.</p>
+<pre><code>devtools::install_github(&quot;kjhealy/socviz&quot;)</code></pre>
+</div>
+<div id="everything-in-r-has-a-name" class="section level3 unnumbered">
+<h3>Everything in R has a name</h3>
+<p>In R, every object has a name.</p>
+<ul>
+<li>named entities, like <code>x</code> or <code>y</code><br />
+</li>
+<li>data you have loaded, like <code>my_data</code></li>
+<li>functions you use, like <code>sin()</code></li>
+</ul>
+<p>Some names are forbidden</p>
+<ul>
+<li>reserved words, like <code>TRUE</code> or <code>FALSE</code><br />
+</li>
+<li>programming words, like <code>Inf</code>, <code>for</code>, <code>else</code>, and <code>function</code><br />
+</li>
+<li>special entities, like <code>NA</code> and <code>NaN</code></li>
+</ul>
+<p>Some names should not be used because they name commonly used functions</p>
+<ul>
+<li><code>q()</code> quit</li>
+<li><code>c()</code> combine or concatenate</li>
+<li><code>mean()</code></li>
+<li><code>range()</code></li>
+<li><code>var()</code> variance</li>
+</ul>
+<p>Names in R are case-sensitive</p>
+<ul>
+<li><code>my_data</code> and <code>My_Data</code> are different objects</li>
+<li>I follow the style guide used in the tidyverse by naming things in lower case, with words separated by underscores, and no spaces</li>
+</ul>
+<p>If you want to know if a name has already been used in a package you have loaded, go to the RStudio console, type a question mark followed by the name, e.g.,</p>
+<ul>
+<li><code>? c()</code></li>
+<li><code>? mean()</code></li>
+</ul>
+<p>If the name is in use, a help page appears in the RStudio Help pane.</p>
+</div>
+<div id="everything-in-r-is-an-object" class="section level3 unnumbered">
+<h3>Everything in R is an object</h3>
+<ul>
+<li>Some objects are built in to R</li>
+<li>Some objects are loaded with packages</li>
+<li>Some objects are created by you</li>
+</ul>
+<p><code>c()</code> is the function to combine or concatenate its elements to create a vector. For example, the R line of code,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">25</span>)</code></pre>
+<pre><code>## [1]  1  2  3  1  3 25</code></pre>
+<p>Everything that comes back to us in the Console as the result of typing a command will be shown prefaced by a hash mark and greater-than symbol (<code>#&gt;</code>).</p>
+<p>Instead of sending the result to the Console, we can assign the vector to a name.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">25</span>)
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">31</span>, <span class="dv">71</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">21</span>, <span class="dv">6</span>)</code></pre>
+<p>To see the result, type the object name in the Console</p>
+<pre class="sourceCode r"><code class="sourceCode r">x</code></pre>
+<pre><code>## [1]  1  2  3  1  3 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y</code></pre>
+<pre><code>## [1]  5 31 71  1  3 21  6</code></pre>
+<p>You create objects my assigning them names</p>
+<ul>
+<li><code>&lt;-</code> is the assignment operator (keyboard shortcut: ALT –)</li>
+<li>objects exist in your R project workspace, listed in the RStudio Environment pane</li>
+</ul>
+</div>
+<div id="do-things-in-r-using-functions" class="section level3 unnumbered">
+<h3>Do things in R using functions</h3>
+<ul>
+<li>functions are objects the perform actions for you</li>
+<li>functions produce output based on the input it receives</li>
+<li>functions are recognized by the parentheses at the end of their names</li>
+</ul>
+<p>The parentheses are where we include the inputs (arguments) to the function</p>
+<ul>
+<li><code>c()</code> concatenates the comma-separated numbers in the parentheses to create a vector</li>
+<li><code>mean()</code> computes the mean of a vector of numbers</li>
+<li><code>summary()</code> returns a summary of the object</li>
+</ul>
+<p>If we try <code>mean()</code> with no inputs, we get an error statement</p>
+<pre><code>mean()
+#&gt; Error in mean.default() : argument &quot;x&quot; is missing, with no default</code></pre>
+<p>If we use the <code>x</code> or <code>y</code> vector as the argument, the mean is computed and displayed. Add these lines to your script and Source.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)</code></pre>
+<pre><code>## [1] 5.833333</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(y)</code></pre>
+<pre><code>## [1] 19.71429</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(x)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.000   1.250   2.500   5.833   3.000  25.000</code></pre>
+</div>
+<div id="r-functions-come-in-packages" class="section level3 unnumbered">
+<h3>R functions come in packages</h3>
+<ul>
+<li>Families of useful functions are bundled into packages that you can install, load, and use</li>
+<li>Packages allow you to build on the work of others</li>
+<li>You can write you own functions and packages too</li>
+<li>The visualizations we will do depend on choosing the right functions and giving those functions the right arguments</li>
+</ul>
+<p>Functions do something useful with the input you provide and give you back a result. Type the following in tour script and Source. (Comments in R are denoted by a hashtag (<code>#</code>).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(x) <span class="co"># table of counts</span></code></pre>
+<pre><code>## x
+##  1  2  3 25 
+##  2  1  2  1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)    <span class="co"># standard deviation</span></code></pre>
+<pre><code>## [1] 25.14435</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">*</span><span class="st"> </span><span class="dv">5</span>    <span class="co"># multiply every element by a scalar</span></code></pre>
+<pre><code>## [1]   5  10  15   5  15 125</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y <span class="op">+</span><span class="st"> </span><span class="dv">1</span>    <span class="co"># add a scalar to every element</span></code></pre>
+<pre><code>## [1]  6 32 72  2  4 22  7</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">+</span><span class="st"> </span>x    <span class="co"># add elements </span></code></pre>
+<pre><code>## [1]  2  4  6  2  6 50</code></pre>
+<p>As you have already seen, once you have installed a package to your machine, you load it into your workspace using the <code>library()</code> function</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;socviz&quot;</span>)</code></pre>
+<p>Loading all the packages used in a script near the top of the script is good practice.</p>
+</div>
+<div id="r-objects-have-class" class="section level3 unnumbered">
+<h3>R objects have class</h3>
+<p>Everything is an object and every object has a class.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(summary)</code></pre>
+<pre><code>## [1] &quot;function&quot;</code></pre>
+<p>Certain actions will change the class of an object. Suppose we try create a vector from the <code>x</code> object and a text string,</p>
+<pre class="sourceCode r"><code class="sourceCode r">new_vector &lt;-<span class="st"> </span><span class="kw">c</span>(x, <span class="st">&quot;Apple&quot;</span>)
+
+new_vector</code></pre>
+<pre><code>## [1] &quot;1&quot;     &quot;2&quot;     &quot;3&quot;     &quot;1&quot;     &quot;3&quot;     &quot;25&quot;    &quot;Apple&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(new_vector)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>By adding the word “Apple” to the vector, R changed the class from “numeric” to “character”. All the numbers are enclosed in quotes: they are now character strings and cannot be used in calculations.</p>
+<p>The most common class of data object we will use is the data frame.</p>
+<pre class="sourceCode r"><code class="sourceCode r">titanic <span class="co"># data in the socviz package</span></code></pre>
+<pre><code>##       fate    sex    n percent
+## 1 perished   male 1364    62.0
+## 2 perished female  126     5.7
+## 3 survived   male  367    16.7
+## 4 survived female  344    15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(titanic)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<p>You can see there are four variables: fate, sex, n, percent. Two variables (columns) are numeric, two are categorical.</p>
+<p>You can pick out a variable using the <code>$</code> operator,</p>
+<pre class="sourceCode r"><code class="sourceCode r">titanic<span class="op">$</span>percent</code></pre>
+<pre><code>## [1] 62.0  5.7 16.7 15.6</code></pre>
+<p>From the tidyverse, we will regularly use a augmented data frame called a "tibble. We can convert the titanic data frame to a tibble, using the <code>as_tibble()</code> (in the tidyverse package)</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)
+titanic_tb &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(titanic)
+
+<span class="kw">class</span>(titanic_tb)</code></pre>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">titanic_tb</code></pre>
+<pre><code>## # A tibble: 4 x 4
+##   fate     sex        n percent
+##   &lt;fct&gt;    &lt;fct&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+## 1 perished male    1364    62  
+## 2 perished female   126     5.7
+## 3 survived male     367    16.7
+## 4 survived female   344    15.6</code></pre>
+<p>The tibble includes additional information about the variables</p>
+</div>
+<div id="r-objects-have-structure" class="section level3 unnumbered">
+<h3>R objects have structure</h3>
+<p>To see inside an object ask for its structure using the <code>str()</code> function.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(x)</code></pre>
+<pre><code>##  num [1:6] 1 2 3 1 3 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(titanic)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  4 variables:
+##  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2
+##  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1
+##  $ n      : num  1364 126 367 344
+##  $ percent: num  62 5.7 16.7 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(titanic_tb)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    4 obs. of  4 variables:
+##  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2
+##  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1
+##  $ n      : num  1364 126 367 344
+##  $ percent: num  62 5.7 16.7 15.6</code></pre>
+<p>I also like to use the <code>glimpse()</code> function from the tidyverse.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(x)</code></pre>
+<pre><code>##  num [1:6] 1 2 3 1 3 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(titanic)</code></pre>
+<pre><code>## Observations: 4
+## Variables: 4
+## $ fate    &lt;fct&gt; perished, perished, survived, survived
+## $ sex     &lt;fct&gt; male, female, male, female
+## $ n       &lt;dbl&gt; 1364, 126, 367, 344
+## $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(titanic_tb) </code></pre>
+<pre><code>## Observations: 4
+## Variables: 4
+## $ fate    &lt;fct&gt; perished, perished, survived, survived
+## $ sex     &lt;fct&gt; male, female, male, female
+## $ n       &lt;dbl&gt; 1364, 126, 367, 344
+## $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</code></pre>
+</div>
+<div id="r-does-what-you-tell-it" class="section level3 unnumbered">
+<h3>R does what you tell it</h3>
+<p>Expect to make errors and don’t worry when that happens. You won’t break anything. Healy <span class="citation">(<span class="citeproc-not-found" data-reference-id="Healy:2019"><strong>???</strong></span>)</span> offers this advice for three specific things to watch out for:</p>
+<ul>
+<li>Make sure parentheses are balanced—that every opening <code>(</code> has a corresponding closing <code>)</code>.<br />
+</li>
+<li>Make sure you complete your expressions. If you see a <code>+</code> in the Console instead of the usual prompt <code>&gt;</code>, that means that R thinks you haven’t written a complete expression. You can hit <code>Esc</code> or <code>Ctrl C</code> to force your way back to the Console and try correcting the code.<br />
+</li>
+<li>In ggplot specifically, as you will see, we create pllots layer by layer, using a <code>+</code> character at the end of the line—not at the beginning of the next line.</li>
+</ul>
+<p>For example, you would write this,</p>
+<pre><code>ggplot(data = mpg, aes(x = displ, y = hwy)) +
+  geom_point()</code></pre>
+<p>not this,</p>
+<pre><code>ggplot(data = mpg, aes(x = displ, y = hwy))  
+  + geom_point()</code></pre>
+</div>
+<div id="keyboard-shortcuts" class="section level3 unnumbered">
+<h3>Keyboard shortcuts</h3>
+<p>In Windows,</p>
+<ul>
+<li><code>Ctrl L</code> clears the Console<br />
+</li>
+<li><code>Ctrl Shift M</code> creates the pipe operator<br />
+</li>
+<li><code>Ctrl Enter</code> runs the selected lilne(s) of code in an R script<br />
+</li>
+<li><code>Ctrl Shift K</code> knits an Rmd file<br />
+</li>
+<li><code>Alt -</code> creates the assignent operator <code>&lt;-</code><br />
+</li>
+<li><code>F7</code> (or possibly <code>Fn 7</code> depending on your keyboard) is a spell check</li>
+</ul>
+</div>
+<div id="exercises" class="section level3 unnumbered">
+<h3>exercises</h3>
+<p>Use <em>File &gt; New File &gt; R Script</em> to create a new R script in your <code>explore</code> directory</p>
+<pre><code>explore/0201-R-basics-explore.R  </code></pre>
+<ul>
+<li>In this script type the code chunks from the tutorial above one line at a time.<br />
+</li>
+<li>After every line, Save, and hit the Source button to run the code.<br />
+</li>
+<li>Confirm that your result matches the result in the tutorial.</li>
+</ul>
+</div>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs">
+<div id="ref-R-binb">
+<p>Eddelbuettel, Dirk, Ista Zahn, and Rob Hyndman. 2018. <em>Binb: ’Binb’ Is Not ’Beamer’</em>. <a href="https://CRAN.R-project.org/package=binb">https://CRAN.R-project.org/package=binb</a>.</p>
+</div>
+<div id="ref-R-seplyr">
+<p>Mount, John. 2019. <em>Seplyr: Improved Standard Evaluation Interfaces for Common Data Manipulation Tasks</em>. <a href="https://CRAN.R-project.org/package=seplyr">https://CRAN.R-project.org/package=seplyr</a>.</p>
+</div>
+<div id="ref-R-tidyverse">
+<p>Wickham, Hadley. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+</div>
+<div id="ref-R-knitr">
+<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+</div>
 
 </div>
 </div>
