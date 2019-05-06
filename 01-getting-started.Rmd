@@ -39,7 +39,7 @@ If you need additional assistance for Mac OS or Linux, these links might be usef
 - [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4) by Michael Galarnyk (or you can Google more recent instructions)    
 - [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can Google more recent instructions)  
 
-Once the installation is complete, you can take a 2-minute tour of the RStudio interface. Please use headphones or ear-buds if you watch the video during the wokshop. 
+Once the installation is complete, you can take a 2-minute tour of the RStudio interface. Please use headphones or ear-buds if you watch the video during the workshop. 
 
 - [Let's start (00:57--02:32)](https://www.youtube.com/embed/kfcX5DEMAp4?start=57&end=152) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1]   
 
@@ -136,7 +136,7 @@ To begin any project, we create an RStudio *Project* file and directory. You can
 
 We will create a project named after the workshop, for example, `midfield_institute.Rproj`, `fie_workshop.Rproj`, etc. 
 
-If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the wokshop), 
+If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop), 
 
 - [Start with a Project (02:34--04:50)](https://www.youtube.com/embed/kfcX5DEMAp4?start=154&end=290) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
@@ -178,7 +178,7 @@ Create three folders in the project main directory, where  `your_project` is the
 </span><span class="line">    └── your_project.Rproj</span></code></pre>
 
 
-If you prefer your instructions with commentary  (please use headphones or ear-buds if you watch the video during the wokshop),  
+If you prefer your instructions with commentary  (please use headphones or ear-buds if you watch the video during the workshop),  
 
 - [Make some folders  (04:50--06:08)](https://www.youtube.com/embed/kfcX5DEMAp4?start=290&end=368) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
