@@ -83,7 +83,7 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 opts_chunk$set(echo = FALSE)
 ```
 
-### Day 0 agenda {-}
+### Day 0 {-}
 
 ```{r} 
 lines_day0 <- "Sunday, 2019-06-02.\n\n
@@ -113,7 +113,7 @@ kable(agenda_day0)
 ```
 
 
-### Day 1 agenda  {-}
+### Day 1 {-} 
 
 ```{r} 
 lines_day1<- "Monday, 2019-06-03."
@@ -140,7 +140,7 @@ agenda_day1 <- build_frame(
 kable(agenda_day1)
 ```
 
-### Day 2 agenda   {-}
+### Day 2   {-}
 
 ```{r} 
 lines_day2 <- "Tuesday, 2019-06-04."
@@ -169,6 +169,8 @@ kable(agenda_day2)
 
 
 # Day 0 materials {-} 
+
+## Agenda {-}
 
 `r lines_day0`
 
@@ -610,6 +612,8 @@ Under construction
 opts_chunk$set(echo = FALSE)
 ```
 
+## Agenda {-}
+
 `r lines_day1`
 
 ```{r}
@@ -622,6 +626,8 @@ kable(agenda_day1)
 ```{r echo = FALSE}
 opts_chunk$set(echo = FALSE)
 ```
+
+## Agenda {-}
 
 `r lines_day2`
 
