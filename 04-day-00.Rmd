@@ -16,6 +16,7 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
                width = 90)
 ```
 
+[Day 0 agenda](#day0agenda)
 
 ## Tutorial: R basics {-} 
 

@@ -16,7 +16,7 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
                width = 90)
 ```
 
-TBD
+[Day 2 agenda](#day2agenda)
 
 
 

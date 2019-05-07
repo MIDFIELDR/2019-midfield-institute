@@ -16,6 +16,10 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
                width = 90)
 ```
 
+
+If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well.
+
+
 If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up. 
 
 Unless noted otherwise, we assume the reader is an R novice. Thus the first steps are to install R and RStudio. 
@@ -32,7 +36,7 @@ Windows users may have to login as an Administrator (localmgr) before installing
 - Install R for your OS: <https://cloud.r-project.org> 
 - Install RStudio, a user interface for R:  <https://www.rstudio.com/products/rstudio/#Desktop> 
 
-If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well. 
+ 
 
 If you need additional assistance for Mac OS or Linux, these links might be useful 
 
