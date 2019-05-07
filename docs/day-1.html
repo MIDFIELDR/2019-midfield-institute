@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Getting started | midfield-workshops.utf8.md</title>
+  <title>Day 1 materials | midfield-workshops.utf8.md</title>
   <meta name="description" content="A public site for workshops for access to MIDFIELD">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Getting started | midfield-workshops.utf8.md" />
+  <meta property="og:title" content="Day 1 materials | midfield-workshops.utf8.md" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="MIDFIELDR/workshops" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Getting started | midfield-workshops.utf8.md" />
+  <meta name="twitter:title" content="Day 1 materials | midfield-workshops.utf8.md" />
   
   <meta name="twitter:description" content="A public site for workshops for access to MIDFIELD" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="midfield-institute.html">
-<link rel="next" href="day-0.html">
+<link rel="prev" href="day-0.html">
+<link rel="next" href="day-2.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -135,138 +135,15 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Getting-started" class="section level1 unnumbered">
-<h1>Getting started</h1>
+<div id="day-1" class="section level1 unnumbered">
+<h1>Day 1 materials</h1>
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 <img src="images/midfield-grad-logo.png" alt="logo" style="position:absolute; top:50px; right:50px; padding:0px;" width="90"/>
-<p>If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up.</p>
-<p>Unless noted otherwise, we assume the reader is an R novice. Thus the first steps are to install R and RStudio.</p>
-<div id="install-r-and-rstudio" class="section level2 unnumbered">
-<h2>Install R and RStudio</h2>
-<p>Windows users may have to login as an Administrator (localmgr) before installing the software.</p>
-<ul>
-<li>Install R for your OS: <a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></li>
-<li>Install RStudio, a user interface for R: <a href="https://www.rstudio.com/products/rstudio/#Desktop" class="uri">https://www.rstudio.com/products/rstudio/#Desktop</a></li>
-</ul>
-<p>If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well.</p>
-<p>If you need additional assistance for Mac OS or Linux, these links might be useful</p>
-<ul>
-<li><a href="https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4">Install R and RStudio on Mac OS</a> by Michael Galarnyk (or you can Google more recent instructions)<br />
-</li>
-<li><a href="https://www.datascienceriot.com//r/install-ubuntu16/">How to Install R Ubuntu 16.04 Xenial</a> by Kris Eberwein (or you can Google more recent instructions)</li>
-</ul>
-<p>Once the installation is complete, you can take a 2-minute tour of the RStudio interface. Please use headphones or ear-buds if you watch the video during the workshop.</p>
-<ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=57&amp;end=152">Let’s start (00:57–02:32)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="Getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
-</ul>
-<p>The same video includes a longer (7 minute) tour of the four quadrants (panes) in RStudio if you are interested.</p>
-<ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=441&amp;end=880">The RStudio quadrants (07:21–14:40)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="Getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
-</ul>
-</div>
-<div id="install-an-r-package" class="section level2 unnumbered">
-<h2>Install an R package</h2>
-<p>The fundamental unit of shareable code in R is the <em>package.</em>
-For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R that is easily shared with others <span class="citation">(Wickham, <a href="Getting-started.html#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>.</p>
-<p>Most packages are obtained from the <a href="https://cran.r-project.org/">CRAN</a> website <span class="citation">(The Comprehensive R Archive Network)</span>. To install a package using RStudio:</p>
-<ul>
-<li>Launch RStudio</li>
-</ul>
-<p>The RStudio interface has several panes. We want the Files/Plots/Packages pane.</p>
-<ul>
-<li>Select the <em>Packages</em> tab</li>
-</ul>
-<img src="images/rstudio-packages.png" alt="rstudio packages pane" width="700"/>
-<p><br>
-Next,</p>
-<ul>
-<li>Click <em>Install</em> on the ribbon</li>
-<li>In the dialog box, type <strong>drat</strong> (a package we’ll use in a moment)</li>
-<li>Check the <em>Install dependencies</em> box</li>
-<li>Click the <em>Install</em> button</li>
-<li>Repeat to install the package <strong>devtools</strong></li>
-<li>Repeat to install the package <strong>tidyverse</strong></li>
-</ul>
-</div>
-<div id="install-midfielddata-and-midfieldr" class="section level2 unnumbered">
-<h2>Install midfielddata and midfieldr</h2>
-<p>In this workshop, we work with the <strong>midfieldr</strong> package and <strong>midfielddata</strong> data-package. The <strong>midfielddata</strong> package is too large to be stored in CRAN, so we use a special “drat-repository” to make the package source files available. We install these packages by typing lines of code in the Console at the prompt.</p>
-<p>The Console in the default RStudio pane layout is on the left. The R command prompt in the Console is <code>&gt;</code>.</p>
-<img src="images/rstudio-console.png" alt="rstudio console pane" width="700"/>
-<p><br>
-At the prompt, type a line of code and press <em>Enter</em> from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press <em>Enter</em>. We only run these lines of code once, so you do not have to type the lines into a script.</p>
-<p>The <strong>drat</strong> <code>addRepo()</code> function adds the <strong>midfieldr</strong> GitHub repository to our current R session.</p>
-<pre><code>drat::addRepo(&quot;midfieldr&quot;) </code></pre>
-<p><strong>midfielddata</strong> must be installed before <strong>midfieldr</strong>.</p>
-<pre><code>install.packages(&quot;midfielddata&quot;) </code></pre>
-<p>The <strong>devtools</strong> <code>install_github()</code> function installs <strong>midfieldr</strong> from it’s GitHub repository.</p>
-<pre><code>devtools::install_github(&quot;MIDFIELDR/midfieldr&quot;) </code></pre>
-</div>
-<div id="create-an-r-project" class="section level2 unnumbered">
-<h2>Create an R project</h2>
-<p>To begin any project, we create an RStudio <em>Project</em> file and directory. You can recognize an R project file by its <em>.Rproj</em> suffix.</p>
-<p>We will create a project named after the workshop, for example, <code>midfield_institute.Rproj</code>, <code>fie_workshop.Rproj</code>, etc.</p>
-<p>If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop),</p>
-<ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=154&amp;end=290">Start with a Project (02:34–04:50)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="Getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
-</ul>
-<p>If you prefer basic written instructions,</p>
-<ul>
-<li>RStudio, <em>File &gt; New Project… &gt; New Directory &gt; New Project</em></li>
-<li>Or, click the <em>New Project</em> button in the Console ribbon,</li>
-</ul>
-<img src="images/rstudio-new-project.png" alt="rstudio new project button" width="700"/>
-<p><br>
-In the dialog box that appears,</p>
-<ul>
-<li>Type the workshop name as the directory name, for example, <code>midfield_institute</code>, <code>fie_workshop</code>, etc.<br />
-</li>
-<li>Use the browse button to select a location on your computer to create the project folder<br />
-</li>
-<li>Click the <em>Create Project</em> button</li>
-</ul>
-</div>
-<div id="create-directories" class="section level2 unnumbered">
-<h2>Create directories</h2>
-<p>While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop.</p>
-<p>Create three folders in the project main directory, where <code>your_project</code> is the name you gave the project, foe example, <code>midfield_institute</code> or <code>fie_workshop</code>.</p>
-<pre><code class=""><span class="line">your_project/
-</span><span class="line">    ├── data/
-</span><span class="line">    ├── figures/
-</span><span class="line">    ├── scripts/
-</span><span class="line">    └── your_project.Rproj</span></code></pre>
-<p>If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop),</p>
-<ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=290&amp;end=368">Make some folders (04:50–06:08)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="Getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
-</ul>
-<p>If you prefer basic written instructions,</p>
-<ul>
-<li>use your usual method of creating new folders on your machine</li>
-<li>or you can use the <em>New Folder</em> button in the Files pane</li>
-</ul>
-<img src="images/rstudio-new-folder.png" alt="rstudio new folder" width="700"/>
-<p><br>
-We use the folders as follows:</p>
-<ul>
-<li><code>data</code> for data files</li>
-<li><code>figures</code> for finished data displays<br />
-</li>
-<li><code>scripts</code> for R scripts that operate on data to produce results</li>
-</ul>
-<p>And that concludes the setup.</p>
-</div>
-<div id="references-1" class="section level2 unnumbered">
+<p>TBD</p>
+<div id="references-3" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs">
-<div id="ref-RLadiesSydney:2018:Lesson1">
-<p>Richmond J (2018) Basic Basics Lesson 1: An opinionated tour of RStudio. <a href="https://youtu.be/kfcX5DEMAp4">https://youtu.be/kfcX5DEMAp4</a></p>
-</div>
-<div id="ref-cranweb">
-<p>The Comprehensive R Archive Network <a href="https://cran.r-project.org/">https://cran.r-project.org/</a></p>
-</div>
-<div id="ref-wickham2014advanced">
-<p>Wickham H (2014) <em>Advanced r.</em> Taylor &amp; Francis</p>
-</div>
+
 </div>
 
 </div>
@@ -276,8 +153,8 @@ We use the folders as follows:</p>
           </div>
         </div>
       </div>
-<a href="midfield-institute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="day-0.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="day-0.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="day-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -307,7 +184,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-getting-started.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-day-01.Rmd",
 "text": "Edit"
 },
 "history": {

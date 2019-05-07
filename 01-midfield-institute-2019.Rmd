@@ -1,0 +1,174 @@
+# 2019 MIDFIELD Institute {-}
+
+
+<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+
+```{r include = FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, collapse = TRUE)
+opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
+```
+
+```{r echo = FALSE}
+htmltools::img(src = 
+knitr::include_graphics("images/midfield-grad-logo.png"), 
+               alt = 'midfield logo', 
+               style = 'position:absolute; top:50px; right:50px; padding:0px;',
+               width = 90)
+suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("wrapr"))
+```
+
+MIDFIELD Institute    
+June 3--4, 2019    
+Purdue University, West Lafayette, Indiana, USA    
+Neil Armstrong Hall of Engineering    
+Room B-098 (basement)    
+Contact: Russell Long, ralong@purdue.edu with questions    
+
+
+
+
+
+
+## Description {-}
+
+```{r echo = FALSE}
+opts_chunk$set(echo = FALSE)
+```
+
+We are offering the first Multiple Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) Institute on Monday June 3 and Tuesday June 4, 2019 in West Lafayette, Indiana. 
+
+We welcome faculty, staff, and graduate students.  
+
+Our learning objectives can be categorized in two broad classes: qualitative and computational. Qualitatively, by the end of the workshop participants should be able to: 
+
+1. Describe the data available in MIDFIELD  
+1. Describe how the MIDFIELD data are organized  
+1. Describe key principles of effective data visualization  
+1. Identify deficiencies of common graph types  
+1. List potential resources beyond MIDFIELD that can contribute to answering research questions  
+ 
+ Computationally, participants should be able use **midfieldr**, an R package specifically designed for use with MIDFIELD, to:
+
+1. Calculate and evaluate educational metrics  
+1. Produce a table of data that addresses a research question  
+1. Explore and tell a story from MIDFIELD data  
+
+
+
+
+
+
+
+## Before you arrive {-}
+
+
+- [MIDFIELD Workshops] for an introduction to MIDFIELD and the workshop facilitators. 
+- [Getting started] for pre-workshop software installation instructions---assuming you plan on using your own laptop. If not, we will have computers available onsite. 
+- Optional: For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our data graphics, you can follow the links in the [publications] section.   
+
+
+
+
+
+
+
+
+
+
+## Agendas {-} 
+
+```{r echo = FALSE}
+opts_chunk$set(echo = FALSE)
+```
+
+### Day 0 agenda {-}
+
+```{r} 
+lines_day0 <- "Sunday, 2019-06-02.\n\n
+
+This is an optional session designed for R novices or for anyone whose R skills are rusty. We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2.\n\n 
+
+We will provide pizza (scheduled to arrive at 6 pm).\n\n
+
+To make the best use of our time, please follow the [Getting started](https://midfieldr.github.io/workshops/getting-started.html) instructions before arriving.\n\n  
+
+You are welcome to attend all or part of this session."
+```
+
+`r lines_day0`
+
+```{r}
+agenda_day0 <- build_frame(
+        "Time", "Activities" |
+          "4:30--5:30 pm", "*Optional.* Time to help anyone needing assistance with the software installation." |
+          "5:30--6:00 pm", "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." |
+          "6:00--6:50", "*R basics.* The RStudio environment and R objects, functions, and scripts" |
+          "7:00--7:50", "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
+          "8:00--8:50", "*Data basics.* Data import, data structure, and data transformation. Writing data to file." |
+          "9:00", "*Adjourn*"
+)
+kable(agenda_day0)
+```
+
+
+### Day 1 agenda {-} 
+
+```{r} 
+lines_day1<- "Monday, 2019-06-03."
+```
+
+`r lines_day1`
+
+```{r}
+agenda_day1 <- build_frame(
+        "Time", "Activities" |
+        "8:00-9:00", "*Breakfast.* Provided in the workshop room." |
+        "9:00--10:00", "*Introductions.* Introduce presenters, participants, objectives, MIDFIELD, and persistence metrics we have found insightful." |
+          "", "Break" |
+        "10:15--12:15", "*Guided practice.* Self-paced tutorials using midfieldr and midfielddata." |
+        "12:15--1:15", "*Lunch.* Provided in the workshop room."  |
+        "1:15--3:15", "*Self-directed practice.* Review the variables in midfielddata. Define a problem involving the data that interests you. Find a collaborator and begin exploring the problem." |
+          "", "Break" |
+        "3:30--4:30", "*Common pitfalls.* Examples of things to look out for and consider when exploring research questions. Lessons learned." |
+        "4:30--4:45", "*Conclusion.* Reflection and discussion" |
+          "", "Break" |
+          "5:00--7:00", "*Reception.* Purdue Union, Anniversary Drawing Room" |
+          "7:00", "*Adjourn.* Make your own dinner plans."
+)
+kable(agenda_day1)
+```
+
+### Day 2 agenda   {-}
+
+```{r} 
+lines_day2 <- "Tuesday, 2019-06-04."
+```
+
+`r lines_day2`
+
+```{r}
+agenda_day2 <- build_frame(
+        "Time", "Activities" |
+        "8:00--9:00", "*Breakfast.* Provided in the workshop room." |
+        "9:00--10:00", "*Data visualization.* Deficiencies of common graphs. Creating more effective graphs." |
+        "", "Break" |
+        "10:15--10:45", "*Explore data.* Finding and presenting stories in the data." |
+        "10:45--12:15", "*Self-directed work.* Continue the collaborative work from Day 1. Produce data displays that address your research question." |
+        "12:15--3:15", "*Lunch and poster preparation.* Lunch provided in the workshop room. Participants make posters to display their work-in-progress." |
+        "3:15--4:15", "*Poster session.*" |
+        "4:15--5:00", "*Conclusion.* Summarize objectives. Plans for proposed 2020 FIE Special Session to showcase participants' work.  Assess MIDFIELD Institute." |
+        "5:00", "*Adjourn*"
+)
+kable(agenda_day2)
+```
+
+
+## References {-}
+
+<div id="refs"></div>
+
+
+
+

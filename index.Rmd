@@ -1,5 +1,5 @@
 --- 
-title: "MIDFIELD Workshops"
+title: 
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
@@ -11,8 +11,9 @@ link-citations: yes
 github-repo: MIDFIELDR/workshops
 description: "A public site for workshops for access to MIDFIELD"
 nocite: | 
-  @R-binb, @R-knitr, @R-seplyr, @R-tidyverse
 ---
+
+# MIDFIELD Workshops {- #MIDFIELD-Workshops}
 
 ```{r echo = FALSE}
 # create a bib database for R packages
@@ -25,15 +26,18 @@ opts_chunk$set(echo = FALSE)
 opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
 ```
 
-# Preface {- #preface}
 
-```{r}
+
+```{r echo = FALSE}
 htmltools::img(src = 
 knitr::include_graphics("images/midfield-grad-logo.png"), 
                alt = 'midfield logo', 
                style = 'position:absolute; top:50px; right:50px; padding:0px;',
                width = 90)
+suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("wrapr"))
 ```
+
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using MIDFIELD data  [@2016ohlandlong]. The software environment is R [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
 
@@ -104,8 +108,7 @@ Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in so
 
 The graphics tools in R provide the means to control every pixel in the service of "rhetorically sensitive design." Designers can craft their visual arguments to balance  logos, ethos, pathos, and kairos as appropriate for a given audience in a given rhetorical situation. 
 
-[[For a gallery of R graphics]](https://www.r-graph-gallery.com/)    
-
+[[For a gallery of R graphics]](https://www.r-graph-gallery.com/)  
 
 
 
@@ -161,10 +164,4 @@ knitr::include_graphics("images/NSF_4-Color_bitmap_Logo.png"),
                alt = 'NSF logo', 
                width = 90)
 ```
-
-
-
-## References {-}
-
-<div id="refs"></div>
 

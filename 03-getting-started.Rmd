@@ -1,4 +1,4 @@
-# Getting started {- #getting-started}
+# Getting started {- #Getting-started}
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
@@ -205,6 +205,10 @@ We use the folders as follows:
 
 
 And that concludes the setup. 
+
+
+
+
 
 ## References {-}
 
