@@ -64,8 +64,8 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 ## Before you arrive {-}
 
 
-- [MIDFIELD Workshops](#MIDFIELD-Workshops) for an introduction to MIDFIELD and the workshop facilitators. 
-- [Getting started](#Getting-started) for pre-workshop software installation instructions---assuming you plan on using your own laptop. If not, we will have computers available onsite. 
+- [MIDFIELD Workshops](#midfield-workshopss) for an introduction to MIDFIELD and the workshop facilitators. 
+- [Getting started](#getting-started) for pre-workshop software installation instructions---assuming you plan on using your own laptop. If not, we will have computers available onsite. 
 - Optional: For several years now, we have been using R to explore and present the stories in the MIDFIELD data. To see a sample of our data graphics, you can follow the links in the [publications](#publications) section.   
 
 

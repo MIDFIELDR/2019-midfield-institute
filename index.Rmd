@@ -12,7 +12,7 @@ description: "A public site for workshops for access to MIDFIELD"
 nocite: | 
 ---
 
-# MIDFIELD Workshops {- #MIDFIELD-Workshops}
+# MIDFIELD Workshops {- #midfield-workshops}
 
 ```{r echo = FALSE}
 # create a bib database for R packages
