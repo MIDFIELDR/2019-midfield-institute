@@ -49,6 +49,69 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -86,9 +149,9 @@
 <li class="chapter" data-level="" data-path="midfield-institute.html"><a href="midfield-institute.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting started</a><ul>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-R-and-RStudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-an-r-package"><i class="fa fa-check"></i>Install an R package</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-midfielddata-and-midfieldr"><i class="fa fa-check"></i>Install midfielddata and midfieldr</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr"><i class="fa fa-check"></i>Install midfielddata and midfieldr</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#create-an-r-project"><i class="fa fa-check"></i>Create an R project</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#create-directories"><i class="fa fa-check"></i>Create directories</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#references-1"><i class="fa fa-check"></i>References</a></li>
@@ -110,9 +173,11 @@
 <li class="chapter" data-level="" data-path="day-0.html"><a href="day-0.html#references-2"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i>Day 1 materials</a><ul>
+<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-1"><i class="fa fa-check"></i>Prerequisites</a></li>
 <li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#references-3"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html"><i class="fa fa-check"></i>Day 2 materials</a><ul>
+<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-2"><i class="fa fa-check"></i>Prerequisites</a></li>
 <li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#references-4"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -142,33 +207,33 @@
 <p>If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well.</p>
 <p>If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up.</p>
 <p>Unless noted otherwise, we assume the reader is an R novice. Thus the first steps are to install R and RStudio.</p>
-<div id="install-r-and-rstudio" class="section level2 unnumbered">
+<div id="install-R-and-RStudio" class="section level2 unnumbered">
 <h2>Install R and RStudio</h2>
 <p>Windows users may have to login as an Administrator (localmgr) before installing the software.</p>
 <ul>
-<li>Install R for your OS: <a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></li>
-<li>Install RStudio, a user interface for R: <a href="https://www.rstudio.com/products/rstudio/#Desktop" class="uri">https://www.rstudio.com/products/rstudio/#Desktop</a></li>
+<li><a href="https://cloud.r-project.org" target="_blank">Install R</a> for your operating system<br />
+</li>
+<li><a href="https://www.rstudio.com/products/rstudio/#Desktop" target="_blank">Install RStudio</a>, a user interface for R</li>
 </ul>
 <p>If you need additional assistance for Mac OS or Linux, these links might be useful</p>
 <ul>
-<li><a href="https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4">Install R and RStudio on Mac OS</a> by Michael Galarnyk (or you can Google more recent instructions)<br />
+<li><a href="https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4%7Btarget=%22_blank%22%7D">Install R and RStudio on Mac OS</a> by Michael Galarnyk (or you can Google more recent instructions)<br />
 </li>
-<li><a href="https://www.datascienceriot.com//r/install-ubuntu16/">How to Install R Ubuntu 16.04 Xenial</a> by Kris Eberwein (or you can Google more recent instructions)</li>
+<li><a href="https://www.datascienceriot.com//r/install-ubuntu16/" target="_blank">How to Install R Ubuntu 16.04 Xenial</a> by Kris Eberwein (or you can Google more recent instructions)</li>
 </ul>
 <p>Once the installation is complete, you can take a 2-minute tour of the RStudio interface. Please use headphones or ear-buds if you watch the video during the workshop.</p>
 <ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=57&amp;end=152">Let’s start (00:57–02:32)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=57&amp;end=152" target="_blank">Let’s start (00:57–02:32)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
 </ul>
 <p>The same video includes a longer (7 minute) tour of the four quadrants (panes) in RStudio if you are interested.</p>
 <ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=441&amp;end=880">The RStudio quadrants (07:21–14:40)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=441&amp;end=880" target="_blank">The RStudio quadrants (07:21–14:40)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
 </ul>
 </div>
 <div id="install-an-r-package" class="section level2 unnumbered">
 <h2>Install an R package</h2>
-<p>The fundamental unit of shareable code in R is the <em>package.</em>
-For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R that is easily shared with others <span class="citation">(Wickham, <a href="getting-started.html#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>.</p>
-<p>Most packages are obtained from the <a href="https://cran.r-project.org/">CRAN</a> website <span class="citation">(The Comprehensive R Archive Network)</span>. To install a package using RStudio:</p>
+<p>The fundamental unit of shareable code in R is the <em>package.</em> For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R that is easily shared with others <span class="citation">(Wickham, <a href="getting-started.html#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>.</p>
+<p>Most packages are obtained from the <a href="https://cran.r-project.org/" target="_blank">CRAN</a> website <span class="citation">(The Comprehensive R Archive Network)</span>. To install a package using RStudio:</p>
 <ul>
 <li>Launch RStudio</li>
 </ul>
@@ -188,7 +253,7 @@ Next,</p>
 <li>Repeat to install the package <strong>tidyverse</strong></li>
 </ul>
 </div>
-<div id="install-midfielddata-and-midfieldr" class="section level2 unnumbered">
+<div id="install-midfieldr" class="section level2 unnumbered">
 <h2>Install midfielddata and midfieldr</h2>
 <p>In this workshop, we work with the <strong>midfieldr</strong> package and <strong>midfielddata</strong> data-package. The <strong>midfielddata</strong> package is too large to be stored in CRAN, so we use a special “drat-repository” to make the package source files available. We install these packages by typing lines of code in the Console at the prompt.</p>
 <p>The Console in the default RStudio pane layout is on the left. The R command prompt in the Console is <code>&gt;</code>.</p>
@@ -196,11 +261,11 @@ Next,</p>
 <p><br>
 At the prompt, type a line of code and press <em>Enter</em> from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press <em>Enter</em>. We only run these lines of code once, so you do not have to type the lines into a script.</p>
 <p>The <strong>drat</strong> <code>addRepo()</code> function adds the <strong>midfieldr</strong> GitHub repository to our current R session.</p>
-<pre><code>drat::addRepo(&quot;midfieldr&quot;) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">drat<span class="op">::</span><span class="kw">addRepo</span>(<span class="st">&quot;midfieldr&quot;</span>) </code></pre>
 <p><strong>midfielddata</strong> must be installed before <strong>midfieldr</strong>.</p>
-<pre><code>install.packages(&quot;midfielddata&quot;) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;midfielddata&quot;</span>) </code></pre>
 <p>The <strong>devtools</strong> <code>install_github()</code> function installs <strong>midfieldr</strong> from it’s GitHub repository.</p>
-<pre><code>devtools::install_github(&quot;MIDFIELDR/midfieldr&quot;) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;MIDFIELDR/midfieldr&quot;</span>) </code></pre>
 </div>
 <div id="create-an-r-project" class="section level2 unnumbered">
 <h2>Create an R project</h2>
@@ -208,7 +273,7 @@ At the prompt, type a line of code and press <em>Enter</em> from your keyboard. 
 <p>We will create a project named after the workshop, for example, <code>midfield_institute.Rproj</code>, <code>fie_workshop.Rproj</code>, etc.</p>
 <p>If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop),</p>
 <ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=154&amp;end=290">Start with a Project (02:34–04:50)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=154&amp;end=290" target="_blank">Start with a Project (02:34–04:50)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
 </ul>
 <p>If you prefer basic written instructions,</p>
 <ul>
@@ -237,7 +302,7 @@ In the dialog box that appears,</p>
 </span><span class="line">    └── your_project.Rproj</span></code></pre>
 <p>If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop),</p>
 <ul>
-<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=290&amp;end=368">Make some folders (04:50–06:08)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=290&amp;end=368" target="_blank">Make some folders (04:50–06:08)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="getting-started.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
 </ul>
 <p>If you prefer basic written instructions,</p>
 <ul>

@@ -18,6 +18,10 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
 
 [Day 1 agenda](#day1agenda)
 
+### Prerequisites {-} 
+
+- We assume you have completed all of the [Getting started](#getting-started) instructions. 
+- Run `midfield_institute.Rproj` to start every work session 
 
 
 ## References {-}

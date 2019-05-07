@@ -16,9 +16,7 @@ knitr::include_graphics("images/midfield-grad-logo.png"),
                width = 90)
 ```
 
-
 If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well.
-
 
 If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up. 
 
@@ -29,27 +27,27 @@ Unless noted otherwise, we assume the reader is an R novice. Thus the first step
 
 
 
-## Install R and RStudio {-}
+## Install R and RStudio {- #install-R-and-RStudio}
 
 Windows users may have to login as an Administrator (localmgr) before installing the software. 
 
-- Install R for your OS: <https://cloud.r-project.org> 
-- Install RStudio, a user interface for R:  <https://www.rstudio.com/products/rstudio/#Desktop> 
+- [Install R](https://cloud.r-project.org){target="_blank"} for your operating system  
+- [Install RStudio](https://www.rstudio.com/products/rstudio/#Desktop){target="_blank"}, a user interface for R  
 
  
 
 If you need additional assistance for Mac OS or Linux, these links might be useful 
 
-- [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4) by Michael Galarnyk (or you can Google more recent instructions)    
-- [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/) by Kris Eberwein (or you can Google more recent instructions)  
+- [Install R and RStudio on Mac OS](https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4{target="_blank"}) by Michael Galarnyk (or you can Google more recent instructions)    
+- [How to Install R Ubuntu 16.04 Xenial](https://www.datascienceriot.com//r/install-ubuntu16/){target="_blank"} by Kris Eberwein (or you can Google more recent instructions)  
 
 Once the installation is complete, you can take a 2-minute tour of the RStudio interface. Please use headphones or ear-buds if you watch the video during the workshop. 
 
-- [Let's start (00:57--02:32)](https://www.youtube.com/embed/kfcX5DEMAp4?start=57&end=152) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1]   
+- [Let's start (00:57--02:32)](https://www.youtube.com/embed/kfcX5DEMAp4?start=57&end=152){target="_blank"} by R Ladies Sydney [@RLadiesSydney:2018:Lesson1]   
 
 The same video includes a longer (7 minute) tour of the four quadrants (panes) in RStudio if you are interested. 
 
-- [The RStudio quadrants (07:21--14:40)](https://www.youtube.com/embed/kfcX5DEMAp4?start=441&end=880) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
+- [The RStudio quadrants (07:21--14:40)](https://www.youtube.com/embed/kfcX5DEMAp4?start=441&end=880){target="_blank"} by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
 
 
@@ -59,12 +57,11 @@ The same video includes a longer (7 minute) tour of the four quadrants (panes) i
 
 
 
-## Install an R package {-}
+## Install an R package {- #install-an-r-package}
 
-The fundamental unit of shareable code in R is the *package.* 
-For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R that is easily shared with others  [@wickham2014advanced]. 
+The fundamental unit of shareable code in R is the *package.* For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R that is easily shared with others  [@wickham2014advanced]. 
 
-Most packages are obtained from the [CRAN](https://cran.r-project.org/) website [@cranweb]. To install a package using RStudio:
+Most packages are obtained from the [CRAN](https://cran.r-project.org/){target="_blank"} website [@cranweb]. To install a package using RStudio:
 
 - Launch RStudio 
 
@@ -93,7 +90,7 @@ Next,
 
 
 
-## Install midfielddata and midfieldr {-}
+## Install midfielddata and midfieldr {- #install-midfieldr}
 
 In this workshop, we work with the **midfieldr** package and  **midfielddata** data-package. The **midfielddata** package is too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available. We install these packages by typing lines of code in the Console at the prompt. 
 
@@ -112,19 +109,19 @@ At the prompt, type a line of code and press *Enter* from your keyboard. Alterna
 
 The **drat** `addRepo()` function adds the **midfieldr** GitHub repository to our current R session. 
  
-```
+```r
 drat::addRepo("midfieldr") 
 ```
 
 **midfielddata**  must be installed before **midfieldr**. 
 
-```
+```r
 install.packages("midfielddata") 
 ```
 
 The **devtools**  `install_github()` function installs  **midfieldr** from it's GitHub repository.  
 
-```
+```r
 devtools::install_github("MIDFIELDR/midfieldr") 
 ```
 
@@ -134,7 +131,7 @@ devtools::install_github("MIDFIELDR/midfieldr")
 
 
 
-## Create an R project {-}
+## Create an R project {- #create-an-r-project}
 
 To begin any project, we create an RStudio *Project* file and directory. You can recognize an R project file by its *.Rproj* suffix. 
 
@@ -142,7 +139,7 @@ We will create a project named after the workshop, for example, `midfield_instit
 
 If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop), 
 
-- [Start with a Project (02:34--04:50)](https://www.youtube.com/embed/kfcX5DEMAp4?start=154&end=290) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
+- [Start with a Project (02:34--04:50)](https://www.youtube.com/embed/kfcX5DEMAp4?start=154&end=290){target="_blank"} by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
 
 If you prefer basic written instructions, 
@@ -169,7 +166,7 @@ In the dialog box that appears,
 
 
 
-## Create directories {-}
+## Create directories {- #create-directories}
 
 While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop. 
 
@@ -184,7 +181,7 @@ Create three folders in the project main directory, where  `your_project` is the
 
 If you prefer your instructions with commentary  (please use headphones or ear-buds if you watch the video during the workshop),  
 
-- [Make some folders  (04:50--06:08)](https://www.youtube.com/embed/kfcX5DEMAp4?start=290&end=368) by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
+- [Make some folders  (04:50--06:08)](https://www.youtube.com/embed/kfcX5DEMAp4?start=290&end=368){target="_blank"} by R Ladies Sydney [@RLadiesSydney:2018:Lesson1] 
 
 If you prefer basic written instructions, 
 

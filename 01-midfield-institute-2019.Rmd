@@ -85,19 +85,16 @@ opts_chunk$set(echo = FALSE)
 
 ### Day 0 agenda {- #day0agenda}
 
-```{r} 
-lines_day0 <- "Sunday, 2019-06-02.\n\n
+Sunday, 2019-06-02.
 
-This is an optional session designed for R novices or for anyone whose R skills are rusty. We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2.\n\n 
+This is an optional session designed for R novices or for anyone whose R skills are rusty. We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2. 
 
-We will provide pizza (scheduled to arrive at 6 pm).\n\n
+We will provide pizza (scheduled to arrive at 6 pm).
 
-To make the best use of our time, please follow the [Getting started](https://midfieldr.github.io/workshops/getting-started.html) instructions before arriving.\n\n  
+To make the best use of our time, please follow the [Getting started](https://midfieldr.github.io/workshops/getting-started.html) instructions before arriving.  
 
 You are welcome to attend all or part of this session."
-```
 
-`r lines_day0`
 
 ```{r}
 agenda_day0 <- build_frame(
@@ -115,11 +112,7 @@ kable(agenda_day0)
 
 ### Day 1 agenda {- #day1agenda} 
 
-```{r} 
-lines_day1<- "Monday, 2019-06-03."
-```
-
-`r lines_day1`
+Monday, 2019-06-03
 
 ```{r}
 agenda_day1 <- build_frame(
@@ -142,11 +135,7 @@ kable(agenda_day1)
 
 ### Day 2 agenda   {- #day2agenda}
 
-```{r} 
-lines_day2 <- "Tuesday, 2019-06-04."
-```
-
-`r lines_day2`
+Tuesday, 2019-06-04.
 
 ```{r}
 agenda_day2 <- build_frame(

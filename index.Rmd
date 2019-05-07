@@ -57,8 +57,8 @@ Analytical tools for research in student pathways are generally scarce. The R pa
 **midfielddata** is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
 
 
-[[For more information about midfieldr]](https://midfieldr.github.io/midfieldr/)    
-[[For more information about midfielddata]](https://midfieldr.github.io/midfielddata/)    
+[[For more information about midfieldr]](https://midfieldr.github.io/midfieldr/){target="_blank"}    
+[[For more information about midfielddata]](https://midfieldr.github.io/midfielddata/){target="_blank"}    
 
 
 
@@ -107,7 +107,7 @@ Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in so
 
 The graphics tools in R provide the means to control every pixel in the service of "rhetorically sensitive design." Designers can craft their visual arguments to balance  logos, ethos, pathos, and kairos as appropriate for a given audience in a given rhetorical situation. 
 
-[[For a gallery of R graphics]](https://www.r-graph-gallery.com/)  
+[[For a gallery of R graphics]](https://www.r-graph-gallery.com/){target="_blank"}      
 
 
 
@@ -125,7 +125,7 @@ The MIDFIELD team has been using R to explore and present the stories in the MID
 - Brawner CE, Lord SM,  Layton RA, Ohland MW, and Long RA (2015) Factors affecting women's persistence in chemical engineering, *International Journal of Engineering Education* 31(6A), 1431--1447, https://tinyurl.com/y6jq58xh  
 
 
-[[For more information about MIDFIELD publications]](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html)  
+[[For more information about MIDFIELD publications]](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html){target="_blank"}    
 
 
 

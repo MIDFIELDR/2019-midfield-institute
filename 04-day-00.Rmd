@@ -29,23 +29,16 @@ An introduction to R adapted from [@Healy:2019:Ch.2] with extra material from [@
 
 ### Prerequisites {-} 
 
-Project setup 
-
-- [Create an R project] instructions  are completed and you have an R project file on your machine called `midfield_institute.Rproj`  
-- [Create directories] instructions are completed  
-- Run `midfield_institute.Rproj` to start work  
-- [Installing an R package] instructions are completed  
-- [Installing midfielddata and midfieldr] instructions are completed  
+- We assume you have completed all of the [Getting started](#getting-started) instructions. 
+- Run `midfield_institute.Rproj` to start every work session 
 
 Packages 
 
-Run the following line of code in the RStudio Console to install the **socviz** package. 
+- Run the following line of code in the RStudio Console to install the **socviz** package. 
 
 ```r
 devtools::install_github("kjhealy/socviz")
 ```
-
-Script
 
 Use *File &gt; New File &gt; R Script* to create a new R script
 
