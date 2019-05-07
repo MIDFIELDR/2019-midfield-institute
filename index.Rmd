@@ -1,5 +1,4 @@
 --- 
-title: 
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
