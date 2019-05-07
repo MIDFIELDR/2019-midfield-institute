@@ -44,7 +44,7 @@ This site provides access to workshop materials for studying how undergraduate s
 
 **MIDFIELD** (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
 
-[[For more information about MIDFIELD]](https://engineering.purdue.edu/MIDFIELD)
+[[For more information about MIDFIELD]](https://engineering.purdue.edu/MIDFIELD){target="_blank"}
 
 
 
