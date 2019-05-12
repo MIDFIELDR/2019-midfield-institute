@@ -1,4 +1,4 @@
-# 2019 MIDFIELD Institute {-}
+# MIDFIELD Institute 2019 {}
 
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
@@ -10,13 +10,10 @@ opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp =
 ```
 
 ```{r echo = FALSE}
-htmltools::img(src = 
-knitr::include_graphics("images/midfield-grad-logo.png"), 
-               alt = 'midfield logo', 
-               style = 'position:absolute; top:50px; right:50px; padding:0px;',
-               width = 90)
-suppressPackageStartupMessages(library("tidyverse"))
-suppressPackageStartupMessages(library("wrapr"))
+htmltools::img(src = knitr::include_graphics("figures/midfield-grad-logo.png"), 
+        alt = 'midfield logo', 
+        style = 'left:0px; padding:10px;',
+        width = 200)
 ```
 
 MIDFIELD Institute    
@@ -32,10 +29,12 @@ Registration: [http://www.conf.purdue.edu/MIDFIELD.  ](http://www.conf.purdue.ed
 
 
 
-## Description {-}
+## Description {}
 
 ```{r echo = FALSE}
 opts_chunk$set(echo = FALSE)
+suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("wrapr"))
 ```
 
 We are offering the first Multiple Institution Database for Investigating Engineering Longitudinal Development (MIDFIELD) Institute on Monday June 3 and Tuesday June 4, 2019 in West Lafayette, Indiana. 
@@ -62,7 +61,7 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 
-## Before you arrive {-}
+## Before you arrive {}
 
 
 - [MIDFIELD Workshops](#midfield-workshops) for an introduction to MIDFIELD and the workshop facilitators. 
@@ -78,24 +77,24 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 
-## Agendas {-} 
+## Agendas {} 
 
 ```{r echo = FALSE}
 opts_chunk$set(echo = FALSE)
 ```
 
-### Day 0 agenda {- #day0agenda}
+### Sunday {- #day0agenda}
 
-Sunday, 2019-06-02.
+2019-06-02
 
-This is an optional session designed for R novices or for anyone whose R skills are rusty. We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2. 
+**Optional.** This is an optional session designed for R novices or for anyone whose R skills are rusty. 
 
-We will provide pizza (scheduled to arrive at 6 pm).
+- We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2. 
+- Everyone is welcome to attend all or part of this session. 
+- To make the best use of our time, please follow the [Getting started](#getting-started) instructions before arriving.  If you have any difficulty with the installation, we can help you when you arrive. 
+- We provide pizza (scheduled to arrive at 6 pm).
 
-To make the best use of our time, please follow the [Getting started](https://midfieldr.github.io/workshops/getting-started.html) instructions before arriving.  
-
-You are welcome to attend all or part of this session."
-
+<br>
 
 ```{r}
 agenda_day0 <- build_frame(
@@ -110,10 +109,9 @@ agenda_day0 <- build_frame(
 kable(agenda_day0)
 ```
 
+### Monday {- #day1agenda} 
 
-### Day 1 agenda {- #day1agenda} 
-
-Monday, 2019-06-03
+2019-06-03
 
 ```{r}
 agenda_day1 <- build_frame(
@@ -134,9 +132,9 @@ agenda_day1 <- build_frame(
 kable(agenda_day1)
 ```
 
-### Day 2 agenda   {- #day2agenda}
+### Tuesday   {- #day2agenda}
 
-Tuesday, 2019-06-04.
+2019-06-04
 
 ```{r}
 agenda_day2 <- build_frame(
@@ -155,7 +153,7 @@ kable(agenda_day2)
 ```
 
 
-## References {-}
+## References {}
 
 <div id="refs"></div>
 

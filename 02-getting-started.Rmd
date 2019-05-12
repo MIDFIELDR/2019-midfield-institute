@@ -1,19 +1,11 @@
-# Getting started {- #getting-started}
+# Getting started {#getting-started}
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
-```{r include=FALSE}
+```{r include = FALSE}
 library(knitr)
-opts_chunk$set(echo=FALSE)
+opts_chunk$set(echo = FALSE)
 opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
-```
-
-```{r}
-htmltools::img(src = 
-knitr::include_graphics("images/midfield-grad-logo.png"), 
-               alt = 'logo', 
-               style = 'position:absolute; top:50px; right:50px; padding:0px;',
-               width = 90)
 ```
 
 If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well.
@@ -27,7 +19,20 @@ Unless noted otherwise, we assume the reader is an R novice. Thus the first step
 
 
 
-## Install R and RStudio {- #install-R-and-RStudio}
+## Install R and RStudio {#install-R-and-RStudio}
+
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/logo-R.png"), 
+        alt    = "logo", 
+        style  = "left:0px; padding:5px;", 
+        height = "110px")
+htmltools::img(src = knitr::include_graphics("figures/logo-RStudio.png"), 
+        alt    = "logo", 
+        style  = "left:0px; padding:5px;", 
+        height = "110px")
+```
+
 
 Windows users may have to login as an Administrator (localmgr) before installing the software. 
 
@@ -57,7 +62,7 @@ The same video includes a longer (7 minute) tour of the four quadrants (panes) i
 
 
 
-## Install an R package {- #install-an-r-package}
+## Install an R package {#install-an-r-package}
 
 The fundamental unit of shareable code in R is the *package.* For the R novice, an R package is like an "app" for R---a collection of functions, data, and documentation for doing work in R that is easily shared with others  [@wickham2014advanced]. 
 
@@ -69,69 +74,99 @@ The RStudio interface has several panes. We want the Files/Plots/Packages pane.
 
 - Select the *Packages*  tab  
 
-```{r}
-htmltools::img(src = 
-knitr::include_graphics("images/rstudio-packages.png"), 
-               alt = 'rstudio packages pane', 
-               width = 700)
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/rstudio-packages.png"), 
+        alt   = "rstudio packages pane", 
+        width = "700px")
 ```
 
 <br>
 Next, 
 
 - Click *Install* on the ribbon 
-- In the dialog box, type **drat** (a package we'll use in a moment) 
+- In the dialog box, type **tidyverse**   
 - Check the *Install dependencies* box 
 - Click the  *Install* button 
 - Repeat to install the package **devtools** 
-- Repeat to install the package **tidyverse**
+
+
+Alternatively (for future reference), if you prefer using thea command-line, you can install a CRAN package (or a vector of packages) by typing  `install.packages()` in the Console, for example, 
+
+```r
+install.packages(pkgs = c("tidyverse", "devtools"))
+```
+
+Some packages are archived in a repoistory other than CRAN, GitHub being a current favorite. For such packages, we use `install_github()` from the devtools package in this form, 
+
+
+```r
+devtools::install_github(repo = "user_name/repo_name") 
+```
 
 
 
 
 
-## Install midfielddata and midfieldr {- #install-midfieldr}
+## Install midfielddata and midfieldr {#install-midfieldr}
+
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/logo-midfieldr.png"), 
+        alt    = "logo", 
+        style  = "left:0px; padding:5px;", 
+        height = "110px")
+htmltools::img(src = knitr::include_graphics("figures/logo-midfielddata.png"), 
+        alt    = "logo", 
+        style  = "left:0px; padding:5px;", 
+        height = "110px")
+```
+
 
 In this workshop, we work with the **midfieldr** package and  **midfielddata** data-package. The **midfielddata** package is too large to be stored in CRAN, so we use a special "drat-repository" to make the package source files available. We install these packages by typing lines of code in the Console at the prompt. 
 
 
 The Console in the default RStudio pane layout is on the left.  The R command prompt in the Console is `>`. 
 
-```{r}
-htmltools::img(src = 
-knitr::include_graphics("images/rstudio-console.png"), 
-               alt = 'rstudio console pane', 
-               width = 700)
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/rstudio-console.png"), 
+        alt   = "rstudio console pane", 
+        width = "700px")
 ```
 
 <br>
 At the prompt, type a line of code and press *Enter* from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. We only run these lines of code once, so you do not have to type the lines into a script. 
 
-The **drat** `addRepo()` function adds the **midfieldr** GitHub repository to our current R session. 
- 
-```r
-drat::addRepo("midfieldr") 
-```
-
-**midfielddata**  must be installed before **midfieldr**. 
+Install **midfielddata** from the our drat repo. The data package is large so this step takes time. Be patient and wait for the Console prompt `>` to reappear.  
 
 ```r
-install.packages("midfielddata") 
+install.packages(pkgs = "midfielddata", 
+        repos = "https://MIDFIELDR.github.io/drat/", 
+        type  = "source")
 ```
 
-The **devtools**  `install_github()` function installs  **midfieldr** from it's GitHub repository.  
+If that installation was successful, only then can you install **midfieldr** from its GitHub repo, 
 
 ```r
-devtools::install_github("MIDFIELDR/midfieldr") 
+devtools::install_github(repo = "MIDFIELDR/midfieldr") 
+```
+
+If the installation was successful, at the prompt you can type 
+
+```r
+? midfieldr
+```
+and see the **midfieldr** help page in the RStudio Help pane. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/midfieldr-help-page.png"), 
+        alt   = "rstudio console pane", 
+        width = "700px")
 ```
 
 
 
 
-
-
-
-## Create an R project {- #create-an-r-project}
+## Create an R project {#create-an-r-project}
 
 To begin any project, we create an RStudio *Project* file and directory. You can recognize an R project file by its *.Rproj* suffix. 
 
@@ -148,11 +183,10 @@ If you prefer basic written instructions,
 - Or, click the *New Project* button in the Console ribbon, 
 
 
-```{r}
-htmltools::img(src = 
-knitr::include_graphics("images/rstudio-new-project.png"), 
-               alt = 'rstudio new project button', 
-               width = 700)
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/rstudio-new-project.png"), 
+        alt   = "rstudio new project button", 
+        width = "700px")
 ```
 
 <br>
@@ -166,7 +200,7 @@ In the dialog box that appears,
 
 
 
-## Create directories {- #create-directories}
+## Create directories {#create-directories}
 
 While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop. 
 
@@ -188,11 +222,10 @@ If you prefer basic written instructions,
 - use your usual method of creating new folders on your machine 
 - or you can use the *New Folder* button in the Files pane 
 
-```{r}
-htmltools::img(src = 
-knitr::include_graphics("images/rstudio-new-folder.png"), 
-               alt = 'rstudio new folder', 
-               width = 700)
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/rstudio-new-folder.png"), 
+        alt   = "rstudio new folder", 
+        width = "700px")
 ```
 
 <br>
@@ -211,6 +244,6 @@ And that concludes the setup.
 
 
 
-## References {-}
+## References {}
 
 <div id="refs"></div>

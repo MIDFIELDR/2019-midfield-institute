@@ -6,7 +6,7 @@ delete_merged_file: true
 output_dir: "docs"
 rmd_files: ["index.Rmd",
 "01-midfield-institute-2019.Rmd",
-"03-getting-started.Rmd",
-"04-day-00.Rmd",
-"05-day-01.Rmd",
-"06-day-02.Rmd"]
+"02-getting-started.Rmd",
+"03-day-00.Rmd",
+"04-day-01.Rmd",
+"05-day-02.Rmd"]

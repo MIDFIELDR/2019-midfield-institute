@@ -1,0 +1,998 @@
+# Preworkshop {#day-0} 
+
+<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+
+```{r include = FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE)
+opts_chunk$set(fig.width = 6, 
+        out.width = "70%", 
+        fig.align = "center", 
+        fig.asp   = 0.618, 
+        comment   = "#>", 
+        warning   = FALSE, 
+        message   = FALSE)
+```
+
+Agenda [[link](#day0agenda)]
+
+This session consists of three tutorials, each designed to be completed by an R novice in less than 50 minutes. The timing has been student-tested, but of course your mileage may vary. 
+
+The tutorials give the R novice a quick introduction to three essential elements of data science using R:
+
+- [R basics](#r-basics) 
+- [Graph basics](#graph-basics) 
+- [Data basics](#data-basics) 
+
+
+
+
+
+
+## Tutorial: R basics {#r-basics} 
+
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/logo-R.png"), 
+        alt    = "logo", 
+        style  = "left:0px; padding:0px;", 
+        height = "100px")
+```
+
+If the prerequisites have been met, the tutorial should take less than 50 minutes. 
+
+An introduction to R adapted from [@Healy:2019:Ch.2] with extra material from [@Matloff:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
+
+
+### Prerequisites {} 
+
+- We assume you have completed all of the [Getting started](#getting-started) instructions. 
+- Run `midfield_institute.Rproj` to start every work session 
+
+Packages 
+
+- Run the following line of code in the RStudio Console to install the **socviz** package. 
+
+```r
+devtools::install_github("kjhealy/socviz")
+```
+
+Use *File &gt; New File &gt; R Script* to create a new R script
+
+- Name the script `01-R-basics.R` (R filenames can begin with numbers) 
+- Save it in the `scripts` directory 
+
+Add a minimal header at the top of the script (if you wish) then use `library()`  to load the packages we will use. Loading all the libraries at the top of a script is conventional practice. 
+
+```{r}
+# workshop R basics 
+# name 
+# date 
+
+library("tidyverse")
+library("socviz")
+```
+
+
+Guidelines 
+
+- In this script type the lines of code in the tutorial below one line at a time.  
+- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
+- Confirm that your result matches the result in the tutorial.  
+- **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
+
+
+
+
+
+
+
+### Everything in R has a name {} 
+
+In R, every object has a name. 
+
+- named entities, like `x` or `y`  
+- data you have loaded, like `my_data` 
+- functions you use, like `sin()` 
+
+Some names are forbidden 
+
+- reserved words, like `TRUE` or `FALSE`  
+- programming words, like `Inf`, `for`, `else`, and `function`  
+- special entities, like `NA` and `NaN`  
+
+Some names should not be used because they name commonly used functions 
+
+- `q()`  quit 
+- `c()` combine or concatenate 
+- `mean()` 
+- `range()` 
+- `var()` variance 
+
+Names in R are case-sensitive 
+
+- `my_data` and `My_Data` are different objects 
+- I follow the style guide used in the tidyverse by naming things in lower case,  with words separated by underscores, and no spaces
+
+
+If you want to know if a name has already been used in a package you have loaded, go to the RStudio console, type a question mark followed by the name, e.g., 
+
+- `? c()` 
+- `? mean()`
+
+If the name is in use, a help page appears in the RStudio Help pane.  
+
+
+
+
+
+
+### Everything in R is an object  {}
+
+Origins of R objects  
+
+- Some objects are built in to R 
+- Some objects are loaded with packages 
+- Some objects are created by you 
+
+
+Type this line of code in your script, Save, Source. `c()` is the function to combine or concatenate its elements to create a vector. 
+
+```{r echo = TRUE, results = "hide"}
+c(1, 2, 3, 1, 3, 25)
+```
+
+In these notes, everything that comes back to us in the Console as the result of running a script is shown prefaced by `#>`. For example, after running your script, the Console should show, 
+
+```{r echo = FALSE}
+c(1, 2, 3, 1, 3, 25)
+```
+
+But what is that `[1]` here? It's just a row label. We'll go into that later, not needed yet.
+
+We can assign the vector to a name. 
+
+```{r}
+x <- c(1, 2, 3, 1, 3, 25)
+y <- c(5, 31, 71, 1, 3, 21, 6)
+```
+
+To see the result in the Console, type the object name in the script, Save, and Source.  (Remember, type the line of code but not the line prefaced by `#>`---that's the output line so you can check your results.)
+
+```{r}
+x
+
+y
+```
+
+You create objects my assigning them names 
+
+- `<-` is the assignment operator (keyboard shortcut: ALT --) 
+- objects exist in your R project workspace, listed in the RStudio Environment pane 
+
+
+```{r echo = FALSE}
+htmltools::img(src = 
+knitr::include_graphics("figures/rstudio-environment-x-y.png"), 
+        alt = 'rstudio new folder', 
+        width = 700)
+```
+
+Datasets are also named objects, and a large number of datasets are included in the base R installation. For example,`LakeHuron` contains annual measurements of the lake level, in feet, from 1875--1972. 
+
+```{r}
+LakeHuron
+```
+
+Now you can see how the row labels work. There are 10 numbers per row, here, so the second row starts with the 11th, indicated by `[11]`. The last row starts with the 91st value `[91]` and ends with the 98th value. 
+
+- In the Console, type `? LakeHuron` to see the help page for the data set 
+
+Individual elements of a vector are obtained using `[]` notation. 
+
+For example, the first five lake level readings are extracted with 
+
+```{r}
+LakeHuron[1:5]
+```
+
+The 4th element alone, 
+
+```{r}
+LakeHuron[4]
+```
+
+
+
+
+
+
+
+
+### Do things in R using functions  {}
+
+Functions do something useful 
+
+- functions are objects the perform actions for you 
+- functions produce output based on the input it receives 
+- functions are recognized by the parentheses at the end of their names 
+
+The parentheses are where we include the inputs (arguments) to the function 
+
+- `c()` concatenates the comma-separated numbers in the parentheses to create a vector 
+- `mean()` computes the mean of a vector of numbers 
+- `sd()` computes the standard deviation of a vector of numbers 
+- `summary()` returns a summary of the object 
+
+If we try `mean()` with no inputs, we get an error statement 
+
+
+    mean()
+    #> Error in mean.default() : argument "x" is missing, with no default
+
+If we use the Lake Huron dataset as the argument, the function is computed and displayed. Add these lines to your script, Save, and Source.
+
+```{r}
+mean(LakeHuron)
+
+sd(LakeHuron)
+
+summary(LakeHuron)
+```
+
+
+We can extract subsets of data using functions. For example, If we wanted only the first five even-numbered elements, we use `c()` to create a vector of indices to the desired elements, 
+
+```{r}
+LakeHuron[c(2, 4, 6, 8, 10)]
+```
+
+If we wanted every 5th entry over the full data set, we use `length()` to determine how many entries there are, and the sequence function `seq()` to create the vector of indices, 
+
+```{r}
+n <- length(LakeHuron)
+LakeHuron[seq(from = 5, to = n, by = 5)]
+```
+
+
+Because we will be using the ggplot2 package for graphics, we will not be using the base R `plot()` function very often, but it is useful for a quick look at data. Add these lines to your script, Save, and Source. 
+
+```{r}
+plot(LakeHuron)
+```
+
+The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and *Enter* to see the function help page. 
+
+- `? mean()` 
+- `? sd()` 
+- `? summary()` 
+
+
+
+### R functions come in packages {}
+
+Functions are bundled in packages  
+
+- Families of useful functions are bundled into packages that you can install, load, and use 
+- Packages allow you to build on the work of others 
+- You can write your own functions and packages too 
+- A lot of the work in data science consists of choosing the right functions and giving them the right arguments to get our data into the form we need for analysis or visualization 
+
+Functions operate on the input you provide and give you back a result. Type the following in your script, Save, and Source.
+
+```{r}
+table(x) # table of counts
+
+sd(y)    # standard deviation
+
+x * 5    # multiply every element by a scalar
+
+y + 1    # add a scalar to every element
+
+x + x    # add elements 
+```
+
+*Comments* are annotations to make the source code easier for humans to understand but are ignored by R. Comments in R are denoted by a hashtag `#`. 
+
+
+
+
+
+
+### R objects have class {}
+
+Everything is an object and every object has a class. 
+
+```{r}
+class(x)
+
+class(summary)
+```
+
+Certain actions will change the class of an object. Suppose we try create a vector from the `x` object and a text string, 
+
+```{r}
+new_vector <- c(x, "Apple")
+
+new_vector
+
+class(new_vector)
+```
+
+By adding the word "Apple" to the vector, R changed the class from "numeric" to "character". All the numbers are enclosed in quotes: they are now character strings and cannot be used in calculations. 
+
+The most common class of data object we will use is the data frame. 
+
+```{r}
+titanic # data in the socviz package
+
+class(titanic)
+```
+
+You can see there are four variables: `r names(titanic)`.  Two variables (columns) are numeric, two are categorical. 
+
+You can pick variable out of a data frame using the `$` operator, 
+
+```{r}
+titanic$percent
+```
+
+From the tidyverse, we will regularly use a augmented data frame called a *tibble.* We can convert the titanic data frame to a tibble using  `as_tibble()`. 
+
+```{r}
+titanic_tb <- as_tibble(titanic)
+
+class(titanic_tb)
+
+titanic_tb
+```
+
+The tibble includes additional information about the variables
+
+
+
+
+
+
+
+### R objects have structure {}
+
+
+To see inside an object ask for its structure using the `str()` function. 
+
+```{r}
+str(x)
+
+str(titanic)
+
+str(titanic_tb)
+```
+
+I also like to use the `glimpse()` function from the tidyverse. 
+
+```{r}
+glimpse(x)
+
+glimpse(titanic)
+
+glimpse(titanic_tb) 
+```
+
+
+
+
+
+### R does what you tell it {}
+
+Expect to make errors and don't worry when that happens.  You won't break anything. Healy [-@Healy:2019] offers this advice for three specific things to watch out for: 
+
+- Make sure parentheses are balanced---that every opening `(` has a corresponding closing `)`.  
+- Make sure you complete your expressions. If you see a `+` in the Console instead of the usual prompt `>`, that means that R thinks you haven't written a complete expression. You can hit `Esc` or `Ctrl C` to force your way back to the Console and try correcting the code.  
+- In ggplot specifically, as you will see, we create plots layer by layer, using a `+` character at the end of the line---not at the beginning of the next line. 
+
+For example, you would write this, 
+
+```r
+ggplot(data = mpg, aes(x = displ, y = hwy)) +
+    geom_point()
+```
+
+not this,  
+
+```r  
+# error caused by incorrectly placed +
+ggplot(data = mpg, aes(x = displ, y = hwy))  
+    + geom_point()
+```
+
+To conclude, let's make bar graph of the `titanic` data, 
+
+```{r fig.asp = 1/3}
+ggplot(data = titanic_tb, mapping = aes(x = sex, y = n, fill = fate)) +
+        geom_col() +
+        coord_flip()
+```
+
+
+> **Your turn.** As shown, color distinguishes those who survived from those who did not and bar length gives totals by sex. Make a small change so that color denotes sex and bar length gives totals of survived and perished. 
+
+
+
+### Keyboard shortcuts {}
+
+In Windows, 
+
+- `Ctrl L` clears the Console  
+- `Alt -` creates the assignment operator `<-`  
+- `Ctrl Enter` runs the selected line(s) of code in an R script 
+
+Feel free to take a break before starting the next tutorial. 
+
+
+ 
+    
+    
+    
+    
+
+
+
+
+## Tutorial: Graph basics {#graph-basics} 
+
+
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/cm201-01.png"), 
+        alt = 'logo', 
+        style = 'left:0px; padding:0px;', 
+        width = 400)
+```
+<small>
+<br>
+<i>Decline</i> by Randall Munroe (xkcd.com) is licensed under <a href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a>
+<br>
+</small>
+
+If the prerequisites have been met, the tutorial should take less than 50 minutes. 
+
+An introduction to ggplot2  adapted from Chapter 3  from [@Healy:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
+
+
+### Prerequisites {} 
+
+- We assume you have completed all of the [Getting started](#getting-started) instructions. 
+- Run `midfield_institute.Rproj` to start every work session 
+
+Packages 
+
+- If any of these packages have not yet been installed, they can be installed using these commands, 
+
+```r
+install.packages("tidyverse")
+install.packages("gapminder")
+devtools::install_github("kjhealy/socviz")
+```
+
+Use *File &gt; New File &gt; R Script* to create a new R script
+
+- Name the script `02-graph-basics.R`   
+- Save it in the `scripts` directory 
+
+Add a minimal header at the top of the script (if you wish) then use `library()`  to load the packages we will use. Loading all the libraries at the top of a script is conventional practice. 
+
+```{r}
+# workshop graph basics 
+# name 
+# date 
+
+library("tidyverse")
+library("gapminder")
+```
+
+
+Guidelines 
+
+- In this script type the lines of code in the tutorial below one line at a time.  
+- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
+- Confirm that your result matches the result in the tutorial.  
+- **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
+
+
+
+
+
+
+### Tidy data {}
+
+If the data set is "tidy", then every row is an observation and every column is a variable.  The `gapminder` data frame is tidy. We use `glimpse()` to get a look at the structure. 
+
+```{r}
+glimpse(gapminder)
+```
+
+And we can just type its name to see the first few rows, 
+
+```{r}
+gapminder
+```
+
+
+Read more about [tidy data](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) in [@Wickham+Grolemund:2017].  
+
+
+
+
+
+
+
+### Anatomy of a graph  
+
+`ggplot()` is a our basic plotting function. The `data = ...` argument assigns the data frame. 
+
+```{r}
+p <- ggplot(data = gapminder)
+```
+
+Next we use the mapping argument `mapping = aes(...)` to assign variables  (column names) from the data frame to specific aesthetic properties of the graph such as the x-coordinate, the y-coordinate color, fill, etc. 
+
+Here we will map the GDP per capita variable to `x` and the life expectancy variable to `y`. 
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
+```
+
+If we try to print the graph by typing the name of the graph object (everything in R is an object), we get an empty graph because we haven't told ggplot what sort of a graph we want. 
+
+```{r}
+p
+```
+
+Because the graph will be a scatterplot, we add the `geom_point()` layer. 
+
+```{r}
+p <- p +geom_point()
+
+p # display the graph
+```
+
+In ggplot2, "geoms" are geometric objects such as points, lines, bars, boxplots, contours, polygons, etc. You can browse the full list on the ggplot2 [geom reference page](https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms). 
+
+We could also have simply added the layer to the original object, 
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point()
+
+p # display the graph
+```
+
+Notice that the default axis labels are the variables names from the data frame. We can edit those with another layer 
+
+```{r}
+p <- p + labs(x = "GDP per capita", y = "Life expectancy (years)")
+
+p # display the graph
+```
+
+Or, with all layers shown in one code chunk, 
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point() +
+        labs(x = "GDP per capita", y = "Life expectancy (years)")
+
+p # display the graph
+```
+
+Summary. The basics steps for building up the layers of any graph consist of, 
+
+- assign the data frame 
+- map variables (columns names) to aesthetic properties  
+- choose geoms  
+- adjust scales, labels, etc. 
+
+For more information  
+
+- [aes()](https://ggplot2.tidyverse.org/reference/aes.html) help page 
+- [geom_point()](https://ggplot2.tidyverse.org/reference/geom_point.html) help page 
+- [geom_labs()](https://ggplot2.tidyverse.org/reference/labs.html) help page 
+
+
+
+
+
+
+
+
+### Layer: smooth fit
+
+Suppose you wanted a smooth fit curve, not necessarily linear. Add a  `geom_smooth()` layer. The name *loess* (pronounced like the proper name Lois) is a nonparametric curve-fitting method based on *local regression*. 
+
+```{r}
+p <- p + geom_smooth(method = "loess", se = FALSE)
+
+p # display the graph
+```
+
+The `se` argument controls whether or not the confidence interval is displayed. Setting `se = TRUE` yields, 
+
+```{r}
+p <- p + geom_smooth(method = "loess", se = TRUE)
+
+p # display the graph
+```
+
+For a linear-fit layer, we add a layer with `method` set to `lm` (short for linear model). The linear fit is not particularly good in this case, but now you know how to do one. 
+
+```{r}
+p <- p + geom_smooth(method = "lm", se = TRUE)
+
+p # display the graph
+```
+
+For more information  
+
+- [geom_smooth()](https://ggplot2.tidyverse.org/reference/geom_smooth.html) help page 
+
+
+
+
+
+
+
+### Layer: log scale
+
+```{r echo = FALSE}
+options(scipen = 999)
+```
+
+We have orders of magnitude differences in the GDP per capita variable. To confirm, we can `summarize()`  the `gdpPercap`  variable. The output shows that the minimum is `r round(min(gapminder[["gdpPercap"]]), 0)`, the median  `r round(median(gapminder[["gdpPercap"]]), 0)`, and the maximum  `r round(max(gapminder[["gdpPercap"]]), 0)`. 
+
+```{r}
+# extract one variable from the data frame 
+this_variable <- gapminder["gdpPercap"]
+
+# staistical summary of one variable 
+summary(this_variable)
+```
+
+The bracket notation I just used, `gapminder["gdpPercap"]`, is one way to extract a variable from a data frame. 
+
+In exploring a graph like this, it might be useful to add a layer that changes the horizontal scale to a log-base-10 scale. 
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point() +
+        scale_x_log10() 
+
+p # display the graph
+```
+
+The scales package allows us to change the GDP scale to dollars. Using the syntax `thepackage::thefunction` we can use the `scales::dollar` function without loading the scales package. 
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point() +
+        scale_x_log10(labels = scales::dollar)
+
+p # display the graph
+```
+
+In this case, a linear fit might work, 
+
+```{r}
+p <- p + geom_smooth(method = "lm", se = TRUE)
+
+p # display the graph
+```
+
+Update the axis labels, 
+
+```{r}
+p <- p + labs(x = "GDP per capita (log10 scale)", y = "Life expectancy (years)")
+
+p # display the graph
+```
+
+In summary, all the layers could have been be coded at once, for example, 
+
+```{r eval = FALSE}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point() +
+        geom_smooth(method = "lm", se = TRUE) +
+        scale_x_log10(labels = scales::dollar) +
+        labs(x = "GDP per capita (log10 scale)", y = "Life expectancy (years)")
+```
+
+With all the layers in one place, we can see that we've coded all the basic steps, that is, 
+
+- assign the data frame 
+- map variables (columns names) to aesthetic properties  
+- choose geoms 
+- adjust scales, labels, etc. 
+
+For more information  
+
+- [scale_x_log10()](https://ggplot2.tidyverse.org/reference/scale_continuous.html) help page 
+
+
+
+
+
+
+
+### Mapping aesthetics
+
+So far, we have mapped variables only to the x-coordinate and y-coordinate aesthetics. 
+
+If we map a variable to the color aesthetic, the data symbols are automatically assigned different colors and a legend is created. I this example, we map the `continent`  variable to color.  
+
+```{r}
+p <- ggplot(data = gapminder, 
+                mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+        geom_point() +
+        scale_x_log10(labels = scales::dollar) + 
+        labs(x = "GDP per capita", y = "Life expectancy (years)")
+
+p # print the graph
+```
+
+
+
+
+
+### Setting properties 
+
+Because the colors overprint, we might try making the data symbols slightly transparent. In this case, we are not mapping a property to a variable; instead, we want all data symbols to be less opaque. 
+
+ The `alpha` argument, with $0 \leq \alpha \leq 1$, sets the transparency level. Because this change applies to all data points equally, we assign it in the geom, not `aes()`. 
+
+```{r}
+p <- ggplot(data = gapminder, 
+                mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+        geom_point(alpha = 0.3) +
+        scale_x_log10(labels = scales::dollar) + 
+        labs(x = "GDP per capita", y = "Life expectancy (years)")
+
+p # print the graph
+```
+
+If we add a linear fit to these data, a fit for each continent is generated. For a thinner line, I've added a `size` argument to the geom.  
+
+```{r}
+p <- p + geom_smooth(method = "lm", se = FALSE, size = 0.5)
+
+p # print the graph
+```
+
+If we want all the data markers the same color but we want to change the color, we don't map it, we set it in the geom. 
+
+Here, I've omitted the aesthetic mapping to color and used a color assignment in the geom. 
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point(alpha = 0.3, color = "purple1") +
+        geom_smooth(method = "lm", se = FALSE, size = 0.5, color = "purple4") + 
+        scale_x_log10(labels = scales::dollar) + 
+        labs(x = "GDP per capita (log10 scale)", y = "Life expectancy (years)")
+
+p # print the graph
+```
+
+For more information 
+
+- [R color names](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) 
+
+
+
+
+
+
+
+### Layer: facets  
+
+In the earlier graph where we mapped continent to color, there was a lot of overprinting, making it difficult to compare the continents. 
+
+The `facet_wrap()` layer separates the data into different panels (or facets). Like the `aes()` mapping, `facet_wrap()` is applied to a variable (column name) in the data frame. 
+
+```{r}
+p <- p + facet_wrap(facets = vars(continent))
+
+p # print the graph
+```
+
+Comparisons are facilitated by having the facets appear in one column, by using the `ncols` argument of `facet_wrap()`. 
+
+```{r fig.asp = 2/1}
+p <- p + facet_wrap(facets = vars(continent), ncol = 1)
+
+p # print the graph
+```
+
+In a faceted display, all panels have identical scales (the default) to facilitate comparison. 
+
+Again, all the layers could have been be coded at once, for example, 
+
+```{r eval = FALSE}
+ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point(alpha = 0.3, color = "purple1") +
+        geom_smooth(method = "lm", se = FALSE, size = 0.5, color = "purple4") + 
+        facet_wrap(facets = vars(continent), ncol = 1) +
+        scale_x_log10(labels = scales::dollar) + 
+        labs(x = "GDP per capita (log10 scale)", y = "Life expectancy (years)") 
+```
+
+For more information  
+
+- [facet_wrap()](https://ggplot2.tidyverse.org/reference/facet_wrap.html) help page 
+
+
+
+
+
+
+
+
+### Ordering the panels
+
+The default ordering of the panels in this example is alphabetical. In most cases, ordering the panels by the data (often the mean of the median) improves the display. 
+
+Here we have two quantitative variables, but the one that is the more interesting is life expectancy. Our goal then is to order the `continent` variable by the median of the `lifeExp` variable in each panel.  
+
+To do that, we require continent to be a *factor*, a type of variable specialized for creating ordered levels of a category. Using `gimpse()` we see that continent is already a factor (`<fct>`). 
+
+```{r}
+glimpse(gapminder)
+```
+
+Therefore all we have to do is tell R that we want the levels of continent ordered by the median of life expectancy using the `fct)reorder()` function.  
+
+```{r}
+gapminder <- gapminder %>%
+        mutate(continent = fct_reorder(continent, lifeExp, median))
+```
+
+In doing so, I've overwritten the original gapminder dataset with my revised version. 
+
+We set the `as.table ` argument to false to place the panel with the highest life expectancy in the top position. 
+
+```{r fig.asp = 2/1}
+ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
+        geom_point(alpha = 0.3, color = "purple1") +
+        geom_smooth(method = "lm", se = FALSE, size = 0.5, color = "purple4") + 
+        facet_wrap(facets = vars(continent), ncol = 1, as.table = FALSE) + 
+        scale_x_log10(labels = scales::dollar) + 
+        labs(x = "GDP per capita (log10 scale)", y = "Life expectancy (years)") 
+```
+
+For more information  
+
+- [mutate()](https://dplyr.tidyverse.org/reference/mutate.html) help page 
+- [fct_reorder()](https://forcats.tidyverse.org/reference/fct_reorder.html) help page 
+
+
+
+
+
+
+
+
+### Beyond the basics
+
+Demonstrating how the basics can be built upon to create a complex data graphic. 
+
+To wrap up this introduction, I'll show you how we can use functions in various layers to show all the data in every panel; add a common overall loess smooth fit; and highlight the the continent data in each panel, making it easier to compare each continent to the global data. 
+
+Because life expectancy has generally increased over time, I'm going to restrict this final graph to 2007, the most recent year in this dataset. 
+
+Without further explanation, here's the code. 
+
+```{r fig.asp = 2/1, results = 'hide'}
+gapminder <- gapminder %>%
+        filter(year == 2007)
+
+ggplot(data = gapminder, mapping = aes(x  = gdpPercap / 1000, y = lifeExp)) +
+        geom_point(data = select(gapminder, -continent),
+                size  = 1.25,
+                alpha = 0.5, 
+                color = "#80cdc1") +
+        geom_smooth(data = select(gapminder, -continent),
+                method = "loess",
+                se    = FALSE,
+                size  = 0.7,
+                color = "#80cdc1") +
+        geom_point(mapping = aes(color = continent),
+                size  = 1.25,
+                color = "#01665e") +
+        facet_wrap(vars(continent),
+                ncol = 1,
+                as.table = FALSE) +
+        labs(x = "GDP per capita (thousands of dollars)",
+                y = "Life expectancy (years)",
+                title  = "Life expectancy by country, 2007",
+                caption = "Source: Gapminder") +
+        theme(legend.position = "none")
+```
+
+For more information  
+
+- [select()](https://dplyr.tidyverse.org/reference/select.html) help page 
+- [filter()](https://dplyr.tidyverse.org/reference/filter.html) help page 
+- [theme()](https://ggplot2.tidyverse.org/reference/index.html#section-themes) help page 
+- [ColorBrewer](http://colorbrewer2.org/) for color hex codes 
+
+
+
+
+
+
+
+### Resize and write to file 
+
+For consistent control over the size and aspect ratio of your publication-ready graph, you should always conclude your design by saving the image and sizing it at the same time. 
+
+Here, we save the figure to the `figures` directory we set up earlier. 
+
+```{r}
+ggsave(filename = "figures/02-graph-basics-gapminder.png", 
+        width  = 6.5,
+        height = 10.5,
+        units  = "in", 
+        dpi    = 300)
+```
+
+And the final figure looks like this: 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/02-graph-basics-gapminder.png"), 
+        alt   = "figures/02-graph-basics-gapminder", 
+        style = "display: block; margin-left: auto; margin-right: auto;",  
+        width = "500px")
+```
+
+For more information  
+
+- [ggsave()](https://ggplot2.tidyverse.org/reference/ggsave.html) help page 
+
+Feel free to take a break before starting the next tutorial. 
+
+
+
+
+
+
+
+
+
+
+
+
+## Tutorial: Data basics {#data-basics}  
+
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/sd011-14.png"), 
+               alt    = 'logo', 
+               style  = 'left:0px; padding:0px;', 
+               height = 200)
+htmltools::img(src = knitr::include_graphics("figures/sd011-14b.png"), 
+               alt    = 'logo', 
+               style  = 'left:0px; padding:0px;', 
+               height = 200)
+```
+
+
+If the prerequisites have been met, the tutorial should take less than 50 minutes. 
+
+
+
+
+
+
+
+
+
+## References {-}
+
+<div id="refs"></div>
