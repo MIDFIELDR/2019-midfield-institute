@@ -470,8 +470,7 @@ Packages
 
 ```r
 install.packages("tidyverse")
-install.packages("gapminder")
-devtools::install_github("kjhealy/socviz")
+install.packages("gapminder") 
 ```
 
 Use *File &gt; New File &gt; R Script* to create a new R script
