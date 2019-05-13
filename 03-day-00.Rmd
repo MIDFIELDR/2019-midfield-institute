@@ -1065,7 +1065,7 @@ Feel free to take a break before starting the next tutorial.
 > **Your turn.** Continue to practice with `mpg`.
 >
 - Write your graph to the `figures` directory with the name `02-graph-basics-mpg.png` 
-- Try a 6 in by 8 in figure size 
+- Try a 6 in by 6 in figure size 
 - The ggsave() code chunk should immediately follow the ggplot() code chunk of the graph you want to save. 
 > 
 > *Check your work:* Navigate to your `figures` folder. The new png file should be there. Open it to confirm it is the figure you expect. 
