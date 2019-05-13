@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-12">
+<meta name="date" content="2019-05-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -216,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Preworkshop</h1>
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 <p>Agenda [<a href="midfield-institute-2019.html#day0agenda">link</a>]</p>
-<p>This session consists of three tutorials, each designed to be completed by an R novice in less than 50 minutes. The timing has been student-tested, but of course your mileage may vary.</p>
+<p>This session consists of three tutorials designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary.</p>
 <p>The tutorials give the R novice a quick introduction to three essential elements of data science using R:</p>
 <ul>
 <li><a href="day-0.html#r-basics">R basics</a></li>
@@ -614,6 +614,17 @@ new_vector</code></pre>
 #&gt; 10 Afghanistan Asia       1997    41.8 22227415      635.
 #&gt; # ... with 1,694 more rows</code></pre>
 <p>Read more about <a href="https://r4ds.had.co.nz/tidy-data.html#tidy-data-1">tidy data</a> in <span class="citation">(Wickham and Grolemund, <a href="day-0.html#ref-Wickham+Grolemund:2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> The ggplot2 package includes a dataset called <code>mpg</code>.</p>
+<ul>
+<li>Use <code>glimpse()</code> to examine the data set.</li>
+<li>How many variables? How many observations?</li>
+<li>How many of the variables are numeric? How many are character type?</li>
+<li>Is the data set tidy?</li>
+</ul>
+<p><em>Check your work.</em> There are 234 observations and 11 variables.</p>
+</blockquote>
 </div>
 <div id="anatomy-of-a-graph" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Anatomy of a graph</h3>
@@ -624,31 +635,31 @@ new_vector</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp))</code></pre>
 <p>If we try to print the graph by typing the name of the graph object (everything in R is an object), we get an empty graph because we haven’t told ggplot what sort of a graph we want.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-31-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-32-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Because the graph will be a scatterplot, we add the <code>geom_point()</code> layer.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-32-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In ggplot2, “geoms” are geometric objects such as points, lines, bars, boxplots, contours, polygons, etc. You can browse the full list on the ggplot2 <a href="https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms">geom reference page</a>.</p>
 <p>We could also have simply added the layer to the original object,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Notice that the default axis labels are the variables names from the data frame. We can edit those with another layer</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Or, with all layers shown in one code chunk,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Summary. The basics steps for building up the layers of any graph consist of,</p>
 <ul>
 <li>assign the data frame</li>
@@ -664,6 +675,17 @@ p <span class="co"># display the graph</span></code></pre>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a> help page</li>
 <li><a href="https://ggplot2.tidyverse.org/reference/labs.html">geom_labs()</a> help page</li>
 </ul>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong></p>
+<ul>
+<li>In the console, type <code>? mpg</code> to see the data set help page. Skim the descriptions of the variables.<br />
+</li>
+<li>Create a scatterplot of highway miles per gallon as a function of engine displacement in liters.</li>
+</ul>
+<p><em>Check your work:</em></p>
+</blockquote>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-37-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-smooth-fit" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Layer: smooth fit</h3>
@@ -671,21 +693,30 @@ p <span class="co"># display the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The <code>se</code> argument controls whether or not the confidence interval is displayed. Setting <code>se = TRUE</code> yields,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-37-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-39-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For a linear-fit layer, we add a layer with <code>method</code> set to <code>lm</code> (short for linear model). The linear fit is not particularly good in this case, but now you know how to do one.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-40-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a> help page</li>
 </ul>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
+<ul>
+<li>Add a loess curve fit with a confidence interval.</li>
+</ul>
+<p><em>Check your work:</em></p>
+</blockquote>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-log-scale" class="section level3">
 <h3><span class="header-section-number">3.2.5</span> Layer: log scale</h3>
@@ -709,24 +740,24 @@ this_variable &lt;-<span class="st"> </span>gapminder[<span class="st">&quot;gdp
 <span class="st">        </span><span class="kw">scale_x_log10</span>() 
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-44-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The scales package allows us to change the GDP scale to dollars. Using the syntax <code>thepackage::thefunction</code> we can use the <code>scales::dollar</code> function without loading the scales package.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-42-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-45-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In this case, a linear fit might work,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-43-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-46-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Update the axis labels,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-44-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In summary, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
@@ -745,6 +776,15 @@ p <span class="co"># display the graph</span></code></pre>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10()</a> help page</li>
 </ul>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
+<ul>
+<li>Edit the axis labels to include units.</li>
+</ul>
+<p><em>Check your work:</em></p>
+</blockquote>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-49-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mapping-aesthetics" class="section level3">
 <h3><span class="header-section-number">3.2.6</span> Mapping aesthetics</h3>
@@ -757,7 +797,16 @@ p <span class="co"># display the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-46-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
+<ul>
+<li>Map vehicle class to color</li>
+</ul>
+<p><em>Check your work:</em></p>
+</blockquote>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-51-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="setting-properties" class="section level3">
 <h3><span class="header-section-number">3.2.7</span> Setting properties</h3>
@@ -770,12 +819,12 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-52-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we add a linear fit to these data, a fit for each continent is generated. For a thinner line, I’ve added a <code>size</code> argument to the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-48-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-53-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we want all the data markers the same color but we want to change the color, we don’t map it, we set it in the geom.</p>
 <p>Here, I’ve omitted the aesthetic mapping to color and used a color assignment in the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -785,7 +834,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-49-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-54-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R color names</a></li>
@@ -798,12 +847,12 @@ p <span class="co"># print the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent))
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-55-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Comparisons are facilitated by having the facets appear in one column, by using the <code>ncols</code> argument of <code>facet_wrap()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-51-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-56-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In a faceted display, all panels have identical scales (the default) to facilitate comparison.</p>
 <p>Again, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -816,6 +865,18 @@ p <span class="co"># print the graph</span></code></pre>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a> help page</li>
 </ul>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
+<ul>
+<li>Map drive type to color</li>
+<li>Facet on vehicle class</li>
+<li>Add some transparency to the data symbols</li>
+<li>Omit the smooth fit</li>
+</ul>
+<p><em>Check your work:</em></p>
+</blockquote>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-58-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ordering-the-panels" class="section level3">
 <h3><span class="header-section-number">3.2.9</span> Ordering the panels</h3>
@@ -842,12 +903,22 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">as.table =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>) </code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-55-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-61-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a> help page</li>
 <li><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a> help page</li>
 </ul>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
+<ul>
+<li>Convert <code>class</code> to a factor ordered by the mean highway mileage</li>
+<li>Same graph as before, but order the panels by mean fuel consumption</li>
+</ul>
+<p><em>Check your work:</em></p>
+</blockquote>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-62-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="beyond-the-basics" class="section level3">
 <h3><span class="header-section-number">3.2.10</span> Beyond the basics</h3>
@@ -879,7 +950,7 @@ p <span class="co"># print the graph</span></code></pre>
                 <span class="dt">title  =</span> <span class="st">&quot;Life expectancy by country, 2007&quot;</span>,
                 <span class="dt">caption =</span> <span class="st">&quot;Source: Gapminder&quot;</span>) <span class="op">+</span>
 <span class="st">        </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-56-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-63-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a> help page</li>
@@ -904,6 +975,15 @@ p <span class="co"># print the graph</span></code></pre>
 <li><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a> help page</li>
 </ul>
 <p>Feel free to take a break before starting the next tutorial.</p>
+<blockquote>
+<p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
+<ul>
+<li>Write your graph to the <code>figures</code> directory with the name <code>02-graph-basics-mpg.png</code></li>
+<li>Try a 6 in by 8 in figure size</li>
+<li>The ggsave() code chunk should immediately follow the ggplot() code chunk of the graph you want to save.</li>
+</ul>
+<p><em>Check your work:</em> Navigate to your <code>figures</code> folder. The new png file should be there. Open it to confirm it is the figure you expect.</p>
+</blockquote>
 </div>
 </div>
 <div id="data-basics" class="section level2">

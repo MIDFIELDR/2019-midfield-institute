@@ -16,7 +16,7 @@ opts_chunk$set(fig.width = 6,
 
 Agenda [[link](#day0agenda)]
 
-This session consists of three tutorials, each designed to be completed by an R novice in less than 50 minutes. The timing has been student-tested, but of course your mileage may vary. 
+This session consists of three tutorials designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary. 
 
 The tutorials give the R novice a quick introduction to three essential elements of data science using R:
 
@@ -519,7 +519,24 @@ gapminder
 
 Read more about [tidy data](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) in [@Wickham+Grolemund:2017].  
 
+<br>   
 
+> **Your turn.** The ggplot2 package includes a dataset called `mpg`. 
+>
+- Use `glimpse()` to examine the data set. 
+- How many variables? How many observations? 
+- How many of the variables are numeric? How many are character type? 
+- Is the data set tidy? 
+> 
+> *Check your work.* There are `r nrow(mpg)` observations and `r ncol(mpg)` variables. 
+
+```{r include = FALSE}
+glimpse(mpg)
+n_var      <- ncol(mpg)
+n_obs      <- nrow(mpg)
+n_char_var <- ncol(select_if(mpg, is.character))
+n_num_var  <- ncol(select_if(mpg, is.numeric))
+```
 
 
 
@@ -597,6 +614,19 @@ For more information
 - [geom_point()](https://ggplot2.tidyverse.org/reference/geom_point.html) help page 
 - [geom_labs()](https://ggplot2.tidyverse.org/reference/labs.html) help page 
 
+<br>   
+
+> **Your turn.** 
+> 
+- In the console, type `? mpg` to see the data set help page. Skim the descriptions of the variables.  
+- Create a scatterplot of highway miles per gallon as a function of engine displacement in liters. 
+> 
+> *Check your work:*
+
+```{r echo = FALSE}
+ggplot(mpg, aes(displ, hwy)) +
+    geom_point()
+```
 
 
 
@@ -634,8 +664,19 @@ For more information
 
 - [geom_smooth()](https://ggplot2.tidyverse.org/reference/geom_smooth.html) help page 
 
+<br>   
 
+> **Your turn.** Continue to practice with `mpg`.
+>
+- Add a loess curve fit with a confidence interval. 
+> 
+> *Check your work:*
 
+```{r echo = FALSE}
+ggplot(mpg, aes(displ, hwy)) +
+    geom_point() +
+    geom_smooth(method = "loess", se = TRUE)
+```
 
 
 
@@ -716,6 +757,20 @@ For more information
 - [scale_x_log10()](https://ggplot2.tidyverse.org/reference/scale_continuous.html) help page 
 
 
+<br>   
+
+> **Your turn.** Continue to practice with `mpg`.
+>
+- Edit the axis labels to include units.  
+> 
+> *Check your work:*
+
+```{r echo = FALSE}
+ggplot(mpg, aes(displ, hwy)) +
+    geom_point() +
+    geom_smooth(method = "loess", se = TRUE) +
+    labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
+```
 
 
 
@@ -738,6 +793,20 @@ p # print the graph
 ```
 
 
+<br>   
+
+> **Your turn.** Continue to practice with `mpg`.
+>
+- Map vehicle class to color
+> 
+> *Check your work:*
+
+```{r echo = FALSE}
+ggplot(mpg, aes(displ, hwy, color = class)) +
+    geom_point() +
+    geom_smooth(method = "loess", se = FALSE) +
+    labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
+```
 
 
 
@@ -828,6 +897,23 @@ For more information
 
 
 
+<br>   
+
+> **Your turn.** Continue to practice with `mpg`. 
+>
+- Map drive type to color 
+- Facet on vehicle class 
+- Add some transparency to the data symbols 
+- Omit the smooth fit 
+> 
+> *Check your work:*
+
+```{r echo = FALSE, fig.asp = 1, out.width = "80%"}
+ggplot(mpg, aes(displ, hwy, color = drv)) +
+    geom_point(alpha = 0.5) +
+    facet_wrap(vars(class), as.table = FALSE) +
+    labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
+```
 
 
 
@@ -870,6 +956,26 @@ For more information
 - [mutate()](https://dplyr.tidyverse.org/reference/mutate.html) help page 
 - [fct_reorder()](https://forcats.tidyverse.org/reference/fct_reorder.html) help page 
 
+
+<br>   
+
+> **Your turn.** Continue to practice with `mpg`. 
+>
+- Convert `class` to a factor ordered by the mean highway mileage 
+- Same graph as before, but order the panels by mean fuel consumption  
+> 
+> *Check your work:*
+
+```{r echo = FALSE, fig.asp = 1, out.width = "80%"}
+mpg <- mpg %>% 
+    mutate(class = fct_reorder(class, hwy, mean))
+
+p <- ggplot(mpg, aes(displ, hwy, color = drv)) +
+    geom_point(alpha = 0.5) +
+    facet_wrap(vars(class), as.table = FALSE) +
+    labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
+p
+```
 
 
 
@@ -956,9 +1062,22 @@ For more information
 
 Feel free to take a break before starting the next tutorial. 
 
+> **Your turn.** Continue to practice with `mpg`.
+>
+- Write your graph to the `figures` directory with the name `02-graph-basics-mpg.png` 
+- Try a 6 in by 8 in figure size 
+- The ggsave() code chunk should immediately follow the ggplot() code chunk of the graph you want to save. 
+> 
+> *Check your work:* Navigate to your `figures` folder. The new png file should be there. Open it to confirm it is the figure you expect. 
 
-
-
+```{r echo = FALSE}
+ggsave(filename = "figures/02-graph-basics-mpg.png", 
+       plot = p, 
+        width  = 6,
+        height = 6,
+        units  = "in", 
+        dpi    = 300)
+```
 
 
 
