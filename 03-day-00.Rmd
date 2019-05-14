@@ -1,4 +1,4 @@
-# Introduction to R {#day-0} 
+# MIDFIELD Pre-Institute Workshop {#day-0} 
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
