@@ -29,7 +29,7 @@ The tutorials are designed to be completed by an R novice in less than 50 minute
 
 
 
-## Tutorial: R basics {#r-basics} 
+## R basics {#r-basics} 
 
 ```{r echo = FALSE}
 opts_chunk$set(echo = TRUE)
@@ -438,7 +438,7 @@ Feel free to take a break before starting the next tutorial.
 
 
 
-## Tutorial: Graph basics {#graph-basics} 
+## Graph basics {#graph-basics} 
 
 
 ```{r echo = FALSE}
@@ -1090,7 +1090,7 @@ Feel free to take a break before starting the next tutorial.
 
 
 
-## Tutorial: Data basics {#data-basics}  
+## Data basics {#data-basics}  
 
 ```{r echo = FALSE}
 opts_chunk$set(echo = TRUE)
