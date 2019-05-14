@@ -431,8 +431,8 @@ Feel free to take a break before starting the next tutorial.
 
  
     
-    
-    
+<br>
+[&#9650; top of page](#day-0)   
     
 
 
@@ -1086,7 +1086,9 @@ ggsave(filename = "figures/02-graph-basics-mpg.png",
 Feel free to take a break before starting the next tutorial. 
 
 
-
+    
+<br>
+[&#9650; top of page](#day-0) 
 
 
 
@@ -1110,9 +1112,10 @@ If the prerequisites have been met, the tutorial should take less than 50 minute
 
 
 
+    
 
-
-
+<br>
+[&#9650; top of page](#day-0)
 
 
 ## References {-}
