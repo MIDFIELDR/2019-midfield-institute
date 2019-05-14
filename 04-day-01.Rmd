@@ -1,4 +1,4 @@
-# Day 1 materials {#day-1} 
+# Monday materials {#day-1} 
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
@@ -16,6 +16,6 @@ Agenda [[link](#day1agenda)]
 - Run `midfield_institute.Rproj` to start every work session 
 
 
-## References {}
+## References {-}
 
 <div id="refs"></div>

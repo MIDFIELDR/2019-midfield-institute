@@ -116,17 +116,28 @@ kable(agenda_day0)
 ```{r}
 agenda_day1 <- build_frame(
         "Time", "Activities" |
-        "8:00-9:00", "*Breakfast.* Provided in the workshop room." |
+        "8:00-9:00", "*Breakfast.* Provided in the workshop room." | 
+                
         "9:00--10:00", "*Introductions.* Introduce presenters, participants, objectives, MIDFIELD, and persistence metrics we have found insightful." |
+                
           "", "Break" |
+                
         "10:15--12:15", "*Guided practice.* Self-paced tutorials using midfieldr and midfielddata." |
+                
         "12:15--1:15", "*Lunch.* Provided in the workshop room."  |
-        "1:15--3:15", "*Self-directed practice.* Review the variables in midfielddata. Define a problem involving the data that interests you. Find a collaborator and begin exploring the problem." |
-          "", "Break" |
-        "3:30--4:30", "*Common pitfalls.* Examples of things to look out for and consider when exploring research questions. Lessons learned." |
+                
+        "1:15--2:15", "*Refining your analysis.* Examples of things to look out for and consider when exploring research questions. Lessons learned." |
+                
+        "", "Break" |
+                
+        "2:30--4:30", "*Self-directed practice.* Review the variables in midfielddata. Define a problem involving the data that interests you. Find a collaborator and begin exploring the problem." |
+                
         "4:30--4:45", "*Conclusion.* Reflection and discussion" |
+                
           "", "Break" |
+                
           "5:00--7:00", "*Reception.* Purdue Union, Anniversary Drawing Room" |
+                
           "7:00", "*Adjourn.* Make your own dinner plans."
 )
 kable(agenda_day1)
@@ -153,7 +164,7 @@ kable(agenda_day2)
 ```
 
 
-## References {}
+## References {-}
 
 <div id="refs"></div>
 

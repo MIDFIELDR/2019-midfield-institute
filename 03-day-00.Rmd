@@ -1,4 +1,4 @@
-# Preworkshop {#day-0} 
+# Sunday materials {#day-0} 
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
@@ -797,14 +797,15 @@ p # print the graph
 
 > **Your turn.** Continue to practice with `mpg`.
 >
-- Map vehicle class to color
+- Map vehicle class to color 
+- Change the curve fit to linear 
 > 
 > *Check your work:*
 
 ```{r echo = FALSE}
 ggplot(mpg, aes(displ, hwy, color = class)) +
     geom_point() +
-    geom_smooth(method = "loess", se = FALSE) +
+    geom_smooth(method = "lm", se = FALSE) +
     labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
 ```
 
@@ -991,7 +992,7 @@ To wrap up this introduction, I'll show you how we can use functions in various 
 
 Because life expectancy has generally increased over time, I'm going to restrict this final graph to 2007, the most recent year in this dataset. 
 
-Without further explanation, here's the code. 
+Typing this code in your script is optional. Without further explanation, here's the code. 
 
 ```{r fig.asp = 2/1, results = 'hide'}
 gapminder <- gapminder %>%
