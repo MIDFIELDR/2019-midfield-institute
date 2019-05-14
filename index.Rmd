@@ -12,7 +12,7 @@ description: "A public site for workshops for access to MIDFIELD"
 nocite: | 
 ---
 
-# MIDFIELD Workshops {- #midfield-workshops}
+# MIDFIELD Workshops {#midfield-workshops}
 
 ```{r echo = FALSE}
 # create a bib database for R packages
@@ -40,7 +40,7 @@ suppressPackageStartupMessages(library("wrapr"))
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using MIDFIELD data  [@2016ohlandlong]. The software environment is R [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
 
-## What is MIDFIELD? {-}
+## What is MIDFIELD? {}
 
 **MIDFIELD** (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
 
@@ -48,7 +48,7 @@ This site provides access to workshop materials for studying how undergraduate s
 
 
 
-## What is midfieldr? {-}
+## What is midfieldr? {}
 
 Analytical tools for research in student pathways are generally scarce. The R package **midfieldr** provides an entry to this type of intersectional research for anyone willing to develop basic proficiency in R. 
 
@@ -64,7 +64,7 @@ Analytical tools for research in student pathways are generally scarce. The R pa
 
 
 
-## Why R? {-}
+## Why R? {}
 
 ```{r eval = FALSE}
 # if internet available, find and save current number of R packages
@@ -101,7 +101,7 @@ RStudio, an integrated development environment (IDE) for R, includes a console, 
 [[For more information about R]](https://www.r-project.org/)     
 
 
-## Why R graphics? {-}
+## Why R graphics? {}
 
 Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in software like Microsoft Excel and PowerPoint creates the **illusion** of flexibility. ... So marvelously malleable are these graphical effects---but for whom and to what end? Paradoxically, then, even as the technology for visualizing data has become more sophisticated, it does not necessarily engender rhetorically sensitive design."
 
@@ -114,7 +114,7 @@ The graphics tools in R provide the means to control every pixel in the service 
 
 
 
-## Publications {-} 
+## Publications {} 
 
 The power of data visualization is discovering the stories in the data. As John Tukey [-@Tukey:1977] put it, "The greatest value of a picture is when it forces us to notice what we never expected to see." 
 
@@ -131,7 +131,7 @@ The MIDFIELD team has been using R to explore and present the stories in the MID
 
 
 
-## Facilitators {-}
+## Facilitators {}
 
 **Matthew Ohland** is the MIDFIELD Director and Principal Investigator. He is Professor and Associate Head of Engineering Education at Purdue University.
 
