@@ -39,9 +39,9 @@ htmltools::img(src = knitr::include_graphics("figures/logo-R.png"),
         height = "100px")
 ```
 
-If the prerequisites have been met, the tutorial should take less than 50 minutes. 
-
 An introduction to R adapted from [@Healy:2019:Ch.2] with extra material from [@Matloff:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
+
+If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
 
 ### Prerequisites {} 
@@ -454,9 +454,9 @@ htmltools::img(src = knitr::include_graphics("figures/cm201-01.png"),
 <br>
 </small>
 
-If the prerequisites have been met, the tutorial should take less than 50 minutes. 
-
 An introduction to ggplot2  adapted from Chapter 3  from [@Healy:2019]. If you already have R experience, you might still want to browse this section in case you find something new. 
+
+If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
 
 ### Prerequisites {} 
@@ -1107,7 +1107,7 @@ htmltools::img(src = knitr::include_graphics("figures/sd011-14b.png"),
 ```
 
 
-If the prerequisites have been met, the tutorial should take less than 50 minutes. 
+If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
 
 
