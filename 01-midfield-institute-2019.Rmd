@@ -99,8 +99,8 @@ agenda_day0 <- build_frame(
           "5:30--6:00 pm"  , "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." | 
           "6:00"           , "Pizza should arrive" |
           "6:00--6:50"     , "[*R basics.*](#r-basics) The RStudio environment and R objects, functions, and scripts" |
-          "7:00--7:50"     , "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
-          "8:00--8:50"     , "*Data basics.* Data import, data structure, and data transformation. Writing data to file." |
+          "7:00--7:50"     , "[*Graph basics.*](#graph-basics) Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
+          "8:00--8:50"     , "[*Data basics.*](#data-basics) Data import, data structure, and data transformation. Writing data to file." |
           "9:00"           , "*Adjourn*"
 )
 kable(agenda_day0)
