@@ -77,39 +77,35 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 
-## Agendas {} 
+
 
 ```{r echo = FALSE}
 opts_chunk$set(echo = FALSE)
 ```
 
-### Sunday {- #day0agenda}
+## Sunday agenda {#day0agenda}
 
 2019-06-02
 
-**Optional.** This is an optional session designed for R novices or for anyone whose R skills are rusty. 
-
-- We cover the basics of data carpentry using the tidyverse packages and data graphics using ggplot2. 
-- Everyone is welcome to attend all or part of this session. 
-- To make the best use of our time, please follow the [Getting started](#getting-started) instructions before arriving.  If you have any difficulty with the installation, we can help you when you arrive. 
-- We provide pizza (scheduled to arrive at 6 pm).
+This is an **optional session** designed for R novices.
 
 <br>
 
 ```{r}
 agenda_day0 <- build_frame(
         "Time", "Activities" |
-          "4:30--5:30 pm", "*Optional.* Time to help anyone needing assistance with the software installation." |
-          "5:30--6:00 pm", "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." |
-          "6:00--6:50", "*R basics.* The RStudio environment and R objects, functions, and scripts" |
-          "7:00--7:50", "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
-          "8:00--8:50", "*Data basics.* Data import, data structure, and data transformation. Writing data to file." |
-          "9:00", "*Adjourn*"
+          "4:30--5:30 pm"  , "*Optional.* Time to help anyone needing assistance with the software installation." |
+          "5:30--6:00 pm"  , "*Introductions.* Introduce presenters, participants, and learning objectives. Verify that software is installed." | 
+          "6:00"           , "Pizza should arrive" |
+          "6:00--6:50"     , "[*R basics.*](#r-basics) The RStudio environment and R objects, functions, and scripts" |
+          "7:00--7:50"     , "*Graph basics.* Meet ggplot, geom layers, aesthetic mappings, and facets. Writing graphs to file." |
+          "8:00--8:50"     , "*Data basics.* Data import, data structure, and data transformation. Writing data to file." |
+          "9:00"           , "*Adjourn*"
 )
 kable(agenda_day0)
 ```
 
-### Monday {- #day1agenda} 
+## Monday agenda {#day1agenda} 
 
 2019-06-03
 
@@ -143,7 +139,7 @@ agenda_day1 <- build_frame(
 kable(agenda_day1)
 ```
 
-### Tuesday   {- #day2agenda}
+## Tuesday agenda   {#day2agenda}
 
 2019-06-04
 
@@ -162,12 +158,5 @@ agenda_day2 <- build_frame(
 )
 kable(agenda_day2)
 ```
-
-
-## References {-}
-
-<div id="refs"></div>
-
-
 
 

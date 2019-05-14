@@ -16,7 +16,7 @@ opts_chunk$set(fig.width = 6,
 
 Agenda [[link](#day0agenda)]  
 
-**Optional.** This is an optional session designed for R novices or for anyone whose R skills are rusty. 
+This is an **optional session** designed for R novices. If you cannot attend this session on Sunday, you are welcome to work these tutorials on your own before the Monday/Tuesday sessions. 
 
 The tutorials give the R novice a quick introduction to three essential elements of data science using R:
 
@@ -24,7 +24,7 @@ The tutorials give the R novice a quick introduction to three essential elements
 - [Graph basics](#graph-basics) 
 - [Data basics](#data-basics) 
 
-The tutorialsare designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary. 
+The tutorials are designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary. 
 
 
 

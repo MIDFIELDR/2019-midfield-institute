@@ -1,4 +1,4 @@
-# Monday materials {#day-1} 
+# MIDFIELD Institute Day 1 {#day-1} 
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
@@ -10,7 +10,7 @@ opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp =
 
 Agenda [[link](#day1agenda)]
 
-### Prerequisites {} 
+## Prerequisites {-} 
 
 - We assume you have completed all of the [Getting started](#getting-started) instructions. 
 - Run `midfield_institute.Rproj` to start every work session 
@@ -19,3 +19,5 @@ Agenda [[link](#day1agenda)]
 ## References {-}
 
 <div id="refs"></div>
+
+

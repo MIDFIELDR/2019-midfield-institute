@@ -164,3 +164,9 @@ knitr::include_graphics("images/NSF_4-Color_bitmap_Logo.png"),
                width = 90)
 ```
 
+
+```{r}
+# delete html byproducts
+unlink("./*.html")
+```
+
