@@ -73,7 +73,8 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 
-
+<br>
+[&#9650; top of page](#day-0)
 
 
 
@@ -104,6 +105,11 @@ agenda_day0 <- build_frame(
 )
 kable(agenda_day0)
 ```
+
+
+<br>
+[&#9650; top of page](#day-0)
+
 
 ## Monday agenda {#day1agenda} 
 
@@ -139,6 +145,11 @@ agenda_day1 <- build_frame(
 kable(agenda_day1)
 ```
 
+
+<br>
+[&#9650; top of page](#day-0)
+
+
 ## Tuesday agenda   {#day2agenda}
 
 2019-06-04
@@ -160,3 +171,5 @@ kable(agenda_day2)
 ```
 
 
+<br>
+[&#9650; top of page](#day-0)
