@@ -90,13 +90,13 @@ Next,
 - Repeat to install the package **devtools** 
 
 
-Alternatively (for future reference), if you prefer using thea command-line, you can install a CRAN package (or a vector of packages) by typing  `install.packages()` in the Console, for example, 
+Alternatively (for future reference), if you prefer using the command-line, you can install a CRAN package (or a vector of packages) by typing  `install.packages()` in the Console, for example, 
 
 ```r
 install.packages(pkgs = c("tidyverse", "devtools"))
 ```
 
-Some packages are archived in a repoistory other than CRAN, GitHub being a current favorite. For such packages, we use `install_github()` from the devtools package in this form, 
+Some packages are archived in a repository other than CRAN, GitHub being a current favorite. For such packages, we use `install_github()` from the devtools package in this form, 
 
 
 ```r
@@ -144,10 +144,22 @@ install.packages(pkgs = "midfielddata",
         type  = "source")
 ```
 
+In the Console, load the package by typing, 
+
+```r
+library("midfielddata")
+```
+
 If that installation was successful, only then can you install **midfieldr** from its GitHub repo, 
 
 ```r
 devtools::install_github(repo = "MIDFIELDR/midfieldr") 
+```
+
+In the Console, load the package by typing, 
+
+```r
+library("midfield")
 ```
 
 If the installation was successful, at the prompt you can type 

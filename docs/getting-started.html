@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-14">
+<meta name="date" content="2019-05-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -154,7 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="day-0.html"><a href="day-0.html"><i class="fa fa-check"></i><b>4</b> MIDFIELD Pre-Institute Workshop</a><ul>
-<li class="chapter" data-level="4.1" data-path="day-0.html"><a href="day-0.html#r-basics"><i class="fa fa-check"></i><b>4.1</b> Tutorial: R basics</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-0.html"><a href="day-0.html#r-basics"><i class="fa fa-check"></i><b>4.1</b> R basics</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="day-0.html"><a href="day-0.html#prerequisites"><i class="fa fa-check"></i><b>4.1.1</b> Prerequisites</a></li>
 <li class="chapter" data-level="4.1.2" data-path="day-0.html"><a href="day-0.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>4.1.2</b> Everything in R has a name</a></li>
 <li class="chapter" data-level="4.1.3" data-path="day-0.html"><a href="day-0.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>4.1.3</b> Everything in R is an object</a></li>
@@ -165,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.8" data-path="day-0.html"><a href="day-0.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>4.1.8</b> R does what you tell it</a></li>
 <li class="chapter" data-level="4.1.9" data-path="day-0.html"><a href="day-0.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>4.1.9</b> Keyboard shortcuts</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="day-0.html"><a href="day-0.html#graph-basics"><i class="fa fa-check"></i><b>4.2</b> Tutorial: Graph basics</a><ul>
+<li class="chapter" data-level="4.2" data-path="day-0.html"><a href="day-0.html#graph-basics"><i class="fa fa-check"></i><b>4.2</b> Graph basics</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="day-0.html"><a href="day-0.html#prerequisites-1"><i class="fa fa-check"></i><b>4.2.1</b> Prerequisites</a></li>
 <li class="chapter" data-level="4.2.2" data-path="day-0.html"><a href="day-0.html#tidy-data"><i class="fa fa-check"></i><b>4.2.2</b> Tidy data</a></li>
 <li class="chapter" data-level="4.2.3" data-path="day-0.html"><a href="day-0.html#anatomy-of-a-graph"><i class="fa fa-check"></i><b>4.2.3</b> Anatomy of a graph</a></li>
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.10" data-path="day-0.html"><a href="day-0.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.2.10</b> Beyond the basics</a></li>
 <li class="chapter" data-level="4.2.11" data-path="day-0.html"><a href="day-0.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>4.2.11</b> Resize and write to file</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Tutorial: Data basics</a></li>
+<li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Data basics</a></li>
 <li class="chapter" data-level="" data-path="day-0.html"><a href="day-0.html#references-1"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>5</b> MIDFIELD Institute Day 1</a><ul>
@@ -261,9 +261,9 @@ Next,</p>
 <li>Click the <em>Install</em> button</li>
 <li>Repeat to install the package <strong>devtools</strong></li>
 </ul>
-<p>Alternatively (for future reference), if you prefer using thea command-line, you can install a CRAN package (or a vector of packages) by typing <code>install.packages()</code> in the Console, for example,</p>
+<p>Alternatively (for future reference), if you prefer using the command-line, you can install a CRAN package (or a vector of packages) by typing <code>install.packages()</code> in the Console, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="dt">pkgs =</span> <span class="kw">c</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;devtools&quot;</span>))</code></pre>
-<p>Some packages are archived in a repoistory other than CRAN, GitHub being a current favorite. For such packages, we use <code>install_github()</code> from the devtools package in this form,</p>
+<p>Some packages are archived in a repository other than CRAN, GitHub being a current favorite. For such packages, we use <code>install_github()</code> from the devtools package in this form,</p>
 <pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="dt">repo =</span> <span class="st">&quot;user_name/repo_name&quot;</span>) </code></pre>
 </div>
 <div id="install-midfieldr" class="section level2">
@@ -278,8 +278,12 @@ At the prompt, type a line of code and press <em>Enter</em> from your keyboard. 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="dt">pkgs =</span> <span class="st">&quot;midfielddata&quot;</span>, 
         <span class="dt">repos =</span> <span class="st">&quot;https://MIDFIELDR.github.io/drat/&quot;</span>, 
         <span class="dt">type  =</span> <span class="st">&quot;source&quot;</span>)</code></pre>
+<p>In the Console, load the package by typing,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;midfielddata&quot;</span>)</code></pre>
 <p>If that installation was successful, only then can you install <strong>midfieldr</strong> from its GitHub repo,</p>
 <pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="dt">repo =</span> <span class="st">&quot;MIDFIELDR/midfieldr&quot;</span>) </code></pre>
+<p>In the Console, load the package by typing,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;midfield&quot;</span>)</code></pre>
 <p>If the installation was successful, at the prompt you can type</p>
 <pre class="sourceCode r"><code class="sourceCode r">? midfieldr</code></pre>
 <p>and see the <strong>midfieldr</strong> help page in the RStudio Help pane.</p>
