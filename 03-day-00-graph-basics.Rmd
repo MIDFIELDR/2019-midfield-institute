@@ -654,8 +654,3 @@ ggsave(filename = "figures/02-graph-basics-mpg.png",
         units  = "in", 
         dpi    = 300)
 ```
-
-
-
-<br>
-Feel free to take a break before starting the next tutorial. 
