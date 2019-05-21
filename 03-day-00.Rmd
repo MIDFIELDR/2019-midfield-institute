@@ -1109,7 +1109,6 @@ Feel free to take a break before starting the next tutorial.
 
 If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
-<<<<<<< HEAD
 Preparing data for graphs starts with four basic skills
 
 ```{r echo = FALSE}
@@ -1230,8 +1229,6 @@ Data in base R and in R packages are automatically loaded
 - Loading a package with `library()` loads all the data sets in the package  
 - All other data files have to be read or web-scraped  explicitly 
   
-=======
->>>>>>> cc8bf46820049660c011cf661d0073e748e111f6
 
 
 
