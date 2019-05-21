@@ -179,8 +179,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.11" data-path="day-0.html"><a href="day-0.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>4.2.11</b> Resize and write to file</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Data basics</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#data-online"><i class="fa fa-check"></i><b>4.3.1</b> Data online</a></li>
-<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#data-in-r"><i class="fa fa-check"></i><b>4.3.2</b> Data in R</a></li>
+<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#data-sources"><i class="fa fa-check"></i><b>4.3.1</b> Data sources</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#obtain-raw-data"><i class="fa fa-check"></i><b>4.3.2</b> Obtain raw data</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#read-data-into-r"><i class="fa fa-check"></i><b>4.3.3</b> Read data into R</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#identify-the-structure"><i class="fa fa-check"></i><b>4.3.4</b> Identify the structure</a></li>
+<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#reshape-data"><i class="fa fa-check"></i><b>4.3.5</b> Reshape data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="day-0.html"><a href="day-0.html#references-1"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
@@ -989,12 +992,11 @@ p <span class="co"># print the graph</span></code></pre>
 </blockquote>
 <p><br>
 Feel free to take a break before starting the next tutorial.</p>
-<p><br>
-<a href="day-0.html#day-0">▲ top of page</a></p>
 </div>
 </div>
 <div id="data-basics" class="section level2">
 <h2><span class="header-section-number">4.3</span> Data basics</h2>
+<!-- Use  knitr:: child = to include as a section in a chapter-->
 <p>If the prerequisites have been met, the tutorial should take no longer than 50 minutes.</p>
 <p>Preparing data for graphs starts with four basic skills</p>
 <table>
@@ -1017,9 +1019,9 @@ Feel free to take a break before starting the next tutorial.</p>
 </tr>
 </tbody>
 </table>
-<div id="data-online" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Data online</h3>
-<p>While we won’t be using external data sources like these in today’s work, we thought you might appreciate having a glimpse of what is available. Here is a small sample of online, open-data sources:</p>
+<div id="data-sources" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Data sources</h3>
+<p><strong>Online, open-source data.</strong> While we won’t be using external data sources like these in today’s work, we thought you might appreciate having a glimpse of what is available. Here is a small sample of online, open-data sources:</p>
 <ul>
 <li><a href="https://www.cdc.gov/datastatistics/index.html">Center for Disease Control</a><br />
 </li>
@@ -1043,11 +1045,8 @@ Feel free to take a break before starting the next tutorial.</p>
 </li>
 <li><a href="https://data.gov.uk/">Data.gov.uk</a> UK government open data</li>
 </ul>
-</div>
-<div id="data-in-r" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Data in R</h3>
-<p>Practice data sets are included with the basic R installation and with
-some R packages.</p>
+<p><br>
+<strong>Practice data sets in R.</strong> Practice data sets are included with the basic R installation and with some R packages.</p>
 <p>To list the practice data sets available in R, type in the Console,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>() <span class="co"># to list data sets in base R </span></code></pre>
 <p>yields</p>
@@ -1080,6 +1079,18 @@ Data in base R and in R packages are automatically loaded</p>
 </li>
 <li>All other data files have to be read or web-scraped explicitly</li>
 </ul>
+</div>
+<div id="obtain-raw-data" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Obtain raw data</h3>
+</div>
+<div id="read-data-into-r" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Read data into R</h3>
+</div>
+<div id="identify-the-structure" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Identify the structure</h3>
+</div>
+<div id="reshape-data" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> Reshape data</h3>
 <p><br>
 <a href="day-0.html#day-0">▲ top of page</a></p>
 </div>
