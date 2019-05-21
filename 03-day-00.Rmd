@@ -1110,6 +1110,55 @@ htmltools::img(src = knitr::include_graphics("figures/sd011-14b.png"),
 If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
 
+### Four basic skills 
+
+Preparing data for graphs starts with four basic skills
+
+```{r echo = FALSE}
+library("magick")
+image_read("figures/sd021-09.png") %>% 
+        image_scale("200") %>% 
+        image_write(., path = "figures/data-basics-01.png")
+image_read("figures/sd021-02.png") %>% 
+        image_scale("200") %>% 
+        image_write(., path = "figures/data-basics-02.png")
+image_read("figures/sd011-14.png") %>% 
+        image_scale("x200") %>%  
+        image_write(., path = "figures/data-basics-03a.png")
+image_read("figures/sd011-14b.png") %>% 
+        image_scale("x200")  %>%        
+        image_write(., path = "figures/data-basics-03b.png") 
+image_read("figures/sd021-01.png") %>% 
+        image_scale("200") %>% 
+        image_write(., path = "figures/data-basics-04.png")
+
+img3a <- image_read("figures/data-basics-03a.png")
+img3b <- image_read("figures/data-basics-03b.png")
+image_append(c(img3a, img3b), stack = FALSE) %>% 
+        image_scale("200") %>% 
+        image_write(., path = "figures/data-basics-03.png")
+
+
+df6 <- wrapr::build_frame(
+                "filename"             , "item"|
+                "data-basics-01.png"   , "Obtain the raw data"|
+                "data-basics-02.png"   , "Read the raw data into R and examine it"|
+                "data-basics-03.png"   , "Identify the structure of the data"|
+                "data-basics-04.png"   , "Tidy the data and write to file") %>%
+        mutate(image = str_c("![](figures/", filename, ")")) %>%
+        select(-filename) %>%
+        select(image, item)
+
+kable(df6, col.names = NULL, align = 'll')
+```
+
+
+
+
+
+
+
+
 
 
     
