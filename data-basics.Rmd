@@ -16,45 +16,49 @@ opts_chunk$set(fig.width = 6,
 library("tidyverse")
 ```
 
-If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
+An introduction to data carpentry. In [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), Hadley Wickham says, 
 
-Preparing data for graphs starts with four basic skills
+> It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected. 
+
+The goal of this 50-minute tutorial is to introduce the R novice to the basic  elements of data carpentry. The essential skills can be grouped into four basic categories: 
+
 
 ```{r echo = FALSE}
 library("magick")
 image_read("figures/sd021-09.png") %>% 
-        image_scale("200") %>% 
+        image_scale("300") %>% 
         image_write(., path = "figures/data-basics-01.png")
 image_read("figures/sd021-02.png") %>% 
-        image_scale("200") %>% 
+        image_scale("300") %>% 
         image_write(., path = "figures/data-basics-02.png")
 image_read("figures/sd011-14.png") %>% 
-        image_scale("x200") %>%  
+        image_scale("x300") %>%  
         image_write(., path = "figures/data-basics-03a.png")
 image_read("figures/sd011-14b.png") %>% 
-        image_scale("x200")  %>%        
+        image_scale("x300")  %>%        
         image_write(., path = "figures/data-basics-03b.png") 
 image_read("figures/sd021-01.png") %>% 
-        image_scale("200") %>% 
+        image_scale("300") %>% 
         image_write(., path = "figures/data-basics-04.png")
 
 img3a <- image_read("figures/data-basics-03a.png")
 img3b <- image_read("figures/data-basics-03b.png")
 image_append(c(img3a, img3b), stack = FALSE) %>% 
-        image_scale("200") %>% 
+        image_scale("300") %>% 
         image_write(., path = "figures/data-basics-03.png")
+```
 
-
+```{r echo = FALSE}
 df6 <- wrapr::build_frame(
-                "filename"             , "item"|
-                "data-basics-01.png"   , "Obtain the raw data"|
-                "data-basics-02.png"   , "Read the raw data into R and examine it"|
-                "data-basics-03.png"   , "Identify the structure of the data"|
-                "data-basics-04.png"   , "Tidy the data and write to file") %>%
+        "filename"            , "item" |
+        "data-basics-01.png"  , "Acquire the raw data and save it locally." |
+        "data-basics-02.png"  , "Import the raw data into R and examine it." |
+        "data-basics-03.png"  , "Identify the data structure, the number of observations, the number of variables, and their type." |
+        "data-basics-04.png"  , "Transform and reshape the data to the desired form for your intended graph or analysis; write it to file."
+        ) %>%
         mutate(image = str_c("![](figures/", filename, ")")) %>%
         select(-filename) %>%
         select(image, item)
-
 kable(df6, col.names = NULL, align = 'll')
 ```
 
@@ -100,6 +104,7 @@ yields
 To list the practice data sets available in an R package (if any), type in the Console, 
 
 ```r 
+library("dplyr")
 data(package = "dplyr") # to list data sets an R package 
 ```
 
@@ -115,7 +120,6 @@ yields
 Every data set in base R and in R packages has a help page that describes format of the data and the variable names with short descriptions. Type in the Console a question mark followed by the name of the data set, e.g., 
 
 ```r
-library("dplyr")
 ? starwars
 ```
 
@@ -137,19 +141,83 @@ Data in base R and in R packages are automatically loaded
 - All other data files have to be read or web-scraped  explicitly 
 
 
-  
+ 
+### Exercises 
+
+1. Determine the data sets included in the midfielddata package.  
+1. Determine the variables in the `midfielddegrees` data set from the midfielddata package.  
+1. Determine the data sets included in the midfieldr package.  
+1. Determine the variables in the `case_stickiness` data set from the midfieldr package. 
 
 
-### Obtain raw data 
 
 
-### Read data into R 
+
+### Acquire raw data 
+
+Obtain data from its original source and save it locally. Raw data should never be operated on manually. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/data-basics-01.png"),
+               alt   = '',
+               style = 'left:0px; padding:0px;', 
+               width = 300)
+```
 
 
-### Identify the structure 
 
 
-### Reshape data  
+
+
+
+
+
+### Import data into R
+
+Bring your data into the R environment to examine it. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/data-basics-02.png"),
+               alt   = '',
+               style = 'left:0px; padding:0px;', 
+               width = 300)
+```
+
+
+
+
+
+
+### Classify the data structure 
+
+Identify the number of observations, the number of variables, and their type. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/data-basics-03.png"),
+               alt   = '',
+               style = 'left:0px; padding:0px;', 
+               width = 300)
+```
+
+
+
+
+
+
+
+### Transform and reshape data 
+
+Transform and reshape the data to obtain the shape you need for your application. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/data-basics-04.png"),
+               alt   = '',
+               style = 'left:0px; padding:0px;', 
+               width = 300)
+```
+
+
+
 
 
 
