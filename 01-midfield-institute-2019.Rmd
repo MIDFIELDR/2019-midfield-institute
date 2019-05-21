@@ -128,7 +128,7 @@ agenda_day1 <- build_frame(
                 
         "12:15--1:15", "*Lunch.* Provided in the workshop room."  |
                 
-        "1:15--2:15", "*Defining your analysis.* Examples of things to look out for and consider when exploring research questions." |
+        "1:15--2:15", "*Defining your question.* Examples of things to look out for and consider when exploring research questions." |
                 
         "", "Break" |
                 

@@ -687,13 +687,13 @@ ggplot(mpg, aes(displ, hwy)) +
 options(scipen = 999)
 ```
 
-We have orders of magnitude differences in the GDP per capita variable. To confirm, we can `summarize()`  the `gdpPercap`  variable. The output shows that the minimum is `r round(min(gapminder[["gdpPercap"]]), 0)`, the median  `r round(median(gapminder[["gdpPercap"]]), 0)`, and the maximum  `r round(max(gapminder[["gdpPercap"]]), 0)`. 
+We have orders of magnitude differences in the GDP per capita variable. To confirm, we can create a `summary()` of the `gdpPercap`  variable. The output shows that the minimum is `r round(min(gapminder[["gdpPercap"]]), 0)`, the median  `r round(median(gapminder[["gdpPercap"]]), 0)`, and the maximum  `r round(max(gapminder[["gdpPercap"]]), 0)`. 
 
 ```{r}
 # extract one variable from the data frame 
 this_variable <- gapminder["gdpPercap"]
 
-# staistical summary of one variable 
+# statistical summary of one variable 
 summary(this_variable)
 ```
 
@@ -780,7 +780,7 @@ ggplot(mpg, aes(displ, hwy)) +
 
 So far, we have mapped variables only to the x-coordinate and y-coordinate aesthetics. 
 
-If we map a variable to the color aesthetic, the data symbols are automatically assigned different colors and a legend is created. I this example, we map the `continent`  variable to color.  
+If we map a variable to the color aesthetic, the data symbols are automatically assigned different colors and a legend is created. In this example, we map the `continent`  variable to color.  
 
 ```{r}
 p <- ggplot(data = gapminder, 
@@ -922,17 +922,17 @@ ggplot(mpg, aes(displ, hwy, color = drv)) +
 
 ### Ordering the panels
 
-The default ordering of the panels in this example is alphabetical. In most cases, ordering the panels by the data (often the mean of the median) improves the display. 
+The default ordering of the panels in this example is alphabetical. In most cases, ordering the panels by the data (often the mean or the median) improves the display. 
 
 Here we have two quantitative variables, but the one that is the more interesting is life expectancy. Our goal then is to order the `continent` variable by the median of the `lifeExp` variable in each panel.  
 
-To do that, we require continent to be a *factor*, a type of variable specialized for creating ordered levels of a category. Using `gimpse()` we see that continent is already a factor (`<fct>`). 
+To do that, we require continent to be a *factor*, a type of variable specialized for creating ordered levels of a category. Using `glimpse()` we see that continent is already a factor (`<fct>`). 
 
 ```{r}
 glimpse(gapminder)
 ```
 
-Therefore all we have to do is tell R that we want the levels of continent ordered by the median of life expectancy using the `fct)reorder()` function.  
+Therefore all we have to do is tell R that we want the levels of continent ordered by the median of life expectancy using the `fct_reorder()` function.  
 
 ```{r}
 gapminder <- gapminder %>%
@@ -1109,6 +1109,7 @@ Feel free to take a break before starting the next tutorial.
 
 If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
+<<<<<<< HEAD
 Preparing data for graphs starts with four basic skills
 
 ```{r echo = FALSE}
@@ -1229,6 +1230,8 @@ Data in base R and in R packages are automatically loaded
 - Loading a package with `library()` loads all the data sets in the package  
 - All other data files have to be read or web-scraped  explicitly 
   
+=======
+>>>>>>> cc8bf46820049660c011cf661d0073e748e111f6
 
 
 
