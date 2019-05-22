@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-21">
+<meta name="date" content="2019-05-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -179,12 +179,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.11" data-path="day-0.html"><a href="day-0.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>4.2.11</b> Resize and write to file</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Data basics</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#data-sources"><i class="fa fa-check"></i><b>4.3.1</b> Data sources</a></li>
-<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#exercises"><i class="fa fa-check"></i><b>4.3.2</b> Exercises</a></li>
-<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#acquire-raw-data"><i class="fa fa-check"></i><b>4.3.3</b> Acquire raw data</a></li>
-<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#import-data-into-r"><i class="fa fa-check"></i><b>4.3.4</b> Import data into R</a></li>
-<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#classify-the-data-structure"><i class="fa fa-check"></i><b>4.3.5</b> Classify the data structure</a></li>
-<li class="chapter" data-level="4.3.6" data-path="day-0.html"><a href="day-0.html#transform-and-reshape-data"><i class="fa fa-check"></i><b>4.3.6</b> Transform and reshape data</a></li>
+<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#determine-your-data-sources"><i class="fa fa-check"></i><b>4.3.1</b> Determine your data sources</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#acquire-raw-data-and-save-locally"><i class="fa fa-check"></i><b>4.3.2</b> Acquire raw data and save locally</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#read-into-r-and-identify-the-data-structure"><i class="fa fa-check"></i><b>4.3.3</b> Read into R and identify the data structure</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#transform-reshape-and-save"><i class="fa fa-check"></i><b>4.3.4</b> Transform, reshape, and save</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="day-0.html"><a href="day-0.html#references-1"><i class="fa fa-check"></i>References</a></li>
 </ul></li>
@@ -218,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="day-0" class="section level1">
 <h1><span class="header-section-number">4</span> MIDFIELD Pre-Institute Workshop</h1>
-<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+<!-- This file is included only if listed in the _bookdown.yml file. -->
 <p>Agenda [<a href="midfield-institute-2019.html#day0agenda">link</a>]</p>
 <p>This is an <strong>optional session</strong> designed for R novices. If you cannot attend this session on Sunday, you are welcome to work these tutorials on your own before the Monday/Tuesday sessions.</p>
 <p>The tutorials give the R novice a quick introduction to three essential elements of data science using R:</p>
@@ -230,6 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The tutorials are designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary.</p>
 <p><br>
 <a href="day-0.html#day-0">▲ top of page</a></p>
+<!-- R basics -->
 <div id="r-basics" class="section level2">
 <h2><span class="header-section-number">4.1</span> R basics</h2>
 <!-- Use  knitr:: child = to include as a section in a chapter-->
@@ -545,8 +544,9 @@ new_vector</code></pre>
 <li><code>Ctrl Enter</code> runs the selected line(s) of code in an R script</li>
 </ul>
 <p>Feel free to take a break before starting the next tutorial.</p>
-<p><br>
+<p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
+<!-- Graph basics -->
 </div>
 </div>
 <div id="graph-basics" class="section level2">
@@ -996,131 +996,47 @@ p <span class="co"># print the graph</span></code></pre>
 <p><em>Check your work:</em> Navigate to your <code>figures</code> folder. The new png file should be there. Open it to confirm it is the figure you expect.</p>
 </blockquote>
 <p>Feel free to take a break before starting the next tutorial.</p>
-<p><br>
+<p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
+<!-- Data basics -->
 </div>
 </div>
 <div id="data-basics" class="section level2">
 <h2><span class="header-section-number">4.3</span> Data basics</h2>
-<!-- Use  knitr:: child = to include as a section in a chapter-->
-<p>An introduction to data carpentry. In <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, Hadley Wickham says,</p>
+<img src="figures/data-basics-00.png" alt="" style="left:0px; padding:0px;" width="700"/>
+<p>In <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, Hadley Wickham says,</p>
 <blockquote>
 <p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected.</p>
 </blockquote>
-<p>The goal of this 50-minute tutorial is to introduce the R novice to the basic elements of data carpentry. The essential skills can be grouped into four basic categories:</p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="figures/data-basics-01.png" /></td>
-<td align="left">Acquire the raw data and save it locally.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="figures/data-basics-02.png" /></td>
-<td align="left">Import the raw data into R and examine it.</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="figures/data-basics-03.png" /></td>
-<td align="left">Identify the data structure, the number of observations, the number of variables, and their type.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="figures/data-basics-04.png" /></td>
-<td align="left">Transform and reshape the data to the desired form for your intended graph or analysis; write it to file.</td>
-</tr>
-</tbody>
-</table>
-<div id="data-sources" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Data sources</h3>
-<p><strong>Online, open-source data.</strong> While we won’t be using external data sources like these in today’s work, we thought you might appreciate having a glimpse of what is available. Here is a small sample of online, open-data sources:</p>
+<p>The goal of this 50-minute tutorial is to introduce the R novice to the basic elements of data carpentry. The essential skills can be grouped into these basic categories:</p>
 <ul>
-<li><a href="https://www.cdc.gov/datastatistics/index.html">Center for Disease Control</a><br />
-</li>
-<li><a href="http://apps.who.int/gho/data/node.home">Global Health Observatory</a> World Health Organization (WHO) data repository</li>
-<li><a href="http://www.mortality.org/">Human Mortality Database</a> detailed mortality and population data<br />
-</li>
-<li><a href="https://data.oecd.org/">OECD Data</a> Organisation for Economic Co-operation and Development</li>
-<li><a href="https://fivethirtyeight.com/">FiveThirtyEight</a> Datasets used in its articles available via GitHub repository</li>
-<li><a href="https://www.theguardian.com/data">Guardian Datablog</a> Provides a lot of free-to-use data via Google spreadsheets.</li>
-<li><a href="https://www.gapminder.org/data/">Gapminder</a> Data in Gapminder World (over 500 entries).</li>
-<li><a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a> US Census Bureau<br />
-</li>
-<li><a href="https://www.bjs.gov/index.cfm?ty=abu">Bureau of Justice</a> statistics and data.</li>
-<li><a href="https://open.canada.ca/en/open-data">Open.canada.ca</a> Canadian Government open data<br />
-</li>
-<li><a href="https://www.data.gov/">Data.gov</a> US Government open data<br />
-</li>
-<li><a href="https://data.gov.au/">Data.gov.au</a> Australian government open data<br />
-</li>
-<li><a href="https://data.gov.nz/">Data.gov.nz</a> New Zealand government open data<br />
-</li>
-<li><a href="https://data.gov.uk/">Data.gov.uk</a> UK government open data</li>
+<li>Determine your data sources</li>
+<li>Acquire raw data and save locally</li>
+<li>Read into R and identify the data structure</li>
+<li>Transform, reshape, and save</li>
 </ul>
-<p><br>
-<strong>Practice data sets in R.</strong> Practice data sets are included with the basic R installation and with some R packages.</p>
-<p>To list the practice data sets available in R, type in the Console,</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>() <span class="co"># to list data sets in base R </span></code></pre>
-<p>yields</p>
-<pre><code> #&gt; AirPassengers  Monthly Airline Passenger Numbers
- #&gt; BJsales        Sales Data with Leading Indicator
- #&gt; BOD            Biochemical Oxygen Demand
- #&gt; CO2            Carbon Dioxide Uptake in Grass Plants
- #&gt; Formaldehyde   Determination of Formaldehyde
- etc.</code></pre>
-<p>To list the practice data sets available in an R package (if any), type in the Console,</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)
-<span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>) <span class="co"># to list data sets an R package </span></code></pre>
-<p>yields</p>
-<pre><code> #&gt; band_instruments   Band membership
- #&gt; band_instruments2  Band membership
- #&gt; band_members       Band membership
- #&gt; nasa               NASA spatio-temporal data
- #&gt; starwars           Starwars characters
- #&gt; storms             Storm tracks data</code></pre>
-<p>Every data set in base R and in R packages has a help page that describes format of the data and the variable names with short descriptions. Type in the Console a question mark followed by the name of the data set, e.g.,</p>
-<pre class="sourceCode r"><code class="sourceCode r">? starwars</code></pre>
-<p>yields</p>
-<img src="figures/starwars-help-page.png" alt="starwars help page" style="left:0px; padding:0px;" width="600"/>
-<p><br>
-Data in base R and in R packages are automatically loaded</p>
+<div id="determine-your-data-sources" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Determine your data sources</h3>
+<p>When we work with data in the MIDFIELD Institute, the practice data are provided in the midfielddata package. In our practice sessions, however, we use a number of other data sources. The most common data sources are</p>
+<p><strong>Online, open-source data</strong></p>
 <ul>
-<li>Launching R loads all data sets in base R<br />
+<li><a href="https://www.cdc.gov/datastatistics/index.html">Centers for Disease Control and Prevention (CDC)</a></li>
+<li><a href="https://data.oecd.org/">Organisation for Economic Cooperation and Development (OECD)</a>, the</li>
+<li><a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a></li>
+<li><a href="https://fivethirtyeight.com/">FiveThirtyEight</a><br />
 </li>
-<li>Loading a package with <code>library()</code> loads all the data sets in the package<br />
-</li>
-<li>All other data files have to be read or web-scraped explicitly</li>
+<li><a href="https://www.theguardian.com/data">Guardian Datablog</a></li>
 </ul>
 </div>
-<div id="exercises" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Exercises</h3>
-<ol style="list-style-type: decimal">
-<li>Determine the data sets included in the midfielddata package.<br />
-</li>
-<li>Determine the variables in the <code>midfielddegrees</code> data set from the midfielddata package.<br />
-</li>
-<li>Determine the data sets included in the midfieldr package.<br />
-</li>
-<li>Determine the variables in the <code>case_stickiness</code> data set from the midfieldr package.</li>
-</ol>
+<div id="acquire-raw-data-and-save-locally" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Acquire raw data and save locally</h3>
 </div>
-<div id="acquire-raw-data" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> Acquire raw data</h3>
-<p>Obtain data from its original source and save it locally. Raw data should never be operated on manually.</p>
-<img src="figures/data-basics-01.png" alt="" style="left:0px; padding:0px;" width="300"/>
+<div id="read-into-r-and-identify-the-data-structure" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Read into R and identify the data structure</h3>
 </div>
-<div id="import-data-into-r" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> Import data into R</h3>
-<p>Bring your data into the R environment to examine it.</p>
-<img src="figures/data-basics-02.png" alt="" style="left:0px; padding:0px;" width="300"/>
-</div>
-<div id="classify-the-data-structure" class="section level3">
-<h3><span class="header-section-number">4.3.5</span> Classify the data structure</h3>
-<p>Identify the number of observations, the number of variables, and their type.</p>
-<img src="figures/data-basics-03.png" alt="" style="left:0px; padding:0px;" width="300"/>
-</div>
-<div id="transform-and-reshape-data" class="section level3">
-<h3><span class="header-section-number">4.3.6</span> Transform and reshape data</h3>
-<p>Transform and reshape the data to obtain the shape you need for your application.</p>
-<img src="figures/data-basics-04.png" alt="" style="left:0px; padding:0px;" width="300"/>
-<p><br>
+<div id="transform-reshape-and-save" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Transform, reshape, and save</h3>
+<p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
 </div>
 </div>

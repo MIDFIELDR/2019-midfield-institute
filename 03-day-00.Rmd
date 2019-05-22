@@ -1,6 +1,6 @@
 # MIDFIELD Pre-Institute Workshop {#day-0} 
 
-<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+<!-- This file is included only if listed in the _bookdown.yml file. -->
 
 ```{r include = FALSE}
 library(knitr)
@@ -26,53 +26,44 @@ The tutorials give the R novice a quick introduction to three essential elements
 
 The tutorials are designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary. 
 
-
-
-
-
-
-
-<br>
-[&#9650; top of page](#day-0) 
-
-```{r child = "R-basics.Rmd", echo = FALSE}
-# imports the R basics Rmd script 
-```
-
-Feel free to take a break before starting the next tutorial. 
-
 <br>
 [&#9650; top of page](#day-0) 
 
 
 
+<!-- R basics -->    
 
-
-```{r child = "graph-basics.Rmd", echo = FALSE}
-# imports the graph basics Rmd script 
+```{r child = "R-basics.Rmd"}
 ```
 
-Feel free to take a break before starting the next tutorial. 
+Feel free to take a break before starting the next tutorial.    
 
-<br>
+<br>    
 [&#9650; top of page](#day-0)    
 
 
 
+<!-- Graph basics -->  
 
-
-```{r child = "data-basics.Rmd", echo = FALSE}
-# imports the data basics Rmd script 
+```{r child = "graph-basics.Rmd"}
 ```
 
-<br>
-[&#9650; top of page](#day-0)  
+Feel free to take a break before starting the next tutorial.    
+
+<br>    
+[&#9650; top of page](#day-0)    
 
 
-  
+
+<!-- Data basics -->  
+
+```{r child = "data-basics.Rmd"}
+```
+
+<br>    
+[&#9650; top of page](#day-0)    
 
 
 
-## References {-}
-
-<div id="refs"></div>
+## References {-}    
+<div id="refs"></div>    
