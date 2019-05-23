@@ -1209,9 +1209,6 @@ These exercises assume that you have successfully followed the instructions to [
 
 
 
-
-
-
 ### Import open-source data 
 
 There are hundreds of websites providing access to public data, for example, 
@@ -1251,6 +1248,13 @@ url <- "https://www2.stetson.edu/~jrasp/data/Pollution.xls"
 x   <- rio::import(url, format = "xls")
 rio::export(x, "data/pollution.csv")
 ```
+
+The rio package can import a lot of different file types, e.g., tab-separated (.tsv), SAS (.sas7bdat), SPSS (.sav), STATA (.dta), MATLAB (.mat), and HTML (.html) among others. 
+
+[[For more information about  rio]](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} to import, export, and convert data files
+
+
+
 
 
 
