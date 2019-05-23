@@ -1,7 +1,7 @@
 # About the MIDFIELD workshops 
 
 ```{r echo = FALSE}
-htmltools::img(src = knitr::include_graphics("images/midfield-grad-logo.png"), 
+htmltools::img(src = knitr::include_graphics("figures/midfield-grad-logo.png"), 
         alt = 'midfield logo', 
         style = 'left:0px; padding:10px;',
         width = 200)
@@ -27,25 +27,28 @@ Analytical tools for research in student pathways are generally scarce. The R pa
 
 ## Why R? {}
 
-```{r eval = FALSE}
+```{r}
 # if internet available, find and save current number of R packages
 if (pingr::is_online()) {
 	n_pkg <- nrow(available.packages(contrib.url("https://cloud.r-project.org/")))
 	# round down to nearest 250
 	n_pkg <- 250 * floor(n_pkg / 250)
 	n_pkg <- format(n_pkg, big.mark = ",", trim = TRUE, digits = 0, scientific = FALSE)
-	saveRDS(n_pkg, "data/n_pkg.rds")
+	date_pkg <- format(Sys.Date(), "%b %Y")
+	info_pkg <- c(n_pkg, date_pkg)
+	saveRDS(info_pkg, "data/info_pkg.rds")
 }
-# use saved number 
-n_pkg <- readRDS("data/n_pkg.rds")
 
-# The variety of R packages (more than `r n_pkg` as of `r Sys.Date()`), many of them cutting edge tools.
+# use saved values 
+info_pkg <- readRDS("data/info_pkg.rds")
+n_pkg    <- info_pkg[1]
+date_pkg <- info_pkg[1]
 ```
 
 R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], ranked by IEEE in 2018 as the 7th most popular programming language (Python, C++, and Java are the top three) [@2018Cass]. If you are new to R, some of its best features, paraphrasing Wickham  [-@wickham2014advanced], are: 
 
 - R is free, open source, and available on every major platform, making it easy for others to replicate your work.
-- More than 14,000 open-source R packages are available (April 2019). Many are cutting-edge tools. 
+- More than `r n_pkg` open-source R packages are available (`r date_pkg`). Many are cutting-edge tools. 
 - R packages provide deep-seated support for data analysis, e.g., missing values, data frames, and subsetting.
 - R packages provide powerful tools for communicating results via html, pdf, docx, or interactive websites.
 - It is easy to get help from experts in the R community.

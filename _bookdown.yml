@@ -4,11 +4,12 @@ language:
     chapter_name: ""
 delete_merged_file: true
 output_dir: "docs"
+before_chapter_script: ["before-chapter.R"]
 rmd_files: ["index.Rmd",
 "100-about-midfield-workshops.Rmd",
 "200-midfield-institute-2019.Rmd",
 "300-getting-started.Rmd",
 "400-basics-preworkshop.Rmd",
 "500-day-01.Rmd",
-"600-day-02.Rmd"]
-before_chapter_script: ["before-chapter.R"]
+"600-day-02.Rmd",
+"900-appendices.Rmd"]

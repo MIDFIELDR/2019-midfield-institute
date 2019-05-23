@@ -180,18 +180,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.11" data-path="day-0.html"><a href="day-0.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>4.2.11</b> Resize and write to file</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Data basics</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#determine-your-data-sources"><i class="fa fa-check"></i><b>4.3.1</b> Determine your data sources</a></li>
-<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#exercises"><i class="fa fa-check"></i><b>4.3.2</b> Exercises</a></li>
-<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#acquire-raw-data-and-save-locally"><i class="fa fa-check"></i><b>4.3.3</b> Acquire raw data and save locally</a></li>
-<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#read-into-r-and-identify-the-data-structure"><i class="fa fa-check"></i><b>4.3.4</b> Read into R and identify the data structure</a></li>
-<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#transform-reshape-and-save"><i class="fa fa-check"></i><b>4.3.5</b> Transform, reshape, and save</a></li>
+<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#prerequisites-2"><i class="fa fa-check"></i><b>4.3.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#data-sets-in-r"><i class="fa fa-check"></i><b>4.3.2</b> Data sets in R</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#exercises"><i class="fa fa-check"></i><b>4.3.3</b> Exercises</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#import-open-source-data"><i class="fa fa-check"></i><b>4.3.4</b> Import open-source data</a></li>
+<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#default-app-for-manually-opening-csv-files"><i class="fa fa-check"></i><b>4.3.5</b> Default app for manually opening CSV files</a></li>
+<li class="chapter" data-level="4.3.6" data-path="day-0.html"><a href="day-0.html#read-into-r-and-identify-the-data-structure"><i class="fa fa-check"></i><b>4.3.6</b> Read into R and identify the data structure</a></li>
+<li class="chapter" data-level="4.3.7" data-path="day-0.html"><a href="day-0.html#transform-reshape-and-save"><i class="fa fa-check"></i><b>4.3.7</b> Transform, reshape, and save</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>5</b> MIDFIELD Institute Day 1</a><ul>
-<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-2"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-3"><i class="fa fa-check"></i>Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="day-2.html"><a href="day-2.html"><i class="fa fa-check"></i><b>6</b> MIDFIELD Institute Day 2</a><ul>
-<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-3"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-4"><i class="fa fa-check"></i>Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -228,10 +230,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The tutorials are designed to be completed by an R novice in less than 50 minutes each. The timing has been student-tested, but of course your mileage may vary.</p>
 <p><br>
 <a href="day-0.html#day-0">▲ top of page</a></p>
-<!-- R basics -->
 <div id="r-basics" class="section level2">
 <h2><span class="header-section-number">4.1</span> R basics</h2>
-<!-- Use  knitr:: child = to include as a section in a chapter-->
 <img src="figures/logo-R.png" alt="logo" style="left:0px; padding:0px;" height="100px"/>
 <p>An introduction to R adapted from <span class="citation">(Healy, <a href="references.html#ref-Healy:2019:Ch.2" role="doc-biblioref">2019</a><a href="references.html#ref-Healy:2019:Ch.2" role="doc-biblioref">a</a>)</span> with extra material from <span class="citation">(Matloff, <a href="references.html#ref-Matloff:2019" role="doc-biblioref">2019</a>)</span>. If you already have R experience, you might still want to browse this section in case you find something new.</p>
 <p>If the prerequisites have been met, the tutorial should take no longer than 50 minutes.</p>
@@ -323,11 +323,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">25</span>)
 y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">31</span>, <span class="dv">71</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">21</span>, <span class="dv">6</span>)</code></pre>
 <p>To see the result in the Console, type the object name in the script, Save, and Source. (Remember, type the line of code but not the line prefaced by <code>#&gt;</code>—that’s the output line so you can check your results.)</p>
-<pre class="sourceCode r"><code class="sourceCode r">x
-<span class="co">#&gt; [1]  1  2  3  1  3 25</span>
-
-y
-<span class="co">#&gt; [1]  5 31 71  1  3 21  6</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x</code></pre>
+<pre><code>#&gt; [1]  1  2  3  1  3 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y</code></pre>
+<pre><code>#&gt; [1]  5 31 71  1  3 21  6</code></pre>
 <p>You create objects my assigning them names</p>
 <ul>
 <li><code>&lt;-</code> is the assignment operator (keyboard shortcut: ALT –)</li>
@@ -335,32 +334,32 @@ y
 </ul>
 <img src="figures/rstudio-environment-x-y.png" alt="rstudio new folder" width="700"/>
 <p>Datasets are also named objects, and a large number of datasets are included in the base R installation. For example,<code>LakeHuron</code> contains annual measurements of the lake level, in feet, from 1875–1972.</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron
-<span class="co">#&gt; Time Series:</span>
-<span class="co">#&gt; Start = 1875 </span>
-<span class="co">#&gt; End = 1972 </span>
-<span class="co">#&gt; Frequency = 1 </span>
-<span class="co">#&gt;  [1] 580.38 581.86 580.97 580.80 579.79 580.39 580.42 580.82 581.40 581.32</span>
-<span class="co">#&gt; [11] 581.44 581.68 581.17 580.53 580.01 579.91 579.14 579.16 579.55 579.67</span>
-<span class="co">#&gt; [21] 578.44 578.24 579.10 579.09 579.35 578.82 579.32 579.01 579.00 579.80</span>
-<span class="co">#&gt; [31] 579.83 579.72 579.89 580.01 579.37 578.69 578.19 578.67 579.55 578.92</span>
-<span class="co">#&gt; [41] 578.09 579.37 580.13 580.14 579.51 579.24 578.66 578.86 578.05 577.79</span>
-<span class="co">#&gt; [51] 576.75 576.75 577.82 578.64 580.58 579.48 577.38 576.90 576.94 576.24</span>
-<span class="co">#&gt; [61] 576.84 576.85 576.90 577.79 578.18 577.51 577.23 578.42 579.61 579.05</span>
-<span class="co">#&gt; [71] 579.26 579.22 579.38 579.10 577.95 578.12 579.75 580.85 580.41 579.96</span>
-<span class="co">#&gt; [81] 579.61 578.76 578.18 577.21 577.13 579.10 578.25 577.91 576.89 575.96</span>
-<span class="co">#&gt; [91] 576.80 577.68 578.38 578.52 579.74 579.31 579.89 579.96</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron</code></pre>
+<pre><code>#&gt; Time Series:
+#&gt; Start = 1875 
+#&gt; End = 1972 
+#&gt; Frequency = 1 
+#&gt;  [1] 580.38 581.86 580.97 580.80 579.79 580.39 580.42 580.82 581.40 581.32
+#&gt; [11] 581.44 581.68 581.17 580.53 580.01 579.91 579.14 579.16 579.55 579.67
+#&gt; [21] 578.44 578.24 579.10 579.09 579.35 578.82 579.32 579.01 579.00 579.80
+#&gt; [31] 579.83 579.72 579.89 580.01 579.37 578.69 578.19 578.67 579.55 578.92
+#&gt; [41] 578.09 579.37 580.13 580.14 579.51 579.24 578.66 578.86 578.05 577.79
+#&gt; [51] 576.75 576.75 577.82 578.64 580.58 579.48 577.38 576.90 576.94 576.24
+#&gt; [61] 576.84 576.85 576.90 577.79 578.18 577.51 577.23 578.42 579.61 579.05
+#&gt; [71] 579.26 579.22 579.38 579.10 577.95 578.12 579.75 580.85 580.41 579.96
+#&gt; [81] 579.61 578.76 578.18 577.21 577.13 579.10 578.25 577.91 576.89 575.96
+#&gt; [91] 576.80 577.68 578.38 578.52 579.74 579.31 579.89 579.96</code></pre>
 <p>Now you can see how the row labels work. There are 10 numbers per row, here, so the second row starts with the 11th, indicated by <code>[11]</code>. The last row starts with the 91st value <code>[91]</code> and ends with the 98th value.</p>
 <ul>
 <li>In the Console, type <code>? LakeHuron</code> to see the help page for the data set</li>
 </ul>
 <p>Individual elements of a vector are obtained using <code>[]</code> notation.</p>
 <p>For example, the first five lake level readings are extracted with</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]
-<span class="co">#&gt; [1] 580.38 581.86 580.97 580.80 579.79</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</code></pre>
+<pre><code>#&gt; [1] 580.38 581.86 580.97 580.80 579.79</code></pre>
 <p>The 4th element alone,</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">4</span>]
-<span class="co">#&gt; [1] 580.8</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">4</span>]</code></pre>
+<pre><code>#&gt; [1] 580.8</code></pre>
 </div>
 <div id="do-things-in-r-using-functions" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Do things in R using functions</h3>
@@ -381,26 +380,24 @@ y
 <pre><code>mean()
 #&gt; Error in mean.default() : argument &quot;x&quot; is missing, with no default</code></pre>
 <p>If we use the Lake Huron dataset as the argument, the function is computed and displayed. Add these lines to your script, Save, and Source.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(LakeHuron)
-<span class="co">#&gt; [1] 579.0041</span>
-
-<span class="kw">sd</span>(LakeHuron)
-<span class="co">#&gt; [1] 1.318299</span>
-
-<span class="kw">summary</span>(LakeHuron)
-<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
-<span class="co">#&gt;   576.0   578.1   579.1   579.0   579.9   581.9</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(LakeHuron)</code></pre>
+<pre><code>#&gt; [1] 579.0041</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(LakeHuron)</code></pre>
+<pre><code>#&gt; [1] 1.318299</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(LakeHuron)</code></pre>
+<pre><code>#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#&gt;   576.0   578.1   579.1   579.0   579.9   581.9</code></pre>
 <p>We can extract subsets of data using functions. For example, If we wanted only the first five even-numbered elements, we use <code>c()</code> to create a vector of indices to the desired elements,</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)]
-<span class="co">#&gt; [1] 581.86 580.80 580.39 580.82 581.32</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)]</code></pre>
+<pre><code>#&gt; [1] 581.86 580.80 580.39 580.82 581.32</code></pre>
 <p>If we wanted every 5th entry over the full data set, we use <code>length()</code> to determine how many entries there are, and the sequence function <code>seq()</code> to create the vector of indices,</p>
 <pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">length</span>(LakeHuron)
-LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">5</span>, <span class="dt">to =</span> n, <span class="dt">by =</span> <span class="dv">5</span>)]
-<span class="co">#&gt;  [1] 579.79 581.32 580.01 579.67 579.35 579.80 579.37 578.92 579.51 577.79</span>
-<span class="co">#&gt; [11] 580.58 576.24 578.18 579.05 577.95 579.96 577.13 575.96 579.74</span></code></pre>
+LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">5</span>, <span class="dt">to =</span> n, <span class="dt">by =</span> <span class="dv">5</span>)]</code></pre>
+<pre><code>#&gt;  [1] 579.79 581.32 580.01 579.67 579.35 579.80 579.37 578.92 579.51 577.79
+#&gt; [11] 580.58 576.24 578.18 579.05 577.95 579.96 577.13 575.96 579.74</code></pre>
 <p>Because we will be using the ggplot2 package for graphics, we will not be using the base R <code>plot()</code> function very often, but it is useful for a quick look at data. Add these lines to your script, Save, and Source.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(LakeHuron)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-49-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and <em>Enter</em> to see the function help page.</p>
 <ul>
 <li><code>? mean()</code></li>
@@ -418,109 +415,97 @@ LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class
 <li>A lot of the work in data science consists of choosing the right functions and giving them the right arguments to get our data into the form we need for analysis or visualization</li>
 </ul>
 <p>Functions operate on the input you provide and give you back a result. Type the following in your script, Save, and Source.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(x) <span class="co"># table of counts</span>
-<span class="co">#&gt; x</span>
-<span class="co">#&gt;  1  2  3 25 </span>
-<span class="co">#&gt;  2  1  2  1</span>
-
-<span class="kw">sd</span>(y)    <span class="co"># standard deviation</span>
-<span class="co">#&gt; [1] 25.14435</span>
-
-x <span class="op">*</span><span class="st"> </span><span class="dv">5</span>    <span class="co"># multiply every element by a scalar</span>
-<span class="co">#&gt; [1]   5  10  15   5  15 125</span>
-
-y <span class="op">+</span><span class="st"> </span><span class="dv">1</span>    <span class="co"># add a scalar to every element</span>
-<span class="co">#&gt; [1]  6 32 72  2  4 22  7</span>
-
-x <span class="op">+</span><span class="st"> </span>x    <span class="co"># add elements </span>
-<span class="co">#&gt; [1]  2  4  6  2  6 50</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(x) <span class="co"># table of counts</span></code></pre>
+<pre><code>#&gt; x
+#&gt;  1  2  3 25 
+#&gt;  2  1  2  1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)    <span class="co"># standard deviation</span></code></pre>
+<pre><code>#&gt; [1] 25.14435</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">*</span><span class="st"> </span><span class="dv">5</span>    <span class="co"># multiply every element by a scalar</span></code></pre>
+<pre><code>#&gt; [1]   5  10  15   5  15 125</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y <span class="op">+</span><span class="st"> </span><span class="dv">1</span>    <span class="co"># add a scalar to every element</span></code></pre>
+<pre><code>#&gt; [1]  6 32 72  2  4 22  7</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">+</span><span class="st"> </span>x    <span class="co"># add elements </span></code></pre>
+<pre><code>#&gt; [1]  2  4  6  2  6 50</code></pre>
 <p><em>Comments</em> are annotations to make the source code easier for humans to understand but are ignored by R. Comments in R are denoted by a hashtag <code>#</code>.</p>
 </div>
 <div id="r-objects-have-class" class="section level3">
 <h3><span class="header-section-number">4.1.6</span> R objects have class</h3>
 <p>Everything is an object and every object has a class.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
-<span class="co">#&gt; [1] &quot;numeric&quot;</span>
-
-<span class="kw">class</span>(summary)
-<span class="co">#&gt; [1] &quot;function&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)</code></pre>
+<pre><code>#&gt; [1] &quot;numeric&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(summary)</code></pre>
+<pre><code>#&gt; [1] &quot;function&quot;</code></pre>
 <p>Certain actions will change the class of an object. Suppose we try create a vector from the <code>x</code> object and a text string,</p>
 <pre class="sourceCode r"><code class="sourceCode r">new_vector &lt;-<span class="st"> </span><span class="kw">c</span>(x, <span class="st">&quot;Apple&quot;</span>)
 
-new_vector
-<span class="co">#&gt; [1] &quot;1&quot;     &quot;2&quot;     &quot;3&quot;     &quot;1&quot;     &quot;3&quot;     &quot;25&quot;    &quot;Apple&quot;</span>
-
-<span class="kw">class</span>(new_vector)
-<span class="co">#&gt; [1] &quot;character&quot;</span></code></pre>
+new_vector</code></pre>
+<pre><code>#&gt; [1] &quot;1&quot;     &quot;2&quot;     &quot;3&quot;     &quot;1&quot;     &quot;3&quot;     &quot;25&quot;    &quot;Apple&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(new_vector)</code></pre>
+<pre><code>#&gt; [1] &quot;character&quot;</code></pre>
 <p>By adding the word “Apple” to the vector, R changed the class from “numeric” to “character”. All the numbers are enclosed in quotes: they are now character strings and cannot be used in calculations.</p>
 <p>The most common class of data object we will use is the data frame.</p>
-<pre class="sourceCode r"><code class="sourceCode r">titanic <span class="co"># data in the socviz package</span>
-<span class="co">#&gt;       fate    sex    n percent</span>
-<span class="co">#&gt; 1 perished   male 1364    62.0</span>
-<span class="co">#&gt; 2 perished female  126     5.7</span>
-<span class="co">#&gt; 3 survived   male  367    16.7</span>
-<span class="co">#&gt; 4 survived female  344    15.6</span>
-
-<span class="kw">class</span>(titanic)
-<span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">titanic <span class="co"># data in the socviz package</span></code></pre>
+<pre><code>#&gt;       fate    sex    n percent
+#&gt; 1 perished   male 1364    62.0
+#&gt; 2 perished female  126     5.7
+#&gt; 3 survived   male  367    16.7
+#&gt; 4 survived female  344    15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(titanic)</code></pre>
+<pre><code>#&gt; [1] &quot;data.frame&quot;</code></pre>
 <p>You can see there are four variables: fate, sex, n, percent. Two variables (columns) are numeric, two are categorical.</p>
 <p>You can pick variable out of a data frame using the <code>$</code> operator,</p>
-<pre class="sourceCode r"><code class="sourceCode r">titanic<span class="op">$</span>percent
-<span class="co">#&gt; [1] 62.0  5.7 16.7 15.6</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">titanic<span class="op">$</span>percent</code></pre>
+<pre><code>#&gt; [1] 62.0  5.7 16.7 15.6</code></pre>
 <p>From the tidyverse, we will regularly use a augmented data frame called a <em>tibble.</em> We can convert the titanic data frame to a tibble using <code>as_tibble()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">titanic_tb &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(titanic)
 
-<span class="kw">class</span>(titanic_tb)
-<span class="co">#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</span>
-
-titanic_tb
-<span class="co">#&gt; # A tibble: 4 x 4</span>
-<span class="co">#&gt;   fate     sex        n percent</span>
-<span class="co">#&gt;   &lt;fct&gt;    &lt;fct&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 perished male    1364    62  </span>
-<span class="co">#&gt; 2 perished female   126     5.7</span>
-<span class="co">#&gt; 3 survived male     367    16.7</span>
-<span class="co">#&gt; 4 survived female   344    15.6</span></code></pre>
+<span class="kw">class</span>(titanic_tb)</code></pre>
+<pre><code>#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">titanic_tb</code></pre>
+<pre><code>#&gt; # A tibble: 4 x 4
+#&gt;   fate     sex        n percent
+#&gt;   &lt;fct&gt;    &lt;fct&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+#&gt; 1 perished male    1364    62  
+#&gt; 2 perished female   126     5.7
+#&gt; 3 survived male     367    16.7
+#&gt; 4 survived female   344    15.6</code></pre>
 <p>The tibble includes additional information about the variables</p>
 </div>
 <div id="r-objects-have-structure" class="section level3">
 <h3><span class="header-section-number">4.1.7</span> R objects have structure</h3>
 <p>To see inside an object ask for its structure using the <code>str()</code> function.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(x)
-<span class="co">#&gt;  num [1:6] 1 2 3 1 3 25</span>
-
-<span class="kw">str</span>(titanic)
-<span class="co">#&gt; &#39;data.frame&#39;:    4 obs. of  4 variables:</span>
-<span class="co">#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2</span>
-<span class="co">#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1</span>
-<span class="co">#&gt;  $ n      : num  1364 126 367 344</span>
-<span class="co">#&gt;  $ percent: num  62 5.7 16.7 15.6</span>
-
-<span class="kw">str</span>(titanic_tb)
-<span class="co">#&gt; Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    4 obs. of  4 variables:</span>
-<span class="co">#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2</span>
-<span class="co">#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1</span>
-<span class="co">#&gt;  $ n      : num  1364 126 367 344</span>
-<span class="co">#&gt;  $ percent: num  62 5.7 16.7 15.6</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(x)</code></pre>
+<pre><code>#&gt;  num [1:6] 1 2 3 1 3 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(titanic)</code></pre>
+<pre><code>#&gt; &#39;data.frame&#39;:    4 obs. of  4 variables:
+#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2
+#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1
+#&gt;  $ n      : num  1364 126 367 344
+#&gt;  $ percent: num  62 5.7 16.7 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(titanic_tb)</code></pre>
+<pre><code>#&gt; Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    4 obs. of  4 variables:
+#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2
+#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1
+#&gt;  $ n      : num  1364 126 367 344
+#&gt;  $ percent: num  62 5.7 16.7 15.6</code></pre>
 <p>I also like to use the <code>glimpse()</code> function from the tidyverse.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(x)
-<span class="co">#&gt;  num [1:6] 1 2 3 1 3 25</span>
-
-<span class="kw">glimpse</span>(titanic)
-<span class="co">#&gt; Observations: 4</span>
-<span class="co">#&gt; Variables: 4</span>
-<span class="co">#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived</span>
-<span class="co">#&gt; $ sex     &lt;fct&gt; male, female, male, female</span>
-<span class="co">#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344</span>
-<span class="co">#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</span>
-
-<span class="kw">glimpse</span>(titanic_tb) 
-<span class="co">#&gt; Observations: 4</span>
-<span class="co">#&gt; Variables: 4</span>
-<span class="co">#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived</span>
-<span class="co">#&gt; $ sex     &lt;fct&gt; male, female, male, female</span>
-<span class="co">#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344</span>
-<span class="co">#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(x)</code></pre>
+<pre><code>#&gt;  num [1:6] 1 2 3 1 3 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(titanic)</code></pre>
+<pre><code>#&gt; Observations: 4
+#&gt; Variables: 4
+#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived
+#&gt; $ sex     &lt;fct&gt; male, female, male, female
+#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344
+#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(titanic_tb) </code></pre>
+<pre><code>#&gt; Observations: 4
+#&gt; Variables: 4
+#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived
+#&gt; $ sex     &lt;fct&gt; male, female, male, female
+#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344
+#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</code></pre>
 </div>
 <div id="r-does-what-you-tell-it" class="section level3">
 <h3><span class="header-section-number">4.1.8</span> R does what you tell it</h3>
@@ -543,7 +528,7 @@ titanic_tb
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanic_tb, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">y =</span> n, <span class="dt">fill =</span> fate)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_col</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">coord_flip</span>()</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-58-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p><strong>Your turn.</strong> As shown, color distinguishes those who survived from those who did not and bar length gives totals by sex. Make a small change so that color denotes sex and bar length gives totals of survived and perished.</p>
 </blockquote>
@@ -561,12 +546,10 @@ titanic_tb
 <p>Feel free to take a break before starting the next tutorial.</p>
 <p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
-<!-- Graph basics -->
 </div>
 </div>
 <div id="graph-basics" class="section level2">
 <h2><span class="header-section-number">4.2</span> Graph basics</h2>
-<!-- Use  knitr:: child = to include as a section in a chapter-->
 <p><img src="figures/cm201-01.png" alt="logo" style="left:0px; padding:0px;" width="400"/>
 <small>
 <br>
@@ -614,31 +597,31 @@ titanic_tb
 <div id="tidy-data" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Tidy data</h3>
 <p>If the data set is “tidy”, then every row is an observation and every column is a variable. The <code>gapminder</code> data frame is tidy. We use <code>glimpse()</code> to get a look at the structure.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)
-<span class="co">#&gt; Observations: 142</span>
-<span class="co">#&gt; Variables: 6</span>
-<span class="co">#&gt; $ country   &lt;fct&gt; Afghanistan, Albania, Algeria, Angola, Argentina, Au...</span>
-<span class="co">#&gt; $ continent &lt;fct&gt; Asia, Europe, Africa, Africa, Americas, Oceania, Eur...</span>
-<span class="co">#&gt; $ year      &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007...</span>
-<span class="co">#&gt; $ lifeExp   &lt;dbl&gt; 43.828, 76.423, 72.301, 42.731, 75.320, 81.235, 79.8...</span>
-<span class="co">#&gt; $ pop       &lt;int&gt; 31889923, 3600523, 33333216, 12420476, 40301927, 204...</span>
-<span class="co">#&gt; $ gdpPercap &lt;dbl&gt; 974.5803, 5937.0295, 6223.3675, 4797.2313, 12779.379...</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)</code></pre>
+<pre><code>#&gt; Observations: 142
+#&gt; Variables: 6
+#&gt; $ country   &lt;fct&gt; Afghanistan, Albania, Algeria, Angola, Argentina, Au...
+#&gt; $ continent &lt;fct&gt; Asia, Europe, Africa, Africa, Americas, Oceania, Eur...
+#&gt; $ year      &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007...
+#&gt; $ lifeExp   &lt;dbl&gt; 43.828, 76.423, 72.301, 42.731, 75.320, 81.235, 79.8...
+#&gt; $ pop       &lt;int&gt; 31889923, 3600523, 33333216, 12420476, 40301927, 204...
+#&gt; $ gdpPercap &lt;dbl&gt; 974.5803, 5937.0295, 6223.3675, 4797.2313, 12779.379...</code></pre>
 <p>And we can just type its name to see the first few rows,</p>
-<pre class="sourceCode r"><code class="sourceCode r">gapminder
-<span class="co">#&gt; # A tibble: 142 x 6</span>
-<span class="co">#&gt;    country     continent  year lifeExp       pop gdpPercap</span>
-<span class="co">#&gt;    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Afghanistan Asia       2007    43.8  31889923      975.</span>
-<span class="co">#&gt;  2 Albania     Europe     2007    76.4   3600523     5937.</span>
-<span class="co">#&gt;  3 Algeria     Africa     2007    72.3  33333216     6223.</span>
-<span class="co">#&gt;  4 Angola      Africa     2007    42.7  12420476     4797.</span>
-<span class="co">#&gt;  5 Argentina   Americas   2007    75.3  40301927    12779.</span>
-<span class="co">#&gt;  6 Australia   Oceania    2007    81.2  20434176    34435.</span>
-<span class="co">#&gt;  7 Austria     Europe     2007    79.8   8199783    36126.</span>
-<span class="co">#&gt;  8 Bahrain     Asia       2007    75.6    708573    29796.</span>
-<span class="co">#&gt;  9 Bangladesh  Asia       2007    64.1 150448339     1391.</span>
-<span class="co">#&gt; 10 Belgium     Europe     2007    79.4  10392226    33693.</span>
-<span class="co">#&gt; # ... with 132 more rows</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">gapminder</code></pre>
+<pre><code>#&gt; # A tibble: 142 x 6
+#&gt;    country     continent  year lifeExp       pop gdpPercap
+#&gt;    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+#&gt;  1 Afghanistan Asia       2007    43.8  31889923      975.
+#&gt;  2 Albania     Europe     2007    76.4   3600523     5937.
+#&gt;  3 Algeria     Africa     2007    72.3  33333216     6223.
+#&gt;  4 Angola      Africa     2007    42.7  12420476     4797.
+#&gt;  5 Argentina   Americas   2007    75.3  40301927    12779.
+#&gt;  6 Australia   Oceania    2007    81.2  20434176    34435.
+#&gt;  7 Austria     Europe     2007    79.8   8199783    36126.
+#&gt;  8 Bahrain     Asia       2007    75.6    708573    29796.
+#&gt;  9 Bangladesh  Asia       2007    64.1 150448339     1391.
+#&gt; 10 Belgium     Europe     2007    79.4  10392226    33693.
+#&gt; # ... with 132 more rows</code></pre>
 <p>Read more about <a href="https://r4ds.had.co.nz/tidy-data.html#tidy-data-1">tidy data</a> in <span class="citation">(Wickham and Grolemund, <a href="references.html#ref-Wickham+Grolemund:2017" role="doc-biblioref">2017</a>)</span>.</p>
 <p><br></p>
 <blockquote>
@@ -661,31 +644,31 @@ titanic_tb
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp))</code></pre>
 <p>If we try to print the graph by typing the name of the graph object (everything in R is an object), we get an empty graph because we haven’t told ggplot what sort of a graph we want.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-67-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-55-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Because the graph will be a scatterplot, we add the <code>geom_point()</code> layer.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-68-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-56-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In ggplot2, “geoms” are geometric objects such as points, lines, bars, boxplots, contours, polygons, etc. You can browse the full list on the ggplot2 <a href="https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms">geom reference page</a>.</p>
 <p>We could also have simply added the layer to the original object,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-69-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-57-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Notice that the default axis labels are the variables names from the data frame. We can edit those with another layer</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-70-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-58-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Or, with all layers shown in one code chunk,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-71-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-59-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Summary. The basics steps for building up the layers of any graph consist of,</p>
 <ul>
 <li>assign the data frame</li>
@@ -711,7 +694,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-72-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-60-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-smooth-fit" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Layer: smooth fit</h3>
@@ -719,17 +702,17 @@ p <span class="co"># display the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-73-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-61-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The <code>se</code> argument controls whether or not the confidence interval is displayed. Setting <code>se = TRUE</code> yields,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-74-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-62-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For a linear-fit layer, we add a layer with <code>method</code> set to <code>lm</code> (short for linear model). The linear fit is not particularly good in this case, but now you know how to do one.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-75-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-63-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a> help page</li>
@@ -742,7 +725,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-76-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-64-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-log-scale" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Layer: log scale</h3>
@@ -751,14 +734,14 @@ p <span class="co"># display the graph</span></code></pre>
 this_variable &lt;-<span class="st"> </span>gapminder[<span class="st">&quot;gdpPercap&quot;</span>]
 
 <span class="co"># statistical summary of one variable </span>
-<span class="kw">summary</span>(this_variable)
-<span class="co">#&gt;    gdpPercap      </span>
-<span class="co">#&gt;  Min.   :  277.6  </span>
-<span class="co">#&gt;  1st Qu.: 1624.8  </span>
-<span class="co">#&gt;  Median : 6124.4  </span>
-<span class="co">#&gt;  Mean   :11680.1  </span>
-<span class="co">#&gt;  3rd Qu.:18008.8  </span>
-<span class="co">#&gt;  Max.   :49357.2</span></code></pre>
+<span class="kw">summary</span>(this_variable)</code></pre>
+<pre><code>#&gt;    gdpPercap      
+#&gt;  Min.   :  277.6  
+#&gt;  1st Qu.: 1624.8  
+#&gt;  Median : 6124.4  
+#&gt;  Mean   :11680.1  
+#&gt;  3rd Qu.:18008.8  
+#&gt;  Max.   :49357.2</code></pre>
 <p>The bracket notation I just used, <code>gapminder["gdpPercap"]</code>, is one way to extract a variable from a data frame.</p>
 <p>In exploring a graph like this, it might be useful to add a layer that changes the horizontal scale to a log-base-10 scale.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -766,24 +749,24 @@ this_variable &lt;-<span class="st"> </span>gapminder[<span class="st">&quot;gdp
 <span class="st">        </span><span class="kw">scale_x_log10</span>() 
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-79-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-67-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The scales package allows us to change the GDP scale to dollars. Using the syntax <code>thepackage::thefunction</code> we can use the <code>scales::dollar</code> function without loading the scales package.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-80-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-68-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In this case, a linear fit might work,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-81-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-69-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Update the axis labels,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-82-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-70-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In summary, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
@@ -810,7 +793,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-84-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-72-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mapping-aesthetics" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Mapping aesthetics</h3>
@@ -823,7 +806,7 @@ p <span class="co"># display the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-85-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-73-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p><br></p>
 <blockquote>
 <p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
@@ -833,7 +816,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-86-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-74-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="setting-properties" class="section level3">
 <h3><span class="header-section-number">4.2.7</span> Setting properties</h3>
@@ -846,12 +829,12 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-87-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-75-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we add a linear fit to these data, a fit for each continent is generated. For a thinner line, I’ve added a <code>size</code> argument to the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-88-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-76-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we want all the data markers the same color but we want to change the color, we don’t map it, we set it in the geom.</p>
 <p>Here, I’ve omitted the aesthetic mapping to color and used a color assignment in the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -861,7 +844,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-89-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-77-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R color names</a></li>
@@ -874,12 +857,12 @@ p <span class="co"># print the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent))
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-90-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-78-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Comparisons are facilitated by having the facets appear in one column, by using the <code>ncols</code> argument of <code>facet_wrap()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-91-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-79-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In a faceted display, all panels have identical scales (the default) to facilitate comparison.</p>
 <p>Again, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -903,22 +886,22 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-93-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-81-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ordering-the-panels" class="section level3">
 <h3><span class="header-section-number">4.2.9</span> Ordering the panels</h3>
 <p>The default ordering of the panels in this example is alphabetical. In most cases, ordering the panels by the data (often the mean or the median) improves the display.</p>
 <p>Here we have two quantitative variables, but the one that is the more interesting is life expectancy. Our goal then is to order the <code>continent</code> variable by the median of the <code>lifeExp</code> variable in each panel.</p>
 <p>To do that, we require continent to be a <em>factor</em>, a type of variable specialized for creating ordered levels of a category. Using <code>glimpse()</code> we see that continent is already a factor (<code>&lt;fct&gt;</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)
-<span class="co">#&gt; Observations: 142</span>
-<span class="co">#&gt; Variables: 6</span>
-<span class="co">#&gt; $ country   &lt;fct&gt; Afghanistan, Albania, Algeria, Angola, Argentina, Au...</span>
-<span class="co">#&gt; $ continent &lt;fct&gt; Asia, Europe, Africa, Africa, Americas, Oceania, Eur...</span>
-<span class="co">#&gt; $ year      &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007...</span>
-<span class="co">#&gt; $ lifeExp   &lt;dbl&gt; 43.828, 76.423, 72.301, 42.731, 75.320, 81.235, 79.8...</span>
-<span class="co">#&gt; $ pop       &lt;int&gt; 31889923, 3600523, 33333216, 12420476, 40301927, 204...</span>
-<span class="co">#&gt; $ gdpPercap &lt;dbl&gt; 974.5803, 5937.0295, 6223.3675, 4797.2313, 12779.379...</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)</code></pre>
+<pre><code>#&gt; Observations: 142
+#&gt; Variables: 6
+#&gt; $ country   &lt;fct&gt; Afghanistan, Albania, Algeria, Angola, Argentina, Au...
+#&gt; $ continent &lt;fct&gt; Asia, Europe, Africa, Africa, Americas, Oceania, Eur...
+#&gt; $ year      &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007...
+#&gt; $ lifeExp   &lt;dbl&gt; 43.828, 76.423, 72.301, 42.731, 75.320, 81.235, 79.8...
+#&gt; $ pop       &lt;int&gt; 31889923, 3600523, 33333216, 12420476, 40301927, 204...
+#&gt; $ gdpPercap &lt;dbl&gt; 974.5803, 5937.0295, 6223.3675, 4797.2313, 12779.379...</code></pre>
 <p>Therefore all we have to do is tell R that we want the levels of continent ordered by the median of life expectancy using the <code>fct_reorder()</code> function.</p>
 <pre class="sourceCode r"><code class="sourceCode r">gapminder &lt;-<span class="st"> </span>gapminder <span class="op">%&gt;%</span>
 <span class="st">        </span><span class="kw">mutate</span>(<span class="dt">continent =</span> <span class="kw">fct_reorder</span>(continent, lifeExp, median))</code></pre>
@@ -930,7 +913,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">as.table =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>) </code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-96-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-84-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a> help page</li>
@@ -945,7 +928,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-97-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-85-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="beyond-the-basics" class="section level3">
 <h3><span class="header-section-number">4.2.10</span> Beyond the basics</h3>
@@ -977,7 +960,7 @@ p <span class="co"># print the graph</span></code></pre>
                 <span class="dt">title  =</span> <span class="st">&quot;Life expectancy by country, 2007&quot;</span>,
                 <span class="dt">caption =</span> <span class="st">&quot;Source: Gapminder&quot;</span>) <span class="op">+</span>
 <span class="st">        </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-98-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-86-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a> help page</li>
@@ -1013,7 +996,6 @@ p <span class="co"># print the graph</span></code></pre>
 <p>Feel free to take a break before starting the next tutorial.</p>
 <p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
-<!-- Data basics -->
 </div>
 </div>
 <div id="data-basics" class="section level2">
@@ -1021,40 +1003,17 @@ p <span class="co"># print the graph</span></code></pre>
 <img src="figures/data-basics-00.png" alt="" style="left:0px; padding:0px;" width="700"/>
 <p>In <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, Hadley Wickham says,</p>
 <blockquote>
-<p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected.</p>
+<p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data.</p>
+<p>Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected.</p>
 </blockquote>
-<p>The goal of this 50-minute tutorial is to introduce the R novice to the basic elements of data carpentry. The essential skills can be grouped into these basic categories:</p>
-<ul>
-<li>Determine your data sources</li>
-<li>Acquire raw data and save locally</li>
-<li>Read into R and identify the data structure</li>
-<li>Transform, reshape, and save</li>
-</ul>
-<div id="determine-your-data-sources" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Determine your data sources</h3>
-<p>When we work with data in the MIDFIELD Institute, the practice data are provided in the midfieldr and midfielddata packages.</p>
-<p>In these practice sessions, however, we use a number of other sources to develop familiarity with importing, reading, writing, and manipulating data. The most common data sources are</p>
-<ul>
-<li>Your own data</li>
-<li>Online, open-source data</li>
-<li>Data sets in R and in R packages</li>
-</ul>
-<p><strong>Your own data</strong></p>
-<p>Data you</p>
-<p><strong>Online, open-source data</strong></p>
-<p>There are hundreds of websites providing access to public data. Here are just a few to illustrate. We will use</p>
-<ul>
-<li><a href="https://www.cdc.gov/datastatistics/index.html">Centers for Disease Control and Prevention (CDC)</a><br />
-</li>
-<li><a href="https://data.oecd.org/">Organisation for Economic Cooperation and Development (OECD)</a><br />
-</li>
-<li><a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a><br />
-</li>
-<li><a href="https://fivethirtyeight.com/">FiveThirtyEight</a><br />
-</li>
-<li><a href="https://www.theguardian.com/data">Guardian Datablog</a></li>
-</ul>
-<p><strong>Data sets in R and in R packages</strong></p>
+<p>The goal of this 50-minute tutorial is to introduce the R novice to the basic elements of data carpentry.</p>
+<div id="prerequisites-2" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Prerequisites</h3>
+<p>Use <em>File &gt; New File &gt; R Script</em> to create a new R script</p>
+<p>Name the script <code>03-data-basics.R</code>. Save it in the <code>scripts</code> directory</p>
+</div>
+<div id="data-sets-in-r" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Data sets in R</h3>
 <p>Practice data sets are included with the basic R installation and with some R packages.</p>
 <p>To list the practice data sets available in R, type in the Console,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>() <span class="co"># to list data sets in base R</span></code></pre>
@@ -1065,10 +1024,8 @@ p <span class="co"># print the graph</span></code></pre>
  #&gt; CO2            Carbon Dioxide Uptake in Grass Plants
  #&gt; Formaldehyde   Determination of Formaldehyde
  etc.</code></pre>
-<p>We use the <code>data()</code> function to list practice datasets included in a package (if any). For example, load the dplyr package by typing in the Console,</p>
-<p>To list the practice data sets available in an R package (if any),</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)
-<span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>) <span class="co"># to list data sets an R package</span></code></pre>
+<p>We use the <code>data()</code> function to list practice datasets included in a package (if any). For example, to determine what packages are bundled with the dplyr package, type in the Console,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>) <span class="co"># to list data sets an R package</span></code></pre>
 <p>yields</p>
 <pre><code> #&gt; band_instruments   Band membership
  #&gt; band_instruments2  Band membership
@@ -1076,35 +1033,73 @@ p <span class="co"># print the graph</span></code></pre>
  #&gt; nasa               NASA spatio-temporal data
  #&gt; starwars           Starwars characters
  #&gt; storms             Storm tracks data</code></pre>
-<p>Every data set in base R and in R packages has a help page that describes format of the data and the variable names with short descriptions. Type in the Console a question mark followed by the name of the data set, e.g.,</p>
-<pre class="sourceCode r"><code class="sourceCode r">? starwars</code></pre>
+<p>Every data set in base R and in R packages has a help page that describes the data format and variable names. The data help page can be accessed using <code>help()</code>, for example,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(starwars, <span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>)</code></pre>
+<p>Alternatively, if the package is loaded, you may run the <code>? item-name</code> syntax in the Console,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)
+? starwars</code></pre>
 <p>yields</p>
 <img src="figures/starwars-help-page.png" alt="starwars help page" style="left:0px; padding:0px;" width="600"/>
-<p><br>
-Data in base R and in R packages are automatically loaded</p>
-<ul>
-<li>Launching R loads all data sets in base R</li>
-<li>Loading a package with <code>library()</code> loads all the data sets in the package</li>
-<li>All other data files have to be read or web-scraped explicitly</li>
-</ul>
 </div>
 <div id="exercises" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Exercises</h3>
+<h3><span class="header-section-number">4.3.3</span> Exercises</h3>
+<p>These exercises assume that you have successfully followed the instructions to <a href="getting-started.html#install-midfieldr">install midfielddata and midfieldr</a>.</p>
 <ol style="list-style-type: decimal">
-<li>Determine the data sets included in the midfielddata package.</li>
-<li>Determine the variables in the <code>midfielddegrees</code> data set from the midfielddata package.</li>
-<li>Determine the data sets included in the midfieldr package.</li>
-<li>Determine the variables in the <code>case_stickiness</code> data set from the midfieldr package.</li>
+<li>Determine the names of the datasets available in the midfieldr package.</li>
+<li>Determine the variables in <code>case_stickiness</code> (one of the datasets in the midfieldr package).</li>
+<li>Determine the names of the datasets available in the midfielddata package.</li>
+<li>Determine the variables in <code>midfielddegrees</code> (one of the datasets in the midfielddata package).</li>
 </ol>
 </div>
-<div id="acquire-raw-data-and-save-locally" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> Acquire raw data and save locally</h3>
+<div id="import-open-source-data" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Import open-source data</h3>
+<p>There are hundreds of websites providing access to public data, for example,</p>
+<ul>
+<li><a href="https://www.cdc.gov/datastatistics/index.html">Centers for Disease Control and Prevention (CDC)</a><br />
+</li>
+<li><a href="https://data.oecd.org/">Organisation for Economic Cooperation and Development (OECD)</a><br />
+</li>
+<li><a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a><br />
+</li>
+<li><a href="https://fivethirtyeight.com/">FiveThirtyEight</a></li>
+</ul>
+<p>If you know the URL for a specific data file, you can download it using the <code>import()</code> function in the rio package.</p>
+<p>For example, below is the URL to a data set saved as a CSV file. Add these lines to the script you opened earlier.</p>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;http://bit.ly/BostonSnowfallCSV&quot;</span></code></pre>
+<p>Now use <code>rio::import()</code> to read the CSV file,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;rio&quot;</span>)
+x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">format =</span> <span class="st">&quot;csv&quot;</span>)</code></pre>
+<p>And then <code>rio::export()</code> to write it directly to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/boston_snow.csv&quot;</span>)</code></pre>
+<p>If you navigate to your <code>data</code> directory, you should find the new CSV data file. Don’t open it yet!</p>
+<p>The rio package can download XLS and XLSX files as well. And when using <code>export()</code>, we can change the data format to CSV.</p>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;https://www2.stetson.edu/~jrasp/data/Pollution.xls&quot;</span>
+x   &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">format =</span> <span class="st">&quot;xls&quot;</span>)
+rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/pollution.csv&quot;</span>)</code></pre>
+</div>
+<div id="default-app-for-manually-opening-csv-files" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> Default app for manually opening CSV files</h3>
+<p>Navigate to your data directory. If the <code>boston_snow.csv</code> file is represented by a text-editor icon like Notebook, then you can skip this section.</p>
+<p>However, if the <code>boston_snow.csv</code> file is represented by an MSExcel icon, then Excel is your default app for opening CSV files. Excel can alter a CSV file in unexpected ways, so we need to change the default.</p>
+<ul>
+<li>Right-click on the <code>boston_snow.csv</code> file<br />
+</li>
+<li>Select <em>Open with</em> then <em>Choose another app</em><br />
+</li>
+<li>In the dialog box, check the box labeled <em>Always use this app to open .csv files</em><br />
+</li>
+<li>Select <em>Notepad</em> (or any other text editor) and <em>OK</em><br />
+</li>
+<li>The CSV file will open. You can examine it briefly, and close it.</li>
+</ul>
+<p>We do sometimes want to examine data text file, and when we do, we want to use a text editor.</p>
+<img src="figures/400-13-raw-data-in-excel.png" alt="" style="left:0px; padding:0px;" width="400"/>
 </div>
 <div id="read-into-r-and-identify-the-data-structure" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> Read into R and identify the data structure</h3>
+<h3><span class="header-section-number">4.3.6</span> Read into R and identify the data structure</h3>
 </div>
 <div id="transform-reshape-and-save" class="section level3">
-<h3><span class="header-section-number">4.3.5</span> Transform, reshape, and save</h3>
+<h3><span class="header-section-number">4.3.7</span> Transform, reshape, and save</h3>
 <p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
 

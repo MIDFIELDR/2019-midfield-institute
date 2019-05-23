@@ -180,18 +180,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.11" data-path="day-0.html"><a href="day-0.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>4.2.11</b> Resize and write to file</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Data basics</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#determine-your-data-sources"><i class="fa fa-check"></i><b>4.3.1</b> Determine your data sources</a></li>
-<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#exercises"><i class="fa fa-check"></i><b>4.3.2</b> Exercises</a></li>
-<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#acquire-raw-data-and-save-locally"><i class="fa fa-check"></i><b>4.3.3</b> Acquire raw data and save locally</a></li>
-<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#read-into-r-and-identify-the-data-structure"><i class="fa fa-check"></i><b>4.3.4</b> Read into R and identify the data structure</a></li>
-<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#transform-reshape-and-save"><i class="fa fa-check"></i><b>4.3.5</b> Transform, reshape, and save</a></li>
+<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#prerequisites-2"><i class="fa fa-check"></i><b>4.3.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#data-sets-in-r"><i class="fa fa-check"></i><b>4.3.2</b> Data sets in R</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#exercises"><i class="fa fa-check"></i><b>4.3.3</b> Exercises</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#import-open-source-data"><i class="fa fa-check"></i><b>4.3.4</b> Import open-source data</a></li>
+<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#default-app-for-manually-opening-csv-files"><i class="fa fa-check"></i><b>4.3.5</b> Default app for manually opening CSV files</a></li>
+<li class="chapter" data-level="4.3.6" data-path="day-0.html"><a href="day-0.html#read-into-r-and-identify-the-data-structure"><i class="fa fa-check"></i><b>4.3.6</b> Read into R and identify the data structure</a></li>
+<li class="chapter" data-level="4.3.7" data-path="day-0.html"><a href="day-0.html#transform-reshape-and-save"><i class="fa fa-check"></i><b>4.3.7</b> Transform, reshape, and save</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>5</b> MIDFIELD Institute Day 1</a><ul>
-<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-2"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-3"><i class="fa fa-check"></i>Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="day-2.html"><a href="day-2.html"><i class="fa fa-check"></i><b>6</b> MIDFIELD Institute Day 2</a><ul>
-<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-3"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-4"><i class="fa fa-check"></i>Prerequisites</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -216,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="about-the-midfield-workshops" class="section level1">
 <h1><span class="header-section-number">1</span> About the MIDFIELD workshops</h1>
-<img src="images/midfield-grad-logo.png" alt="midfield logo" style="left:0px; padding:10px;" width="200"/>
+<img src="figures/midfield-grad-logo.png" alt="midfield logo" style="left:0px; padding:10px;" width="200"/>
 <div id="what-is-midfieldr" class="section level2">
 <h2><span class="header-section-number">1.1</span> What is midfieldr?</h2>
 <p>Analytical tools for research in student pathways are generally scarce. The R package <strong>midfieldr</strong> provides an entry to this type of intersectional research.</p>
@@ -230,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>R is an open source language and environment for statistical computing and graphics <span class="citation">(R Core Team, <a href="references.html#ref-2018rcoreteam" role="doc-biblioref">2018</a>)</span>, ranked by IEEE in 2018 as the 7th most popular programming language (Python, C++, and Java are the top three) <span class="citation">(Cass, <a href="references.html#ref-2018Cass" role="doc-biblioref">2018</a>)</span>. If you are new to R, some of its best features, paraphrasing Wickham <span class="citation">(<a href="references.html#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>, are:</p>
 <ul>
 <li>R is free, open source, and available on every major platform, making it easy for others to replicate your work.</li>
-<li>More than 14,000 open-source R packages are available (April 2019). Many are cutting-edge tools.</li>
+<li>More than 14,000 open-source R packages are available (14,000). Many are cutting-edge tools.</li>
 <li>R packages provide deep-seated support for data analysis, e.g., missing values, data frames, and subsetting.</li>
 <li>R packages provide powerful tools for communicating results via html, pdf, docx, or interactive websites.</li>
 <li>It is easy to get help from experts in the R community.</li>

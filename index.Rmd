@@ -20,7 +20,7 @@ write_bib(c(.packages(), "tidyverse", "seplyr", "wrapr", "cdata", "knitr"), "pac
 ```
 
 ```{r echo = FALSE}
-htmltools::img(src = knitr::include_graphics("images/midfield-grad-logo.png"), 
+htmltools::img(src = knitr::include_graphics("figures/midfield-grad-logo.png"), 
         alt = 'midfield logo', 
         style = 'left:0px; padding:10px;',
         width = 200)
@@ -93,7 +93,7 @@ Funding provided by the National Science Foundation Grant 1545667 "Expanding Acc
 
 ```{r}
 htmltools::img(src = 
-knitr::include_graphics("images/NSF_4-Color_bitmap_Logo.png"), 
+knitr::include_graphics("figures/NSF_4-Color_bitmap_Logo.png"), 
                alt = 'NSF logo', 
                width = 90)
 ```
