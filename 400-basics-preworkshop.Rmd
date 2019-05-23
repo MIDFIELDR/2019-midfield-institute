@@ -33,7 +33,7 @@ The tutorials are designed to be completed by an R novice in less than 50 minute
 
 <!-- R basics -->    
 
-```{r child = "R-basics.Rmd"}
+```{r child = "401-R-basics.Rmd"}
 ```
 
 Feel free to take a break before starting the next tutorial.    
@@ -45,7 +45,7 @@ Feel free to take a break before starting the next tutorial.
 
 <!-- Graph basics -->  
 
-```{r child = "graph-basics.Rmd"}
+```{r child = "402-graph-basics.Rmd"}
 ```
 
 Feel free to take a break before starting the next tutorial.    
@@ -57,13 +57,11 @@ Feel free to take a break before starting the next tutorial.
 
 <!-- Data basics -->  
 
-```{r child = "data-basics.Rmd"}
+```{r child = "403-data-basics.Rmd"}
 ```
 
 <br>    
 [&#9650; top of page](#day-0)    
 
 
-
-## References {-}    
-<div id="refs"></div>    
+ 

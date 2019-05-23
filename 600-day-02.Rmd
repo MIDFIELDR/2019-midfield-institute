@@ -17,7 +17,7 @@ Agenda [[link](#day2agenda)]
 
 
 
-## References {-}
+# References {-}
 
 <div id="refs"></div>
 

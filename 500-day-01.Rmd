@@ -16,8 +16,3 @@ Agenda [[link](#day1agenda)]
 - Run `midfield_institute.Rproj` to start every work session 
 
 
-## References {-}
-
-<div id="refs"></div>
-
-

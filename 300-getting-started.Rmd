@@ -254,10 +254,3 @@ And that concludes the setup.
 
 
 
-
-
-## References {-}
-
-<div id="refs"></div>
-
-

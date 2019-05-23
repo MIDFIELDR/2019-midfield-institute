@@ -1,0 +1,77 @@
+# About the MIDFIELD workshops 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("images/midfield-grad-logo.png"), 
+        alt = 'midfield logo', 
+        style = 'left:0px; padding:10px;',
+        width = 200)
+
+suppressPackageStartupMessages(library("wrapr"))
+```
+
+## What is midfieldr? {}
+
+Analytical tools for research in student pathways are generally scarce. The R package **midfieldr** provides an entry to this type of intersectional research.
+
+**midfieldr** is a R package that provides functions for turning student-record data into persistence metrics. 
+
+**midfielddata** is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
+
+
+[[For more information about midfieldr]](https://midfieldr.github.io/midfieldr/){target="_blank"}    
+[[For more information about midfielddata]](https://midfieldr.github.io/midfielddata/){target="_blank"}    
+
+
+
+
+
+## Why R? {}
+
+```{r eval = FALSE}
+# if internet available, find and save current number of R packages
+if (pingr::is_online()) {
+	n_pkg <- nrow(available.packages(contrib.url("https://cloud.r-project.org/")))
+	# round down to nearest 250
+	n_pkg <- 250 * floor(n_pkg / 250)
+	n_pkg <- format(n_pkg, big.mark = ",", trim = TRUE, digits = 0, scientific = FALSE)
+	saveRDS(n_pkg, "data/n_pkg.rds")
+}
+# use saved number 
+n_pkg <- readRDS("data/n_pkg.rds")
+
+# The variety of R packages (more than `r n_pkg` as of `r Sys.Date()`), many of them cutting edge tools.
+```
+
+R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], ranked by IEEE in 2018 as the 7th most popular programming language (Python, C++, and Java are the top three) [@2018Cass]. If you are new to R, some of its best features, paraphrasing Wickham  [-@wickham2014advanced], are: 
+
+- R is free, open source, and available on every major platform, making it easy for others to replicate your work.
+- More than 14,000 open-source R packages are available (April 2019). Many are cutting-edge tools. 
+- R packages provide deep-seated support for data analysis, e.g., missing values, data frames, and subsetting.
+- R packages provide powerful tools for communicating results via html, pdf, docx, or interactive websites.
+- It is easy to get help from experts in the R community.
+
+RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control  [@2016rstudio]. 
+
+[[For more information about R]](https://www.r-project.org/)     
+[[For more information about RStudio]](http://www.rstudio.com/)     
+
+
+
+## Why R graphics? {}
+
+Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in software like Microsoft Excel and PowerPoint creates the **illusion** of flexibility. ... So marvelously malleable are these graphical effects---but for whom and to what end? Paradoxically, then, even as the technology for visualizing data has become more sophisticated, it does not necessarily engender rhetorically sensitive design."
+
+The graphics tools in R provide the means to control every pixel in the service of "rhetorically sensitive design." Designers can craft their visual arguments to balance  logos, ethos, pathos, and kairos as appropriate for a given audience in a given rhetorical situation. 
+
+[[For a gallery of R graphics]](https://www.r-graph-gallery.com/){target="_blank"}      
+
+
+
+
+
+
+
+
+
+
+

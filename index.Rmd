@@ -12,17 +12,11 @@ description: "A public site for workshops for access to MIDFIELD"
 nocite: | 
 ---
 
-# MIDFIELD Workshops {#midfield-workshops}
+# MIDFIELD Workshops {- #midfield-workshops}
 
 ```{r echo = FALSE}
 # create a bib database for R packages
-library(knitr)
-write_bib(
-  c(.packages(), 'tidyverse', 'binb', 'seplyr', 'wrapr', 'cdata')
-  , 'packages.bib'
-  )
-opts_chunk$set(echo = FALSE)
-opts_chunk$set(fig.width = 6, out.width = "70%", fig.align = "center", fig.asp = 0.618, comment = "#>")
+write_bib(c(.packages(), "tidyverse", "seplyr", "wrapr", "cdata", "knitr"), "packages.bib")
 ```
 
 ```{r echo = FALSE}
@@ -38,100 +32,20 @@ suppressPackageStartupMessages(library("wrapr"))
 ```
 
 
-This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using MIDFIELD data  [@2016ohlandlong]. The software environment is R [-@2018rcoreteam] and RStudio [-@2016rstudio]. 
 
-## What is MIDFIELD? {}
+The *Multiple-Institution Database for Investigating Engineering Longitudinal Development* (MIDFIELD) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
 
-**MIDFIELD** (*Multiple-Institution Database for Investigating Engineering Longitudinal Development*) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
+This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using MIDFIELD data. 
 
 [[For more information about MIDFIELD]](https://engineering.purdue.edu/MIDFIELD){target="_blank"}
 
 
 
-## What is midfieldr? {}
-
-Analytical tools for research in student pathways are generally scarce. The R package **midfieldr** provides an entry to this type of intersectional research for anyone willing to develop basic proficiency in R. 
-
-**midfieldr** is a R package that provides functions for turning student-record data into persistence metrics. 
-
-**midfielddata** is an R package that provides a stratified sample of the MIDFIELD data. This data package contains student records for 98,000 students, suitable for practice with the midfieldr package. 
-
-
-[[For more information about midfieldr]](https://midfieldr.github.io/midfieldr/){target="_blank"}    
-[[For more information about midfielddata]](https://midfieldr.github.io/midfielddata/){target="_blank"}    
 
 
 
 
-
-## Why R? {}
-
-```{r eval = FALSE}
-# if internet available, find and save current number of R packages
-if (pingr::is_online()) {
-	n_pkg <- nrow(available.packages(contrib.url("https://cloud.r-project.org/")))
-	# round down to nearest 250
-	n_pkg <- 250 * floor(n_pkg / 250)
-	n_pkg <- format(n_pkg, big.mark = ",", trim = TRUE, digits = 0, scientific = FALSE)
-	saveRDS(n_pkg, "data/n_pkg.rds")
-}
-# use saved number 
-n_pkg <- readRDS("data/n_pkg.rds")
-
-# The variety of R packages (more than `r n_pkg` as of `r Sys.Date()`), many of them cutting edge tools.
-```
-
-
-
-
-R is an open source language and environment for statistical computing and graphics [@2018rcoreteam], ranked by IEEE in 2018 as the 7th most popular programming language (Python, C++, and Java are the top three) [@2018Cass]. If you are new to R, some of its best features, paraphrasing Wickham  [-@wickham2014advanced], are: 
-
-
-- R is free, open source, and available on every major platform, making it easy for others to replicate your work.
-- More than 14,000 open-source R packages are available (April 2019). Many are cutting-edge tools. 
-- R packages provide deep-seated support for data analysis, e.g., missing values, data frames, and subsetting.
-- R packages provide powerful tools for communicating results via html, pdf, docx, or interactive websites.
-- It is easy to get help from experts in the R community.
-
-
-RStudio, an integrated development environment (IDE) for R, includes a console, editor, and tools for plotting, history, debugging, and workspace management as well as access to GitHub for collaboration and version control  [@2016rstudio]. 
-
-
-
-[[For more information about R]](https://www.r-project.org/)     
-
-
-## Why R graphics? {}
-
-Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in software like Microsoft Excel and PowerPoint creates the **illusion** of flexibility. ... So marvelously malleable are these graphical effects---but for whom and to what end? Paradoxically, then, even as the technology for visualizing data has become more sophisticated, it does not necessarily engender rhetorically sensitive design."
-
-The graphics tools in R provide the means to control every pixel in the service of "rhetorically sensitive design." Designers can craft their visual arguments to balance  logos, ethos, pathos, and kairos as appropriate for a given audience in a given rhetorical situation. 
-
-[[For a gallery of R graphics]](https://www.r-graph-gallery.com/){target="_blank"}      
-
-
-
-
-
-
-## Publications {} 
-
-The power of data visualization is discovering the stories in the data. As John Tukey [-@Tukey:1977] put it, "The greatest value of a picture is when it forces us to notice what we never expected to see." 
-
-The MIDFIELD team has been using R to explore and present the stories in the MIDFIELD data for several years. To see a sample of our work, you can follow these links: 
-
-- Lord SM, Ohland MW, Layton RA,and Camacho MM (2019) Beyond pipeline and pathways: Ecosystem metrics. *Journal of Engineering Education*, 108, 32--56,  https://doi.org/10.1002/jee.20250 
-- Lord SM, Layton RA, and Ohland MW (2015) Multi-Institution study of student demographics and outcomes in Electrical and Computer Engineering in the USA, *IEEE Transactions on Education*, 58(3), 141--150,  http://dx.doi.org/10.1109/TE.2014.2344622  
-- Brawner CE, Lord SM,  Layton RA, Ohland MW, and Long RA (2015) Factors affecting women's persistence in chemical engineering, *International Journal of Engineering Education* 31(6A), 1431--1447, https://tinyurl.com/y6jq58xh  
-
-
-[[For more information about MIDFIELD publications]](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html){target="_blank"}    
-
-
-
-
-
-## Facilitators {}
+## Facilitators {-}
 
 **Matthew Ohland** is the MIDFIELD Director and Principal Investigator. He is Professor and Associate Head of Engineering Education at Purdue University.
 
@@ -149,11 +63,31 @@ The MIDFIELD team has been using R to explore and present the stories in the MID
 
 
 
+## Publications {-} 
+
+The MIDFIELD team has been exploring and presenting the stories in the MIDFIELD data for several years. To see a sample of our work, you can follow these links: 
+
+- Lord SM, Ohland MW, Layton RA,and Camacho MM (2019) Beyond pipeline and pathways: Ecosystem metrics. *Journal of Engineering Education*, 108, 32--56,  https://doi.org/10.1002/jee.20250 
+- Lord SM, Layton RA, and Ohland MW (2015) Multi-Institution study of student demographics and outcomes in Electrical and Computer Engineering in the USA, *IEEE Transactions on Education*, 58(3), 141--150,  http://dx.doi.org/10.1109/TE.2014.2344622  
+- Brawner CE, Lord SM,  Layton RA, Ohland MW, and Long RA (2015) Factors affecting women's persistence in chemical engineering, *International Journal of Engineering Education* 31(6A), 1431--1447, https://tinyurl.com/y6jq58xh  
+
+
+[[For more information about MIDFIELD publications]](https://engineering.purdue.edu/MIDFIELD/papers_presentations.html){target="_blank"}    
 
 
 
 
-## Acknowledgment {-}
+## Licenses {-} 
+
+The following licenses apply to the text, data, and code in these workshops. Our goal is to minimize legal encumbrances to the dissemination, sharing, use, and re-use of this work. However, the existing rights of authors whose work is cited (text, code, or data) are reserved to those authors.
+
+- [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) for all text.  
+- [GPL-3](https://www.r-project.org/Licenses/GPL-3) for all code.  
+- [CC0](https://wiki.creativecommons.org/wiki/CC0_use_for_data) for all data.  
+
+
+
+## Acknowledgement {-} 
 
 Funding provided by the National Science Foundation Grant 1545667 "Expanding Access to and Participation in the Multiple-Institution Database for Investigating Engineering Longitudinal Development." 
 
@@ -164,9 +98,4 @@ knitr::include_graphics("images/NSF_4-Color_bitmap_Logo.png"),
                width = 90)
 ```
 
-
-```{r}
-# delete html byproducts
-unlink("./*.html")
-```
 

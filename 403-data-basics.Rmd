@@ -94,7 +94,70 @@ There are hundreds of websites providing access to public data. Here are just a 
 
 **Data sets in R and in R packages**  
 
-R and R packages come bundled with datasets used for practice. 
+Practice data sets are included with the basic R installation and with some R packages.
+
+To list the practice data sets available in R, type in the Console,
+
+```r
+data() # to list data sets in base R
+```
+
+which yields
+
+     #> AirPassengers  Monthly Airline Passenger Numbers
+     #> BJsales        Sales Data with Leading Indicator
+     #> BOD            Biochemical Oxygen Demand
+     #> CO2            Carbon Dioxide Uptake in Grass Plants
+     #> Formaldehyde   Determination of Formaldehyde
+     etc.
+
+We use the `data()` function to list practice datasets included in a package (if any). For example, load the dplyr package by typing in the Console, 
+
+To list the practice data sets available in an R package (if any), 
+
+```r
+library("dplyr")
+data(package = "dplyr") # to list data sets an R package
+```
+
+yields
+
+     #> band_instruments   Band membership
+     #> band_instruments2  Band membership
+     #> band_members       Band membership
+     #> nasa               NASA spatio-temporal data
+     #> starwars           Starwars characters
+     #> storms             Storm tracks data
+
+Every data set in base R and in R packages has a help page that describes format of the data and the variable names with short descriptions. Type in the Console a question mark followed by the name of the data set, e.g.,
+
+```r
+? starwars
+```
+
+yields
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/starwars-help-page.png"),
+               alt   = 'starwars help page',
+               style = 'left:0px; padding:0px;',
+               width = 600)
+```
+
+
+<br>
+Data in base R and in R packages are automatically loaded
+
+- Launching R loads all data sets in base R
+- Loading a package with `library()` loads all the data sets in the package
+- All other data files have to be read or web-scraped  explicitly
+
+### Exercises 
+
+1. Determine the data sets included in the midfielddata package.
+1. Determine the variables in the `midfielddegrees` data set from the midfielddata package.
+1. Determine the data sets included in the midfieldr package.
+1. Determine the variables in the `case_stickiness` data set from the midfieldr package.
 
 
 ### Acquire raw data and save locally 
