@@ -183,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#prerequisites-2"><i class="fa fa-check"></i><b>4.3.1</b> Prerequisites</a></li>
 <li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#data-sets-in-r"><i class="fa fa-check"></i><b>4.3.2</b> Data sets in R</a></li>
 <li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#data-structure"><i class="fa fa-check"></i><b>4.3.3</b> Data structure</a></li>
-<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#case-1-adjusting-for-inflation"><i class="fa fa-check"></i><b>4.3.4</b> Case 1: Adjusting for inflation</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#example-create-a-2018-price-index"><i class="fa fa-check"></i><b>4.3.4</b> Example: Create a 2018 price index</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>5</b> MIDFIELD Institute Day 1</a><ul>
@@ -256,16 +256,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;socviz&quot;</span>)</code></pre>
-<p>Run the script by clicking the <em>Source</em> button. If you see an error, e.g.,</p>
-<pre><code>Error in library(&quot;tidyverse&quot;) : there is no package called &#39;tidyverse&#39;</code></pre>
-<p>then you have to install the package as explained in <a href="getting-started.html#install-an-r-package">Install an R package</a></p>
+<p>Run the script by clicking the <em>Source</em> button. If you see an error like this one,</p>
+<pre><code>Error in library(&quot;pkg_name&quot;) : there is no package called &#39;pkg_name&#39;</code></pre>
+<p>then you should install the missing package(s) and run the script again.</p>
+<p><a href="getting-started.html#install-an-r-package">[To review how to install an R package]</a></p>
 <p>Guidelines</p>
 <ul>
-<li>In this script type the lines of code in the tutorial below one line at a time.<br />
+<li>As you work through the tutorial, type a line or chunk of code then <em>File &gt; Save</em> and <em>Source.</em><br />
 </li>
-<li>After every line, <em>File &gt; Save</em>, and hit the <em>Source</em> button to run the code.<br />
-</li>
-<li>Confirm that your result matches the result in the tutorial.<br />
+<li>Confirm that your result matches the tutorial result.<br />
 </li>
 <li><strong>Your turn</strong> exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!</li>
 </ul>
@@ -581,16 +580,15 @@ new_vector</code></pre>
 
 <span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;gapminder&quot;</span>)</code></pre>
-<p>Run the script by clicking the <em>Source</em> button. If you see an error, e.g.,</p>
-<pre><code>Error in library(&quot;gapminder&quot;) : there is no package called ‘gapminder’</code></pre>
-<p>then you have to install the package as explained in <a href="getting-started.html#install-an-r-package">Install an R package</a></p>
+<p>Run the script by clicking the <em>Source</em> button. If you see an error like this one,</p>
+<pre><code>Error in library(&quot;pkg_name&quot;) : there is no package called &#39;pkg_name&#39;</code></pre>
+<p>then you should install the missing package(s) and run the script again.</p>
+<p><a href="getting-started.html#install-an-r-package">[To review how to install an R package]</a></p>
 <p>Guidelines</p>
 <ul>
-<li>In this script type the lines of code in the tutorial below one line at a time.<br />
+<li>As you work through the tutorial, type a line or chunk of code then <em>File &gt; Save</em> and <em>Source.</em><br />
 </li>
-<li>After every line, <em>File &gt; Save</em>, and hit the <em>Source</em> button to run the code.<br />
-</li>
-<li>Confirm that your result matches the result in the tutorial.<br />
+<li>Confirm that your result matches the tutorial result.<br />
 </li>
 <li><strong>Your turn</strong> exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!</li>
 </ul>
@@ -1006,24 +1004,21 @@ p <span class="co"># print the graph</span></code></pre>
 <p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data.</p>
 <p>Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected.</p>
 </blockquote>
-<p>The goal of this 50-minute tutorial is to introduce the R novice to basic data carpentry skills:</p>
+<p>The goal of this 50-minute tutorial is to introduce three basic steps of data preparation:</p>
+<p><br></p>
 <table>
 <tbody>
 <tr class="odd">
-<td align="left"><img src="figures/data-basics-01.png" /></td>
-<td align="left">Importing data</td>
+<td align="left"><img src="figures/data-basics-02.png" /></td>
+<td align="left"><strong>Step 1.</strong> Importing raw data and writing to file.</td>
 </tr>
 <tr class="even">
-<td align="left"><img src="figures/data-basics-02.png" /></td>
-<td align="left">Reading data into R; writing data from R to file.</td>
+<td align="left"><img src="figures/data-basics-03.png" /></td>
+<td align="left"><strong>Step 2.</strong> Identifying the data structure.</td>
 </tr>
 <tr class="odd">
-<td align="left"><img src="figures/data-basics-03.png" /></td>
-<td align="left">Identifying data structure, the number of observations, the number of variables, and their types.</td>
-</tr>
-<tr class="even">
 <td align="left"><img src="figures/data-basics-04.png" /></td>
-<td align="left">Transforming, reshaping, and joining data to obtain the desired form for your intended graph or analysis.</td>
+<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
 </tr>
 </tbody>
 </table>
@@ -1035,6 +1030,8 @@ p <span class="co"># print the graph</span></code></pre>
 </li>
 <li>You launched <code>midfield_institute.Rproj</code> to start the R session</li>
 </ul>
+<p>Install the inspectdf package from GitHub. If a message comes up about updating packages, you can type the number that corresponds to <code>None</code> for now.</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;alastairrushworth/inspectdf&quot;</span>)</code></pre>
 <p>Use <em>File &gt; New File &gt; R Script</em> to create a new R script</p>
 <ul>
 <li>Name the script <code>03-data-basics.R</code><br />
@@ -1050,17 +1047,17 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;lubridate&quot;</span>) 
 <span class="kw">library</span>(<span class="st">&quot;seplyr&quot;</span>) 
-<span class="kw">library</span>(<span class="st">&quot;rio&quot;</span>)</code></pre>
-<p>Run the script by clicking the <em>Source</em> button. If you see an error, e.g.,</p>
-<pre><code>Error in library(&quot;rio&quot;) : there is no package called ‘rio’</code></pre>
-<p>then you have to install the package as explained in <a href="getting-started.html#install-an-r-package">Install an R package</a></p>
+<span class="kw">library</span>(<span class="st">&quot;rio&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;inspectdf&quot;</span>)</code></pre>
+<p>Run the script by clicking the <em>Source</em> button. If you see an error like this one,</p>
+<pre><code>Error in library(&quot;pkg_name&quot;) : there is no package called &#39;pkg_name&#39;</code></pre>
+<p>then you should install the missing package(s) and run the script again.</p>
+<p><a href="getting-started.html#install-an-r-package">[To review how to install an R package]</a></p>
 <p>Guidelines</p>
 <ul>
-<li>In this script type the lines of code in the tutorial below one line at a time.<br />
+<li>As you work through the tutorial, type a line or chunk of code then <em>File &gt; Save</em> and <em>Source.</em><br />
 </li>
-<li>After every line, <em>File &gt; Save</em>, and hit the <em>Source</em> button to run the code.<br />
-</li>
-<li>Confirm that your result matches the result in the tutorial.<br />
+<li>Confirm that your result matches the tutorial result.<br />
 </li>
 <li><strong>Your turn</strong> exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!</li>
 </ul>
@@ -1099,34 +1096,59 @@ p <span class="co"># print the graph</span></code></pre>
 <img src="figures/starwars-help-page.png" alt="starwars help page" style="left:0px; padding:0px;" width="600"/>
 <p><br></p>
 <blockquote>
-<p><strong>Your turn.</strong></p>
-<p>These exercises assume that you have successfully followed the instructions to <a href="getting-started.html#install-midfieldr">install midfielddata and midfieldr</a>.</p>
+<p><strong>Your turn.</strong> These exercises assume that you have successfully followed the instructions to <a href="getting-started.html#install-midfieldr">install midfielddata and midfieldr</a>.</p>
 <ol style="list-style-type: decimal">
 <li>Determine the names of the datasets available in the midfieldr package.</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfieldr/reference/index.html"><em>Check your work</em></a></p>
+<ol start="2" style="list-style-type: decimal">
 <li>Determine the variables in <code>case_stickiness</code> (one of the datasets in the midfieldr package).</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfieldr/reference/case_stickiness.html"><em>Check your work</em></a></p>
+<ol start="3" style="list-style-type: decimal">
 <li>Determine the names of the datasets available in the midfielddata package.</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfielddata/index.html"><em>Check your work</em></a></p>
+<ol start="4" style="list-style-type: decimal">
 <li>Determine the variables in <code>midfielddegrees</code> (one of the datasets in the midfielddata package).</li>
 </ol>
-<p><em>Check your work:</em></p>
+<p><a href="https://midfieldr.github.io/midfielddata/reference/midfielddegrees.html"><em>Check your work</em></a></p>
 </blockquote>
 </div>
 <div id="data-structure" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Data structure</h3>
+<p>When we first encounter any data set, the first step is to characterize its structure including,</p>
 <ul>
-<li>the R data structure, e.g., vector, matrix, data frame, time series, list</li>
+<li>the R data structure, e.g., vector, matrix, data frame, time series, list, etc.<br />
+</li>
 <li>the number of observations</li>
 <li>the number of variables</li>
-<li>the name and type or class of each variable</li>
+<li>the name and class of each variable</li>
 </ul>
-<p>[[]](<a href="http://adv-r.had.co.nz/Data-structures.html" class="uri">http://adv-r.had.co.nz/Data-structures.html</a></p>
+<p>We use these functions—encountered in <a href="day-0.html#r-basics">R basics</a>—to examine the structure of a dataset. .</p>
+<ul>
+<li><code>str()</code></li>
+<li><code>glimpse()</code></li>
+<li><code>class()</code></li>
+</ul>
+<p><a href="http://adv-r.had.co.nz/Data-structures.html">[To read more about R data structures]</a></p>
 </div>
-<div id="case-1-adjusting-for-inflation" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> Case 1: Adjusting for inflation</h3>
-<p>This example illustrates many of the basic skills outlined above.</p>
-<p>Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old could live comfortably on $5/hour but in 2018 (45 years later) that same 20-year-old has to earn $30/hour to achieve the same modest standard of living.</p>
+<div id="example-create-a-2018-price-index" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Example: Create a 2018 price index</h3>
+<p>In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars.</p>
+<p>Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old could live comfortably on $5/hour but in 2018 (45 years later) a 20-year-old has to earn $30/hour to achieve the same modest standard of living.</p>
 <p>We usually adjust for the effects of inflation in US dollars using the Consumer Price Index (CPI) published by the US Bureau of Labor Statistics (BLS). The CPI is available by month from the BLS or from the Federal Reserve (FRED), from 1913 to the present.</p>
-<p><strong>Obtaining the CPI</strong></p>
-<p>The URL to obtain the CPI data from the FRED is <a href="http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt">http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt</a>. If you click on the link, you can see that the data starts on line14; the first 13 lines of the text are meta-information:</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-02.png" /></td>
+<td align="left"><strong>Step 1.</strong> Importing raw data and writing to file.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The URL to obtain the CPI data from the FRED is <a href="http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt">http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt</a>. If you click on the link, you can see that the data starts on line 14; the first 13 lines of the text are meta-information:</p>
 <pre><code>Title:               Consumer Price Index for All Urban Consumers: All Items  
 Series ID:           CPIAUCNS  
 Source:              U.S. Bureau of Labor Statistics  
@@ -1143,19 +1165,152 @@ Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpi
 <ul>
 <li>Assign the URL</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">cpi_url  &lt;-<span class="st"> &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span></code></pre>
 <ul>
-<li>Import the data, skipping the first 13 lines</li>
+<li>Import the data using <code>rio::import()</code>, skipping the first 13 lines</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(cpi_url, <span class="dt">skip =</span> <span class="dv">13</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">skip =</span> <span class="dv">13</span>)</code></pre>
 <ul>
-<li>Write to file and convert to CSV</li>
+<li>Convert the txt file to CSV and write to file in our <code>data</code> directory</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/cip.csv&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
+<p>Now that we have imported the data and written it to file, we don’t have to re-import the data from the Internet every time we <em>Source</em> this R script. We can comment-out those lines as follows (the hashtag # indicates an R comment, that is, a non-executable line of code).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># url &lt;- &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span>
+<span class="co"># x   &lt;- rio::import(url, skip = 13)</span>
+<span class="co"># rio::export(x, &quot;data/cpi-raw.csv&quot;)</span></code></pre>
+<p>Once you have obtained your raw data, save it to file (like we did above) and leave that file unaltered. Never manipulate that data file manually; such operations waste time and are error-prone. Instead, to support the reproducibilty of your work, do all your data preparation in a scripted environment with explicit links to data files.</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-03.png" /></td>
+<td align="left"><strong>Step 2.</strong> Identifying the data structure.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <ul>
-<li>Read the CSV file</li>
+<li>Read the data into R using <code>read_csv()</code>.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/cip.csv&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
+<ul>
+<li>Use <code>class()</code> to determine that the <code>cpi</code> data object itself has the structure of a tibble (a type of data frame).</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cpi)</code></pre>
+<pre><code>#&gt; [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
+<ul>
+<li>Use <code>glimpse()</code> to examine the data object, which tells us we have 1276 observations of 2 variables: {DATE, VALUE}</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(cpi)</code></pre>
+<pre><code>#&gt; Observations: 1,276
+#&gt; Variables: 2
+#&gt; $ DATE  &lt;date&gt; 1913-01-01, 1913-02-01, 1913-03-01, 1913-04-01, 1913-05...
+#&gt; $ VALUE &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1...</code></pre>
+<p>The first few values of the date variable tell us that these are monthly data. <code>VALUE</code> is the monthly CPI. This agrees with the metadata above that gave us a date range of 1913-01-01 to 2019-04-01 which is 106 years + 4 months = 1276 months (observations) total.</p>
+<p>The <code>glimpse()</code> also tells us that</p>
+<ul>
+<li><code>DATE</code> is of the <code>date</code> class<br />
+</li>
+<li><code>VALUE</code> is a double precision floating point number</li>
+</ul>
+<p>We use functions from the inspectdf package to tell us more about the data frame.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;inspectdf&quot;</span>)
+x &lt;-<span class="st"> </span>cpi</code></pre>
+<ul>
+<li><code>inspect_types()</code> confirms the number and type of variables</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_types</span>(x) <span class="co"># variable type</span></code></pre>
+<pre><code>#&gt; # A tibble: 2 x 4
+#&gt;   type      cnt  pcnt col_name 
+#&gt;   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;list&gt;   
+#&gt; 1 Date        1    50 &lt;chr [1]&gt;
+#&gt; 2 numeric     1    50 &lt;chr [1]&gt;</code></pre>
+<ul>
+<li><code>inspect_mem()</code> indicates the amount of memory each variable requires</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_mem</span>(x)   <span class="co"># memory</span></code></pre>
+<pre><code>#&gt; # A tibble: 2 x 3
+#&gt;   col_name size      pcnt
+#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 DATE     10.23 Kb  50.5
+#&gt; 2 VALUE    10.02 Kb  49.5</code></pre>
+<ul>
+<li><code>inspect_na()</code> indicates that there are no missing values</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_na</span>(x)    <span class="co"># NAs</span></code></pre>
+<pre><code>#&gt; # A tibble: 2 x 3
+#&gt;   col_name   cnt  pcnt
+#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 DATE         0     0
+#&gt; 2 VALUE        0     0</code></pre>
+<ul>
+<li><code>inspect_num()</code> summarizes the numerical variables, in this case, the CPI</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_num</span>(x)   <span class="co"># numeric variables</span></code></pre>
+<pre><code>#&gt; # A tibble: 1 x 10
+#&gt;   col_name   min    q1 median  mean    q3   max    sd pcnt_na hist         
+#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;list&gt;       
+#&gt; 1 VALUE      9.7  17.4   32.0  78.9  141.  256.  76.9       0 &lt;tibble [28 ~</code></pre>
+<ul>
+<li><code>inspect_cat()</code> summarizes the categorical variables, in this case, the date</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_cat</span>(x)   <span class="co"># categorical variables</span></code></pre>
+<pre><code>#&gt; # A tibble: 1 x 5
+#&gt;   col_name   cnt common     common_pcnt levels              
+#&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;list&gt;              
+#&gt; 1 DATE      1276 1913-01-01      0.0784 &lt;tibble [1,276 x 3]&gt;</code></pre>
+<ul>
+<li><code>inspect_cat()</code> provides correlation coefficients (if any)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_cor</span>(x)   <span class="co"># correlation (if any) </span></code></pre>
+<pre><code>#&gt; # A tibble: 0 x 3
+#&gt; # ... with 3 variables: col_1 &lt;chr&gt;, col_2 &lt;chr&gt;, corr &lt;dbl&gt;</code></pre>
+<p>These data are in what Hadley Wickham calls “tidy” form, that is,</p>
+<ul>
+<li>Each variable is in a column<br />
+</li>
+<li>Each observation is a row<br />
+</li>
+<li>Each value is a cell</li>
+</ul>
+<p>Such an organization is also called a “data matrix” or a “de-normalized form” <span class="citation">(Mount, <a href="references.html#ref-Mount:2019:tidy-data" role="doc-biblioref">2019</a>)</span>.</p>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong></p>
+<p>Use the inspectdf functions on <code>midfielddata::midfielddegrees</code></p>
+<p><em>Check your work:</em></p>
+</blockquote>
+<pre><code>#&gt; # A tibble: 2 x 4
+#&gt;   type        cnt  pcnt col_name 
+#&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;list&gt;   
+#&gt; 1 character     4    80 &lt;chr [4]&gt;
+#&gt; 2 numeric       1    20 &lt;chr [1]&gt;</code></pre>
+<pre><code>#&gt; # A tibble: 5 x 3
+#&gt;   col_name    size       pcnt
+#&gt;   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;
+#&gt; 1 id          6.7 Mb    69.1 
+#&gt; 2 cip6        780.14 Kb  7.85
+#&gt; 3 degree      763.66 Kb  7.69
+#&gt; 4 institution 763.61 Kb  7.69
+#&gt; 5 term_degree 762.86 Kb  7.68</code></pre>
+<pre><code>#&gt; # A tibble: 5 x 3
+#&gt;   col_name      cnt  pcnt
+#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 cip6        50141  51.4
+#&gt; 2 term_degree 50141  51.4
+#&gt; 3 degree      50141  51.4
+#&gt; 4 id              0   0  
+#&gt; 5 institution     0   0</code></pre>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-04.png" /></td>
+<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <ul>
 <li>Change the column names</li>
 </ul>
@@ -1195,7 +1350,7 @@ Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpi
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_line</span>()
 p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-102-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-115-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The basis year is the year for which the CPI = 100. In this data, the basis year is 1983-1984.</p>
 <pre class="sourceCode r"><code class="sourceCode r">df_note &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">filter</span>(<span class="kw">near</span>(cpi, <span class="dv">100</span>, <span class="dt">tol =</span> <span class="fl">0.5</span>))
@@ -1203,7 +1358,7 @@ p</code></pre>
 p &lt;-<span class="st"> </span>p <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">data =</span> df_note, <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)
 p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-103-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-116-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
 

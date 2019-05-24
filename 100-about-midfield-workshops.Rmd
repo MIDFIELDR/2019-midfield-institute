@@ -29,6 +29,7 @@ Analytical tools for research in student pathways are generally scarce. The R pa
 
 ```{r}
 # if internet available, find and save current number of R packages
+library("pingr")
 if (pingr::is_online()) {
 	n_pkg <- nrow(available.packages(contrib.url("https://cloud.r-project.org/")))
 	# round down to nearest 250

@@ -66,17 +66,19 @@ library("tidyverse")
 library("socviz")
 ```
 
-Run the script by clicking the *Source* button. If you see an error, e.g., 
+Run the script by clicking the *Source* button. If you see an error like this one, 
 
-    Error in library("tidyverse") : there is no package called 'tidyverse'
+    Error in library("pkg_name") : there is no package called 'pkg_name'
 
-then you have to install the package as explained in [Install an R package](#install-an-r-package) 
+then you should install the missing package(s) and run the script again. 
+
+[[To review how to install an R package]](#install-an-r-package)    
+
 
 Guidelines 
 
-- In this script type the lines of code in the tutorial below one line at a time.  
-- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
-- Confirm that your result matches the result in the tutorial.  
+- As you work through the tutorial, type a line or chunk of code then *File &gt; Save* and *Source.*   
+- Confirm that your result matches the tutorial result.  
 - **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
 
 
@@ -478,17 +480,19 @@ library("tidyverse")
 library("gapminder")
 ```
 
-Run the script by clicking the *Source* button. If you see an error, e.g., 
+Run the script by clicking the *Source* button. If you see an error like this one, 
 
-    Error in library("gapminder") : there is no package called ‘gapminder’
+    Error in library("pkg_name") : there is no package called 'pkg_name'
 
-then you have to install the package as explained in [Install an R package](#install-an-r-package) 
+then you should install the missing package(s) and run the script again. 
+
+[[To review how to install an R package]](#install-an-r-package)    
+
 
 Guidelines 
 
-- In this script type the lines of code in the tutorial below one line at a time.  
-- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
-- Confirm that your result matches the result in the tutorial.  
+- As you work through the tutorial, type a line or chunk of code then *File &gt; Save* and *Source.*   
+- Confirm that your result matches the tutorial result.  
 - **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
 
 
@@ -1084,35 +1088,38 @@ Feel free to take a break before starting the next tutorial.
 ## Data basics {#data-basics}  
 
 ```{r echo = FALSE, eval = FALSE}
+common_width  <- "100" # pixels
+common_height <- "x100"
+
 library("magick")
 image_read("figures/sd021-09.png") %>% 
-        image_scale("x100") %>% 
+        image_scale(common_width) %>% 
         image_write(., path = "figures/data-basics-01.png")
-image_read("figures/sd021-02.png") %>% 
-        image_scale("x100") %>% 
-        image_write(., path = "figures/data-basics-02.png")
-image_read("figures/sd011-14.png") %>% 
-        image_scale("x100") %>%  
-        image_write(., path = "figures/data-basics-03a.png")
-image_read("figures/sd011-14b.png") %>% 
-        image_scale("x100")  %>%        
-        image_write(., path = "figures/data-basics-03b.png") 
-image_read("figures/sd021-01.png") %>% 
-        image_scale("x100") %>% 
-        image_write(., path = "figures/data-basics-04.png")
 
-img3a <- image_read("figures/data-basics-03a.png")
-img3b <- image_read("figures/data-basics-03b.png")
+image_read("figures/sd021-02.png") %>% 
+        image_scale(common_width) %>% 
+        image_write(., path = "figures/data-basics-02.png")
+
+img3a <- image_read("figures/sd011-14.png") %>% 
+        image_scale(common_height)
+img3b <- image_read("figures/sd011-14b.png") %>% 
+        image_scale(common_height) 
 image_append(c(img3a, img3b), stack = FALSE) %>% 
-        image_scale("x100") %>% 
+        image_scale(common_width) %>% 
         image_write(., path = "figures/data-basics-03.png")
 
-img1 <- image_read("figures/data-basics-01.png")
-img2 <- image_read("figures/data-basics-02.png")
-img3 <- image_read("figures/data-basics-03.png")
-img4 <- image_read("figures/data-basics-04.png")
-image_append(c(img1, img2, img3, img4), stack = FALSE) %>% 
-        image_write(., path = "figures/data-basics-00.png")
+image_read("figures/sd021-01.png") %>% 
+        image_scale(common_width) %>% 
+        image_write(., path = "figures/data-basics-04.png")
+
+
+
+# img1 <- image_read("figures/data-basics-01.png")
+# img2 <- image_read("figures/data-basics-02.png")
+# img3 <- image_read("figures/data-basics-03.png")
+# img4 <- image_read("figures/data-basics-04.png")
+# image_append(c(img1, img2, img3, img4), stack = FALSE) %>% 
+#         image_write(., path = "figures/data-basics-00.png")
 ```
 
 ```{r echo = FALSE}
@@ -1128,19 +1135,26 @@ In [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), Hadley Wickham says
 >
 > Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected. 
 
-The goal of this 50-minute tutorial is to introduce the R novice to basic data carpentry skills:
+The goal of this 50-minute tutorial is to introduce three basic steps of data preparation: 
 
+<br>
 ```{r echo = FALSE}
 df6 <- wrapr::build_frame(
         "filename"            , "item" |
-        "data-basics-01.png"  , "Importing data" |
-        "data-basics-02.png"  , "Reading data into R; writing data from R to file." |
-        "data-basics-03.png"  , "Identifying data structure, the number of observations, the number of variables, and their types." |
-        "data-basics-04.png"  , "Transforming, reshaping, and joining data to obtain the desired form for your intended graph or analysis. "
+        "data-basics-02.png"  , "**Step 1.** Importing raw data and writing to file." |
+        "data-basics-03.png"  , "**Step 2.** Identifying the data structure." |
+        "data-basics-04.png"  , "**Step 3.** Transforming, reshaping, and joining."
         ) %>%
         mutate(image = str_c("![](figures/", filename, ")")) %>%
         select(-filename) %>%
-        select(image, item)
+        select(image, item) %>% 
+        as_tibble()
+
+# single-row tables to act as section headers 
+heading_01 <- df6[1, ]
+heading_02 <- df6[2, ]
+heading_03 <- df6[3, ]
+
 kable(df6, col.names = NULL, align = 'll')
 ```
 
@@ -1153,6 +1167,12 @@ Every tutorial assumes that
 
 - You completed the [Getting started](#getting-started) instructions  
 - You launched `midfield_institute.Rproj` to start the R session 
+
+Install the inspectdf package from GitHub. If a message comes up about updating packages, you can type the number that corresponds to `None` for now. 
+
+```r
+devtools::install_github("alastairrushworth/inspectdf")
+```
 
 Use *File &gt; New File &gt; R Script* to create a new R script
 
@@ -1170,19 +1190,22 @@ library("tidyverse")
 library("lubridate") 
 library("seplyr") 
 library("rio")
+library("inspectdf")
 ```
 
-Run the script by clicking the *Source* button. If you see an error, e.g., 
+Run the script by clicking the *Source* button. If you see an error like this one, 
 
-    Error in library("rio") : there is no package called ‘rio’
+    Error in library("pkg_name") : there is no package called 'pkg_name'
 
-then you have to install the package as explained in [Install an R package](#install-an-r-package) 
+then you should install the missing package(s) and run the script again. 
+
+[[To review how to install an R package]](#install-an-r-package)    
+
 
 Guidelines 
 
-- In this script type the lines of code in the tutorial below one line at a time.  
-- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
-- Confirm that your result matches the result in the tutorial.  
+- As you work through the tutorial, type a line or chunk of code then *File &gt; Save* and *Source.*   
+- Confirm that your result matches the tutorial result.  
 - **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
 
 
@@ -1253,42 +1276,87 @@ htmltools::img(src = knitr::include_graphics("figures/starwars-help-page.png"),
 
 <br>
 
-> **Your turn.** 
+> **Your turn.** These exercises assume that you have successfully followed the instructions to [install midfielddata and midfieldr](#install-midfieldr).
 >
-> These exercises assume that you have successfully followed the instructions to [install midfielddata and midfieldr](#install-midfieldr).
+> 1. Determine the names of the datasets available in the midfieldr package. 
 >
-1. Determine the names of the datasets available in the midfieldr package. 
-1. Determine the variables in `case_stickiness` (one of the datasets in the midfieldr package). 
-1. Determine the names of the datasets available in the midfielddata package. 
-1. Determine the variables in `midfielddegrees` (one of the datasets in the midfielddata package). 
-> 
-> *Check your work:* 
+> [*Check your work*](https://midfieldr.github.io/midfieldr/reference/index.html) 
+>
+> 2. Determine the variables in `case_stickiness` (one of the datasets in the midfieldr package).
+>
+> [*Check your work*](https://midfieldr.github.io/midfieldr/reference/case_stickiness.html) 
+>
+> 3. Determine the names of the datasets available in the midfielddata package. 
+>
+> [*Check your work*](https://midfieldr.github.io/midfielddata/index.html) 
+>
+> 4. Determine the variables in `midfielddegrees` (one of the datasets in the midfielddata package). 
+>
+> [*Check your work*](https://midfieldr.github.io/midfielddata/reference/midfielddegrees.html) 
+ 
+
+
+
+
+
+ 
+
 
 
 
 ### Data structure 
 
-- the R data structure, e.g., vector, matrix, data frame, time series, list 
+When we first encounter any data set, the first step is to characterize its structure including, 
+
+- the R data structure, e.g., vector, matrix, data frame, time series, list, etc.  
 - the number of observations 
 - the number of variables 
-- the name and type or class of each variable 
+- the name and class of each variable 
+
+We use these functions---encountered in [R basics](#r-basics)---to examine the structure of a dataset. . 
+
+- `str()` 
+- `glimpse()` 
+- `class()`  
 
 
-[[]](http://adv-r.had.co.nz/Data-structures.html
+[[To read more about R data structures]](http://adv-r.had.co.nz/Data-structures.html)
 
 
 
-### Case 1: Adjusting for inflation 
 
-This example illustrates many of the basic skills outlined above.  
 
-Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old  could live comfortably on \$5/hour but in 2018 (45 years later) that same 20-year-old has to earn \$`r 5 * round(251/44.4, 0)`/hour to achieve the same modest standard of living. 
+
+### Example: Create a 2018 price index 
+
+In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars. 
+
+Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old  could live comfortably on \$5/hour but in 2018 (45 years later) a 20-year-old has to earn \$`r 5 * round(251/44.4, 0)`/hour to achieve the same modest standard of living. 
 
 We usually adjust for the effects of inflation in US dollars using the Consumer Price Index (CPI) published by the US Bureau of Labor Statistics (BLS). The CPI is available by month from the BLS or from the Federal Reserve (FRED), from 1913 to the present. 
 
-**Obtaining the CPI**
 
-The URL to obtain the CPI data from the FRED is [http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt](http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt). If you click on the link, you can see that the data starts on line14; the first 13 lines of the text are meta-information:
+
+
+
+
+
+
+<br> 
+
+```{r echo = FALSE}
+##### step 1 #####
+kable(heading_01, col.names = NULL, align = 'll')
+```
+
+<br>
+
+
+
+
+
+
+The URL to obtain the CPI data from the FRED is [http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt](http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt). If you click on the link, you can see that the data starts on line 14; the first 13 lines of the text are meta-information:
 
 
     Title:               Consumer Price Index for All Urban Consumers: All Items  
@@ -1308,26 +1376,167 @@ The URL to obtain the CPI data from the FRED is [http://research.stlouisfed.org/
 - Assign the URL 
 
 ```{r}
-cpi_url  <- "http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt"
+url <- "http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt"
 ```
 
-- Import the data, skipping the first 13 lines 
+- Import the data using `rio::import()`, skipping the first 13 lines 
 
 ```{r}
-x <- rio::import(cpi_url, skip = 13)
+x <- rio::import(url, skip = 13)
 ```
 
-- Write to file and convert to CSV
+- Convert the txt file to CSV and write to file in our `data` directory 
 
 ```{r}
-rio::export(x, "data/cip.csv")
+rio::export(x, "data/cpi-raw.csv")
 ```
 
-- Read the CSV file  
+Now that we have imported the data and written it to file, we don't have to re-import the data from the Internet every time we *Source* this R script. We can comment-out those lines as follows (the hashtag # indicates an R comment, that is, a non-executable line of code).  
+
+```r
+# url <- "http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt"
+# x   <- rio::import(url, skip = 13)
+# rio::export(x, "data/cpi-raw.csv")
+```
+
+Once you have obtained your raw data, save it to file (like we did above) and leave that file unaltered. Never manipulate that data file manually; such operations waste time and are error-prone. Instead, to support the reproducibilty of your work, do all your data preparation in a scripted environment with explicit links to data files. 
+
+
+
+
+
+
+ 
+
+<br> 
+
+```{r echo = FALSE}
+##### step 2 #####
+kable(heading_02, col.names = NULL, align = 'll')
+```
+
+<br>
+
+
+
+
+
+
+
+
+- Read the data into R using `read_csv()`. 
 
 ```{r}
-cpi <- read_csv("data/cip.csv")
+cpi <- read_csv("data/cpi-raw.csv")
 ```
+
+- Use `class()` to determine that the `cpi` data object itself has the structure of a tibble (a type of data frame). 
+
+```{r}
+class(cpi)
+```
+
+- Use `glimpse()` to examine the data object, which tells us we have `r nrow(cpi) ` observations of `r ncol(cpi)` variables: {`r names(cpi)`}  
+
+```{r}
+glimpse(cpi)
+```
+
+The first few values of the date variable tell us that these are monthly data. `VALUE` is the monthly CPI. This agrees with the metadata above that gave us a date range of 1913-01-01 to 2019-04-01 which is 106 years + 4 months = 1276 months (observations) total. 
+
+The `glimpse()` also tells us that 
+
+- `DATE` is of the `date` class  
+- `VALUE` is a double precision floating point number    
+
+We use functions from the inspectdf package to tell us more about the data frame. 
+
+```{r}
+library("inspectdf")
+x <- cpi
+```
+
+- `inspect_types()` confirms the number and type of variables 
+
+```{r}
+inspect_types(x) # variable type
+```
+
+- `inspect_mem()` indicates the amount of memory each variable requires 
+
+```{r}
+inspect_mem(x)   # memory
+```
+
+- `inspect_na()` indicates that there are no missing values 
+
+```{r}
+inspect_na(x)    # NAs
+```
+
+- `inspect_num()`  summarizes the numerical variables, in this case, the CPI
+
+```{r}
+inspect_num(x)   # numeric variables
+```
+
+- `inspect_cat()` summarizes the categorical variables, in this case, the date
+
+```{r}
+inspect_cat(x)   # categorical variables
+```
+
+- `inspect_cat()` provides correlation coefficients (if any) 
+
+```{r}
+inspect_cor(x)   # correlation (if any) 
+```
+
+These data are in what Hadley Wickham calls "tidy" form, that is,
+
+- Each variable is in a column  
+- Each observation is a row  
+- Each value is a cell  
+
+Such an organization is also called a "data matrix" or a "de-normalized form"  [@Mount:2019:tidy-data]. 
+
+<br> 
+
+> **Your turn.** 
+>
+> Use the inspectdf functions on `midfielddata::midfielddegrees`
+> 
+> *Check your work:* 
+
+```{r echo = FALSE}
+x <- midfielddata::midfielddegrees
+inspect_types(x) # variable type
+inspect_mem(x)   # memory
+inspect_na(x)    # NAs
+```
+
+
+
+
+
+
+
+
+<br> 
+
+```{r echo = FALSE}
+##### step 3 #####
+kable(heading_03, col.names = NULL, align = 'll')
+```
+
+<br> 
+
+
+
+
+
+
+
 
 - Change the column names
 
