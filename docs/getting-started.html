@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>3 Getting started with R | midfield-workshops.utf8.md</title>
+  <meta name="description" content="A public site for workshops for access to MIDFIELD">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="3 Getting started with R | midfield-workshops.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A public site for workshops for access to MIDFIELD" />
+  <meta name="github-repo" content="MIDFIELDR/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Getting started with R | midfield-workshops.utf8.md" />
+  
+  <meta name="twitter:description" content="A public site for workshops for access to MIDFIELD" />
+  
+
+
+
+<meta name="date" content="2019-05-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="midfield-institute-2019.html">
+<link rel="next" href="day-0.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MIDFIELD Workshops</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>MIDFIELD Workshops</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#facilitators"><i class="fa fa-check"></i>Facilitators</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#publications"><i class="fa fa-check"></i>Publications</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licenses"><i class="fa fa-check"></i>Licenses</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgement"><i class="fa fa-check"></i>Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="about-the-midfield-workshops.html"><a href="about-the-midfield-workshops.html"><i class="fa fa-check"></i><b>1</b> About the MIDFIELD workshops</a><ul>
+<li class="chapter" data-level="1.1" data-path="about-the-midfield-workshops.html"><a href="about-the-midfield-workshops.html#what-is-midfieldr"><i class="fa fa-check"></i><b>1.1</b> What is midfieldr?</a></li>
+<li class="chapter" data-level="1.2" data-path="about-the-midfield-workshops.html"><a href="about-the-midfield-workshops.html#why-r"><i class="fa fa-check"></i><b>1.2</b> Why R?</a></li>
+<li class="chapter" data-level="1.3" data-path="about-the-midfield-workshops.html"><a href="about-the-midfield-workshops.html#why-r-graphics"><i class="fa fa-check"></i><b>1.3</b> Why R graphics?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html"><i class="fa fa-check"></i><b>2</b> MIDFIELD Institute 2019</a><ul>
+<li class="chapter" data-level="2.1" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#description"><i class="fa fa-check"></i><b>2.1</b> Description</a></li>
+<li class="chapter" data-level="2.2" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#before-you-arrive"><i class="fa fa-check"></i><b>2.2</b> Before you arrive</a></li>
+<li class="chapter" data-level="2.3" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#day0agenda"><i class="fa fa-check"></i><b>2.3</b> Sunday agenda</a></li>
+<li class="chapter" data-level="2.4" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#day1agenda"><i class="fa fa-check"></i><b>2.4</b> Monday agenda</a></li>
+<li class="chapter" data-level="2.5" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#day2agenda"><i class="fa fa-check"></i><b>2.5</b> Tuesday agenda</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>3</b> Getting started with R</a><ul>
+<li class="chapter" data-level="3.1" data-path="getting-started.html"><a href="getting-started.html#install-R-and-RStudio"><i class="fa fa-check"></i><b>3.1</b> Install R and RStudio</a></li>
+<li class="chapter" data-level="3.2" data-path="getting-started.html"><a href="getting-started.html#install-an-r-package"><i class="fa fa-check"></i><b>3.2</b> Install an R package</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr"><i class="fa fa-check"></i><b>3.3</b> Install midfielddata and midfieldr</a></li>
+<li class="chapter" data-level="3.4" data-path="getting-started.html"><a href="getting-started.html#create-an-r-project"><i class="fa fa-check"></i><b>3.4</b> Create an R project</a></li>
+<li class="chapter" data-level="3.5" data-path="getting-started.html"><a href="getting-started.html#create-directories"><i class="fa fa-check"></i><b>3.5</b> Create directories</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="day-0.html"><a href="day-0.html"><i class="fa fa-check"></i><b>4</b> MIDFIELD Pre-Institute Workshop</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-0.html"><a href="day-0.html#r-basics"><i class="fa fa-check"></i><b>4.1</b> R basics</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-0.html"><a href="day-0.html#prerequisites"><i class="fa fa-check"></i><b>4.1.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-0.html"><a href="day-0.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>4.1.2</b> Everything in R has a name</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-0.html"><a href="day-0.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>4.1.3</b> Everything in R is an object</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-0.html"><a href="day-0.html#do-things-in-r-using-functions"><i class="fa fa-check"></i><b>4.1.4</b> Do things in R using functions</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-0.html"><a href="day-0.html#r-functions-come-in-packages"><i class="fa fa-check"></i><b>4.1.5</b> R functions come in packages</a></li>
+<li class="chapter" data-level="4.1.6" data-path="day-0.html"><a href="day-0.html#r-objects-have-class"><i class="fa fa-check"></i><b>4.1.6</b> R objects have class</a></li>
+<li class="chapter" data-level="4.1.7" data-path="day-0.html"><a href="day-0.html#r-objects-have-structure"><i class="fa fa-check"></i><b>4.1.7</b> R objects have structure</a></li>
+<li class="chapter" data-level="4.1.8" data-path="day-0.html"><a href="day-0.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>4.1.8</b> R does what you tell it</a></li>
+<li class="chapter" data-level="4.1.9" data-path="day-0.html"><a href="day-0.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>4.1.9</b> Keyboard shortcuts</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-0.html"><a href="day-0.html#graph-basics"><i class="fa fa-check"></i><b>4.2</b> Graph basics</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-0.html"><a href="day-0.html#prerequisites-1"><i class="fa fa-check"></i><b>4.2.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-0.html"><a href="day-0.html#tidy-data"><i class="fa fa-check"></i><b>4.2.2</b> Tidy data</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-0.html"><a href="day-0.html#anatomy-of-a-graph"><i class="fa fa-check"></i><b>4.2.3</b> Anatomy of a graph</a></li>
+<li class="chapter" data-level="4.2.4" data-path="day-0.html"><a href="day-0.html#layer-smooth-fit"><i class="fa fa-check"></i><b>4.2.4</b> Layer: smooth fit</a></li>
+<li class="chapter" data-level="4.2.5" data-path="day-0.html"><a href="day-0.html#layer-log-scale"><i class="fa fa-check"></i><b>4.2.5</b> Layer: log scale</a></li>
+<li class="chapter" data-level="4.2.6" data-path="day-0.html"><a href="day-0.html#mapping-aesthetics"><i class="fa fa-check"></i><b>4.2.6</b> Mapping aesthetics</a></li>
+<li class="chapter" data-level="4.2.7" data-path="day-0.html"><a href="day-0.html#setting-properties"><i class="fa fa-check"></i><b>4.2.7</b> Setting properties</a></li>
+<li class="chapter" data-level="4.2.8" data-path="day-0.html"><a href="day-0.html#layer-facets"><i class="fa fa-check"></i><b>4.2.8</b> Layer: facets</a></li>
+<li class="chapter" data-level="4.2.9" data-path="day-0.html"><a href="day-0.html#ordering-the-panels"><i class="fa fa-check"></i><b>4.2.9</b> Ordering the panels</a></li>
+<li class="chapter" data-level="4.2.10" data-path="day-0.html"><a href="day-0.html#beyond-the-basics"><i class="fa fa-check"></i><b>4.2.10</b> Beyond the basics</a></li>
+<li class="chapter" data-level="4.2.11" data-path="day-0.html"><a href="day-0.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>4.2.11</b> Resize and write to file</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-0.html"><a href="day-0.html#data-basics"><i class="fa fa-check"></i><b>4.3</b> Data basics</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-0.html"><a href="day-0.html#prerequisites-2"><i class="fa fa-check"></i><b>4.3.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#data-sets-in-r"><i class="fa fa-check"></i><b>4.3.2</b> Data sets in R</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#data-structure"><i class="fa fa-check"></i><b>4.3.3</b> Data structure</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#case-1-adjusting-for-inflation"><i class="fa fa-check"></i><b>4.3.4</b> Case 1: Adjusting for inflation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>5</b> MIDFIELD Institute Day 1</a><ul>
+<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-3"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="day-2.html"><a href="day-2.html"><i class="fa fa-check"></i><b>6</b> MIDFIELD Institute Day 2</a><ul>
+<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-4"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="getting-started" class="section level1">
+<h1><span class="header-section-number">3</span> Getting started with R</h1>
+<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+<p>If you already have R and RStudio installed, please update to the most recent releases and update your R packages as well.</p>
+<p>If you are joining us for the first time, it is vital that you attempt to set up your computer with the necessary software in advance or it will be difficult to keep up.</p>
+<p>Unless noted otherwise, we assume the reader is an R novice. Thus the first steps are to install R and RStudio.</p>
+<div id="install-R-and-RStudio" class="section level2">
+<h2><span class="header-section-number">3.1</span> Install R and RStudio</h2>
+<p><img src="figures/logo-R.png" alt="logo" style="left:0px; padding:5px;" height="110px"/><img src="figures/logo-RStudio.png" alt="logo" style="left:0px; padding:5px;" height="110px"/></p>
+<p>Windows users may have to login as an Administrator (localmgr) before installing the software.</p>
+<ul>
+<li><a href="https://cloud.r-project.org" target="_blank">Install R</a> for your operating system<br />
+</li>
+<li><a href="https://www.rstudio.com/products/rstudio/#Desktop" target="_blank">Install RStudio</a>, a user interface for R</li>
+</ul>
+<p>If you need additional assistance for Mac OS or Linux, these links might be useful</p>
+<ul>
+<li><a href="https://medium.com/@GalarnykMichael/install-r-and-rstudio-on-mac-e911606ce4f4%7Btarget=%22_blank%22%7D">Install R and RStudio on Mac OS</a> by Michael Galarnyk (or you can Google more recent instructions)<br />
+</li>
+<li><a href="https://www.datascienceriot.com//r/install-ubuntu16/" target="_blank">How to Install R Ubuntu 16.04 Xenial</a> by Kris Eberwein (or you can Google more recent instructions)</li>
+</ul>
+<p>Once the installation is complete, you can take a 2-minute tour of the RStudio interface. Please use headphones or ear-buds if you watch the video during the workshop.</p>
+<ul>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=57&amp;end=152" target="_blank">Let’s start (00:57–02:32)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="references.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+</ul>
+<p>The same video includes a longer (7 minute) tour of the four quadrants (panes) in RStudio if you are interested.</p>
+<ul>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=441&amp;end=880" target="_blank">The RStudio quadrants (07:21–14:40)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="references.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+</ul>
+</div>
+<div id="install-an-r-package" class="section level2">
+<h2><span class="header-section-number">3.2</span> Install an R package</h2>
+<p>The fundamental unit of shareable code in R is the <em>package.</em> For the R novice, an R package is like an “app” for R—a collection of functions, data, and documentation for doing work in R that is easily shared with others <span class="citation">(Wickham, <a href="references.html#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>.</p>
+<p>Most packages are obtained from the <a href="https://cran.r-project.org/" target="_blank">CRAN</a> website <span class="citation">(The Comprehensive R Archive Network)</span>. To install a package using RStudio:</p>
+<ul>
+<li>Launch RStudio</li>
+</ul>
+<p>The RStudio interface has several panes. We want the Files/Plots/Packages pane.</p>
+<ul>
+<li>Select the <em>Packages</em> tab</li>
+</ul>
+<img src="figures/rstudio-packages.png" alt="rstudio packages pane" width="700px"/>
+<p><br>
+Next,</p>
+<ul>
+<li>Click <em>Install</em> on the ribbon</li>
+<li>In the dialog box, type <strong>tidyverse</strong><br />
+</li>
+<li>Check the <em>Install dependencies</em> box</li>
+<li>Click the <em>Install</em> button</li>
+<li>Repeat to install the package <strong>devtools</strong></li>
+</ul>
+<p>Alternatively (for future reference), if you prefer using the command-line, you can install a CRAN package (or a vector of packages) by typing <code>install.packages()</code> in the Console, for example,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="dt">pkgs =</span> <span class="kw">c</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;devtools&quot;</span>))</code></pre>
+<p>Some packages are archived in a repository other than CRAN, GitHub being a current favorite. For such packages, we use <code>install_github()</code> from the devtools package in this form,</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="dt">repo =</span> <span class="st">&quot;user_name/repo_name&quot;</span>) </code></pre>
+</div>
+<div id="install-midfieldr" class="section level2">
+<h2><span class="header-section-number">3.3</span> Install midfielddata and midfieldr</h2>
+<p><img src="figures/logo-midfieldr.png" alt="logo" style="left:0px; padding:5px;" height="110px"/><img src="figures/logo-midfielddata.png" alt="logo" style="left:0px; padding:5px;" height="110px"/></p>
+<p>In this workshop, we work with the <strong>midfieldr</strong> package and <strong>midfielddata</strong> data-package. The <strong>midfielddata</strong> package is too large to be stored in CRAN, so we use a special “drat-repository” to make the package source files available. We install these packages by typing lines of code in the Console at the prompt.</p>
+<p>The Console in the default RStudio pane layout is on the left. The R command prompt in the Console is <code>&gt;</code>.</p>
+<img src="figures/rstudio-console.png" alt="rstudio console pane" width="700px"/>
+<p><br>
+At the prompt, type a line of code and press <em>Enter</em> from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press <em>Enter</em>. We only run these lines of code once, so you do not have to type the lines into a script.</p>
+<p>Install <strong>midfielddata</strong> from the our drat repo. The data package is large so this step takes time. Be patient and wait for the Console prompt <code>&gt;</code> to reappear.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="dt">pkgs =</span> <span class="st">&quot;midfielddata&quot;</span>, 
+        <span class="dt">repos =</span> <span class="st">&quot;https://MIDFIELDR.github.io/drat/&quot;</span>, 
+        <span class="dt">type  =</span> <span class="st">&quot;source&quot;</span>)</code></pre>
+<p>In the Console, load the package by typing,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;midfielddata&quot;</span>)</code></pre>
+<p>If that installation was successful, only then can you install <strong>midfieldr</strong> from its GitHub repo,</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="dt">repo =</span> <span class="st">&quot;MIDFIELDR/midfieldr&quot;</span>) </code></pre>
+<p>In the Console, load the package by typing,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;midfieldr&quot;</span>)</code></pre>
+<p>If the installation was successful, at the prompt you can type</p>
+<pre class="sourceCode r"><code class="sourceCode r">? midfieldr</code></pre>
+<p>and see the <strong>midfieldr</strong> help page in the RStudio Help pane.</p>
+<img src="figures/midfieldr-help-page.png" alt="rstudio console pane" width="700px"/>
+</div>
+<div id="create-an-r-project" class="section level2">
+<h2><span class="header-section-number">3.4</span> Create an R project</h2>
+<p>To begin any project, we create an RStudio <em>Project</em> file and directory. You can recognize an R project file by its <em>.Rproj</em> suffix.</p>
+<p>We will create a project named after the workshop, for example, <code>midfield_institute.Rproj</code>, <code>fie_workshop.Rproj</code>, etc.</p>
+<p>If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop),</p>
+<ul>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=154&amp;end=290" target="_blank">Start with a Project (02:34–04:50)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="references.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+</ul>
+<p>If you prefer basic written instructions,</p>
+<ul>
+<li>RStudio, <em>File &gt; New Project… &gt; New Directory &gt; New Project</em></li>
+<li>Or, click the <em>New Project</em> button in the Console ribbon,</li>
+</ul>
+<img src="figures/rstudio-new-project.png" alt="rstudio new project button" width="700px"/>
+<p><br>
+In the dialog box that appears,</p>
+<ul>
+<li>Type the workshop name as the directory name, for example, <code>midfield_institute</code>, <code>fie_workshop</code>, etc.<br />
+</li>
+<li>Use the browse button to select a location on your computer to create the project folder<br />
+</li>
+<li>Click the <em>Create Project</em> button</li>
+</ul>
+</div>
+<div id="create-directories" class="section level2">
+<h2><span class="header-section-number">3.5</span> Create directories</h2>
+<p>While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop.</p>
+<p>Create three folders in the project main directory, where <code>your_project</code> is the name you gave the project, foe example, <code>midfield_institute</code> or <code>fie_workshop</code>.</p>
+<pre><code class=""><span class="line">your_project/
+</span><span class="line">    ├── data/
+</span><span class="line">    ├── figures/
+</span><span class="line">    ├── scripts/
+</span><span class="line">    └── your_project.Rproj</span></code></pre>
+<p>If you prefer your instructions with commentary (please use headphones or ear-buds if you watch the video during the workshop),</p>
+<ul>
+<li><a href="https://www.youtube.com/embed/kfcX5DEMAp4?start=290&amp;end=368" target="_blank">Make some folders (04:50–06:08)</a> by R Ladies Sydney <span class="citation">(Richmond, <a href="references.html#ref-RLadiesSydney:2018:Lesson1" role="doc-biblioref">2018</a>)</span></li>
+</ul>
+<p>If you prefer basic written instructions,</p>
+<ul>
+<li>use your usual method of creating new folders on your machine</li>
+<li>or you can use the <em>New Folder</em> button in the Files pane</li>
+</ul>
+<img src="figures/rstudio-new-folder.png" alt="rstudio new folder" width="700px"/>
+<p><br>
+We use the folders as follows:</p>
+<ul>
+<li><code>data</code> for data files</li>
+<li><code>figures</code> for finished data displays<br />
+</li>
+<li><code>scripts</code> for R scripts that operate on data to produce results</li>
+</ul>
+<p>And that concludes the setup.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="midfield-institute-2019.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="day-0.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/300-getting-started.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["midfield-workshops.pdf", "midfield-workshops.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

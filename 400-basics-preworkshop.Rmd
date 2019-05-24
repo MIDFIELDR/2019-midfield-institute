@@ -34,14 +34,17 @@ An introduction to R adapted from [@Healy:2019:Ch.2] with extra material from [@
 If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
 
+
+
+
 ### Prerequisites {} 
 
-- We assume you have completed all of the [Getting started](#getting-started) instructions. 
-- Run `midfield_institute.Rproj` to start every work session 
+Every tutorial assumes that   
 
-Packages 
+- You completed the [Getting started](#getting-started) instructions  
+- You launched `midfield_institute.Rproj` to start the R session 
 
-- Run the following line of code in the RStudio Console to install the **socviz** package. 
+One of the packages is available only on GitHub. To install it, type in the Console, 
 
 ```r
 devtools::install_github("kjhealy/socviz")
@@ -49,10 +52,10 @@ devtools::install_github("kjhealy/socviz")
 
 Use *File &gt; New File &gt; R Script* to create a new R script
 
-- Name the script `01-R-basics.R` (R filenames can begin with numbers) 
+- Name the script `01-R-basics.R`   
 - Save it in the `scripts` directory 
-
-Add a minimal header at the top of the script (if you wish) then use `library()`  to load the packages we will use. Loading all the libraries at the top of a script is conventional practice. 
+- Add a minimal header at the top of the script (if you wish) 
+- Use `library()` to load the packages we will use 
 
 ```{r}
 # workshop R basics 
@@ -63,6 +66,11 @@ library("tidyverse")
 library("socviz")
 ```
 
+Run the script by clicking the *Source* button. If you see an error, e.g., 
+
+    Error in library("tidyverse") : there is no package called 'tidyverse'
+
+then you have to install the package as explained in [Install an R package](#install-an-r-package) 
 
 Guidelines 
 
@@ -446,26 +454,20 @@ An introduction to ggplot2  adapted from Chapter 3  from [@Healy:2019]. If you a
 If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
 
+
 ### Prerequisites {} 
 
-- We assume you have completed all of the [Getting started](#getting-started) instructions. 
-- Run `midfield_institute.Rproj` to start every work session 
+Every tutorial assumes that   
 
-Packages 
-
-- If any of these packages have not yet been installed, they can be installed using these commands, 
-
-```r
-install.packages("tidyverse")
-install.packages("gapminder") 
-```
+- You completed the [Getting started](#getting-started) instructions  
+- You launched `midfield_institute.Rproj` to start the R session 
 
 Use *File &gt; New File &gt; R Script* to create a new R script
 
 - Name the script `02-graph-basics.R`   
 - Save it in the `scripts` directory 
-
-Add a minimal header at the top of the script (if you wish) then use `library()`  to load the packages we will use. Loading all the libraries at the top of a script is conventional practice. 
+- Add a minimal header at the top of the script (if you wish) 
+- Use `library()` to load the packages we will use 
 
 ```{r}
 # workshop graph basics 
@@ -476,6 +478,11 @@ library("tidyverse")
 library("gapminder")
 ```
 
+Run the script by clicking the *Source* button. If you see an error, e.g., 
+
+    Error in library("gapminder") : there is no package called ‘gapminder’
+
+then you have to install the package as explained in [Install an R package](#install-an-r-package) 
 
 Guidelines 
 
@@ -483,8 +490,6 @@ Guidelines
 - After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
 - Confirm that your result matches the result in the tutorial.  
 - **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
-
-
 
 
 
@@ -1078,28 +1083,28 @@ Feel free to take a break before starting the next tutorial.
 
 ## Data basics {#data-basics}  
 
-```{r echo = FALSE}
+```{r echo = FALSE, eval = FALSE}
 library("magick")
 image_read("figures/sd021-09.png") %>% 
-        image_scale("x300") %>% 
+        image_scale("x100") %>% 
         image_write(., path = "figures/data-basics-01.png")
 image_read("figures/sd021-02.png") %>% 
-        image_scale("x300") %>% 
+        image_scale("x100") %>% 
         image_write(., path = "figures/data-basics-02.png")
 image_read("figures/sd011-14.png") %>% 
-        image_scale("x300") %>%  
+        image_scale("x100") %>%  
         image_write(., path = "figures/data-basics-03a.png")
 image_read("figures/sd011-14b.png") %>% 
-        image_scale("x300")  %>%        
+        image_scale("x100")  %>%        
         image_write(., path = "figures/data-basics-03b.png") 
 image_read("figures/sd021-01.png") %>% 
-        image_scale("x300") %>% 
+        image_scale("x100") %>% 
         image_write(., path = "figures/data-basics-04.png")
 
 img3a <- image_read("figures/data-basics-03a.png")
 img3b <- image_read("figures/data-basics-03b.png")
 image_append(c(img3a, img3b), stack = FALSE) %>% 
-        image_scale("x300") %>% 
+        image_scale("x100") %>% 
         image_write(., path = "figures/data-basics-03.png")
 
 img1 <- image_read("figures/data-basics-01.png")
@@ -1111,10 +1116,10 @@ image_append(c(img1, img2, img3, img4), stack = FALSE) %>%
 ```
 
 ```{r echo = FALSE}
-htmltools::img(src = knitr::include_graphics("figures/data-basics-00.png"),
-               alt   = '',
-               style = 'left:0px; padding:0px;', 
-               width = 700)
+# htmltools::img(src = knitr::include_graphics("figures/data-basics-00.png"),
+#                alt   = '',
+#                style = 'left:0px; padding:0px;', 
+#                width = 700)
 ```
 
 In [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), Hadley Wickham says, 
@@ -1123,14 +1128,62 @@ In [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), Hadley Wickham says
 >
 > Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected. 
 
-The goal of this 50-minute tutorial is to introduce the R novice to the basic elements of data carpentry. 
+The goal of this 50-minute tutorial is to introduce the R novice to basic data carpentry skills:
+
+```{r echo = FALSE}
+df6 <- wrapr::build_frame(
+        "filename"            , "item" |
+        "data-basics-01.png"  , "Importing data" |
+        "data-basics-02.png"  , "Reading data into R; writing data from R to file." |
+        "data-basics-03.png"  , "Identifying data structure, the number of observations, the number of variables, and their types." |
+        "data-basics-04.png"  , "Transforming, reshaping, and joining data to obtain the desired form for your intended graph or analysis. "
+        ) %>%
+        mutate(image = str_c("![](figures/", filename, ")")) %>%
+        select(-filename) %>%
+        select(image, item)
+kable(df6, col.names = NULL, align = 'll')
+```
 
 
-### Prerequisites
 
-Use *File > New File > R Script* to create a new R script
 
-Name the script `03-data-basics.R`. Save it in the `scripts` directory
+### Prerequisites {} 
+
+Every tutorial assumes that   
+
+- You completed the [Getting started](#getting-started) instructions  
+- You launched `midfield_institute.Rproj` to start the R session 
+
+Use *File &gt; New File &gt; R Script* to create a new R script
+
+- Name the script `03-data-basics.R`   
+- Save it in the `scripts` directory 
+- Add a minimal header at the top of the script (if you wish) 
+- Use `library()` to load the packages we will use 
+
+```{r}
+# workshop data basics 
+# name 
+# date 
+
+library("tidyverse")
+library("lubridate") 
+library("seplyr") 
+library("rio")
+```
+
+Run the script by clicking the *Source* button. If you see an error, e.g., 
+
+    Error in library("rio") : there is no package called ‘rio’
+
+then you have to install the package as explained in [Install an R package](#install-an-r-package) 
+
+Guidelines 
+
+- In this script type the lines of code in the tutorial below one line at a time.  
+- After every line, *File &gt; Save*, and hit the *Source* button to run the code.  
+- Confirm that your result matches the result in the tutorial.  
+- **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
 
 
 
@@ -1143,7 +1196,8 @@ Practice data sets are included with the basic R installation and with some R pa
 To list the practice data sets available in R, type in the Console,
 
 ```r
-data() # to list data sets in base R
+# type in the Console 
+data() 
 ```
 
 which yields
@@ -1158,7 +1212,8 @@ which yields
 We use the `data()` function to list practice datasets included in a package (if any). For example, to determine what packages are bundled with the dplyr package, type in the Console, 
 
 ```r
-data(package = "dplyr") # to list data sets an R package
+# type in the Console 
+data(package = "dplyr") 
 ```
 
 yields
@@ -1173,12 +1228,14 @@ yields
 Every data set in base R and in R packages has a help page that describes the data format and variable names. The data help page can be accessed using `help()`, for example, 
 
 ```r
+# type in the Console 
 help(starwars, package = "dplyr")
 ```
 
 Alternatively, if the package is loaded, you may run the `? item-name` syntax in the Console,  
 
 ```r
+# type in the Console
 library("dplyr")
 ? starwars
 ```
@@ -1194,103 +1251,137 @@ htmltools::img(src = knitr::include_graphics("figures/starwars-help-page.png"),
 
 
 
+<br>
 
-### Exercises
-
-These exercises assume that you have successfully followed the instructions to [install midfielddata and midfieldr](#install-midfieldr).  
-
+> **Your turn.** 
+>
+> These exercises assume that you have successfully followed the instructions to [install midfielddata and midfieldr](#install-midfieldr).
+>
 1. Determine the names of the datasets available in the midfieldr package. 
 1. Determine the variables in `case_stickiness` (one of the datasets in the midfieldr package). 
 1. Determine the names of the datasets available in the midfielddata package. 
 1. Determine the variables in `midfielddegrees` (one of the datasets in the midfielddata package). 
+> 
+> *Check your work:* 
 
 
 
+### Data structure 
+
+- the R data structure, e.g., vector, matrix, data frame, time series, list 
+- the number of observations 
+- the number of variables 
+- the name and type or class of each variable 
+
+
+[[]](http://adv-r.had.co.nz/Data-structures.html
 
 
 
-### Import open-source data 
+### Case 1: Adjusting for inflation 
 
-There are hundreds of websites providing access to public data, for example, 
+This example illustrates many of the basic skills outlined above.  
 
-- [Centers for Disease Control and Prevention (CDC)](https://www.cdc.gov/datastatistics/index.html)  
-- [Organisation for Economic Cooperation and Development (OECD)](https://data.oecd.org/)  
-- [American Community Survey](https://www.census.gov/programs-surveys/acs/)  
-- [FiveThirtyEight](https://fivethirtyeight.com/)  
+Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old  could live comfortably on \$5/hour but in 2018 (45 years later) that same 20-year-old has to earn \$`r 5 * round(251/44.4, 0)`/hour to achieve the same modest standard of living. 
 
-If you know the URL for a specific data file, you can download it using the `import()` function in the rio package. 
+We usually adjust for the effects of inflation in US dollars using the Consumer Price Index (CPI) published by the US Bureau of Labor Statistics (BLS). The CPI is available by month from the BLS or from the Federal Reserve (FRED), from 1913 to the present. 
 
-For example, below is the URL to a data set saved as a CSV file. Add these lines to the script you opened earlier. 
+**Obtaining the CPI**
+
+The URL to obtain the CPI data from the FRED is [http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt](http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt). If you click on the link, you can see that the data starts on line14; the first 13 lines of the text are meta-information:
+
+
+    Title:               Consumer Price Index for All Urban Consumers: All Items  
+    Series ID:           CPIAUCNS  
+    Source:              U.S. Bureau of Labor Statistics  
+    Release:             Consumer Price Index  
+    Seasonal Adjustment: Not Seasonally Adjusted  
+    Frequency:           Monthly  
+    Units:               Index 1982-1984=100  
+    Date Range:          1913-01-01 to 2019-04-01  
+    Last Updated:        2019-05-10 7:42 AM CDT  
+    Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpihom.pdf)  
+                         Understanding the CPI: Frequently Asked Questions -  
+                         (https://www.bls.gov/cpi/questions-and-answers.htm)  
+                     
+
+- Assign the URL 
 
 ```{r}
-url <- "http://bit.ly/BostonSnowfallCSV"
+cpi_url  <- "http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt"
 ```
 
-Now use `rio::import()` to read the CSV file, 
+- Import the data, skipping the first 13 lines 
 
 ```{r}
-library("rio")
-x <- rio::import(url, format = "csv")
+x <- rio::import(cpi_url, skip = 13)
 ```
 
-And then `rio::export()` to write it directly to file. 
+- Write to file and convert to CSV
 
 ```{r}
-rio::export(x, "data/boston_snow.csv")
+rio::export(x, "data/cip.csv")
 ```
 
-If you navigate to your `data` directory, you should find the new CSV data file. Don't open it yet! 
-
-The rio package can download XLS and XLSX files as well. And when using `export()`, we can change the data format to CSV. 
+- Read the CSV file  
 
 ```{r}
-url <- "https://www2.stetson.edu/~jrasp/data/Pollution.xls"
-x   <- rio::import(url, format = "xls")
-rio::export(x, "data/pollution.csv")
+cpi <- read_csv("data/cip.csv")
 ```
 
-The rio package can import a lot of different file types, e.g., tab-separated (.tsv), SAS (.sas7bdat), SPSS (.sav), STATA (.dta), MATLAB (.mat), and HTML (.html) among others. 
+- Change the column names
 
-[[For more information about  rio]](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} to import, export, and convert data files
+```{r}
+cpi <- cpi %>% 
+        dplyr::rename(date = DATE, cpi = VALUE) %>% 
+        glimpse()
+```
 
-
-
-
-
-
-
-
-
-### Default app for manually opening CSV files 
+- Convert the date to a date variable and extract the year 
 
 
-Navigate to your data directory. If the `boston_snow.csv` file is represented by a text-editor icon like Notebook, then you can skip this section. 
+```{r}
+cpi <- cpi %>% 
+        mutate(date = lubridate::ymd(date)) %>% 
+        mutate(year = lubridate::year(date)) %>% 
+        glimpse()
+```
 
-However, if the `boston_snow.csv` file is represented by an MSExcel icon, then Excel is your default app for opening CSV files. Excel can alter a CSV file   in unexpected ways, so we need to change the default. 
+- Omit 2019 data because we don't have a full year 
+- Group and summarize by year to determine the annual CPI (this assumes our data we wish to adjust is annual data) 
 
-- Right-click on the `boston_snow.csv` file  
-- Select *Open with* then *Choose another app*  
-- In the dialog box, check the box labeled *Always use this app to open .csv files*  
-- Select *Notepad* (or any other text editor) and *OK*  
-- The CSV file will open. You can examine it briefly, and close it. 
+```{r}
+cpi <- cpi %>% 
+        filter(year != 2019) %>% 
+        seplyr::group_summarise(., "year", cpi = mean(cpi)) %>% 
+        mutate(cpi = round(cpi, 2)) %>% 
+        glimpse()
+```
 
-We do sometimes want to examine data text file, and when we do, we want to use a text editor. 
+To see what the CPI numbers look like, we can graph it.  
 
-```{r echo = FALSE}
-htmltools::img(src = knitr::include_graphics("figures/400-13-raw-data-in-excel.png"),
-               alt   = '',
-               style = 'left:0px; padding:0px;', 
-               width = 400)
+```{r fig.asp = 1/2}
+p <- ggplot(data = cpi, mapping = aes(x = year, y =  cpi)) + 
+	geom_line()
+p
+```
+
+The basis year is the year for which the CPI = 100. In this data, the basis year is 1983-1984.
+
+```{r fig.asp = 1/2}
+df_note <- cpi %>% 
+	filter(near(cpi, 100, tol = 0.5))
+
+p <- p +
+	geom_point(data = df_note, aes(x = year, y =  cpi), size = 2, color = "red")
+p
 ```
 
 
 
 
-### Read into R and identify the data structure 
 
 
-
-### Transform, reshape, and save 
 
 
 

@@ -153,7 +153,7 @@ devtools::install_github(repo = "MIDFIELDR/midfieldr")
 In the Console, load the package by typing, 
 
 ```r
-library("midfield")
+library("midfieldr")
 ```
 
 If the installation was successful, at the prompt you can type 
