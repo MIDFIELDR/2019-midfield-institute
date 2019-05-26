@@ -50,6 +50,9 @@ One of the packages is available only on GitHub. To install it, type in the Cons
 devtools::install_github("kjhealy/socviz")
 ```
 
+Note on usage: The double-colon notation `package::name` accesses a function from a specific package. In this case, for example, we are accessing the `install_github()` function from the `devtools` package. 
+
+
 Use *File &gt; New File &gt; R Script* to create a new R script
 
 - Name the script `01-R-basics.R`   
@@ -1087,55 +1090,17 @@ Feel free to take a break before starting the next tutorial.
 
 ## Data basics {#data-basics}  
 
-```{r echo = FALSE, eval = FALSE}
-common_width  <- "100" # pixels
-common_height <- "x100"
-
-library("magick")
-image_read("figures/sd021-09.png") %>% 
-        image_scale(common_width) %>% 
-        image_write(., path = "figures/data-basics-01.png")
-
-image_read("figures/sd021-02.png") %>% 
-        image_scale(common_width) %>% 
-        image_write(., path = "figures/data-basics-02.png")
-
-img3a <- image_read("figures/sd011-14.png") %>% 
-        image_scale(common_height)
-img3b <- image_read("figures/sd011-14b.png") %>% 
-        image_scale(common_height) 
-image_append(c(img3a, img3b), stack = FALSE) %>% 
-        image_scale(common_width) %>% 
-        image_write(., path = "figures/data-basics-03.png")
-
-image_read("figures/sd021-01.png") %>% 
-        image_scale(common_width) %>% 
-        image_write(., path = "figures/data-basics-04.png")
-
-
-
-# img1 <- image_read("figures/data-basics-01.png")
-# img2 <- image_read("figures/data-basics-02.png")
-# img3 <- image_read("figures/data-basics-03.png")
-# img4 <- image_read("figures/data-basics-04.png")
-# image_append(c(img1, img2, img3, img4), stack = FALSE) %>% 
-#         image_write(., path = "figures/data-basics-00.png")
-```
-
-```{r echo = FALSE}
-# htmltools::img(src = knitr::include_graphics("figures/data-basics-00.png"),
-#                alt   = '',
-#                style = 'left:0px; padding:0px;', 
-#                width = 700)
-```
-
 In [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), Hadley Wickham says, 
 
-> It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. 
->
-> Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected. 
+> It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but *must be repeated many times* over the course of analysis as new problems come to light or new data is collected [emphasis mine]. 
 
-The goal of this 50-minute tutorial is to introduce three basic steps of data preparation: 
+That data preparation "must be repeated many times" cannot be overemphasized. Reproducibility starts with deliberate planning for data management, file management, and file-naming schemes and using a scripted computing environment like R (or Python, SAS, etc.). 
+
+Other researchers may never attempt to reproduce your work---but you will. Data preparation "must be repeated many times." As [Karl Broman](https://kbroman.org/) once said, 
+
+> Your closest collaborator is you six months ago, but you don’t reply to emails. 
+
+The goal of this 50-minute tutorial is to introduce three basic steps of data preparation: importing data, identifying its structure, and reshaping to obtain a desired form.
 
 <br>
 ```{r echo = FALSE}
@@ -1161,18 +1126,17 @@ kable(df6, col.names = NULL, align = 'll')
 
 
 
+
+
+
+
+
 ### Prerequisites {} 
 
 Every tutorial assumes that   
 
 - You completed the [Getting started](#getting-started) instructions  
 - You launched `midfield_institute.Rproj` to start the R session 
-
-Install the inspectdf package from GitHub. If a message comes up about updating packages, you can type the number that corresponds to `None` for now. 
-
-```r
-devtools::install_github("alastairrushworth/inspectdf")
-```
 
 Use *File &gt; New File &gt; R Script* to create a new R script
 
@@ -1207,6 +1171,15 @@ Guidelines
 - As you work through the tutorial, type a line or chunk of code then *File &gt; Save* and *Source.*   
 - Confirm that your result matches the tutorial result.  
 - **Your turn** exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1313,14 +1286,12 @@ When we first encounter any data set, the first step is to characterize its stru
 - the number of variables 
 - the name and class of each variable 
 
-We use these functions---encountered in [R basics](#r-basics)---to examine the structure of a dataset. . 
-
-- `str()` 
-- `glimpse()` 
-- `class()`  
+To do so, we use functions like `glimpse()` and `class()` (introduced in [R basics](#r-basics)) as well as functions from the inspectdf package (introduced in the next section). 
 
 
-[[To read more about R data structures]](http://adv-r.had.co.nz/Data-structures.html)
+[[To read more about R data structures]](http://adv-r.had.co.nz/Data-structures.html){target="_blank"}    
+[[To read more about inspectdf]](https://github.com/alastairrushworth/inspectdf){target="_blank"}    
+
 
 
 
@@ -1329,11 +1300,11 @@ We use these functions---encountered in [R basics](#r-basics)---to examine the s
 
 ### Example: Create a 2018 price index 
 
-In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars. 
-
 Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old  could live comfortably on \$5/hour but in 2018 (45 years later) a 20-year-old has to earn \$`r 5 * round(251/44.4, 0)`/hour to achieve the same modest standard of living. 
 
 We usually adjust for the effects of inflation in US dollars using the Consumer Price Index (CPI) published by the US Bureau of Labor Statistics (BLS). The CPI is available by month from the BLS or from the Federal Reserve (FRED), from 1913 to the present. 
+
+In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars. 
 
 
 
@@ -1355,43 +1326,55 @@ kable(heading_01, col.names = NULL, align = 'll')
 
 
 
+The FRED provides CPI data from 1913 to the present as a .txt file at the URL: 
 
-The URL to obtain the CPI data from the FRED is [http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt](http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt). If you click on the link, you can see that the data starts on line 14; the first 13 lines of the text are meta-information:
+&nbsp;&nbsp; [http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt](http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt){target="_blank"}     
+
+If you click on the link, you can see that the first 13 lines are metadata. The data starts on line 14 with the column names. I've added line numbers to make it easier to see. 
 
 
-    Title:               Consumer Price Index for All Urban Consumers: All Items  
-    Series ID:           CPIAUCNS  
-    Source:              U.S. Bureau of Labor Statistics  
-    Release:             Consumer Price Index  
-    Seasonal Adjustment: Not Seasonally Adjusted  
-    Frequency:           Monthly  
-    Units:               Index 1982-1984=100  
-    Date Range:          1913-01-01 to 2019-04-01  
-    Last Updated:        2019-05-10 7:42 AM CDT  
-    Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpihom.pdf)  
-                         Understanding the CPI: Frequently Asked Questions -  
-                         (https://www.bls.gov/cpi/questions-and-answers.htm)  
+     1   Title:               Consumer Price Index for All Urban Consumers: All Items
+     2   Series ID:           CPIAUCNS
+     3   Source:              U.S. Bureau of Labor Statistics
+     4   Release:             Consumer Price Index
+     5   Seasonal Adjustment: Not Seasonally Adjusted
+     6   Frequency:           Monthly
+     7   Units:               Index 1982-1984=100
+     8   Date Range:          1913-01-01 to 2019-04-01
+     9   Last Updated:        2019-05-10 7:42 AM CDT
+    10   Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpihom.pdf)
+    11                        Understanding the CPI: Frequently Asked Questions -
+    12                        (https://www.bls.gov/cpi/questions-and-answers.htm)
+    13   
+    14   DATE          VALUE
+    15   1913-01-01    9.800
+    16   1913-02-01    9.800 
+    etc. 
                      
 
-- Assign the URL 
+Assign the URL (add these lines to your script and run) 
 
 ```{r}
 url <- "http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt"
 ```
 
-- Import the data using `rio::import()`, skipping the first 13 lines 
+Use `rio::import()` to download the data, skipping the first 13 lines 
 
 ```{r}
 x <- rio::import(url, skip = 13)
 ```
 
-- Convert the txt file to CSV and write to file in our `data` directory 
+Use `rio::export()` to convert the txt file to CSV and write to our `data` directory 
 
 ```{r}
 rio::export(x, "data/cpi-raw.csv")
 ```
 
-Now that we have imported the data and written it to file, we don't have to re-import the data from the Internet every time we *Source* this R script. We can comment-out those lines as follows (the hashtag # indicates an R comment, that is, a non-executable line of code).  
+Once you have saved raw data to file (like we did above), leave that file unaltered. Never manipulate raw data manually. 
+
+In this workshop, we are saving all data files to the `data` directory. In larger projects, one might add a `data-raw` directory to separate raw data files from prepared data files. 
+
+We don't have to re-import the data from the Internet every time we *Source* this R script, so we can comment-out the previous three lines of code with a hashtag, i.e.,  
 
 ```r
 # url <- "http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt"
@@ -1399,7 +1382,7 @@ Now that we have imported the data and written it to file, we don't have to re-i
 # rio::export(x, "data/cpi-raw.csv")
 ```
 
-Once you have obtained your raw data, save it to file (like we did above) and leave that file unaltered. Never manipulate that data file manually; such operations waste time and are error-prone. Instead, to support the reproducibilty of your work, do all your data preparation in a scripted environment with explicit links to data files. 
+
 
 
 
@@ -1424,73 +1407,25 @@ kable(heading_02, col.names = NULL, align = 'll')
 
 
 
-- Read the data into R using `read_csv()`. 
+Use `rio::import()` to read the raw data into the R workspace.  
 
 ```{r}
-cpi <- read_csv("data/cpi-raw.csv")
+cpi <- rio::import("data/cpi-raw.csv")
 ```
 
-- Use `class()` to determine that the `cpi` data object itself has the structure of a tibble (a type of data frame). 
+Use `class()` to determine the R data structure---in this case, `cpi` is a tibble (a type of data frame). 
 
 ```{r}
 class(cpi)
 ```
 
-- Use `glimpse()` to examine the data object, which tells us we have `r nrow(cpi) ` observations of `r ncol(cpi)` variables: {`r names(cpi)`}  
+Use `glimpse()` to examine the tibble---we discover the number of observations (`r nrow(cpi)`), the number of variables (`r ncol(cpi)`), their names (`r names(cpi)[1]`, `r names(cpi)[2]`), and their class or type (`r class(cpi$DATE)`, `r typeof(cpi$VALUE)`).  
 
 ```{r}
 glimpse(cpi)
 ```
 
-The first few values of the date variable tell us that these are monthly data. `VALUE` is the monthly CPI. This agrees with the metadata above that gave us a date range of 1913-01-01 to 2019-04-01 which is 106 years + 4 months = 1276 months (observations) total. 
-
-The `glimpse()` also tells us that 
-
-- `DATE` is of the `date` class  
-- `VALUE` is a double precision floating point number    
-
-We use functions from the inspectdf package to tell us more about the data frame. 
-
-```{r}
-library("inspectdf")
-x <- cpi
-```
-
-- `inspect_types()` confirms the number and type of variables 
-
-```{r}
-inspect_types(x) # variable type
-```
-
-- `inspect_mem()` indicates the amount of memory each variable requires 
-
-```{r}
-inspect_mem(x)   # memory
-```
-
-- `inspect_na()` indicates that there are no missing values 
-
-```{r}
-inspect_na(x)    # NAs
-```
-
-- `inspect_num()`  summarizes the numerical variables, in this case, the CPI
-
-```{r}
-inspect_num(x)   # numeric variables
-```
-
-- `inspect_cat()` summarizes the categorical variables, in this case, the date
-
-```{r}
-inspect_cat(x)   # categorical variables
-```
-
-- `inspect_cat()` provides correlation coefficients (if any) 
-
-```{r}
-inspect_cor(x)   # correlation (if any) 
-```
+The first `DATE` values suggest these are monthly data, which agrees with the frequency given in the block of metadata. The `VALUE` variable is the CPI by month indexed at 1982--1984 (for which CPI = 100). 
 
 These data are in what Hadley Wickham calls "tidy" form, that is,
 
@@ -1498,21 +1433,61 @@ These data are in what Hadley Wickham calls "tidy" form, that is,
 - Each observation is a row  
 - Each value is a cell  
 
-Such an organization is also called a "data matrix" or a "de-normalized form"  [@Mount:2019:tidy-data]. 
+Such an organization is also called a "data matrix" or a "de-normalized form"  [@Mount:2019:tidy-data]. This form is typically the desired form for data visualization using the ggplot2 package, though other forms are sometimes useful. 
+
+Functions from the inspectdf package can tell us more about the data. First, we summarize memory usage. Here, both variable use negligible memory. 
+
+```{r}
+inspect_mem(cpi)   # memory
+```
+
+Summarize the rate of missingness. Here, there are no missing values. 
+
+```{r}
+inspect_na(cpi)    # NAs
+```
+
+Summary 
+
+- 1276 observations, one per month, 1913-01 to 2019-04 
+- 1 categorical variable  `DATE` 
+- 1 quantitative variable `VALUE` (the CPI) 
+
+
+
+
+
+
+
+
+
 
 <br> 
 
-> **Your turn.** 
->
-> Use the inspectdf functions on `midfielddata::midfielddegrees`
+> **Your turn.** For the `midfielddegrees` dataset from the midfielddata package, determine 
+> 
+- the R data structure, e.g., vector, matrix, time series, data frame, tibble, etc.
+- the number of observations
+- the number of variables
+- the name and class of each variable 
+- summary of missing values 
+- summary of missing values 
 > 
 > *Check your work:* 
 
-```{r echo = FALSE}
+```{r echo = FALSE, collapse = TRUE}
 x <- midfielddata::midfielddegrees
-inspect_types(x) # variable type
-inspect_mem(x)   # memory
-inspect_na(x)    # NAs
+cat("R data structure ----------")
+class(x)
+
+cat("\nglimpse ----------")
+glimpse(x)
+
+cat("\nmemory summary ----------")
+inspect_mem(x) 
+
+cat("\nNAs summary ----------")
+inspect_na(x) 
 ```
 
 
@@ -1535,10 +1510,11 @@ kable(heading_03, col.names = NULL, align = 'll')
 
 
 
+For the application I have in mind, I want to convert monthly CPI to annual CPI. 
 
+I start by changing the variable names (the column names) because I prefer lowercase names and I prefer meaningful file names (`cpi` instead of `VALUE`). 
 
-
-- Change the column names
+Use `dplyr::rename(new_name = old_name)` to rename the variables. 
 
 ```{r}
 cpi <- cpi %>% 
@@ -1546,44 +1522,263 @@ cpi <- cpi %>%
         glimpse()
 ```
 
-- Convert the date to a date variable and extract the year 
+Before I can average the monthly CPIs by year, I need to extract the 4-digit year from the `date` variable. 
 
+Use `lubridate::year()` to extract the year from the date and `mutate()` to create the new `year` variable. 
 
 ```{r}
 cpi <- cpi %>% 
-        mutate(date = lubridate::ymd(date)) %>% 
         mutate(year = lubridate::year(date)) %>% 
         glimpse()
 ```
 
-- Omit 2019 data because we don't have a full year 
-- Group and summarize by year to determine the annual CPI (this assumes our data we wish to adjust is annual data) 
+Use `filter()` to omit 2019 data because we do not have a full year. Note the reduction in the number of observations. 
 
 ```{r}
 cpi <- cpi %>% 
         filter(year != 2019) %>% 
-        seplyr::group_summarise(., "year", cpi = mean(cpi)) %>% 
-        mutate(cpi = round(cpi, 2)) %>% 
         glimpse()
 ```
 
-To see what the CPI numbers look like, we can graph it.  
+Use `arrange()` and `tail()` to confirm that 2018 is the final year. 
 
-```{r fig.asp = 1/2}
-p <- ggplot(data = cpi, mapping = aes(x = year, y =  cpi)) + 
-	geom_line()
-p
+```{r}
+cpi %>% arrange(date) %>% tail()
 ```
 
-The basis year is the year for which the CPI = 100. In this data, the basis year is 1983-1984.
+Use `seplyr::group_summarize()` operation to determine the average annual CPI. 
+
+```{r}
+grouping_variables <- c("year")
+cpi_1984_basis <- seplyr::group_summarize(cpi, 
+                grouping_variables, 
+                cpi = mean(cpi)) %>% 
+        glimpse()
+```
+
+We have an excess of significant digits. Use `round()` to reduce our annual CPI values to 2 digits. 
+
+```{r}
+cpi_1984_basis <- cpi_1984_basis %>% 
+        mutate(cpi = round(cpi, 2)) %>%
+        glimpse()
+```
+
+These values can be displayed,   
 
 ```{r fig.asp = 1/2}
-df_note <- cpi %>% 
-	filter(near(cpi, 100, tol = 0.5))
+ggplot(data = cpi_1984_basis, mapping = aes(x = year, y =  cpi)) + 
+        geom_line() +
+        labs(title = "CPI with a 1983--1984 basis")
+```
 
-p <- p +
-	geom_point(data = df_note, aes(x = year, y =  cpi), size = 2, color = "red")
-p
+As expected, in 1983--1984 (the basis years), CPI = 100. To shift the basis year to 2018, we extract the CPI for 2018,  
+
+```{r}
+cpi_2018 <- cpi_1984_basis %>% 
+        filter(year == 2018) %>% 
+        select(cpi) %>% 
+        unlist(use.names = FALSE)
+
+cpi_2018
+```
+
+Then divide all CPI values by the 2018 value to create the price index with a 2018 basis. In the basis year, the index = 1. 
+
+```{r}
+cpi_2018_basis <- cpi_1984_basis %>% 
+        mutate(index = cpi / cpi_2018) %>% 
+        glimpse()
+```
+
+Graph the price index,  
+
+```{r fig.asp = 1/2}
+ggplot(data = cpi_2018_basis, mapping = aes(x = year, y = index)) + 
+        geom_line() +
+        labs(title = "Price index with a 2018 basis")
+```
+
+The price index is used to account for inflation for any US dollar amount from 1913 to 2018 and report the results in terms of constant 2018 dollars. One simply divides the nominal dollar value by the price index for that year. 
+
+Now that the data are prepared, we write them to file. 
+
+```{r}
+rio::export(cpi_2018_basis, "data/cpi.csv")
+```
+
+
+
+
+
+
+
+### Example: Normalized housing costs 
+
+In this example we retrieve nominal US housing costs from the OECD database. 
+
+
+
+
+
+
+<br> 
+
+```{r echo = FALSE}
+##### step 1 #####
+kable(heading_01, col.names = NULL, align = 'll')
+```
+
+<br>
+
+
+
+
+The long URL string below retrieves US housing costs by year from the OECD database. These are nominal costs (not adjusted for inflation) and normalized to a basis year of 2015, that is, the median house price is 100 in 2015. 
+
+We start by importing the data and writing it to file. 
+
+```{r eval = FALSE}
+url <- "https://stats.oecd.org/sdmx-json/data/DP_LIVE/USA.HOUSECOST.NOMINAL.IDX2015.A/OECD?contentType=csv&detail=code&separator=comma&csv-lang=en&startPeriod=1956&endPeriod=2018"
+x <- rio::import(url, format = "csv")
+rio::export(x, "data/housing-raw.csv")
+```
+
+Again, after doing this once, we can comment-out these three lines of code so we don't have to access the internet every time we *Source* this script.
+
+```r
+# url <- "https://stats.oecd.org/sdmx-json/data/DP_LIVE/USA.HOUSECOST.NOMINAL.IDX2015.A/OECD?contentType=csv&detail=code&separator=comma&csv-lang=en&startPeriod=1956&endPeriod=2018"
+# x <- rio::import(url, format = "csv")
+# rio::export(x, "data/housing-raw.csv")
+```
+
+
+
+
+
+
+
+
+<br> 
+
+```{r echo = FALSE}
+##### step 2 #####
+kable(heading_02, col.names = NULL, align = 'll')
+```
+
+<br>
+
+
+
+
+
+
+
+Read in the CSV file and examine it. Here, we have 49 observations of 8 variables in tidy form. 
+
+```{r}
+housing <- rio::import("data/housing-raw.csv") %>% 
+        glimpse()
+```
+
+We asked for data starting from 1956, but the US data in this database apparently starts in 1970, hence 49 observations, one per year, from 1970 to 2019. 
+
+We have two numerical variables for year and normalized housing value; of the remaining variables, one is logical and the rest are categorical. 
+
+We cam summarize the categorical variables using `inspect_cat()`.  
+
+```{r}
+inspect_cat(housing)
+```
+
+Here, the count of the number of levels for every categorical variable is 1, e.g., indicator = house cost, location = US, etc, indicating that these variables have a constant value for all years.
+
+Memory usage is small and there are no missing values. 
+
+```{r}
+inspect_mem(housing)
+inspect_na(housing)
+```
+
+Summary 
+
+- 49 observations, one per year, 1970--2019 
+- 2 quantitative variables are of interest:  `TIME` and `Value` 
+- the remaining categorical and logical variables are not relevant to our inquiry 
+
+
+
+
+
+
+
+
+
+
+<br> 
+
+```{r echo = FALSE}
+##### step 3 #####
+kable(heading_03, col.names = NULL, align = 'll')
+```
+
+<br>
+
+
+
+
+
+
+
+
+We want to keep the `TIME` and `Value` columns and rename them. 
+
+```{r}
+housing_2015_basis <- housing %>% 
+        select(TIME, Value) %>% 
+        dplyr::rename(year = TIME, nominal = Value) %>% 
+        glimpse()
+```
+
+The costs have been normalized with a 2015 basis, that is in 2015, the price is 100. I'd like to normalize these data to 2018 costs by dividing all nominal values by the one recorded for 2018, then multiply by 100, so that the \$100 price value is in the same basis year as my price index. 
+
+First, find the 2018 nominal house cost. 
+
+```{r}
+nominal_2018 <- housing_2015_basis %>% 
+        filter(year == 2018) %>% 
+        select(nominal) %>% 
+        unlist(use.names = FALSE)
+
+nominal_2018
+```
+
+Then adjust the costs so that the basis year is 2018. 
+
+```{r}
+housing_2018_basis <- housing_2015_basis %>% 
+        mutate(nominal = nominal / nominal_2018 * 100)
+```
+
+Check the tail of the data frame to confirm that the 2018 value is 100. 
+
+```{r}
+tail(housing_2018_basis, n = 10L)
+```
+
+We can graph this for a look at relative nominal housing costs in the US. 
+
+```{r}
+ggplot(data = housing_2018_basis, mapping = aes(x = year, y = nominal)) +
+        geom_line() +
+        labs(title = "Normalized US median housing cost", 
+                subtitle = "Not adjusted for inflation")
+```
+
+Now that the data are prepared, we write them to file. 
+
+```{r}
+rio::export(housing_2018_basis, "data/housing.csv")
 ```
 
 
@@ -1594,6 +1789,145 @@ p
 
 
 
+
+### Example: Real US housing costs 
+
+In this final example, we join the two data frames we created previously and adjust the US housing costs for inflation. The raw data have already been prepared, so we can continue step 3.
+
+
+
+
+
+<br> 
+
+```{r echo = FALSE}
+##### step 3 #####
+kable(heading_03, col.names = NULL, align = 'll')
+```
+
+<br> 
+
+
+
+
+Read in the two data frames we saved earlier. Recall that both have been transformed to use a 2018 basis. 
+
+```{r}
+cpi     <- rio::import("data/cpi.csv")
+housing <- rio::import("data/housing.csv")
+```
+
+
+The CPI data spans 1913 to 2018, with the index = 1 in 2018. 
+
+```{r}
+head(cpi)
+
+tail(cpi)
+```
+
+The housing data spans 1970 to 2018, with nominal cost = 100 in 2018. 
+
+```{r}
+head(housing)
+
+tail(housing)
+```
+
+Use `left_join()` to combine the two data frames, joining `cpi` to `housing`
+
+```{r}
+housing_cpi <- left_join(housing, cpi, by = "year")
+
+head(housing_cpi)
+
+tail(housing_cpi)
+```
+
+Usage: `left_join(x, y, by)` returns all rows from x and all columns from x and y. 'by' is a character vector of variables (column names) that x and y have in common used to join the two data frames.  
+
+In this case, we left-join cpi (y) to housing (x) because housing has fewer years. Had we reversed the order of the two data frames, rows in x with no match in y will have NA values in the new columns, i.e., 
+
+```{r}
+test <- left_join(cpi, housing, by = "year")
+
+head(test)
+
+tail(test)
+```
+
+The real housing cost is determined by dividing the nominal cost by the price index, 
+
+```{r}
+housing_cpi <- housing_cpi %>% 
+        mutate(real = nominal / index)
+
+head(housing_cpi)
+
+tail(housing_cpi)
+```
+
+Graphing normalized median US housing costs in real (constant 2018) dollars, we have, 
+
+```{r}
+ggplot(data = housing_cpi, mapping = aes(x = year, y = real)) +
+        geom_line() + 
+        labs(title = "Normalized US median housing cost", 
+                subtitle = "Constant 2018 dollars")
+```
+
+From the graph, a monthly housing cost of \$100 in 2018 is equivalent to  approximately \$70 in 1995 and \$60 in 1970, for the *same level of housing* in *constant 2018 dollars*.  Inflation has been accounted for, so the rises and falls we see in the graph represents changes in the real cost of housing. 
+
+The ratios hold for any amount, so a monthly housing cost of \$1000 in 2018 is equivalent to approximately \$700 in 1995 and \$600 in 1970---again, in constant 2018 dollars. 
+
+In summary, we have used the OECD housing index to account for the fluctuations in house prices and we have used the CPI to account for inflation. 
+
+
+
+
+
+
+
+
+### Summary of functions introduced 
+
+Summary of the data preparation functions used in this tutorial, organized by package.  
+
+dplyr 
+
+- [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html){target="_blank"} order tibble rows by an expression  
+- [`filter()`](https://dplyr.tidyverse.org/reference/filter.html){target="_blank"} choose rows/cases where conditions are true  
+- [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html){target="_blank"}  adds new variables and preserves existing ones  
+- [`select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} keeps only the variables you mention   
+- [`rename()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} a variant of `select()` keeps all variables   
+- [`left_join()`](https://dplyr.tidyverse.org/reference/join.html){target="_blank"} join two data frames   
+
+rio 
+
+- [`import()`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} read in a data frame from a file 
+- [`export()`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} write a data frame to a file 
+
+
+inspectdf 
+
+- [`inspect_mem()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize memory usage in a data frame  
+- [`inspect_na()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize the rate of missingness in a data frame    
+- [`inspect_ cat()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize the levels within each categorical variable 
+
+lubridate 
+
+- [`year()`](https://lubridate.tidyverse.org/reference/year.html){target="_blank"} return year from a date object 
+
+seplyr 
+
+- [`group_summarize()`](https://winvector.github.io/seplyr/reference/group_summarize.html){target="_blank"} group a data frame by the grouping variables and compute user summaries 
+
+base R 
+
+- [`(head)`](http://rfunction.com/archives/699){target="_blank"} returns the last part of an R object 
+- [`tail()`](http://rfunction.com/archives/699){target="_blank"} returns the last part of an R object 
+- [`mean()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/mean){target="_blank"} determine an arithmetic mean 
+- [`round()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/Round){target="_blank"} round to a specified number of decimal places 
 
 
 <br>    

@@ -1,11 +1,12 @@
 library("knitr")
-opts_chunk$set(echo = FALSE,
-        fig.width = 6,
+opts_chunk$set(fig.width = 6,
+        fig.asp   = 0.618,
         out.width = "70%",
         fig.align = "center",
-        fig.asp = 0.618,
-        comment = "#>",
-        warning = FALSE,
-        message = FALSE)
+        comment   = "#>",
+        echo      = FALSE,
+        warning   = FALSE,
+        message   = FALSE,
+        collapse  = TRUE)
 
 suppressPackageStartupMessages(library("tidyverse"))

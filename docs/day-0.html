@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-24">
+<meta name="date" content="2019-05-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -184,6 +184,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="day-0.html"><a href="day-0.html#data-sets-in-r"><i class="fa fa-check"></i><b>4.3.2</b> Data sets in R</a></li>
 <li class="chapter" data-level="4.3.3" data-path="day-0.html"><a href="day-0.html#data-structure"><i class="fa fa-check"></i><b>4.3.3</b> Data structure</a></li>
 <li class="chapter" data-level="4.3.4" data-path="day-0.html"><a href="day-0.html#example-create-a-2018-price-index"><i class="fa fa-check"></i><b>4.3.4</b> Example: Create a 2018 price index</a></li>
+<li class="chapter" data-level="4.3.5" data-path="day-0.html"><a href="day-0.html#example-normalized-housing-costs"><i class="fa fa-check"></i><b>4.3.5</b> Example: Normalized housing costs</a></li>
+<li class="chapter" data-level="4.3.6" data-path="day-0.html"><a href="day-0.html#example-real-us-housing-costs"><i class="fa fa-check"></i><b>4.3.6</b> Example: Real US housing costs</a></li>
+<li class="chapter" data-level="4.3.7" data-path="day-0.html"><a href="day-0.html#summary-of-functions-introduced"><i class="fa fa-check"></i><b>4.3.7</b> Summary of functions introduced</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>5</b> MIDFIELD Institute Day 1</a><ul>
@@ -242,6 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>One of the packages is available only on GitHub. To install it, type in the Console,</p>
 <pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;kjhealy/socviz&quot;</span>)</code></pre>
+<p>Note on usage: The double-colon notation <code>package::name</code> accesses a function from a specific package. In this case, for example, we are accessing the <code>install_github()</code> function from the <code>devtools</code> package.</p>
 <p>Use <em>File &gt; New File &gt; R Script</em> to create a new R script</p>
 <ul>
 <li>Name the script <code>01-R-basics.R</code><br />
@@ -323,10 +327,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">25</span>)
 y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">31</span>, <span class="dv">71</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">21</span>, <span class="dv">6</span>)</code></pre>
 <p>To see the result in the Console, type the object name in the script, Save, and Source. (Remember, type the line of code but not the line prefaced by <code>#&gt;</code>—that’s the output line so you can check your results.)</p>
-<pre class="sourceCode r"><code class="sourceCode r">x</code></pre>
-<pre><code>#&gt; [1]  1  2  3  1  3 25</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">y</code></pre>
-<pre><code>#&gt; [1]  5 31 71  1  3 21  6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x
+<span class="co">#&gt; [1]  1  2  3  1  3 25</span>
+
+y
+<span class="co">#&gt; [1]  5 31 71  1  3 21  6</span></code></pre>
 <p>You create objects my assigning them names</p>
 <ul>
 <li><code>&lt;-</code> is the assignment operator (keyboard shortcut: ALT –)</li>
@@ -334,32 +339,32 @@ y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</sp
 </ul>
 <img src="figures/rstudio-environment-x-y.png" alt="rstudio new folder" width="700"/>
 <p>Datasets are also named objects, and a large number of datasets are included in the base R installation. For example,<code>LakeHuron</code> contains annual measurements of the lake level, in feet, from 1875–1972.</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron</code></pre>
-<pre><code>#&gt; Time Series:
-#&gt; Start = 1875 
-#&gt; End = 1972 
-#&gt; Frequency = 1 
-#&gt;  [1] 580.38 581.86 580.97 580.80 579.79 580.39 580.42 580.82 581.40 581.32
-#&gt; [11] 581.44 581.68 581.17 580.53 580.01 579.91 579.14 579.16 579.55 579.67
-#&gt; [21] 578.44 578.24 579.10 579.09 579.35 578.82 579.32 579.01 579.00 579.80
-#&gt; [31] 579.83 579.72 579.89 580.01 579.37 578.69 578.19 578.67 579.55 578.92
-#&gt; [41] 578.09 579.37 580.13 580.14 579.51 579.24 578.66 578.86 578.05 577.79
-#&gt; [51] 576.75 576.75 577.82 578.64 580.58 579.48 577.38 576.90 576.94 576.24
-#&gt; [61] 576.84 576.85 576.90 577.79 578.18 577.51 577.23 578.42 579.61 579.05
-#&gt; [71] 579.26 579.22 579.38 579.10 577.95 578.12 579.75 580.85 580.41 579.96
-#&gt; [81] 579.61 578.76 578.18 577.21 577.13 579.10 578.25 577.91 576.89 575.96
-#&gt; [91] 576.80 577.68 578.38 578.52 579.74 579.31 579.89 579.96</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron
+<span class="co">#&gt; Time Series:</span>
+<span class="co">#&gt; Start = 1875 </span>
+<span class="co">#&gt; End = 1972 </span>
+<span class="co">#&gt; Frequency = 1 </span>
+<span class="co">#&gt;  [1] 580.38 581.86 580.97 580.80 579.79 580.39 580.42 580.82 581.40 581.32</span>
+<span class="co">#&gt; [11] 581.44 581.68 581.17 580.53 580.01 579.91 579.14 579.16 579.55 579.67</span>
+<span class="co">#&gt; [21] 578.44 578.24 579.10 579.09 579.35 578.82 579.32 579.01 579.00 579.80</span>
+<span class="co">#&gt; [31] 579.83 579.72 579.89 580.01 579.37 578.69 578.19 578.67 579.55 578.92</span>
+<span class="co">#&gt; [41] 578.09 579.37 580.13 580.14 579.51 579.24 578.66 578.86 578.05 577.79</span>
+<span class="co">#&gt; [51] 576.75 576.75 577.82 578.64 580.58 579.48 577.38 576.90 576.94 576.24</span>
+<span class="co">#&gt; [61] 576.84 576.85 576.90 577.79 578.18 577.51 577.23 578.42 579.61 579.05</span>
+<span class="co">#&gt; [71] 579.26 579.22 579.38 579.10 577.95 578.12 579.75 580.85 580.41 579.96</span>
+<span class="co">#&gt; [81] 579.61 578.76 578.18 577.21 577.13 579.10 578.25 577.91 576.89 575.96</span>
+<span class="co">#&gt; [91] 576.80 577.68 578.38 578.52 579.74 579.31 579.89 579.96</span></code></pre>
 <p>Now you can see how the row labels work. There are 10 numbers per row, here, so the second row starts with the 11th, indicated by <code>[11]</code>. The last row starts with the 91st value <code>[91]</code> and ends with the 98th value.</p>
 <ul>
 <li>In the Console, type <code>? LakeHuron</code> to see the help page for the data set</li>
 </ul>
 <p>Individual elements of a vector are obtained using <code>[]</code> notation.</p>
 <p>For example, the first five lake level readings are extracted with</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</code></pre>
-<pre><code>#&gt; [1] 580.38 581.86 580.97 580.80 579.79</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]
+<span class="co">#&gt; [1] 580.38 581.86 580.97 580.80 579.79</span></code></pre>
 <p>The 4th element alone,</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">4</span>]</code></pre>
-<pre><code>#&gt; [1] 580.8</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="dv">4</span>]
+<span class="co">#&gt; [1] 580.8</span></code></pre>
 </div>
 <div id="do-things-in-r-using-functions" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Do things in R using functions</h3>
@@ -380,24 +385,26 @@ y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</sp
 <pre><code>mean()
 #&gt; Error in mean.default() : argument &quot;x&quot; is missing, with no default</code></pre>
 <p>If we use the Lake Huron dataset as the argument, the function is computed and displayed. Add these lines to your script, Save, and Source.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(LakeHuron)</code></pre>
-<pre><code>#&gt; [1] 579.0041</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(LakeHuron)</code></pre>
-<pre><code>#&gt; [1] 1.318299</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(LakeHuron)</code></pre>
-<pre><code>#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#&gt;   576.0   578.1   579.1   579.0   579.9   581.9</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(LakeHuron)
+<span class="co">#&gt; [1] 579.0041</span>
+
+<span class="kw">sd</span>(LakeHuron)
+<span class="co">#&gt; [1] 1.318299</span>
+
+<span class="kw">summary</span>(LakeHuron)
+<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class="co">#&gt;   576.0   578.1   579.1   579.0   579.9   581.9</span></code></pre>
 <p>We can extract subsets of data using functions. For example, If we wanted only the first five even-numbered elements, we use <code>c()</code> to create a vector of indices to the desired elements,</p>
-<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)]</code></pre>
-<pre><code>#&gt; [1] 581.86 580.80 580.39 580.82 581.32</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">LakeHuron[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)]
+<span class="co">#&gt; [1] 581.86 580.80 580.39 580.82 581.32</span></code></pre>
 <p>If we wanted every 5th entry over the full data set, we use <code>length()</code> to determine how many entries there are, and the sequence function <code>seq()</code> to create the vector of indices,</p>
 <pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">length</span>(LakeHuron)
-LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">5</span>, <span class="dt">to =</span> n, <span class="dt">by =</span> <span class="dv">5</span>)]</code></pre>
-<pre><code>#&gt;  [1] 579.79 581.32 580.01 579.67 579.35 579.80 579.37 578.92 579.51 577.79
-#&gt; [11] 580.58 576.24 578.18 579.05 577.95 579.96 577.13 575.96 579.74</code></pre>
+LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">5</span>, <span class="dt">to =</span> n, <span class="dt">by =</span> <span class="dv">5</span>)]
+<span class="co">#&gt;  [1] 579.79 581.32 580.01 579.67 579.35 579.80 579.37 578.92 579.51 577.79</span>
+<span class="co">#&gt; [11] 580.58 576.24 578.18 579.05 577.95 579.96 577.13 575.96 579.74</span></code></pre>
 <p>Because we will be using the ggplot2 package for graphics, we will not be using the base R <code>plot()</code> function very often, but it is useful for a quick look at data. Add these lines to your script, Save, and Source.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(LakeHuron)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-15-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and <em>Enter</em> to see the function help page.</p>
 <ul>
 <li><code>? mean()</code></li>
@@ -415,97 +422,109 @@ LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class
 <li>A lot of the work in data science consists of choosing the right functions and giving them the right arguments to get our data into the form we need for analysis or visualization</li>
 </ul>
 <p>Functions operate on the input you provide and give you back a result. Type the following in your script, Save, and Source.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(x) <span class="co"># table of counts</span></code></pre>
-<pre><code>#&gt; x
-#&gt;  1  2  3 25 
-#&gt;  2  1  2  1</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)    <span class="co"># standard deviation</span></code></pre>
-<pre><code>#&gt; [1] 25.14435</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">*</span><span class="st"> </span><span class="dv">5</span>    <span class="co"># multiply every element by a scalar</span></code></pre>
-<pre><code>#&gt; [1]   5  10  15   5  15 125</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">y <span class="op">+</span><span class="st"> </span><span class="dv">1</span>    <span class="co"># add a scalar to every element</span></code></pre>
-<pre><code>#&gt; [1]  6 32 72  2  4 22  7</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">+</span><span class="st"> </span>x    <span class="co"># add elements </span></code></pre>
-<pre><code>#&gt; [1]  2  4  6  2  6 50</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(x) <span class="co"># table of counts</span>
+<span class="co">#&gt; x</span>
+<span class="co">#&gt;  1  2  3 25 </span>
+<span class="co">#&gt;  2  1  2  1</span>
+
+<span class="kw">sd</span>(y)    <span class="co"># standard deviation</span>
+<span class="co">#&gt; [1] 25.14435</span>
+
+x <span class="op">*</span><span class="st"> </span><span class="dv">5</span>    <span class="co"># multiply every element by a scalar</span>
+<span class="co">#&gt; [1]   5  10  15   5  15 125</span>
+
+y <span class="op">+</span><span class="st"> </span><span class="dv">1</span>    <span class="co"># add a scalar to every element</span>
+<span class="co">#&gt; [1]  6 32 72  2  4 22  7</span>
+
+x <span class="op">+</span><span class="st"> </span>x    <span class="co"># add elements </span>
+<span class="co">#&gt; [1]  2  4  6  2  6 50</span></code></pre>
 <p><em>Comments</em> are annotations to make the source code easier for humans to understand but are ignored by R. Comments in R are denoted by a hashtag <code>#</code>.</p>
 </div>
 <div id="r-objects-have-class" class="section level3">
 <h3><span class="header-section-number">4.1.6</span> R objects have class</h3>
 <p>Everything is an object and every object has a class.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)</code></pre>
-<pre><code>#&gt; [1] &quot;numeric&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(summary)</code></pre>
-<pre><code>#&gt; [1] &quot;function&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
+<span class="co">#&gt; [1] &quot;numeric&quot;</span>
+
+<span class="kw">class</span>(summary)
+<span class="co">#&gt; [1] &quot;function&quot;</span></code></pre>
 <p>Certain actions will change the class of an object. Suppose we try create a vector from the <code>x</code> object and a text string,</p>
 <pre class="sourceCode r"><code class="sourceCode r">new_vector &lt;-<span class="st"> </span><span class="kw">c</span>(x, <span class="st">&quot;Apple&quot;</span>)
 
-new_vector</code></pre>
-<pre><code>#&gt; [1] &quot;1&quot;     &quot;2&quot;     &quot;3&quot;     &quot;1&quot;     &quot;3&quot;     &quot;25&quot;    &quot;Apple&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(new_vector)</code></pre>
-<pre><code>#&gt; [1] &quot;character&quot;</code></pre>
+new_vector
+<span class="co">#&gt; [1] &quot;1&quot;     &quot;2&quot;     &quot;3&quot;     &quot;1&quot;     &quot;3&quot;     &quot;25&quot;    &quot;Apple&quot;</span>
+
+<span class="kw">class</span>(new_vector)
+<span class="co">#&gt; [1] &quot;character&quot;</span></code></pre>
 <p>By adding the word “Apple” to the vector, R changed the class from “numeric” to “character”. All the numbers are enclosed in quotes: they are now character strings and cannot be used in calculations.</p>
 <p>The most common class of data object we will use is the data frame.</p>
-<pre class="sourceCode r"><code class="sourceCode r">titanic <span class="co"># data in the socviz package</span></code></pre>
-<pre><code>#&gt;       fate    sex    n percent
-#&gt; 1 perished   male 1364    62.0
-#&gt; 2 perished female  126     5.7
-#&gt; 3 survived   male  367    16.7
-#&gt; 4 survived female  344    15.6</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(titanic)</code></pre>
-<pre><code>#&gt; [1] &quot;data.frame&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">titanic <span class="co"># data in the socviz package</span>
+<span class="co">#&gt;       fate    sex    n percent</span>
+<span class="co">#&gt; 1 perished   male 1364    62.0</span>
+<span class="co">#&gt; 2 perished female  126     5.7</span>
+<span class="co">#&gt; 3 survived   male  367    16.7</span>
+<span class="co">#&gt; 4 survived female  344    15.6</span>
+
+<span class="kw">class</span>(titanic)
+<span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
 <p>You can see there are four variables: fate, sex, n, percent. Two variables (columns) are numeric, two are categorical.</p>
 <p>You can pick variable out of a data frame using the <code>$</code> operator,</p>
-<pre class="sourceCode r"><code class="sourceCode r">titanic<span class="op">$</span>percent</code></pre>
-<pre><code>#&gt; [1] 62.0  5.7 16.7 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">titanic<span class="op">$</span>percent
+<span class="co">#&gt; [1] 62.0  5.7 16.7 15.6</span></code></pre>
 <p>From the tidyverse, we will regularly use a augmented data frame called a <em>tibble.</em> We can convert the titanic data frame to a tibble using <code>as_tibble()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">titanic_tb &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(titanic)
 
-<span class="kw">class</span>(titanic_tb)</code></pre>
-<pre><code>#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">titanic_tb</code></pre>
-<pre><code>#&gt; # A tibble: 4 x 4
-#&gt;   fate     sex        n percent
-#&gt;   &lt;fct&gt;    &lt;fct&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-#&gt; 1 perished male    1364    62  
-#&gt; 2 perished female   126     5.7
-#&gt; 3 survived male     367    16.7
-#&gt; 4 survived female   344    15.6</code></pre>
+<span class="kw">class</span>(titanic_tb)
+<span class="co">#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</span>
+
+titanic_tb
+<span class="co">#&gt; # A tibble: 4 x 4</span>
+<span class="co">#&gt;   fate     sex        n percent</span>
+<span class="co">#&gt;   &lt;fct&gt;    &lt;fct&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 perished male    1364    62  </span>
+<span class="co">#&gt; 2 perished female   126     5.7</span>
+<span class="co">#&gt; 3 survived male     367    16.7</span>
+<span class="co">#&gt; 4 survived female   344    15.6</span></code></pre>
 <p>The tibble includes additional information about the variables</p>
 </div>
 <div id="r-objects-have-structure" class="section level3">
 <h3><span class="header-section-number">4.1.7</span> R objects have structure</h3>
 <p>To see inside an object ask for its structure using the <code>str()</code> function.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(x)</code></pre>
-<pre><code>#&gt;  num [1:6] 1 2 3 1 3 25</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(titanic)</code></pre>
-<pre><code>#&gt; &#39;data.frame&#39;:    4 obs. of  4 variables:
-#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2
-#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1
-#&gt;  $ n      : num  1364 126 367 344
-#&gt;  $ percent: num  62 5.7 16.7 15.6</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(titanic_tb)</code></pre>
-<pre><code>#&gt; Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    4 obs. of  4 variables:
-#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2
-#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1
-#&gt;  $ n      : num  1364 126 367 344
-#&gt;  $ percent: num  62 5.7 16.7 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(x)
+<span class="co">#&gt;  num [1:6] 1 2 3 1 3 25</span>
+
+<span class="kw">str</span>(titanic)
+<span class="co">#&gt; &#39;data.frame&#39;:    4 obs. of  4 variables:</span>
+<span class="co">#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2</span>
+<span class="co">#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1</span>
+<span class="co">#&gt;  $ n      : num  1364 126 367 344</span>
+<span class="co">#&gt;  $ percent: num  62 5.7 16.7 15.6</span>
+
+<span class="kw">str</span>(titanic_tb)
+<span class="co">#&gt; Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    4 obs. of  4 variables:</span>
+<span class="co">#&gt;  $ fate   : Factor w/ 2 levels &quot;perished&quot;,&quot;survived&quot;: 1 1 2 2</span>
+<span class="co">#&gt;  $ sex    : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2 1</span>
+<span class="co">#&gt;  $ n      : num  1364 126 367 344</span>
+<span class="co">#&gt;  $ percent: num  62 5.7 16.7 15.6</span></code></pre>
 <p>I also like to use the <code>glimpse()</code> function from the tidyverse.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(x)</code></pre>
-<pre><code>#&gt;  num [1:6] 1 2 3 1 3 25</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(titanic)</code></pre>
-<pre><code>#&gt; Observations: 4
-#&gt; Variables: 4
-#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived
-#&gt; $ sex     &lt;fct&gt; male, female, male, female
-#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344
-#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(titanic_tb) </code></pre>
-<pre><code>#&gt; Observations: 4
-#&gt; Variables: 4
-#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived
-#&gt; $ sex     &lt;fct&gt; male, female, male, female
-#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344
-#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(x)
+<span class="co">#&gt;  num [1:6] 1 2 3 1 3 25</span>
+
+<span class="kw">glimpse</span>(titanic)
+<span class="co">#&gt; Observations: 4</span>
+<span class="co">#&gt; Variables: 4</span>
+<span class="co">#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived</span>
+<span class="co">#&gt; $ sex     &lt;fct&gt; male, female, male, female</span>
+<span class="co">#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344</span>
+<span class="co">#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</span>
+
+<span class="kw">glimpse</span>(titanic_tb) 
+<span class="co">#&gt; Observations: 4</span>
+<span class="co">#&gt; Variables: 4</span>
+<span class="co">#&gt; $ fate    &lt;fct&gt; perished, perished, survived, survived</span>
+<span class="co">#&gt; $ sex     &lt;fct&gt; male, female, male, female</span>
+<span class="co">#&gt; $ n       &lt;dbl&gt; 1364, 126, 367, 344</span>
+<span class="co">#&gt; $ percent &lt;dbl&gt; 62.0, 5.7, 16.7, 15.6</span></code></pre>
 </div>
 <div id="r-does-what-you-tell-it" class="section level3">
 <h3><span class="header-section-number">4.1.8</span> R does what you tell it</h3>
@@ -528,7 +547,7 @@ new_vector</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanic_tb, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">y =</span> n, <span class="dt">fill =</span> fate)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_col</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">coord_flip</span>()</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-24-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p><strong>Your turn.</strong> As shown, color distinguishes those who survived from those who did not and bar length gives totals by sex. Make a small change so that color denotes sex and bar length gives totals of survived and perished.</p>
 </blockquote>
@@ -596,31 +615,31 @@ new_vector</code></pre>
 <div id="tidy-data" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Tidy data</h3>
 <p>If the data set is “tidy”, then every row is an observation and every column is a variable. The <code>gapminder</code> data frame is tidy. We use <code>glimpse()</code> to get a look at the structure.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)</code></pre>
-<pre><code>#&gt; Observations: 1,704
-#&gt; Variables: 6
-#&gt; $ country   &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, ...
-#&gt; $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia...
-#&gt; $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992...
-#&gt; $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.8...
-#&gt; $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 1488...
-#&gt; $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 78...</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)
+<span class="co">#&gt; Observations: 1,704</span>
+<span class="co">#&gt; Variables: 6</span>
+<span class="co">#&gt; $ country   &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, ...</span>
+<span class="co">#&gt; $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia...</span>
+<span class="co">#&gt; $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992...</span>
+<span class="co">#&gt; $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.8...</span>
+<span class="co">#&gt; $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 1488...</span>
+<span class="co">#&gt; $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 78...</span></code></pre>
 <p>And we can just type its name to see the first few rows,</p>
-<pre class="sourceCode r"><code class="sourceCode r">gapminder</code></pre>
-<pre><code>#&gt; # A tibble: 1,704 x 6
-#&gt;    country     continent  year lifeExp      pop gdpPercap
-#&gt;    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
-#&gt;  1 Afghanistan Asia       1952    28.8  8425333      779.
-#&gt;  2 Afghanistan Asia       1957    30.3  9240934      821.
-#&gt;  3 Afghanistan Asia       1962    32.0 10267083      853.
-#&gt;  4 Afghanistan Asia       1967    34.0 11537966      836.
-#&gt;  5 Afghanistan Asia       1972    36.1 13079460      740.
-#&gt;  6 Afghanistan Asia       1977    38.4 14880372      786.
-#&gt;  7 Afghanistan Asia       1982    39.9 12881816      978.
-#&gt;  8 Afghanistan Asia       1987    40.8 13867957      852.
-#&gt;  9 Afghanistan Asia       1992    41.7 16317921      649.
-#&gt; 10 Afghanistan Asia       1997    41.8 22227415      635.
-#&gt; # ... with 1,694 more rows</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">gapminder
+<span class="co">#&gt; # A tibble: 1,704 x 6</span>
+<span class="co">#&gt;    country     continent  year lifeExp      pop gdpPercap</span>
+<span class="co">#&gt;    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 Afghanistan Asia       1952    28.8  8425333      779.</span>
+<span class="co">#&gt;  2 Afghanistan Asia       1957    30.3  9240934      821.</span>
+<span class="co">#&gt;  3 Afghanistan Asia       1962    32.0 10267083      853.</span>
+<span class="co">#&gt;  4 Afghanistan Asia       1967    34.0 11537966      836.</span>
+<span class="co">#&gt;  5 Afghanistan Asia       1972    36.1 13079460      740.</span>
+<span class="co">#&gt;  6 Afghanistan Asia       1977    38.4 14880372      786.</span>
+<span class="co">#&gt;  7 Afghanistan Asia       1982    39.9 12881816      978.</span>
+<span class="co">#&gt;  8 Afghanistan Asia       1987    40.8 13867957      852.</span>
+<span class="co">#&gt;  9 Afghanistan Asia       1992    41.7 16317921      649.</span>
+<span class="co">#&gt; 10 Afghanistan Asia       1997    41.8 22227415      635.</span>
+<span class="co">#&gt; # ... with 1,694 more rows</span></code></pre>
 <p>Read more about <a href="https://r4ds.had.co.nz/tidy-data.html#tidy-data-1">tidy data</a> in <span class="citation">(Wickham and Grolemund, <a href="references.html#ref-Wickham+Grolemund:2017" role="doc-biblioref">2017</a>)</span>.</p>
 <p><br></p>
 <blockquote>
@@ -643,31 +662,31 @@ new_vector</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp))</code></pre>
 <p>If we try to print the graph by typing the name of the graph object (everything in R is an object), we get an empty graph because we haven’t told ggplot what sort of a graph we want.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-55-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-32-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Because the graph will be a scatterplot, we add the <code>geom_point()</code> layer.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-56-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In ggplot2, “geoms” are geometric objects such as points, lines, bars, boxplots, contours, polygons, etc. You can browse the full list on the ggplot2 <a href="https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms">geom reference page</a>.</p>
 <p>We could also have simply added the layer to the original object,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-57-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Notice that the default axis labels are the variables names from the data frame. We can edit those with another layer</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-58-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Or, with all layers shown in one code chunk,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-59-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Summary. The basics steps for building up the layers of any graph consist of,</p>
 <ul>
 <li>assign the data frame</li>
@@ -693,7 +712,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-60-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-37-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-smooth-fit" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Layer: smooth fit</h3>
@@ -701,17 +720,17 @@ p <span class="co"># display the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-61-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The <code>se</code> argument controls whether or not the confidence interval is displayed. Setting <code>se = TRUE</code> yields,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-62-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-39-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For a linear-fit layer, we add a layer with <code>method</code> set to <code>lm</code> (short for linear model). The linear fit is not particularly good in this case, but now you know how to do one.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-63-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-40-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a> help page</li>
@@ -724,7 +743,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-64-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-log-scale" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Layer: log scale</h3>
@@ -733,14 +752,14 @@ p <span class="co"># display the graph</span></code></pre>
 this_variable &lt;-<span class="st"> </span>gapminder[<span class="st">&quot;gdpPercap&quot;</span>]
 
 <span class="co"># statistical summary of one variable </span>
-<span class="kw">summary</span>(this_variable)</code></pre>
-<pre><code>#&gt;    gdpPercap       
-#&gt;  Min.   :   241.2  
-#&gt;  1st Qu.:  1202.1  
-#&gt;  Median :  3531.8  
-#&gt;  Mean   :  7215.3  
-#&gt;  3rd Qu.:  9325.5  
-#&gt;  Max.   :113523.1</code></pre>
+<span class="kw">summary</span>(this_variable)
+<span class="co">#&gt;    gdpPercap       </span>
+<span class="co">#&gt;  Min.   :   241.2  </span>
+<span class="co">#&gt;  1st Qu.:  1202.1  </span>
+<span class="co">#&gt;  Median :  3531.8  </span>
+<span class="co">#&gt;  Mean   :  7215.3  </span>
+<span class="co">#&gt;  3rd Qu.:  9325.5  </span>
+<span class="co">#&gt;  Max.   :113523.1</span></code></pre>
 <p>The bracket notation I just used, <code>gapminder["gdpPercap"]</code>, is one way to extract a variable from a data frame.</p>
 <p>In exploring a graph like this, it might be useful to add a layer that changes the horizontal scale to a log-base-10 scale.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -748,24 +767,24 @@ this_variable &lt;-<span class="st"> </span>gapminder[<span class="st">&quot;gdp
 <span class="st">        </span><span class="kw">scale_x_log10</span>() 
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-67-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-44-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The scales package allows us to change the GDP scale to dollars. Using the syntax <code>thepackage::thefunction</code> we can use the <code>scales::dollar</code> function without loading the scales package.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-68-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-45-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In this case, a linear fit might work,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-69-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-46-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Update the axis labels,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-70-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In summary, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
@@ -792,7 +811,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-72-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-49-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mapping-aesthetics" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Mapping aesthetics</h3>
@@ -805,7 +824,7 @@ p <span class="co"># display the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-73-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p><br></p>
 <blockquote>
 <p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
@@ -815,7 +834,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-74-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-51-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="setting-properties" class="section level3">
 <h3><span class="header-section-number">4.2.7</span> Setting properties</h3>
@@ -828,12 +847,12 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-75-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-52-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we add a linear fit to these data, a fit for each continent is generated. For a thinner line, I’ve added a <code>size</code> argument to the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-76-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-53-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we want all the data markers the same color but we want to change the color, we don’t map it, we set it in the geom.</p>
 <p>Here, I’ve omitted the aesthetic mapping to color and used a color assignment in the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -843,7 +862,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-77-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-54-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R color names</a></li>
@@ -856,12 +875,12 @@ p <span class="co"># print the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent))
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-78-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-55-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Comparisons are facilitated by having the facets appear in one column, by using the <code>ncols</code> argument of <code>facet_wrap()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-79-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-56-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In a faceted display, all panels have identical scales (the default) to facilitate comparison.</p>
 <p>Again, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -885,22 +904,22 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-81-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-58-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ordering-the-panels" class="section level3">
 <h3><span class="header-section-number">4.2.9</span> Ordering the panels</h3>
 <p>The default ordering of the panels in this example is alphabetical. In most cases, ordering the panels by the data (often the mean or the median) improves the display.</p>
 <p>Here we have two quantitative variables, but the one that is the more interesting is life expectancy. Our goal then is to order the <code>continent</code> variable by the median of the <code>lifeExp</code> variable in each panel.</p>
 <p>To do that, we require continent to be a <em>factor</em>, a type of variable specialized for creating ordered levels of a category. Using <code>glimpse()</code> we see that continent is already a factor (<code>&lt;fct&gt;</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)</code></pre>
-<pre><code>#&gt; Observations: 1,704
-#&gt; Variables: 6
-#&gt; $ country   &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, ...
-#&gt; $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia...
-#&gt; $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992...
-#&gt; $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.8...
-#&gt; $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 1488...
-#&gt; $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 78...</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(gapminder)
+<span class="co">#&gt; Observations: 1,704</span>
+<span class="co">#&gt; Variables: 6</span>
+<span class="co">#&gt; $ country   &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, ...</span>
+<span class="co">#&gt; $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia...</span>
+<span class="co">#&gt; $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992...</span>
+<span class="co">#&gt; $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.8...</span>
+<span class="co">#&gt; $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 1488...</span>
+<span class="co">#&gt; $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 78...</span></code></pre>
 <p>Therefore all we have to do is tell R that we want the levels of continent ordered by the median of life expectancy using the <code>fct_reorder()</code> function.</p>
 <pre class="sourceCode r"><code class="sourceCode r">gapminder &lt;-<span class="st"> </span>gapminder <span class="op">%&gt;%</span>
 <span class="st">        </span><span class="kw">mutate</span>(<span class="dt">continent =</span> <span class="kw">fct_reorder</span>(continent, lifeExp, median))</code></pre>
@@ -912,7 +931,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">as.table =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>) </code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-84-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-61-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a> help page</li>
@@ -927,7 +946,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-85-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-62-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="beyond-the-basics" class="section level3">
 <h3><span class="header-section-number">4.2.10</span> Beyond the basics</h3>
@@ -959,7 +978,7 @@ p <span class="co"># print the graph</span></code></pre>
                 <span class="dt">title  =</span> <span class="st">&quot;Life expectancy by country, 2007&quot;</span>,
                 <span class="dt">caption =</span> <span class="st">&quot;Source: Gapminder&quot;</span>) <span class="op">+</span>
 <span class="st">        </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-86-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-63-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a> help page</li>
@@ -1001,10 +1020,14 @@ p <span class="co"># print the graph</span></code></pre>
 <h2><span class="header-section-number">4.3</span> Data basics</h2>
 <p>In <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, Hadley Wickham says,</p>
 <blockquote>
-<p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data.</p>
-<p>Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected.</p>
+<p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but <em>must be repeated many times</em> over the course of analysis as new problems come to light or new data is collected [emphasis mine].</p>
 </blockquote>
-<p>The goal of this 50-minute tutorial is to introduce three basic steps of data preparation:</p>
+<p>That data preparation “must be repeated many times” cannot be overemphasized. Reproducibility starts with deliberate planning for data management, file management, and file-naming schemes and using a scripted computing environment like R (or Python, SAS, etc.).</p>
+<p>Other researchers may never attempt to reproduce your work—but you will. Data preparation “must be repeated many times.” As <a href="https://kbroman.org/">Karl Broman</a> once said,</p>
+<blockquote>
+<p>Your closest collaborator is you six months ago, but you don’t reply to emails.</p>
+</blockquote>
+<p>The goal of this 50-minute tutorial is to introduce three basic steps of data preparation: importing data, identifying its structure, and reshaping to obtain a desired form.</p>
 <p><br></p>
 <table>
 <tbody>
@@ -1030,8 +1053,6 @@ p <span class="co"># print the graph</span></code></pre>
 </li>
 <li>You launched <code>midfield_institute.Rproj</code> to start the R session</li>
 </ul>
-<p>Install the inspectdf package from GitHub. If a message comes up about updating packages, you can type the number that corresponds to <code>None</code> for now.</p>
-<pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;alastairrushworth/inspectdf&quot;</span>)</code></pre>
 <p>Use <em>File &gt; New File &gt; R Script</em> to create a new R script</p>
 <ul>
 <li>Name the script <code>03-data-basics.R</code><br />
@@ -1125,19 +1146,15 @@ p <span class="co"># print the graph</span></code></pre>
 <li>the number of variables</li>
 <li>the name and class of each variable</li>
 </ul>
-<p>We use these functions—encountered in <a href="day-0.html#r-basics">R basics</a>—to examine the structure of a dataset. .</p>
-<ul>
-<li><code>str()</code></li>
-<li><code>glimpse()</code></li>
-<li><code>class()</code></li>
-</ul>
-<p><a href="http://adv-r.had.co.nz/Data-structures.html">[To read more about R data structures]</a></p>
+<p>To do so, we use functions like <code>glimpse()</code> and <code>class()</code> (introduced in <a href="day-0.html#r-basics">R basics</a>) as well as functions from the inspectdf package (introduced in the next section).</p>
+<p><a href="http://adv-r.had.co.nz/Data-structures.html" target="_blank">[To read more about R data structures]</a><br />
+<a href="https://github.com/alastairrushworth/inspectdf" target="_blank">[To read more about inspectdf]</a></p>
 </div>
 <div id="example-create-a-2018-price-index" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Example: Create a 2018 price index</h3>
-<p>In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars.</p>
 <p>Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old could live comfortably on $5/hour but in 2018 (45 years later) a 20-year-old has to earn $30/hour to achieve the same modest standard of living.</p>
 <p>We usually adjust for the effects of inflation in US dollars using the Consumer Price Index (CPI) published by the US Bureau of Labor Statistics (BLS). The CPI is available by month from the BLS or from the Federal Reserve (FRED), from 1913 to the present.</p>
+<p>In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars.</p>
 <p><br></p>
 <table>
 <tbody>
@@ -1148,37 +1165,39 @@ p <span class="co"># print the graph</span></code></pre>
 </tbody>
 </table>
 <p><br></p>
-<p>The URL to obtain the CPI data from the FRED is <a href="http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt">http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt</a>. If you click on the link, you can see that the data starts on line 14; the first 13 lines of the text are meta-information:</p>
-<pre><code>Title:               Consumer Price Index for All Urban Consumers: All Items  
-Series ID:           CPIAUCNS  
-Source:              U.S. Bureau of Labor Statistics  
-Release:             Consumer Price Index  
-Seasonal Adjustment: Not Seasonally Adjusted  
-Frequency:           Monthly  
-Units:               Index 1982-1984=100  
-Date Range:          1913-01-01 to 2019-04-01  
-Last Updated:        2019-05-10 7:42 AM CDT  
-Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpihom.pdf)  
-                     Understanding the CPI: Frequently Asked Questions -  
-                     (https://www.bls.gov/cpi/questions-and-answers.htm)  
+<p>The FRED provides CPI data from 1913 to the present as a .txt file at the URL:</p>
+<p>   <a href="http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt" target="_blank">http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt</a></p>
+<p>If you click on the link, you can see that the first 13 lines are metadata. The data starts on line 14 with the column names. I’ve added line numbers to make it easier to see.</p>
+<pre><code> 1   Title:               Consumer Price Index for All Urban Consumers: All Items
+ 2   Series ID:           CPIAUCNS
+ 3   Source:              U.S. Bureau of Labor Statistics
+ 4   Release:             Consumer Price Index
+ 5   Seasonal Adjustment: Not Seasonally Adjusted
+ 6   Frequency:           Monthly
+ 7   Units:               Index 1982-1984=100
+ 8   Date Range:          1913-01-01 to 2019-04-01
+ 9   Last Updated:        2019-05-10 7:42 AM CDT
+10   Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpihom.pdf)
+11                        Understanding the CPI: Frequently Asked Questions -
+12                        (https://www.bls.gov/cpi/questions-and-answers.htm)
+13   
+14   DATE          VALUE
+15   1913-01-01    9.800
+16   1913-02-01    9.800 
+etc. 
                  </code></pre>
-<ul>
-<li>Assign the URL</li>
-</ul>
+<p>Assign the URL (add these lines to your script and run)</p>
 <pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span></code></pre>
-<ul>
-<li>Import the data using <code>rio::import()</code>, skipping the first 13 lines</li>
-</ul>
+<p>Use <code>rio::import()</code> to download the data, skipping the first 13 lines</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">skip =</span> <span class="dv">13</span>)</code></pre>
-<ul>
-<li>Convert the txt file to CSV and write to file in our <code>data</code> directory</li>
-</ul>
+<p>Use <code>rio::export()</code> to convert the txt file to CSV and write to our <code>data</code> directory</p>
 <pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
-<p>Now that we have imported the data and written it to file, we don’t have to re-import the data from the Internet every time we <em>Source</em> this R script. We can comment-out those lines as follows (the hashtag # indicates an R comment, that is, a non-executable line of code).</p>
+<p>Once you have saved raw data to file (like we did above), leave that file unaltered. Never manipulate raw data manually.</p>
+<p>In this workshop, we are saving all data files to the <code>data</code> directory. In larger projects, one might add a <code>data-raw</code> directory to separate raw data files from prepared data files.</p>
+<p>We don’t have to re-import the data from the Internet every time we <em>Source</em> this R script, so we can comment-out the previous three lines of code with a hashtag, i.e.,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># url &lt;- &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span>
 <span class="co"># x   &lt;- rio::import(url, skip = 13)</span>
 <span class="co"># rio::export(x, &quot;data/cpi-raw.csv&quot;)</span></code></pre>
-<p>Once you have obtained your raw data, save it to file (like we did above) and leave that file unaltered. Never manipulate that data file manually; such operations waste time and are error-prone. Instead, to support the reproducibilty of your work, do all your data preparation in a scripted environment with explicit links to data files.</p>
 <p><br></p>
 <table>
 <tbody>
@@ -1189,82 +1208,18 @@ Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpi
 </tbody>
 </table>
 <p><br></p>
-<ul>
-<li>Read the data into R using <code>read_csv()</code>.</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
-<ul>
-<li>Use <code>class()</code> to determine that the <code>cpi</code> data object itself has the structure of a tibble (a type of data frame).</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cpi)</code></pre>
-<pre><code>#&gt; [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
-<ul>
-<li>Use <code>glimpse()</code> to examine the data object, which tells us we have 1276 observations of 2 variables: {DATE, VALUE}</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(cpi)</code></pre>
-<pre><code>#&gt; Observations: 1,276
-#&gt; Variables: 2
-#&gt; $ DATE  &lt;date&gt; 1913-01-01, 1913-02-01, 1913-03-01, 1913-04-01, 1913-05...
-#&gt; $ VALUE &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1...</code></pre>
-<p>The first few values of the date variable tell us that these are monthly data. <code>VALUE</code> is the monthly CPI. This agrees with the metadata above that gave us a date range of 1913-01-01 to 2019-04-01 which is 106 years + 4 months = 1276 months (observations) total.</p>
-<p>The <code>glimpse()</code> also tells us that</p>
-<ul>
-<li><code>DATE</code> is of the <code>date</code> class<br />
-</li>
-<li><code>VALUE</code> is a double precision floating point number</li>
-</ul>
-<p>We use functions from the inspectdf package to tell us more about the data frame.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;inspectdf&quot;</span>)
-x &lt;-<span class="st"> </span>cpi</code></pre>
-<ul>
-<li><code>inspect_types()</code> confirms the number and type of variables</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_types</span>(x) <span class="co"># variable type</span></code></pre>
-<pre><code>#&gt; # A tibble: 2 x 4
-#&gt;   type      cnt  pcnt col_name 
-#&gt;   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;list&gt;   
-#&gt; 1 Date        1    50 &lt;chr [1]&gt;
-#&gt; 2 numeric     1    50 &lt;chr [1]&gt;</code></pre>
-<ul>
-<li><code>inspect_mem()</code> indicates the amount of memory each variable requires</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_mem</span>(x)   <span class="co"># memory</span></code></pre>
-<pre><code>#&gt; # A tibble: 2 x 3
-#&gt;   col_name size      pcnt
-#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;
-#&gt; 1 DATE     10.23 Kb  50.5
-#&gt; 2 VALUE    10.02 Kb  49.5</code></pre>
-<ul>
-<li><code>inspect_na()</code> indicates that there are no missing values</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_na</span>(x)    <span class="co"># NAs</span></code></pre>
-<pre><code>#&gt; # A tibble: 2 x 3
-#&gt;   col_name   cnt  pcnt
-#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
-#&gt; 1 DATE         0     0
-#&gt; 2 VALUE        0     0</code></pre>
-<ul>
-<li><code>inspect_num()</code> summarizes the numerical variables, in this case, the CPI</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_num</span>(x)   <span class="co"># numeric variables</span></code></pre>
-<pre><code>#&gt; # A tibble: 1 x 10
-#&gt;   col_name   min    q1 median  mean    q3   max    sd pcnt_na hist         
-#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;list&gt;       
-#&gt; 1 VALUE      9.7  17.4   32.0  78.9  141.  256.  76.9       0 &lt;tibble [28 ~</code></pre>
-<ul>
-<li><code>inspect_cat()</code> summarizes the categorical variables, in this case, the date</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_cat</span>(x)   <span class="co"># categorical variables</span></code></pre>
-<pre><code>#&gt; # A tibble: 1 x 5
-#&gt;   col_name   cnt common     common_pcnt levels              
-#&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;list&gt;              
-#&gt; 1 DATE      1276 1913-01-01      0.0784 &lt;tibble [1,276 x 3]&gt;</code></pre>
-<ul>
-<li><code>inspect_cat()</code> provides correlation coefficients (if any)</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_cor</span>(x)   <span class="co"># correlation (if any) </span></code></pre>
-<pre><code>#&gt; # A tibble: 0 x 3
-#&gt; # ... with 3 variables: col_1 &lt;chr&gt;, col_2 &lt;chr&gt;, corr &lt;dbl&gt;</code></pre>
+<p>Use <code>rio::import()</code> to read the raw data into the R workspace.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
+<p>Use <code>class()</code> to determine the R data structure—in this case, <code>cpi</code> is a tibble (a type of data frame).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cpi)
+<span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
+<p>Use <code>glimpse()</code> to examine the tibble—we discover the number of observations (1276), the number of variables (2), their names (DATE, VALUE), and their class or type (character, double).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(cpi)
+<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ DATE  &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, ...</span>
+<span class="co">#&gt; $ VALUE &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1...</span></code></pre>
+<p>The first <code>DATE</code> values suggest these are monthly data, which agrees with the frequency given in the block of metadata. The <code>VALUE</code> variable is the CPI by month indexed at 1982–1984 (for which CPI = 100).</p>
 <p>These data are in what Hadley Wickham calls “tidy” form, that is,</p>
 <ul>
 <li>Each variable is in a column<br />
@@ -1273,27 +1228,64 @@ x &lt;-<span class="st"> </span>cpi</code></pre>
 </li>
 <li>Each value is a cell</li>
 </ul>
-<p>Such an organization is also called a “data matrix” or a “de-normalized form” <span class="citation">(Mount, <a href="references.html#ref-Mount:2019:tidy-data" role="doc-biblioref">2019</a>)</span>.</p>
+<p>Such an organization is also called a “data matrix” or a “de-normalized form” <span class="citation">(Mount, <a href="references.html#ref-Mount:2019:tidy-data" role="doc-biblioref">2019</a>)</span>. This form is typically the desired form for data visualization using the ggplot2 package, though other forms are sometimes useful.</p>
+<p>Functions from the inspectdf package can tell us more about the data. First, we summarize memory usage. Here, both variable use negligible memory.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_mem</span>(cpi)   <span class="co"># memory</span>
+<span class="co">#&gt; # A tibble: 2 x 3</span>
+<span class="co">#&gt;   col_name size      pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 DATE     89.77 Kb  90.0</span>
+<span class="co">#&gt; 2 VALUE    10.02 Kb  10.0</span></code></pre>
+<p>Summarize the rate of missingness. Here, there are no missing values.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_na</span>(cpi)    <span class="co"># NAs</span>
+<span class="co">#&gt; # A tibble: 2 x 3</span>
+<span class="co">#&gt;   col_name   cnt  pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 DATE         0     0</span>
+<span class="co">#&gt; 2 VALUE        0     0</span></code></pre>
+<p>Summary</p>
+<ul>
+<li>1276 observations, one per month, 1913-01 to 2019-04</li>
+<li>1 categorical variable <code>DATE</code></li>
+<li>1 quantitative variable <code>VALUE</code> (the CPI)</li>
+</ul>
 <p><br></p>
 <blockquote>
-<p><strong>Your turn.</strong></p>
-<p>Use the inspectdf functions on <code>midfielddata::midfielddegrees</code></p>
+<p><strong>Your turn.</strong> For the <code>midfielddegrees</code> dataset from the midfielddata package, determine</p>
+<ul>
+<li>the R data structure, e.g., vector, matrix, time series, data frame, tibble, etc.</li>
+<li>the number of observations</li>
+<li>the number of variables</li>
+<li>the name and class of each variable</li>
+<li>summary of missing values</li>
+<li>summary of missing values</li>
+</ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<pre><code>#&gt; # A tibble: 2 x 4
-#&gt;   type        cnt  pcnt col_name 
-#&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;list&gt;   
-#&gt; 1 character     4    80 &lt;chr [4]&gt;
-#&gt; 2 numeric       1    20 &lt;chr [1]&gt;</code></pre>
-<pre><code>#&gt; # A tibble: 5 x 3
+<pre><code>#&gt; R data structure ----------
+#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
+#&gt; 
+#&gt; glimpse ----------
+#&gt; Observations: 97,640
+#&gt; Variables: 5
+#&gt; $ id          &lt;chr&gt; &quot;MID25783135&quot;, &quot;MID25783147&quot;, &quot;MID25783156&quot;, &quot;MID2...
+#&gt; $ institution &lt;chr&gt; &quot;Institution M&quot;, &quot;Institution M&quot;, &quot;Institution M&quot;,...
+#&gt; $ cip6        &lt;chr&gt; NA, NA, NA, &quot;521401&quot;, NA, NA, &quot;143501&quot;, NA, &quot;23010...
+#&gt; $ term_degree &lt;dbl&gt; NA, NA, NA, 19963, NA, NA, 20001, NA, 20023, 19966...
+#&gt; $ degree      &lt;chr&gt; NA, NA, NA, &quot;Bachelor of Science&quot;, NA, NA, &quot;Bachel...
+#&gt; 
+#&gt; memory summary ----------
+#&gt; # A tibble: 5 x 3
 #&gt;   col_name    size       pcnt
 #&gt;   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;
 #&gt; 1 id          6.7 Mb    69.1 
 #&gt; 2 cip6        780.14 Kb  7.85
 #&gt; 3 degree      763.66 Kb  7.69
 #&gt; 4 institution 763.61 Kb  7.69
-#&gt; 5 term_degree 762.86 Kb  7.68</code></pre>
-<pre><code>#&gt; # A tibble: 5 x 3
+#&gt; 5 term_degree 762.86 Kb  7.68
+#&gt; 
+#&gt; NAs summary ----------
+#&gt; # A tibble: 5 x 3
 #&gt;   col_name      cnt  pcnt
 #&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
 #&gt; 1 cip6        50141  51.4
@@ -1311,54 +1303,405 @@ x &lt;-<span class="st"> </span>cpi</code></pre>
 </tbody>
 </table>
 <p><br></p>
-<ul>
-<li>Change the column names</li>
-</ul>
+<p>For the application I have in mind, I want to convert monthly CPI to annual CPI.</p>
+<p>I start by changing the variable names (the column names) because I prefer lowercase names and I prefer meaningful file names (<code>cpi</code> instead of <code>VALUE</code>).</p>
+<p>Use <code>dplyr::rename(new_name = old_name)</code> to rename the variables.</p>
 <pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">date =</span> DATE, <span class="dt">cpi =</span> VALUE) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span><span class="kw">glimpse</span>()</code></pre>
-<pre><code>#&gt; Observations: 1,276
-#&gt; Variables: 2
-#&gt; $ date &lt;date&gt; 1913-01-01, 1913-02-01, 1913-03-01, 1913-04-01, 1913-05-...
-#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</code></pre>
-<ul>
-<li>Convert the date to a date variable and extract the year</li>
-</ul>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span></code></pre>
+<p>Before I can average the monthly CPIs by year, I need to extract the 4-digit year from the <code>date</code> variable.</p>
+<p>Use <code>lubridate::year()</code> to extract the year from the date and <code>mutate()</code> to create the new <code>year</code> variable.</p>
 <pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">date =</span> lubridate<span class="op">::</span><span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">mutate</span>(<span class="dt">year =</span> lubridate<span class="op">::</span><span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span><span class="kw">glimpse</span>()</code></pre>
-<pre><code>#&gt; Observations: 1,276
-#&gt; Variables: 3
-#&gt; $ date &lt;date&gt; 1913-01-01, 1913-02-01, 1913-03-01, 1913-04-01, 1913-05-...
-#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...
-#&gt; $ year &lt;dbl&gt; 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191...</code></pre>
-<ul>
-<li>Omit 2019 data because we don’t have a full year</li>
-<li>Group and summarize by year to determine the annual CPI (this assumes our data we wish to adjust is annual data)</li>
-</ul>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191...</span></code></pre>
+<p>Use <code>filter()</code> to omit 2019 data because we do not have a full year. Note the reduction in the number of observations.</p>
 <pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">filter</span>(year <span class="op">!=</span><span class="st"> </span><span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span>seplyr<span class="op">::</span><span class="kw">group_summarise</span>(., <span class="st">&quot;year&quot;</span>, <span class="dt">cpi =</span> <span class="kw">mean</span>(cpi)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">cpi =</span> <span class="kw">round</span>(cpi, <span class="dv">2</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">        </span><span class="kw">glimpse</span>()</code></pre>
-<pre><code>#&gt; Observations: 106
-#&gt; Variables: 2
-#&gt; $ year &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 192...
-#&gt; $ cpi  &lt;dbl&gt; 9.88, 10.02, 10.11, 10.88, 12.82, 15.04, 17.33, 20.04, 17...</code></pre>
-<p>To see what the CPI numbers look like, we can graph it.</p>
-<pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi)) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">geom_line</span>()
-p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-115-1.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>The basis year is the year for which the CPI = 100. In this data, the basis year is 1983-1984.</p>
-<pre class="sourceCode r"><code class="sourceCode r">df_note &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">filter</span>(<span class="kw">near</span>(cpi, <span class="dv">100</span>, <span class="dt">tol =</span> <span class="fl">0.5</span>))
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 1,272</span>
+<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191...</span></code></pre>
+<p>Use <code>arrange()</code> and <code>tail()</code> to confirm that 2018 is the final year.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(date) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()
+<span class="co">#&gt;            date     cpi year</span>
+<span class="co">#&gt; 1267 2018-07-01 252.006 2018</span>
+<span class="co">#&gt; 1268 2018-08-01 252.146 2018</span>
+<span class="co">#&gt; 1269 2018-09-01 252.439 2018</span>
+<span class="co">#&gt; 1270 2018-10-01 252.885 2018</span>
+<span class="co">#&gt; 1271 2018-11-01 252.038 2018</span>
+<span class="co">#&gt; 1272 2018-12-01 251.233 2018</span></code></pre>
+<p>Use <code>seplyr::group_summarize()</code> operation to determine the average annual CPI.</p>
+<pre class="sourceCode r"><code class="sourceCode r">grouping_variables &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;year&quot;</span>)
+cpi_<span class="dv">1984</span>_basis &lt;-<span class="st"> </span>seplyr<span class="op">::</span><span class="kw">group_summarize</span>(cpi, 
+                grouping_variables, 
+                <span class="dt">cpi =</span> <span class="kw">mean</span>(cpi)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 106</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 192...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.883333, 10.016667, 10.108333, 10.883333, 12.825000, 15....</span></code></pre>
+<p>We have an excess of significant digits. Use <code>round()</code> to reduce our annual CPI values to 2 digits.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">1984</span>_basis &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">cpi =</span> <span class="kw">round</span>(cpi, <span class="dv">2</span>)) <span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 106</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 192...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.88, 10.02, 10.11, 10.88, 12.82, 15.04, 17.33, 20.04, 17...</span></code></pre>
+<p>These values can be displayed,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi_<span class="dv">1984</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;CPI with a 1983--1984 basis&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-88-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>As expected, in 1983–1984 (the basis years), CPI = 100. To shift the basis year to 2018, we extract the CPI for 2018,</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">2018</span> &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(cpi) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">unlist</span>(<span class="dt">use.names =</span> <span class="ot">FALSE</span>)
 
-p &lt;-<span class="st"> </span>p <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">data =</span> df_note, <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)
-p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-116-1.png" width="70%" style="display: block; margin: auto;" /></p>
+cpi_<span class="dv">2018</span>
+<span class="co">#&gt; [1] 251.11</span></code></pre>
+<p>Then divide all CPI values by the 2018 value to create the price index with a 2018 basis. In the basis year, the index = 1.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">2018</span>_basis &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">index =</span> cpi <span class="op">/</span><span class="st"> </span>cpi_<span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 106</span>
+<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; $ year  &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 19...</span>
+<span class="co">#&gt; $ cpi   &lt;dbl&gt; 9.88, 10.02, 10.11, 10.88, 12.82, 15.04, 17.33, 20.04, 1...</span>
+<span class="co">#&gt; $ index &lt;dbl&gt; 0.03934531, 0.03990283, 0.04026124, 0.04332763, 0.051053...</span></code></pre>
+<p>Graph the price index,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi_<span class="dv">2018</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> index)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Price index with a 2018 basis&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-91-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>The price index is used to account for inflation for any US dollar amount from 1913 to 2018 and report the results in terms of constant 2018 dollars. One simply divides the nominal dollar value by the price index for that year.</p>
+<p>Now that the data are prepared, we write them to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(cpi_<span class="dv">2018</span>_basis, <span class="st">&quot;data/cpi.csv&quot;</span>)</code></pre>
+</div>
+<div id="example-normalized-housing-costs" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> Example: Normalized housing costs</h3>
+<p>In this example we retrieve nominal US housing costs from the OECD database.</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-02.png" /></td>
+<td align="left"><strong>Step 1.</strong> Importing raw data and writing to file.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The long URL string below retrieves US housing costs by year from the OECD database. These are nominal costs (not adjusted for inflation) and normalized to a basis year of 2015, that is, the median house price is 100 in 2015.</p>
+<p>We start by importing the data and writing it to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;https://stats.oecd.org/sdmx-json/data/DP_LIVE/USA.HOUSECOST.NOMINAL.IDX2015.A/OECD?contentType=csv&amp;detail=code&amp;separator=comma&amp;csv-lang=en&amp;startPeriod=1956&amp;endPeriod=2018&quot;</span>
+x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">format =</span> <span class="st">&quot;csv&quot;</span>)
+rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/housing-raw.csv&quot;</span>)</code></pre>
+<p>Again, after doing this once, we can comment-out these three lines of code so we don’t have to access the internet every time we <em>Source</em> this script.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># url &lt;- &quot;https://stats.oecd.org/sdmx-json/data/DP_LIVE/USA.HOUSECOST.NOMINAL.IDX2015.A/OECD?contentType=csv&amp;detail=code&amp;separator=comma&amp;csv-lang=en&amp;startPeriod=1956&amp;endPeriod=2018&quot;</span>
+<span class="co"># x &lt;- rio::import(url, format = &quot;csv&quot;)</span>
+<span class="co"># rio::export(x, &quot;data/housing-raw.csv&quot;)</span></code></pre>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-03.png" /></td>
+<td align="left"><strong>Step 2.</strong> Identifying the data structure.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Read in the CSV file and examine it. Here, we have 49 observations of 8 variables in tidy form.</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/housing-raw.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 49</span>
+<span class="co">#&gt; Variables: 8</span>
+<span class="co">#&gt; $ LOCATION     &lt;chr&gt; &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, ...</span>
+<span class="co">#&gt; $ INDICATOR    &lt;chr&gt; &quot;HOUSECOST&quot;, &quot;HOUSECOST&quot;, &quot;HOUSECOST&quot;, &quot;HOUSECOST...</span>
+<span class="co">#&gt; $ SUBJECT      &lt;chr&gt; &quot;NOMINAL&quot;, &quot;NOMINAL&quot;, &quot;NOMINAL&quot;, &quot;NOMINAL&quot;, &quot;NOMI...</span>
+<span class="co">#&gt; $ MEASURE      &lt;chr&gt; &quot;IDX2015&quot;, &quot;IDX2015&quot;, &quot;IDX2015&quot;, &quot;IDX2015&quot;, &quot;IDX2...</span>
+<span class="co">#&gt; $ FREQUENCY    &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;,...</span>
+<span class="co">#&gt; $ TIME         &lt;int&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1...</span>
+<span class="co">#&gt; $ Value        &lt;dbl&gt; 11.16166, 12.06250, 12.92855, 14.46220, 15.78472,...</span>
+<span class="co">#&gt; $ `Flag Codes` &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N...</span></code></pre>
+<p>We asked for data starting from 1956, but the US data in this database apparently starts in 1970, hence 49 observations, one per year, from 1970 to 2019.</p>
+<p>We have two numerical variables for year and normalized housing value; of the remaining variables, one is logical and the rest are categorical.</p>
+<p>We cam summarize the categorical variables using <code>inspect_cat()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_cat</span>(housing)
+<span class="co">#&gt; # A tibble: 6 x 5</span>
+<span class="co">#&gt;   col_name     cnt common    common_pcnt levels          </span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;list&gt;          </span>
+<span class="co">#&gt; 1 Flag Codes     1 &lt;NA&gt;              100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 2 FREQUENCY      1 A                 100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 3 INDICATOR      1 HOUSECOST         100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 4 LOCATION       1 USA               100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 5 MEASURE        1 IDX2015           100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 6 SUBJECT        1 NOMINAL           100 &lt;tibble [1 x 3]&gt;</span></code></pre>
+<p>Here, the count of the number of levels for every categorical variable is 1, e.g., indicator = house cost, location = US, etc, indicating that these variables have a constant value for all years.</p>
+<p>Memory usage is small and there are no missing values.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_mem</span>(housing)
+<span class="co">#&gt; # A tibble: 8 x 3</span>
+<span class="co">#&gt;   col_name   size       pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 INDICATOR  504 bytes 14.7 </span>
+<span class="co">#&gt; 2 LOCATION   496 bytes 14.5 </span>
+<span class="co">#&gt; 3 SUBJECT    496 bytes 14.5 </span>
+<span class="co">#&gt; 4 MEASURE    496 bytes 14.5 </span>
+<span class="co">#&gt; 5 FREQUENCY  496 bytes 14.5 </span>
+<span class="co">#&gt; 6 Value      440 bytes 12.9 </span>
+<span class="co">#&gt; 7 TIME       248 bytes  7.24</span>
+<span class="co">#&gt; 8 Flag Codes 248 bytes  7.24</span>
+<span class="kw">inspect_na</span>(housing)
+<span class="co">#&gt; # A tibble: 8 x 3</span>
+<span class="co">#&gt;   col_name     cnt  pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Flag Codes    49   100</span>
+<span class="co">#&gt; 2 LOCATION       0     0</span>
+<span class="co">#&gt; 3 INDICATOR      0     0</span>
+<span class="co">#&gt; 4 SUBJECT        0     0</span>
+<span class="co">#&gt; 5 MEASURE        0     0</span>
+<span class="co">#&gt; 6 FREQUENCY      0     0</span>
+<span class="co">#&gt; 7 TIME           0     0</span>
+<span class="co">#&gt; 8 Value          0     0</span></code></pre>
+<p>Summary</p>
+<ul>
+<li>49 observations, one per year, 1970–2019</li>
+<li>2 quantitative variables are of interest: <code>TIME</code> and <code>Value</code></li>
+<li>the remaining categorical and logical variables are not relevant to our inquiry</li>
+</ul>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-04.png" /></td>
+<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We want to keep the <code>TIME</code> and <code>Value</code> columns and rename them.</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_<span class="dv">2015</span>_basis &lt;-<span class="st"> </span>housing <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(TIME, Value) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">year =</span> TIME, <span class="dt">nominal =</span> Value) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 49</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ year    &lt;int&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, ...</span>
+<span class="co">#&gt; $ nominal &lt;dbl&gt; 11.16166, 12.06250, 12.92855, 14.46220, 15.78472, 16.7...</span></code></pre>
+<p>The costs have been normalized with a 2015 basis, that is in 2015, the price is 100. I’d like to normalize these data to 2018 costs by dividing all nominal values by the one recorded for 2018, then multiply by 100, so that the $100 price value is in the same basis year as my price index.</p>
+<p>First, find the 2018 nominal house cost.</p>
+<pre class="sourceCode r"><code class="sourceCode r">nominal_<span class="dv">2018</span> &lt;-<span class="st"> </span>housing_<span class="dv">2015</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(nominal) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">unlist</span>(<span class="dt">use.names =</span> <span class="ot">FALSE</span>)
+
+nominal_<span class="dv">2018</span>
+<span class="co">#&gt; [1] 120.3783</span></code></pre>
+<p>Then adjust the costs so that the basis year is 2018.</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_<span class="dv">2018</span>_basis &lt;-<span class="st"> </span>housing_<span class="dv">2015</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">nominal =</span> nominal <span class="op">/</span><span class="st"> </span>nominal_<span class="dv">2018</span> <span class="op">*</span><span class="st"> </span><span class="dv">100</span>)</code></pre>
+<p>Check the tail of the data frame to confirm that the 2018 value is 100.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(housing_<span class="dv">2018</span>_basis, <span class="dt">n =</span> 10L)
+<span class="co">#&gt;    year   nominal</span>
+<span class="co">#&gt; 40 2009  73.30078</span>
+<span class="co">#&gt; 41 2010  71.12164</span>
+<span class="co">#&gt; 42 2011  68.12677</span>
+<span class="co">#&gt; 43 2012  70.10484</span>
+<span class="co">#&gt; 44 2013  75.07875</span>
+<span class="co">#&gt; 45 2014  78.88267</span>
+<span class="co">#&gt; 46 2015  83.07147</span>
+<span class="co">#&gt; 47 2016  88.01283</span>
+<span class="co">#&gt; 48 2017  93.81684</span>
+<span class="co">#&gt; 49 2018 100.00000</span></code></pre>
+<p>We can graph this for a look at relative nominal housing costs in the US.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> housing_<span class="dv">2018</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> nominal)) <span class="op">+</span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Normalized US median housing cost&quot;</span>, 
+                <span class="dt">subtitle =</span> <span class="st">&quot;Not adjusted for inflation&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-104-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Now that the data are prepared, we write them to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(housing_<span class="dv">2018</span>_basis, <span class="st">&quot;data/housing.csv&quot;</span>)</code></pre>
+</div>
+<div id="example-real-us-housing-costs" class="section level3">
+<h3><span class="header-section-number">4.3.6</span> Example: Real US housing costs</h3>
+<p>In this final example, we join the two data frames we created previously and adjust the US housing costs for inflation. The raw data have already been prepared, so we can continue step 3.</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-04.png" /></td>
+<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Read in the two data frames we saved earlier. Recall that both have been transformed to use a 2018 basis.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi     &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/cpi.csv&quot;</span>)
+housing &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/housing.csv&quot;</span>)</code></pre>
+<p>The CPI data spans 1913 to 2018, with the index = 1 in 2018.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(cpi)
+<span class="co">#&gt;   year   cpi      index</span>
+<span class="co">#&gt; 1 1913  9.88 0.03934531</span>
+<span class="co">#&gt; 2 1914 10.02 0.03990283</span>
+<span class="co">#&gt; 3 1915 10.11 0.04026124</span>
+<span class="co">#&gt; 4 1916 10.88 0.04332763</span>
+<span class="co">#&gt; 5 1917 12.82 0.05105332</span>
+<span class="co">#&gt; 6 1918 15.04 0.05989407</span>
+
+<span class="kw">tail</span>(cpi)
+<span class="co">#&gt;     year    cpi     index</span>
+<span class="co">#&gt; 101 2013 232.96 0.9277209</span>
+<span class="co">#&gt; 102 2014 236.74 0.9427741</span>
+<span class="co">#&gt; 103 2015 237.02 0.9438891</span>
+<span class="co">#&gt; 104 2016 240.01 0.9557963</span>
+<span class="co">#&gt; 105 2017 245.12 0.9761459</span>
+<span class="co">#&gt; 106 2018 251.11 1.0000000</span></code></pre>
+<p>The housing data spans 1970 to 2018, with nominal cost = 100 in 2018.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(housing)
+<span class="co">#&gt;   year   nominal</span>
+<span class="co">#&gt; 1 1970  9.272153</span>
+<span class="co">#&gt; 2 1971 10.020497</span>
+<span class="co">#&gt; 3 1972 10.739936</span>
+<span class="co">#&gt; 4 1973 12.013966</span>
+<span class="co">#&gt; 5 1974 13.112603</span>
+<span class="co">#&gt; 6 1975 13.930902</span>
+
+<span class="kw">tail</span>(housing)
+<span class="co">#&gt;    year   nominal</span>
+<span class="co">#&gt; 44 2013  75.07875</span>
+<span class="co">#&gt; 45 2014  78.88267</span>
+<span class="co">#&gt; 46 2015  83.07147</span>
+<span class="co">#&gt; 47 2016  88.01283</span>
+<span class="co">#&gt; 48 2017  93.81684</span>
+<span class="co">#&gt; 49 2018 100.00000</span></code></pre>
+<p>Use <code>left_join()</code> to combine the two data frames, joining <code>cpi</code> to <code>housing</code></p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_cpi &lt;-<span class="st"> </span><span class="kw">left_join</span>(housing, cpi, <span class="dt">by =</span> <span class="st">&quot;year&quot;</span>)
+
+<span class="kw">head</span>(housing_cpi)
+<span class="co">#&gt;   year   nominal   cpi     index</span>
+<span class="co">#&gt; 1 1970  9.272153 38.83 0.1546334</span>
+<span class="co">#&gt; 2 1971 10.020497 40.49 0.1612441</span>
+<span class="co">#&gt; 3 1972 10.739936 41.82 0.1665406</span>
+<span class="co">#&gt; 4 1973 12.013966 44.40 0.1768149</span>
+<span class="co">#&gt; 5 1974 13.112603 49.31 0.1963681</span>
+<span class="co">#&gt; 6 1975 13.930902 53.82 0.2143284</span>
+
+<span class="kw">tail</span>(housing_cpi)
+<span class="co">#&gt;    year   nominal    cpi     index</span>
+<span class="co">#&gt; 44 2013  75.07875 232.96 0.9277209</span>
+<span class="co">#&gt; 45 2014  78.88267 236.74 0.9427741</span>
+<span class="co">#&gt; 46 2015  83.07147 237.02 0.9438891</span>
+<span class="co">#&gt; 47 2016  88.01283 240.01 0.9557963</span>
+<span class="co">#&gt; 48 2017  93.81684 245.12 0.9761459</span>
+<span class="co">#&gt; 49 2018 100.00000 251.11 1.0000000</span></code></pre>
+<p>Usage: <code>left_join(x, y, by)</code> returns all rows from x and all columns from x and y. ‘by’ is a character vector of variables (column names) that x and y have in common used to join the two data frames.</p>
+<p>In this case, we left-join cpi (y) to housing (x) because housing has fewer years. Had we reversed the order of the two data frames, rows in x with no match in y will have NA values in the new columns, i.e.,</p>
+<pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">left_join</span>(cpi, housing, <span class="dt">by =</span> <span class="st">&quot;year&quot;</span>)
+
+<span class="kw">head</span>(test)
+<span class="co">#&gt;   year   cpi      index nominal</span>
+<span class="co">#&gt; 1 1913  9.88 0.03934531      NA</span>
+<span class="co">#&gt; 2 1914 10.02 0.03990283      NA</span>
+<span class="co">#&gt; 3 1915 10.11 0.04026124      NA</span>
+<span class="co">#&gt; 4 1916 10.88 0.04332763      NA</span>
+<span class="co">#&gt; 5 1917 12.82 0.05105332      NA</span>
+<span class="co">#&gt; 6 1918 15.04 0.05989407      NA</span>
+
+<span class="kw">tail</span>(test)
+<span class="co">#&gt;     year    cpi     index   nominal</span>
+<span class="co">#&gt; 101 2013 232.96 0.9277209  75.07875</span>
+<span class="co">#&gt; 102 2014 236.74 0.9427741  78.88267</span>
+<span class="co">#&gt; 103 2015 237.02 0.9438891  83.07147</span>
+<span class="co">#&gt; 104 2016 240.01 0.9557963  88.01283</span>
+<span class="co">#&gt; 105 2017 245.12 0.9761459  93.81684</span>
+<span class="co">#&gt; 106 2018 251.11 1.0000000 100.00000</span></code></pre>
+<p>The real housing cost is determined by dividing the nominal cost by the price index,</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_cpi &lt;-<span class="st"> </span>housing_cpi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">real =</span> nominal <span class="op">/</span><span class="st"> </span>index)
+
+<span class="kw">head</span>(housing_cpi)
+<span class="co">#&gt;   year   nominal   cpi     index     real</span>
+<span class="co">#&gt; 1 1970  9.272153 38.83 0.1546334 59.96215</span>
+<span class="co">#&gt; 2 1971 10.020497 40.49 0.1612441 62.14490</span>
+<span class="co">#&gt; 3 1972 10.739936 41.82 0.1665406 64.48841</span>
+<span class="co">#&gt; 4 1973 12.013966 44.40 0.1768149 67.94656</span>
+<span class="co">#&gt; 5 1974 13.112603 49.31 0.1963681 66.77562</span>
+<span class="co">#&gt; 6 1975 13.930902 53.82 0.2143284 64.99793</span>
+
+<span class="kw">tail</span>(housing_cpi)
+<span class="co">#&gt;    year   nominal    cpi     index      real</span>
+<span class="co">#&gt; 44 2013  75.07875 232.96 0.9277209  80.92816</span>
+<span class="co">#&gt; 45 2014  78.88267 236.74 0.9427741  83.67080</span>
+<span class="co">#&gt; 46 2015  83.07147 237.02 0.9438891  88.00978</span>
+<span class="co">#&gt; 47 2016  88.01283 240.01 0.9557963  92.08325</span>
+<span class="co">#&gt; 48 2017  93.81684 245.12 0.9761459  96.10944</span>
+<span class="co">#&gt; 49 2018 100.00000 251.11 1.0000000 100.00000</span></code></pre>
+<p>Graphing normalized median US housing costs in real (constant 2018) dollars, we have,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> housing_cpi, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> real)) <span class="op">+</span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Normalized US median housing cost&quot;</span>, 
+                <span class="dt">subtitle =</span> <span class="st">&quot;Constant 2018 dollars&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-113-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>From the graph, a monthly housing cost of $100 in 2018 is equivalent to approximately $70 in 1995 and $60 in 1970, for the <em>same level of housing</em> in <em>constant 2018 dollars</em>. Inflation has been accounted for, so the rises and falls we see in the graph represents changes in the real cost of housing.</p>
+<p>The ratios hold for any amount, so a monthly housing cost of $1000 in 2018 is equivalent to approximately $700 in 1995 and $600 in 1970—again, in constant 2018 dollars.</p>
+<p>In summary, we have used the OECD housing index to account for the fluctuations in house prices and we have used the CPI to account for inflation.</p>
+</div>
+<div id="summary-of-functions-introduced" class="section level3">
+<h3><span class="header-section-number">4.3.7</span> Summary of functions introduced</h3>
+<p>Summary of the data preparation functions used in this tutorial, organized by package.</p>
+<p>dplyr</p>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/reference/arrange.html" target="_blank"><code>arrange()</code></a> order tibble rows by an expression<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/filter.html" target="_blank"><code>filter()</code></a> choose rows/cases where conditions are true<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/mutate.html" target="_blank"><code>mutate()</code></a> adds new variables and preserves existing ones<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/select.html" target="_blank"><code>select()</code></a> keeps only the variables you mention<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/select.html" target="_blank"><code>rename()</code></a> a variant of <code>select()</code> keeps all variables<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/join.html" target="_blank"><code>left_join()</code></a> join two data frames</li>
+</ul>
+<p>rio</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/rio/vignettes/rio.html" target="_blank"><code>import()</code></a> read in a data frame from a file</li>
+<li><a href="https://cran.r-project.org/web/packages/rio/vignettes/rio.html" target="_blank"><code>export()</code></a> write a data frame to a file</li>
+</ul>
+<p>inspectdf</p>
+<ul>
+<li><a href="https://github.com/alastairrushworth/inspectdf" target="_blank"><code>inspect_mem()</code></a> summarize memory usage in a data frame<br />
+</li>
+<li><a href="https://github.com/alastairrushworth/inspectdf" target="_blank"><code>inspect_na()</code></a> summarize the rate of missingness in a data frame<br />
+</li>
+<li><a href="https://github.com/alastairrushworth/inspectdf" target="_blank"><code>inspect_ cat()</code></a> summarize the levels within each categorical variable</li>
+</ul>
+<p>lubridate</p>
+<ul>
+<li><a href="https://lubridate.tidyverse.org/reference/year.html" target="_blank"><code>year()</code></a> return year from a date object</li>
+</ul>
+<p>seplyr</p>
+<ul>
+<li><a href="https://winvector.github.io/seplyr/reference/group_summarize.html" target="_blank"><code>group_summarize()</code></a> group a data frame by the grouping variables and compute user summaries</li>
+</ul>
+<p>base R</p>
+<ul>
+<li><a href="http://rfunction.com/archives/699" target="_blank"><code>(head)</code></a> returns the last part of an R object</li>
+<li><a href="http://rfunction.com/archives/699" target="_blank"><code>tail()</code></a> returns the last part of an R object</li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/mean" target="_blank"><code>mean()</code></a> determine an arithmetic mean</li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/Round" target="_blank"><code>round()</code></a> round to a specified number of decimal places</li>
+</ul>
 <p><br><br />
 <a href="day-0.html#day-0">▲ top of page</a></p>
 
