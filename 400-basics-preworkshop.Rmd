@@ -1468,9 +1468,6 @@ We don't have to re-import the data from the Internet every time we *Source* thi
 
 
 
-
-
-
  
 
 <br> 
@@ -1546,6 +1543,14 @@ Summary
 
 <br> 
 
+```{r echo = FALSE}
+x <- midfielddata::midfielddegrees
+# class(x)
+# tibble::glimpse(x)
+# inspectdf::inspect_mem(x) 
+# inspectdf::inspect_na(x) 
+```
+
 > **Your turn.** For the `midfielddegrees` dataset from the midfielddata package, determine 
 > 
 - the R data structure, e.g., vector, matrix, time series, data frame, tibble, etc.
@@ -1555,22 +1560,8 @@ Summary
 - summary of missing values 
 - summary of missing values 
 > 
-> *Check your work:* 
+> *Check your work:* A tibble with `r nrow(x)` observations and `r ncol(x)` variables. The variable that requires the most memory is `id` with 6.7 Mb. Three of the variables have 51% missing values. 
 
-```{r echo = FALSE, collapse = TRUE}
-x <- midfielddata::midfielddegrees
-cat("R data structure ----------")
-class(x)
-
-cat("\nglimpse ----------")
-glimpse(x)
-
-cat("\nmemory summary ----------")
-inspect_mem(x) 
-
-cat("\nNAs summary ----------")
-inspect_na(x) 
-```
 
 
 

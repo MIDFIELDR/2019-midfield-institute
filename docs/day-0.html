@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-26">
+<meta name="date" content="2019-05-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1331,39 +1331,8 @@ etc.
 <li>summary of missing values</li>
 <li>summary of missing values</li>
 </ul>
-<p><em>Check your work:</em></p>
+<p><em>Check your work:</em> A tibble with 97640 observations and 5 variables. The variable that requires the most memory is <code>id</code> with 6.7 Mb. Three of the variables have 51% missing values.</p>
 </blockquote>
-<pre><code>#&gt; R data structure ----------
-#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
-#&gt; 
-#&gt; glimpse ----------
-#&gt; Observations: 97,640
-#&gt; Variables: 5
-#&gt; $ id          &lt;chr&gt; &quot;MID25783135&quot;, &quot;MID25783147&quot;, &quot;MID25783156&quot;, &quot;MID2...
-#&gt; $ institution &lt;chr&gt; &quot;Institution M&quot;, &quot;Institution M&quot;, &quot;Institution M&quot;,...
-#&gt; $ cip6        &lt;chr&gt; NA, NA, NA, &quot;521401&quot;, NA, NA, &quot;143501&quot;, NA, &quot;23010...
-#&gt; $ term_degree &lt;dbl&gt; NA, NA, NA, 19963, NA, NA, 20001, NA, 20023, 19966...
-#&gt; $ degree      &lt;chr&gt; NA, NA, NA, &quot;Bachelor of Science&quot;, NA, NA, &quot;Bachel...
-#&gt; 
-#&gt; memory summary ----------
-#&gt; # A tibble: 5 x 3
-#&gt;   col_name    size       pcnt
-#&gt;   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;
-#&gt; 1 id          6.7 Mb    69.1 
-#&gt; 2 cip6        780.14 Kb  7.85
-#&gt; 3 degree      763.66 Kb  7.69
-#&gt; 4 institution 763.61 Kb  7.69
-#&gt; 5 term_degree 762.86 Kb  7.68
-#&gt; 
-#&gt; NAs summary ----------
-#&gt; # A tibble: 5 x 3
-#&gt;   col_name      cnt  pcnt
-#&gt;   &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
-#&gt; 1 cip6        50141  51.4
-#&gt; 2 term_degree 50141  51.4
-#&gt; 3 degree      50141  51.4
-#&gt; 4 id              0   0  
-#&gt; 5 institution     0   0</code></pre>
 <p><br></p>
 <table>
 <tbody>
