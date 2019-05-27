@@ -177,7 +177,7 @@ You create objects my assigning them names
 ```{r echo = FALSE}
 htmltools::img(src = 
 knitr::include_graphics("figures/rstudio-environment-x-y.png"), 
-        alt = 'rstudio new folder', 
+        alt = "rstudio new folder", 
         width = 700)
 ```
 
@@ -421,6 +421,71 @@ ggplot(data = titanic_tb, mapping = aes(x = sex, y = n, fill = fate)) +
 
 
 
+
+
+
+
+### Pipe operator 
+
+`%>%` is the pipe operator from the magrittr package, part of the tidyverse suite of packages. 
+
+The pipe takes the output of one statement and makes it the input of the next statement. You can think of it as the word “then”. In this example, we'll use the `starwars` dataset from the dplyr package, 
+
+```{r}
+glimpse(starwars)
+```
+
+The following code chunk
+
+```r
+starwars %>%
+        count(homeworld) 
+```
+
+could be read as, 
+
+- start with the `starwars` object, then  
+- count the number of observations `n` by homeworld 
+
+Because each observation in `starwars` is a person, `count()` yields the number of people from a given homeworld. The result is: 
+
+```{r echo = FALSE}
+starwars %>%
+        count(homeworld) 
+```
+
+The pipe makes a sequence of operations easy to construct and easy to read, 
+
+```r
+starwars %>%
+        count(homeworld) %>% 
+        arrange(desc(n)) %>% 
+        filter(n >= 3) %>% 
+        drop_na()
+```
+
+which can be read as, 
+
+- start with the `starwars` object, then 
+- count the number of observations `n` by homeworld, then 
+- arrange the rows in descending order of `n`, then  
+- filter to keep all rows where $n \ge 3$, then  
+- drop rows with NA  
+
+The output is 
+
+```{r echo = FALSE}
+starwars %>%
+        count(homeworld) %>% 
+        arrange(desc(n)) %>% 
+        filter(n >= 3) %>% 
+        drop_na()
+```
+
+
+
+
+
 ### Keyboard shortcuts {}
 
 In Windows, 
@@ -439,13 +504,18 @@ Feel free to take a break before starting the next tutorial.
 
 
 
+
+
+
+
+
 ## Graph basics {#graph-basics} 
 
 ```{r echo = FALSE}
 opts_chunk$set(echo = TRUE)
 htmltools::img(src = knitr::include_graphics("figures/cm201-01.png"), 
-        alt = 'logo', 
-        style = 'left:0px; padding:0px;', 
+        alt   = "logo", 
+        style = "left:0px; padding:0px;", 
         width = 400)
 ```
 <small>
@@ -910,10 +980,11 @@ For more information
 
 ```{r echo = FALSE, fig.asp = 1, out.width = "80%"}
 ggplot(mpg, aes(displ, hwy, color = drv)) +
-    geom_point(alpha = 0.5) +
-    facet_wrap(vars(class), as.table = FALSE) +
-    labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
+        geom_point(alpha = 0.5) +
+        facet_wrap(vars(class), as.table = FALSE) +
+        labs(x = "Engine displacement (liters)", y = "Highway fuel consumption (mpg)")
 ```
+
 
 
 
@@ -939,6 +1010,17 @@ gapminder <- gapminder %>%
 ```
 
 In doing so, I've overwritten the original gapminder dataset with my revised version. 
+
+
+
+
+
+
+
+
+
+
+
 
 We set the `as.table ` argument to false to place the panel with the highest life expectancy in the top position. 
 
@@ -1895,38 +1977,38 @@ Summary of the data preparation functions used in this tutorial, organized by pa
 
 dplyr 
 
-- [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html){target="_blank"} order tibble rows by an expression  
-- [`filter()`](https://dplyr.tidyverse.org/reference/filter.html){target="_blank"} choose rows/cases where conditions are true  
-- [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html){target="_blank"}  adds new variables and preserves existing ones  
-- [`select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} keeps only the variables you mention   
-- [`rename()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} a variant of `select()` keeps all variables   
-- [`left_join()`](https://dplyr.tidyverse.org/reference/join.html){target="_blank"} join two data frames   
+- [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html){target="_blank"} order the rows of data frame   
+- [`filter()`](https://dplyr.tidyverse.org/reference/filter.html){target="_blank"} choose rows of a data frame that meet a condition, and omit all others 
+- [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html){target="_blank"} add new variables (columns) to a data frame   
+- [`select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} choose variables (columns) of a data frame and omit all others 
+- [`rename()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} rename selected variables (columns) of a data frame and keep all others    
+- [`left_join()`](https://dplyr.tidyverse.org/reference/join.html){target="_blank"} combine  two data frames by variables they have in common 
 
 rio 
 
-- [`import()`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} read in a data frame from a file 
-- [`export()`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} write a data frame to a file 
+- [`import()`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} read a data frame by URL or filename 
+- [`export()`](https://cran.r-project.org/web/packages/rio/vignettes/rio.html){target="_blank"} write a data frame as a specified type of file 
 
 
 inspectdf 
 
-- [`inspect_mem()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize memory usage in a data frame  
-- [`inspect_na()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize the rate of missingness in a data frame    
-- [`inspect_ cat()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize the levels within each categorical variable 
+- [`inspect_mem()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize memory usage of a data frame  
+- [`inspect_na()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize the rate of missingness of variables in a data frame    
+- [`inspect_ cat()`](https://github.com/alastairrushworth/inspectdf){target="_blank"} summarize the levels within each categorical variable in a data frame 
 
 lubridate 
 
-- [`year()`](https://lubridate.tidyverse.org/reference/year.html){target="_blank"} return year from a date object 
+- [`year()`](https://lubridate.tidyverse.org/reference/year.html){target="_blank"} return the year as a number from a date object 
 
 seplyr 
 
-- [`group_summarize()`](https://winvector.github.io/seplyr/reference/group_summarize.html){target="_blank"} group a data frame by the grouping variables and compute user summaries 
+- [`group_summarize()`](https://winvector.github.io/seplyr/reference/group_summarize.html){target="_blank"} perform summary operations on groups defined by selected variables 
 
 base R 
 
-- [`(head)`](http://rfunction.com/archives/699){target="_blank"} returns the last part of an R object 
+- [`(head)`](http://rfunction.com/archives/699){target="_blank"} returns the first part of an R object 
 - [`tail()`](http://rfunction.com/archives/699){target="_blank"} returns the last part of an R object 
-- [`mean()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/mean){target="_blank"} determine an arithmetic mean 
+- [`mean()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/mean){target="_blank"} compute an arithmetic mean 
 - [`round()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/Round){target="_blank"} round to a specified number of decimal places 
 
 
