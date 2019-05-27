@@ -1997,10 +1997,11 @@ seplyr
 
 base R 
 
-- [`(head)`](http://rfunction.com/archives/699){target="_blank"} returns the first part of an R object 
+- [`head()`](http://rfunction.com/archives/699){target="_blank"} returns the first part of an R object 
 - [`tail()`](http://rfunction.com/archives/699){target="_blank"} returns the last part of an R object 
 - [`mean()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/mean){target="_blank"} compute an arithmetic mean 
 - [`round()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/Round){target="_blank"} round to a specified number of decimal places 
+- [`unlist()`](https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/unlist){target="_blank"} simplify a list to a vector of values  
 
 
 <br>    
