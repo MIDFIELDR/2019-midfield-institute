@@ -1172,25 +1172,32 @@ Feel free to take a break before starting the next tutorial.
 
 ## Data basics {#data-basics}  
 
-In [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf), Hadley Wickham says, 
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/data-basics-00.png"), 
+        alt   = "logo", 
+        style = "left:0px; padding:0px; width:100%;")
+```
 
-> It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but *must be repeated many times* over the course of analysis as new problems come to light or new data is collected [emphasis mine]. 
+"Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected." [@Wickham:2014:tidydata]
 
-That data preparation "must be repeated many times" cannot be overemphasized. Reproducibility starts with deliberate planning for data management, file management, and file-naming schemes and using a scripted computing environment like R (or Python, SAS, etc.). 
+Indeed. 
 
-Other researchers may never attempt to reproduce your work---but you will. Data preparation "must be repeated many times." As [Karl Broman](https://kbroman.org/) once said, 
+In this 50-minute tutorial we introduce the basic tools of data preparation,  always keeping in mind that many of the steps will be repeated many times over the course of a project. We organize our work into three main categories: 
 
-> Your closest collaborator is you six months ago, but you don’t reply to emails. 
+- Importing data 
+- Exploring data 
+- Tidying data  
 
-The goal of this 50-minute tutorial is to introduce three basic steps of data preparation: importing data, identifying its structure, and reshaping to obtain a desired form.
+We begin by reviewing the practice datasets available in R and functions for exploring data. 
 
 <br>
 ```{r echo = FALSE}
 df6 <- wrapr::build_frame(
         "filename"            , "item" |
-        "data-basics-02.png"  , "**Step 1.** Importing raw data and writing to file." |
-        "data-basics-03.png"  , "**Step 2.** Identifying the data structure." |
-        "data-basics-04.png"  , "**Step 3.** Transforming, reshaping, and joining."
+        "data-basics-02.png"  , "**Step 1.** Importing data" |
+        "data-basics-03.png"  , "**Step 2.** Exploring data" |
+        "data-basics-04.png"  , "**Step 3.** Tidying data."
         ) %>%
         mutate(image = str_c("![](figures/", filename, ")")) %>%
         select(-filename) %>%
@@ -1202,7 +1209,7 @@ heading_01 <- df6[1, ]
 heading_02 <- df6[2, ]
 heading_03 <- df6[3, ]
 
-kable(df6, col.names = NULL, align = 'll')
+# kable(df6, col.names = NULL, align = 'll')
 ```
 
 
@@ -1369,6 +1376,8 @@ When we first encounter any data set, the first step is to characterize its stru
 - the name and class of each variable 
 
 To do so, we use functions like `glimpse()` and `class()` (introduced in [R basics](#r-basics)) as well as functions from the inspectdf package (introduced in the next section). 
+
+
 
 
 [[To read more about R data structures]](http://adv-r.had.co.nz/Data-structures.html){target="_blank"}    

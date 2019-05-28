@@ -71,6 +71,7 @@ The RStudio interface has several panes. We want the Files/Plots/Packages pane.
 ```{r echo = FALSE}
 htmltools::img(src = knitr::include_graphics("figures/rstudio-packages.png"), 
         alt   = "rstudio packages pane", 
+        style = "left:0px; padding:20px;", 
         width = "700px")
 ```
 
@@ -124,13 +125,24 @@ The Console in the default RStudio pane layout is on the left.  The R command pr
 ```{r echo = FALSE}
 htmltools::img(src = knitr::include_graphics("figures/rstudio-console.png"), 
         alt   = "rstudio console pane", 
+        style = "left:0px; padding:20px;", 
         width = "700px")
 ```
 
 <br>
 At the prompt, type a line of code and press *Enter* from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. We only run these lines of code once, so you do not have to type the lines into a script. 
 
-Install **midfielddata** from the our drat repo. The data package is large so this step takes time. Be patient and wait for the Console prompt `>` to reappear.  
+
+
+
+
+
+
+
+
+### Install midfielddata 
+
+Install midfielddata from the our drat repo. The data package is large so this step takes time. Be patient and wait for the Console prompt `>` to reappear.  
 
 ```r
 install.packages(pkgs = "midfielddata", 
@@ -144,30 +156,112 @@ In the Console, load the package by typing,
 library("midfielddata")
 ```
 
-If that installation was successful, only then can you install **midfieldr** from its GitHub repo, 
+If successful, the Console prompt `>` reappears. You should be able to view the midfielddata help page at this point by typing in the Console 
+
+```r
+? midfielddata
+```
+
+which should show the help page in the RStudio Viewer pane, 
+
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/midfielddata-help-page.png"), 
+        alt   = "midfielddata help page", 
+        style = "left:0px; padding:20px;", 
+        width = "700px")
+```
+
+
+
+
+
+
+
+
+
+### Install midfieldr 
+
+midfieldr can only be installed if the midfielddata installation was successful. 
 
 ```r
 devtools::install_github(repo = "MIDFIELDR/midfieldr") 
 ```
 
-In the Console, load the package by typing, 
+If you receive a message like this one, see the [trouble-shooting](#troubleshoot-midfieldr) notes below.  Otherwise, continue. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/package-recent-versions-1.png"), 
+        alt   = "update package screen shot", 
+        style = "left:0px; padding:20px;", 
+        width = "600px")
+```
+
+If the midfieldr installation is successful, the Console prompt `>` reappears. In the Console, load the package by typing, 
 
 ```r
 library("midfieldr")
 ```
 
-If the installation was successful, at the prompt you can type 
+You should be able to view the midfieldr help page at this point by typing in the Console 
 
 ```r
 ? midfieldr
 ```
-and see the **midfieldr** help page in the RStudio Help pane. 
+
+which should show the help page in the RStudio Viewer pane, 
+
 
 ```{r echo = FALSE}
 htmltools::img(src = knitr::include_graphics("figures/midfieldr-help-page.png"), 
-        alt   = "rstudio console pane", 
+        alt   = "midfieldr help page", 
+        style = "left:0px; padding:20px;", 
         width = "700px")
 ```
+
+
+
+
+
+
+
+### Troubleshooting {#troubleshoot-midfieldr} 
+
+If you receive a message like the one below, then midfieldr is not installed yet. 
+
+```{r echo = FALSE}
+htmltools::img(src = knitr::include_graphics("figures/package-recent-versions-1.png"), 
+        alt   = "update package screen shot", 
+        style = "left:0px; padding:20px;", 
+        width = "600px")
+```
+
+To respond to a message like this one, 
+
+- Press *Enter* to cancel 
+- Manually install the packages listed in the message using the RStudio  *Packages &gt; Install* pane or using `install.packages("package_name")` in the Console 
+
+In this case, for example, I would type in the Console, 
+
+```r
+install.packages("digest")
+```
+
+Next 
+
+- Attempt to install midfieldr again: `devtools::install_github(repo = "MIDFIELDR/midfieldr")` 
+- If the message appears, manually install all packages listed one at a time 
+- Repeat until the message no longer appears and the Console responds with a prompt. 
+
+Confirm the installation is successful by loading the package and checking the help page comes up. 
+
+```r
+library("midfieldr")
+? midfieldr
+```
+
+
+
 
 
 
@@ -192,6 +286,7 @@ If you prefer basic written instructions,
 ```{r echo = FALSE}
 htmltools::img(src = knitr::include_graphics("figures/rstudio-new-project.png"), 
         alt   = "rstudio new project button", 
+        style = "left:0px; padding:20px;", 
         width = "700px")
 ```
 
@@ -231,6 +326,7 @@ If you prefer basic written instructions,
 ```{r echo = FALSE}
 htmltools::img(src = knitr::include_graphics("figures/rstudio-new-folder.png"), 
         alt   = "rstudio new folder", 
+        style = "left:0px; padding:20px;", 
         width = "700px")
 ```
 

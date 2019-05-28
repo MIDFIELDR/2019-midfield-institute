@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-05-27">
+<meta name="date" content="2019-05-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -150,7 +150,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>3</b> Getting started with R</a><ul>
 <li class="chapter" data-level="3.1" data-path="getting-started.html"><a href="getting-started.html#install-R-and-RStudio"><i class="fa fa-check"></i><b>3.1</b> Install R and RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="getting-started.html"><a href="getting-started.html#install-an-r-package"><i class="fa fa-check"></i><b>3.2</b> Install an R package</a></li>
-<li class="chapter" data-level="3.3" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr"><i class="fa fa-check"></i><b>3.3</b> Install midfielddata and midfieldr</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr"><i class="fa fa-check"></i><b>3.3</b> Install midfielddata and midfieldr</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="getting-started.html"><a href="getting-started.html#install-midfielddata"><i class="fa fa-check"></i><b>3.3.1</b> Install midfielddata</a></li>
+<li class="chapter" data-level="3.3.2" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr-1"><i class="fa fa-check"></i><b>3.3.2</b> Install midfieldr</a></li>
+<li class="chapter" data-level="3.3.3" data-path="getting-started.html"><a href="getting-started.html#troubleshoot-midfieldr"><i class="fa fa-check"></i><b>3.3.3</b> Troubleshooting</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="getting-started.html"><a href="getting-started.html#create-an-r-project"><i class="fa fa-check"></i><b>3.4</b> Create an R project</a></li>
 <li class="chapter" data-level="3.5" data-path="getting-started.html"><a href="getting-started.html#create-directories"><i class="fa fa-check"></i><b>3.5</b> Create directories</a></li>
 </ul></li>
@@ -405,7 +409,7 @@ LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class
 <span class="co">#&gt; [11] 580.58 576.24 578.18 579.05 577.95 579.96 577.13 575.96 579.74</span></code></pre>
 <p>Because we will be using the ggplot2 package for graphics, we will not be using the base R <code>plot()</code> function very often, but it is useful for a quick look at data. Add these lines to your script, Save, and Source.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(LakeHuron)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-15-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and <em>Enter</em> to see the function help page.</p>
 <ul>
 <li><code>? mean()</code></li>
@@ -548,7 +552,7 @@ titanic_tb
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanic_tb, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">y =</span> n, <span class="dt">fill =</span> fate)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_col</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">coord_flip</span>()</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-24-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <blockquote>
 <p><strong>Your turn.</strong> As shown, color distinguishes those who survived from those who did not and bar length gives totals by sex. Make a small change so that color denotes sex and bar length gives totals of survived and perished.</p>
 </blockquote>
@@ -733,31 +737,31 @@ titanic_tb
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp))</code></pre>
 <p>If we try to print the graph by typing the name of the graph object (everything in R is an object), we get an empty graph because we haven’t told ggplot what sort of a graph we want.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-35-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-61-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Because the graph will be a scatterplot, we add the <code>geom_point()</code> layer.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-36-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-62-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In ggplot2, “geoms” are geometric objects such as points, lines, bars, boxplots, contours, polygons, etc. You can browse the full list on the ggplot2 <a href="https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms">geom reference page</a>.</p>
 <p>We could also have simply added the layer to the original object,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>()
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-37-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-63-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Notice that the default axis labels are the variables names from the data frame. We can edit those with another layer</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-38-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-64-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Or, with all layers shown in one code chunk,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-39-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-65-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Summary. The basics steps for building up the layers of any graph consist of,</p>
 <ul>
 <li>assign the data frame</li>
@@ -783,7 +787,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-40-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-66-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-smooth-fit" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Layer: smooth fit</h3>
@@ -791,17 +795,17 @@ p <span class="co"># display the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-41-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-67-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The <code>se</code> argument controls whether or not the confidence interval is displayed. Setting <code>se = TRUE</code> yields,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-42-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-68-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For a linear-fit layer, we add a layer with <code>method</code> set to <code>lm</code> (short for linear model). The linear fit is not particularly good in this case, but now you know how to do one.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-43-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-69-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a> help page</li>
@@ -814,7 +818,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-44-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-70-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="layer-log-scale" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Layer: log scale</h3>
@@ -838,24 +842,24 @@ this_variable &lt;-<span class="st"> </span>gapminder[<span class="st">&quot;gdp
 <span class="st">        </span><span class="kw">scale_x_log10</span>() 
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-73-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The scales package allows us to change the GDP scale to dollars. Using the syntax <code>thepackage::thefunction</code> we can use the <code>scales::dollar</code> function without loading the scales package.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-48-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-74-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In this case, a linear fit might work,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-49-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-75-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Update the axis labels,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># display the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-50-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-76-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In summary, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
 <span class="st">        </span><span class="kw">geom_point</span>() <span class="op">+</span>
@@ -882,7 +886,7 @@ p <span class="co"># display the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-52-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-78-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="mapping-aesthetics" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Mapping aesthetics</h3>
@@ -895,7 +899,7 @@ p <span class="co"># display the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-53-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-79-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p><br></p>
 <blockquote>
 <p><strong>Your turn.</strong> Continue to practice with <code>mpg</code>.</p>
@@ -905,7 +909,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-54-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-80-1.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="setting-properties" class="section level3">
 <h3><span class="header-section-number">4.2.7</span> Setting properties</h3>
@@ -918,12 +922,12 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-55-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-81-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we add a linear fit to these data, a fit for each continent is generated. For a thinner line, I’ve added a <code>size</code> argument to the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-56-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-82-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>If we want all the data markers the same color but we want to change the color, we don’t map it, we set it in the geom.</p>
 <p>Here, I’ve omitted the aesthetic mapping to color and used a color assignment in the geom.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -933,7 +937,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-57-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-83-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R color names</a></li>
@@ -946,12 +950,12 @@ p <span class="co"># print the graph</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent))
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-58-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-84-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Comparisons are facilitated by having the facets appear in one column, by using the <code>ncols</code> argument of <code>facet_wrap()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>)
 
 p <span class="co"># print the graph</span></code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-59-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-85-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>In a faceted display, all panels have identical scales (the default) to facilitate comparison.</p>
 <p>Again, all the layers could have been be coded at once, for example,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> gapminder, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) <span class="op">+</span>
@@ -975,7 +979,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-61-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-87-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ordering-the-panels" class="section level3">
 <h3><span class="header-section-number">4.2.9</span> Ordering the panels</h3>
@@ -1002,7 +1006,7 @@ p <span class="co"># print the graph</span></code></pre>
 <span class="st">        </span><span class="kw">facet_wrap</span>(<span class="dt">facets =</span> <span class="kw">vars</span>(continent), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">as.table =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">scale_x_log10</span>(<span class="dt">labels =</span> scales<span class="op">::</span>dollar) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;GDP per capita (log10 scale)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Life expectancy (years)&quot;</span>) </code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-64-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-90-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a> help page</li>
@@ -1017,7 +1021,7 @@ p <span class="co"># print the graph</span></code></pre>
 </ul>
 <p><em>Check your work:</em></p>
 </blockquote>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-65-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-91-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="beyond-the-basics" class="section level3">
 <h3><span class="header-section-number">4.2.10</span> Beyond the basics</h3>
@@ -1049,7 +1053,7 @@ p <span class="co"># print the graph</span></code></pre>
                 <span class="dt">title  =</span> <span class="st">&quot;Life expectancy by country, 2007&quot;</span>,
                 <span class="dt">caption =</span> <span class="st">&quot;Source: Gapminder&quot;</span>) <span class="op">+</span>
 <span class="st">        </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-66-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-92-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>For more information</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a> help page</li>
@@ -1089,33 +1093,17 @@ p <span class="co"># print the graph</span></code></pre>
 </div>
 <div id="data-basics" class="section level2">
 <h2><span class="header-section-number">4.3</span> Data basics</h2>
-<p>In <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>, Hadley Wickham says,</p>
-<blockquote>
-<p>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. Data preparation is not just a first step, but <em>must be repeated many times</em> over the course of analysis as new problems come to light or new data is collected [emphasis mine].</p>
-</blockquote>
-<p>That data preparation “must be repeated many times” cannot be overemphasized. Reproducibility starts with deliberate planning for data management, file management, and file-naming schemes and using a scripted computing environment like R (or Python, SAS, etc.).</p>
-<p>Other researchers may never attempt to reproduce your work—but you will. Data preparation “must be repeated many times.” As <a href="https://kbroman.org/">Karl Broman</a> once said,</p>
-<blockquote>
-<p>Your closest collaborator is you six months ago, but you don’t reply to emails.</p>
-</blockquote>
-<p>The goal of this 50-minute tutorial is to introduce three basic steps of data preparation: importing data, identifying its structure, and reshaping to obtain a desired form.</p>
+<img src="figures/data-basics-00.png" alt="logo" style="left:0px; padding:0px; width:100%;"/>
+<p>“Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new data is collected.” <span class="citation">(Wickham, <a href="references.html#ref-Wickham:2014:tidydata" role="doc-biblioref">2014</a><a href="references.html#ref-Wickham:2014:tidydata" role="doc-biblioref">b</a>)</span></p>
+<p>Indeed.</p>
+<p>In this 50-minute tutorial we introduce the basic tools of data preparation, always keeping in mind that many of the steps will be repeated many times over the course of a project. We organize our work into three main categories:</p>
+<ul>
+<li>Importing data</li>
+<li>Exploring data</li>
+<li>Tidying data</li>
+</ul>
+<p>We begin by reviewing the practice datasets available in R and functions for exploring data.</p>
 <p><br></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="figures/data-basics-02.png" /></td>
-<td align="left"><strong>Step 1.</strong> Importing raw data and writing to file.</td>
-</tr>
-<tr class="even">
-<td align="left"><img src="figures/data-basics-03.png" /></td>
-<td align="left"><strong>Step 2.</strong> Identifying the data structure.</td>
-</tr>
-<tr class="odd">
-<td align="left"><img src="figures/data-basics-04.png" /></td>
-<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
-</tr>
-</tbody>
-</table>
 <div id="prerequisites-2" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Prerequisites</h3>
 <p>Every tutorial assumes that</p>
@@ -1231,7 +1219,7 @@ p <span class="co"># print the graph</span></code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-02.png" /></td>
-<td align="left"><strong>Step 1.</strong> Importing raw data and writing to file.</td>
+<td align="left"><strong>Step 1.</strong> Importing data</td>
 </tr>
 </tbody>
 </table>
@@ -1274,7 +1262,7 @@ etc.
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-03.png" /></td>
-<td align="left"><strong>Step 2.</strong> Identifying the data structure.</td>
+<td align="left"><strong>Step 2.</strong> Exploring data</td>
 </tr>
 </tbody>
 </table>
@@ -1338,7 +1326,7 @@ etc.
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-04.png" /></td>
-<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
+<td align="left"><strong>Step 3.</strong> Tidying data.</td>
 </tr>
 </tbody>
 </table>
@@ -1403,7 +1391,7 @@ cpi_<span class="dv">1984</span>_basis &lt;-<span class="st"> </span>seplyr<span
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi_<span class="dv">1984</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi)) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;CPI with a 1983--1984 basis&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-91-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-118-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>As expected, in 1983–1984 (the basis years), CPI = 100. To shift the basis year to 2018, we extract the CPI for 2018,</p>
 <pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">2018</span> &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -1425,7 +1413,7 @@ cpi_<span class="dv">2018</span>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi_<span class="dv">2018</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> index)) <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Price index with a 2018 basis&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-94-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-121-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The price index is used to account for inflation for any US dollar amount from 1913 to 2018 and report the results in terms of constant 2018 dollars. One simply divides the nominal dollar value by the price index for that year.</p>
 <p>Now that the data are prepared, we write them to file.</p>
 <pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(cpi_<span class="dv">2018</span>_basis, <span class="st">&quot;data/cpi.csv&quot;</span>)</code></pre>
@@ -1438,7 +1426,7 @@ cpi_<span class="dv">2018</span>
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-02.png" /></td>
-<td align="left"><strong>Step 1.</strong> Importing raw data and writing to file.</td>
+<td align="left"><strong>Step 1.</strong> Importing data</td>
 </tr>
 </tbody>
 </table>
@@ -1457,7 +1445,7 @@ rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-03.png" /></td>
-<td align="left"><strong>Step 2.</strong> Identifying the data structure.</td>
+<td align="left"><strong>Step 2.</strong> Exploring data</td>
 </tr>
 </tbody>
 </table>
@@ -1525,7 +1513,7 @@ rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-04.png" /></td>
-<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
+<td align="left"><strong>Step 3.</strong> Tidying data.</td>
 </tr>
 </tbody>
 </table>
@@ -1569,7 +1557,7 @@ nominal_<span class="dv">2018</span>
 <span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Normalized US median housing cost&quot;</span>, 
                 <span class="dt">subtitle =</span> <span class="st">&quot;Not adjusted for inflation&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-107-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-134-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Now that the data are prepared, we write them to file.</p>
 <pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(housing_<span class="dv">2018</span>_basis, <span class="st">&quot;data/housing.csv&quot;</span>)</code></pre>
 </div>
@@ -1581,7 +1569,7 @@ nominal_<span class="dv">2018</span>
 <tbody>
 <tr class="odd">
 <td align="left"><img src="figures/data-basics-04.png" /></td>
-<td align="left"><strong>Step 3.</strong> Transforming, reshaping, and joining.</td>
+<td align="left"><strong>Step 3.</strong> Tidying data.</td>
 </tr>
 </tbody>
 </table>
@@ -1692,7 +1680,7 @@ housing &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="
 <span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Normalized US median housing cost&quot;</span>, 
                 <span class="dt">subtitle =</span> <span class="st">&quot;Constant 2018 dollars&quot;</span>)</code></pre>
-<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-116-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-143-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>From the graph, a monthly housing cost of $100 in 2018 is equivalent to approximately $70 in 1995 and $60 in 1970, for the <em>same level of housing</em> in <em>constant 2018 dollars</em>. Inflation has been accounted for, so the rises and falls we see in the graph represents changes in the real cost of housing.</p>
 <p>The ratios hold for any amount, so a monthly housing cost of $1000 in 2018 is equivalent to approximately $700 in 1995 and $600 in 1970—again, in constant 2018 dollars.</p>
 <p>In summary, we have used the OECD housing index to account for the fluctuations in house prices and we have used the CPI to account for inflation.</p>
