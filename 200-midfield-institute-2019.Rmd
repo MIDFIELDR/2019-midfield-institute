@@ -1,4 +1,4 @@
-# MIDFIELD Institute 2019 {#midfield-institute-2019}
+# MIDFIELD Institute {#midfield-institute-2019}
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 

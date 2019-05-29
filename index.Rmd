@@ -16,7 +16,7 @@ nocite: |
 
 ```{r echo = FALSE}
 # create a bib database for R packages
-write_bib(c(.packages(), "tidyverse", "seplyr", "wrapr", "cdata", "knitr"), "packages.bib")
+write_bib(c(.packages(), "tidyverse", "seplyr", "wrapr", "cdata", "knitr", "rio", "inspectdf", "socviz", "gapminder", "lubridate"), "packages.bib")
 ```
 
 ```{r echo = FALSE}
