@@ -52,6 +52,11 @@ The same video includes a longer (7 minute) tour of the four quadrants (panes) i
 
 
 
+<br>    
+[&#9650; top of page](#getting-started) 
+
+
+
 
 
 
@@ -102,6 +107,16 @@ devtools::install_github(repo = "user_name/repo_name")
 
 
 
+
+<br>    
+[&#9650; top of page](#getting-started) 
+
+
+
+
+
+
+
 ## Install midfielddata and midfieldr {#install-midfieldr}
 
 ```{r echo = FALSE}
@@ -132,6 +147,16 @@ htmltools::img(src = knitr::include_graphics("figures/rstudio-console.png"),
 <br>
 At the prompt, type a line of code and press *Enter* from your keyboard. Alternatively, you can copy a line of code from this page, paste it in the console, and press *Enter*. We only run these lines of code once, so you do not have to type the lines into a script. 
 
+
+
+
+
+
+
+
+
+<br>    
+[&#9650; top of page](#getting-started) 
 
 
 
@@ -172,6 +197,16 @@ htmltools::img(src = knitr::include_graphics("figures/midfielddata-help-page.png
         width = "700px")
 ```
 
+
+
+
+
+
+
+
+
+<br>    
+[&#9650; top of page](#getting-started) 
 
 
 
@@ -225,6 +260,16 @@ htmltools::img(src = knitr::include_graphics("figures/midfieldr-help-page.png"),
 
 
 
+<br>    
+[&#9650; top of page](#getting-started) 
+
+
+
+
+
+
+
+
 ### Troubleshooting {#troubleshoot-midfieldr} 
 
 If you receive a message like the one below, then midfieldr is not installed yet. 
@@ -259,6 +304,16 @@ Confirm the installation is successful by loading the package and checking the h
 library("midfieldr")
 ? midfieldr
 ```
+
+
+
+
+
+
+
+<br>    
+[&#9650; top of page](#getting-started) 
+
 
 
 
@@ -301,11 +356,21 @@ In the dialog box that appears,
 
 
 
+
+
+<br>    
+[&#9650; top of page](#getting-started) 
+
+
+
+
+
+
 ## Create directories {#create-directories}
 
 While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop. 
 
-Create three folders in the project main directory, where  `your_project` is the name you gave the project, foe example, `midfield_institute` or `fie_workshop`.
+Create three folders in the project main directory, where  `your_project` is the name you gave the project, for example, `midfield_institute` or `fie_workshop`.
 
 <pre><code class=""><span class="line">your_project/
 </span><span class="line">    ├── data/
@@ -341,6 +406,10 @@ We use the folders as follows:
 
 
 And that concludes the setup. 
+
+
+<br>    
+[&#9650; top of page](#getting-started) 
 
 
 

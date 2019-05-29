@@ -1,4 +1,4 @@
-# About the MIDFIELD workshops 
+# About the MIDFIELD workshops {#about-midfield-workshops}
 
 ```{r echo = FALSE}
 htmltools::img(src = knitr::include_graphics("figures/midfield-grad-logo.png"), 
@@ -61,6 +61,13 @@ RStudio, an integrated development environment (IDE) for R, includes a console, 
 
 
 
+
+<br>
+[&#9650; top of page](#about-midfield-workshops)
+
+
+
+
 ## Why R graphics? {}
 
 Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in software like Microsoft Excel and PowerPoint creates the **illusion** of flexibility. ... So marvelously malleable are these graphical effects---but for whom and to what end? Paradoxically, then, even as the technology for visualizing data has become more sophisticated, it does not necessarily engender rhetorically sensitive design."
@@ -68,6 +75,18 @@ Charles Kostelnick [-@kostelnick2007] writes, "The array of design options in so
 The graphics tools in R provide the means to control every pixel in the service of "rhetorically sensitive design." Designers can craft their visual arguments to balance  logos, ethos, pathos, and kairos as appropriate for a given audience in a given rhetorical situation. 
 
 [[For a gallery of R graphics]](https://www.r-graph-gallery.com/){target="_blank"}      
+
+
+
+
+
+
+
+
+
+
+<br>
+[&#9650; top of page](#about-midfield-workshops)
 
 
 

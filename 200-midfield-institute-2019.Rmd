@@ -1,4 +1,4 @@
-# MIDFIELD Institute 2019 {}
+# MIDFIELD Institute 2019 {#midfield-institute-2019}
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
@@ -67,7 +67,10 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 
 
 <br>
-[&#9650; top of page](#day-0)
+[&#9650; top of page](#midfield-institute-2019)
+
+
+
 
 
 
@@ -100,8 +103,19 @@ kable(agenda_day0)
 ```
 
 
+
+
+
+
+
 <br>
-[&#9650; top of page](#day-0)
+[&#9650; top of page](#midfield-institute-2019)
+
+
+
+
+
+
 
 
 ## Monday agenda {#day1agenda} 
@@ -139,8 +153,19 @@ kable(agenda_day1)
 ```
 
 
+
+
+
+
+
 <br>
-[&#9650; top of page](#day-0)
+[&#9650; top of page](#midfield-institute-2019)
+
+
+
+
+
+
 
 
 ## Tuesday agenda   {#day2agenda}
@@ -164,5 +189,16 @@ kable(agenda_day2)
 ```
 
 
+
+
+
+
+
 <br>
-[&#9650; top of page](#day-0)
+[&#9650; top of page](#midfield-institute-2019)
+
+
+
+
+
+

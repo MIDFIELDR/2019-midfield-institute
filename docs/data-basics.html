@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>7 Data basics | midfield-workshops.utf8.md</title>
+  <meta name="description" content="A public site for workshops for access to MIDFIELD">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="7 Data basics | midfield-workshops.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A public site for workshops for access to MIDFIELD" />
+  <meta name="github-repo" content="MIDFIELDR/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Data basics | midfield-workshops.utf8.md" />
+  
+  <meta name="twitter:description" content="A public site for workshops for access to MIDFIELD" />
+  
+
+
+
+<meta name="date" content="2019-05-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="graph-basics.html">
+<link rel="next" href="day-1.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MIDFIELD Workshops</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>MIDFIELD Workshops</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#facilitators"><i class="fa fa-check"></i>Facilitators</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#publications"><i class="fa fa-check"></i>Publications</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licenses"><i class="fa fa-check"></i>Licenses</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgement"><i class="fa fa-check"></i>Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="about-midfield-workshops.html"><a href="about-midfield-workshops.html"><i class="fa fa-check"></i><b>1</b> About the MIDFIELD workshops</a><ul>
+<li class="chapter" data-level="1.1" data-path="about-midfield-workshops.html"><a href="about-midfield-workshops.html#what-is-midfieldr"><i class="fa fa-check"></i><b>1.1</b> What is midfieldr?</a></li>
+<li class="chapter" data-level="1.2" data-path="about-midfield-workshops.html"><a href="about-midfield-workshops.html#why-r"><i class="fa fa-check"></i><b>1.2</b> Why R?</a></li>
+<li class="chapter" data-level="1.3" data-path="about-midfield-workshops.html"><a href="about-midfield-workshops.html#why-r-graphics"><i class="fa fa-check"></i><b>1.3</b> Why R graphics?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html"><i class="fa fa-check"></i><b>2</b> MIDFIELD Institute 2019</a><ul>
+<li class="chapter" data-level="2.1" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#description"><i class="fa fa-check"></i><b>2.1</b> Description</a></li>
+<li class="chapter" data-level="2.2" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#before-you-arrive"><i class="fa fa-check"></i><b>2.2</b> Before you arrive</a></li>
+<li class="chapter" data-level="2.3" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#day0agenda"><i class="fa fa-check"></i><b>2.3</b> Sunday agenda</a></li>
+<li class="chapter" data-level="2.4" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#day1agenda"><i class="fa fa-check"></i><b>2.4</b> Monday agenda</a></li>
+<li class="chapter" data-level="2.5" data-path="midfield-institute-2019.html"><a href="midfield-institute-2019.html#day2agenda"><i class="fa fa-check"></i><b>2.5</b> Tuesday agenda</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>3</b> Getting started with R</a><ul>
+<li class="chapter" data-level="3.1" data-path="getting-started.html"><a href="getting-started.html#install-R-and-RStudio"><i class="fa fa-check"></i><b>3.1</b> Install R and RStudio</a></li>
+<li class="chapter" data-level="3.2" data-path="getting-started.html"><a href="getting-started.html#install-an-r-package"><i class="fa fa-check"></i><b>3.2</b> Install an R package</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr"><i class="fa fa-check"></i><b>3.3</b> Install midfielddata and midfieldr</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="getting-started.html"><a href="getting-started.html#install-midfielddata"><i class="fa fa-check"></i><b>3.3.1</b> Install midfielddata</a></li>
+<li class="chapter" data-level="3.3.2" data-path="getting-started.html"><a href="getting-started.html#install-midfieldr-1"><i class="fa fa-check"></i><b>3.3.2</b> Install midfieldr</a></li>
+<li class="chapter" data-level="3.3.3" data-path="getting-started.html"><a href="getting-started.html#troubleshoot-midfieldr"><i class="fa fa-check"></i><b>3.3.3</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="getting-started.html"><a href="getting-started.html#create-an-r-project"><i class="fa fa-check"></i><b>3.4</b> Create an R project</a></li>
+<li class="chapter" data-level="3.5" data-path="getting-started.html"><a href="getting-started.html#create-directories"><i class="fa fa-check"></i><b>3.5</b> Create directories</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="day-0.html"><a href="day-0.html"><i class="fa fa-check"></i><b>4</b> Pre-Institute Workshop</a></li>
+<li class="chapter" data-level="5" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>5</b> R basics</a><ul>
+<li class="chapter" data-level="5.1" data-path="r-basics.html"><a href="r-basics.html#prerequisites"><i class="fa fa-check"></i><b>5.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="5.2" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>5.2</b> Everything in R has a name</a></li>
+<li class="chapter" data-level="5.3" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>5.3</b> Everything in R is an object</a></li>
+<li class="chapter" data-level="5.4" data-path="r-basics.html"><a href="r-basics.html#do-things-in-r-using-functions"><i class="fa fa-check"></i><b>5.4</b> Do things in R using functions</a></li>
+<li class="chapter" data-level="5.5" data-path="r-basics.html"><a href="r-basics.html#r-functions-come-in-packages"><i class="fa fa-check"></i><b>5.5</b> R functions come in packages</a></li>
+<li class="chapter" data-level="5.6" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-class"><i class="fa fa-check"></i><b>5.6</b> R objects have class</a></li>
+<li class="chapter" data-level="5.7" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-structure"><i class="fa fa-check"></i><b>5.7</b> R objects have structure</a></li>
+<li class="chapter" data-level="5.8" data-path="r-basics.html"><a href="r-basics.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>5.8</b> R does what you tell it</a></li>
+<li class="chapter" data-level="5.9" data-path="r-basics.html"><a href="r-basics.html#pipe-operator"><i class="fa fa-check"></i><b>5.9</b> Pipe operator</a></li>
+<li class="chapter" data-level="5.10" data-path="r-basics.html"><a href="r-basics.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>5.10</b> Keyboard shortcuts</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graph-basics.html"><a href="graph-basics.html"><i class="fa fa-check"></i><b>6</b> Graph basics</a><ul>
+<li class="chapter" data-level="6.1" data-path="graph-basics.html"><a href="graph-basics.html#prerequisites-1"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="6.2" data-path="graph-basics.html"><a href="graph-basics.html#tidy-data"><i class="fa fa-check"></i><b>6.2</b> Tidy data</a></li>
+<li class="chapter" data-level="6.3" data-path="graph-basics.html"><a href="graph-basics.html#anatomy-of-a-graph"><i class="fa fa-check"></i><b>6.3</b> Anatomy of a graph</a></li>
+<li class="chapter" data-level="6.4" data-path="graph-basics.html"><a href="graph-basics.html#layer-smooth-fit"><i class="fa fa-check"></i><b>6.4</b> Layer: smooth fit</a></li>
+<li class="chapter" data-level="6.5" data-path="graph-basics.html"><a href="graph-basics.html#layer-log-scale"><i class="fa fa-check"></i><b>6.5</b> Layer: log scale</a></li>
+<li class="chapter" data-level="6.6" data-path="graph-basics.html"><a href="graph-basics.html#mapping-aesthetics"><i class="fa fa-check"></i><b>6.6</b> Mapping aesthetics</a></li>
+<li class="chapter" data-level="6.7" data-path="graph-basics.html"><a href="graph-basics.html#setting-properties"><i class="fa fa-check"></i><b>6.7</b> Setting properties</a></li>
+<li class="chapter" data-level="6.8" data-path="graph-basics.html"><a href="graph-basics.html#layer-facets"><i class="fa fa-check"></i><b>6.8</b> Layer: facets</a></li>
+<li class="chapter" data-level="6.9" data-path="graph-basics.html"><a href="graph-basics.html#ordering-the-panels"><i class="fa fa-check"></i><b>6.9</b> Ordering the panels</a></li>
+<li class="chapter" data-level="6.10" data-path="graph-basics.html"><a href="graph-basics.html#beyond-the-basics"><i class="fa fa-check"></i><b>6.10</b> Beyond the basics</a></li>
+<li class="chapter" data-level="6.11" data-path="graph-basics.html"><a href="graph-basics.html#resize-and-write-to-file"><i class="fa fa-check"></i><b>6.11</b> Resize and write to file</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-basics.html"><a href="data-basics.html"><i class="fa fa-check"></i><b>7</b> Data basics</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-basics.html"><a href="data-basics.html#prerequisites-2"><i class="fa fa-check"></i><b>7.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="7.2" data-path="data-basics.html"><a href="data-basics.html#data-sets-in-r"><i class="fa fa-check"></i><b>7.2</b> Data sets in R</a></li>
+<li class="chapter" data-level="7.3" data-path="data-basics.html"><a href="data-basics.html#data-structure"><i class="fa fa-check"></i><b>7.3</b> Data structure</a></li>
+<li class="chapter" data-level="7.4" data-path="data-basics.html"><a href="data-basics.html#example-create-a-2018-price-index"><i class="fa fa-check"></i><b>7.4</b> Example: Create a 2018 price index</a></li>
+<li class="chapter" data-level="7.5" data-path="data-basics.html"><a href="data-basics.html#example-normalized-housing-costs"><i class="fa fa-check"></i><b>7.5</b> Example: Normalized housing costs</a></li>
+<li class="chapter" data-level="7.6" data-path="data-basics.html"><a href="data-basics.html#example-real-us-housing-costs"><i class="fa fa-check"></i><b>7.6</b> Example: Real US housing costs</a></li>
+<li class="chapter" data-level="7.7" data-path="data-basics.html"><a href="data-basics.html#summary-of-functions-introduced"><i class="fa fa-check"></i><b>7.7</b> Summary of functions introduced</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="day-1.html"><a href="day-1.html"><i class="fa fa-check"></i><b>8</b> MIDFIELD Institute Day 1</a><ul>
+<li class="chapter" data-level="" data-path="day-1.html"><a href="day-1.html#prerequisites-3"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="day-2.html"><a href="day-2.html"><i class="fa fa-check"></i><b>9</b> MIDFIELD Institute Day 2</a><ul>
+<li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-4"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-basics" class="section level1">
+<h1><span class="header-section-number">7</span> Data basics</h1>
+<!-- This file is included only if listed in the _bookdown.yml file. -->
+<img src="figures/data-basics-00.png" alt="logo" style="left:0px; padding:10px; width:100%;"/>
+<p><a href="midfield-institute-2019.html#day0agenda">Pre-Institute Workshop Agenda</a></p>
+<p>This tutorial is an introduction to data preparation using the tidyverse (and other packages) for importing data, exploring data, and tidying data. Our goal is to transform, reshape, and join data frames to obtain the form we need for analysis and graphs.</p>
+<p>We do the work in a reproducible form, by</p>
+<ul>
+<li>prescribing the file organization and file-naming scheme</li>
+<li>avoiding manual operations</li>
+<li>using explicit links and relative file paths</li>
+</ul>
+<p>If the prerequisites have been met, the tutorial should take no longer than 50 minutes.</p>
+<p><br></p>
+<div id="prerequisites-2" class="section level2">
+<h2><span class="header-section-number">7.1</span> Prerequisites</h2>
+<p>Every tutorial assumes that</p>
+<ul>
+<li>You completed the <a href="getting-started.html#getting-started">Getting started</a> instructions<br />
+</li>
+<li>You launched <code>midfield_institute.Rproj</code> to start the R session</li>
+</ul>
+<p>Use <em>File &gt; New File &gt; R Script</em> to create a new R script</p>
+<ul>
+<li>Name the script <code>03-data-basics.R</code><br />
+</li>
+<li>Save it in the <code>scripts</code> directory</li>
+<li>Add a minimal header at the top of the script (if you wish)</li>
+<li>Use <code>library()</code> to load the packages we will use</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># workshop data basics </span>
+<span class="co"># name </span>
+<span class="co"># date </span>
+
+<span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;lubridate&quot;</span>) 
+<span class="kw">library</span>(<span class="st">&quot;seplyr&quot;</span>) 
+<span class="kw">library</span>(<span class="st">&quot;rio&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;inspectdf&quot;</span>)</code></pre>
+<p>Run the script by clicking the <em>Source</em> button. If you see an error like this one,</p>
+<pre><code>Error in library(&quot;pkg_name&quot;) : there is no package called &#39;pkg_name&#39;</code></pre>
+<p>then you should install the missing package(s) and run the script again.</p>
+<p><a href="getting-started.html#install-an-r-package">[To review how to install an R package]</a></p>
+<p>Guidelines</p>
+<ul>
+<li>As you work through the tutorial, type a line or chunk of code then <em>File &gt; Save</em> and <em>Source.</em><br />
+</li>
+<li>Confirm that your result matches the tutorial result.<br />
+</li>
+<li><strong>Your turn</strong> exercises give you chance to devise your own examples and check them out. You learn by doing (but you knew that already)!</li>
+</ul>
+<p>We begin by reviewing the practice datasets available in R and functions for exploring data.</p>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+</div>
+<div id="data-sets-in-r" class="section level2">
+<h2><span class="header-section-number">7.2</span> Data sets in R</h2>
+<p>Practice data sets are included with the basic R installation and with some R packages.</p>
+<p>To list the practice data sets available in R, type in the Console,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># type in the Console </span>
+<span class="kw">data</span>() </code></pre>
+<p>which yields</p>
+<pre><code> #&gt; AirPassengers  Monthly Airline Passenger Numbers
+ #&gt; BJsales        Sales Data with Leading Indicator
+ #&gt; BOD            Biochemical Oxygen Demand
+ #&gt; CO2            Carbon Dioxide Uptake in Grass Plants
+ #&gt; Formaldehyde   Determination of Formaldehyde
+ etc.</code></pre>
+<p>We use the <code>data()</code> function to list practice datasets included in a package (if any). For example, to determine what packages are bundled with the dplyr package, type in the Console,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># type in the Console </span>
+<span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>) </code></pre>
+<p>yields</p>
+<pre><code> #&gt; band_instruments   Band membership
+ #&gt; band_instruments2  Band membership
+ #&gt; band_members       Band membership
+ #&gt; nasa               NASA spatio-temporal data
+ #&gt; starwars           Starwars characters
+ #&gt; storms             Storm tracks data</code></pre>
+<p>Every data set in base R and in R packages has a help page that describes the data format and variable names. The data help page can be accessed using <code>help()</code>, for example,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># type in the Console </span>
+<span class="kw">help</span>(starwars, <span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>)</code></pre>
+<p>Alternatively, if the package is loaded, you may run the <code>? item-name</code> syntax in the Console,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># type in the Console</span>
+<span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)
+? starwars</code></pre>
+<p>yields</p>
+<img src="figures/starwars-help-page.png" alt="starwars help page" style="left:0px; padding:0px;" width="600"/>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> These exercises assume that you have successfully followed the instructions to <a href="getting-started.html#install-midfieldr">install midfielddata and midfieldr</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Determine the names of the datasets available in the midfieldr package.</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfieldr/reference/index.html"><em>Check your work</em></a></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Determine the variables in <code>case_stickiness</code> (one of the datasets in the midfieldr package).</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfieldr/reference/case_stickiness.html"><em>Check your work</em></a></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Determine the names of the datasets available in the midfielddata package.</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfielddata/index.html"><em>Check your work</em></a></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Determine the variables in <code>midfielddegrees</code> (one of the datasets in the midfielddata package).</li>
+</ol>
+<p><a href="https://midfieldr.github.io/midfielddata/reference/midfielddegrees.html"><em>Check your work</em></a></p>
+</blockquote>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+</div>
+<div id="data-structure" class="section level2">
+<h2><span class="header-section-number">7.3</span> Data structure</h2>
+<p>When we first encounter any data set, the first step is to characterize its structure including,</p>
+<ul>
+<li>the R data structure, e.g., vector, matrix, data frame, time series, list, etc.<br />
+</li>
+<li>the number of observations</li>
+<li>the number of variables</li>
+<li>the name and class of each variable</li>
+</ul>
+<p>To do so, we use functions like <code>glimpse()</code> and <code>class()</code> (introduced in <a href="r-basics.html#r-basics">R basics</a>) as well as functions from the inspectdf package (introduced in the next section).</p>
+<p><a href="http://adv-r.had.co.nz/Data-structures.html" target="_blank">[To read more about R data structures]</a><br />
+<a href="https://github.com/alastairrushworth/inspectdf" target="_blank">[To read more about inspectdf]</a></p>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+</div>
+<div id="example-create-a-2018-price-index" class="section level2">
+<h2><span class="header-section-number">7.4</span> Example: Create a 2018 price index</h2>
+<p>Over any time period with inflation, a dollar buys less at the end the period than it did at the beginning of the period. Thus, in 1973 a single 20-year old could live comfortably on $5/hour but in 2018 (45 years later) a 20-year-old has to earn $30/hour to achieve the same modest standard of living.</p>
+<p>We usually adjust for the effects of inflation in US dollars using the Consumer Price Index (CPI) published by the US Bureau of Labor Statistics (BLS). The CPI is available by month from the BLS or from the Federal Reserve (FRED), from 1913 to the present.</p>
+<p>In this example, we obtain historical Consumer Price Index data from the Federal Reserve (FRED) and perform the necessary data carpentry to graph a price index with respect to 2018 dollars.</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-02.png" /></td>
+<td align="left"><strong>Step 1.</strong> Importing data</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The FRED provides CPI data from 1913 to the present as a .txt file at the URL:</p>
+<p>   <a href="http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt" target="_blank">http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt</a></p>
+<p>If you click on the link, you can see that the first 13 lines are metadata. The data starts on line 14 with the column names. I’ve added line numbers to make it easier to see.</p>
+<pre><code> 1   Title:               Consumer Price Index for All Urban Consumers: All Items
+ 2   Series ID:           CPIAUCNS
+ 3   Source:              U.S. Bureau of Labor Statistics
+ 4   Release:             Consumer Price Index
+ 5   Seasonal Adjustment: Not Seasonally Adjusted
+ 6   Frequency:           Monthly
+ 7   Units:               Index 1982-1984=100
+ 8   Date Range:          1913-01-01 to 2019-04-01
+ 9   Last Updated:        2019-05-10 7:42 AM CDT
+10   Notes:               Handbook of Methods - (https://www.bls.gov/opub/hom/pdf/cpihom.pdf)
+11                        Understanding the CPI: Frequently Asked Questions -
+12                        (https://www.bls.gov/cpi/questions-and-answers.htm)
+13   
+14   DATE          VALUE
+15   1913-01-01    9.800
+16   1913-02-01    9.800 
+etc. 
+                 </code></pre>
+<p>Assign the URL (add these lines to your script and run)</p>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span></code></pre>
+<p>Use <code>rio::import()</code> to download the data, skipping the first 13 lines</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">skip =</span> <span class="dv">13</span>)</code></pre>
+<p>Use <code>rio::export()</code> to convert the txt file to CSV and write to our <code>data</code> directory</p>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
+<p>Once you have saved raw data to file (like we did above), leave that file unaltered. Never manipulate raw data manually.</p>
+<p>In this workshop, we are saving all data files to the <code>data</code> directory. In larger projects, one might add a <code>data-raw</code> directory to separate raw data files from prepared data files.</p>
+<p>We don’t have to re-import the data from the Internet every time we <em>Source</em> this R script, so we can comment-out the previous three lines of code with a hashtag, i.e.,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># url &lt;- &quot;http://research.stlouisfed.org/fred2/data/CPIAUCNS.txt&quot;</span>
+<span class="co"># x   &lt;- rio::import(url, skip = 13)</span>
+<span class="co"># rio::export(x, &quot;data/cpi-raw.csv&quot;)</span></code></pre>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-03.png" /></td>
+<td align="left"><strong>Step 2.</strong> Exploring data</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Use <code>rio::import()</code> to read the raw data into the R workspace.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
+<p>Use <code>class()</code> to determine the R data structure—in this case, <code>cpi</code> is a tibble (a type of data frame).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cpi)
+<span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
+<p>Use <code>glimpse()</code> to examine the tibble—we discover the number of observations (1276), the number of variables (2), their names (DATE, VALUE), and their class or type (character, double).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(cpi)
+<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ DATE  &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, ...</span>
+<span class="co">#&gt; $ VALUE &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1...</span></code></pre>
+<p>The first <code>DATE</code> values suggest these are monthly data, which agrees with the frequency given in the block of metadata. The <code>VALUE</code> variable is the CPI by month indexed at 1982–1984 (for which CPI = 100).</p>
+<p>These data are in what Hadley Wickham calls “tidy” form, that is,</p>
+<ul>
+<li>Each variable is in a column<br />
+</li>
+<li>Each observation is a row<br />
+</li>
+<li>Each value is a cell</li>
+</ul>
+<p>Such an organization is also called a “data matrix” or a “de-normalized form” <span class="citation">(Mount, <a href="references.html#ref-Mount:2019:tidy-data" role="doc-biblioref">2019</a>)</span>. This form is typically the desired form for data visualization using the ggplot2 package, though other forms are sometimes useful.</p>
+<p>Functions from the inspectdf package can tell us more about the data. First, we summarize memory usage. Here, both variable use negligible memory.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_mem</span>(cpi)   <span class="co"># memory</span>
+<span class="co">#&gt; # A tibble: 2 x 3</span>
+<span class="co">#&gt;   col_name size      pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 DATE     89.77 Kb  90.0</span>
+<span class="co">#&gt; 2 VALUE    10.02 Kb  10.0</span></code></pre>
+<p>Summarize the rate of missingness. Here, there are no missing values.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_na</span>(cpi)    <span class="co"># NAs</span>
+<span class="co">#&gt; # A tibble: 2 x 3</span>
+<span class="co">#&gt;   col_name   cnt  pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 DATE         0     0</span>
+<span class="co">#&gt; 2 VALUE        0     0</span></code></pre>
+<p>Summary</p>
+<ul>
+<li>1276 observations, one per month, 1913-01 to 2019-04</li>
+<li>1 categorical variable <code>DATE</code></li>
+<li>1 quantitative variable <code>VALUE</code> (the CPI)</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p><strong>Your turn.</strong> For the <code>midfielddegrees</code> dataset from the midfielddata package, determine</p>
+<ul>
+<li>the R data structure, e.g., vector, matrix, time series, data frame, tibble, etc.</li>
+<li>the number of observations</li>
+<li>the number of variables</li>
+<li>the name and class of each variable</li>
+<li>summary of missing values</li>
+<li>summary of missing values</li>
+</ul>
+<p><em>Check your work:</em> A tibble with 97640 observations and 5 variables. The variable that requires the most memory is <code>id</code> with 6.7 Mb. Three of the variables have 51% missing values.</p>
+</blockquote>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-04.png" /></td>
+<td align="left"><strong>Step 3.</strong> Tidying data.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>For the application I have in mind, I want to convert monthly CPI to annual CPI.</p>
+<p>I start by changing the variable names (the column names) because I prefer lowercase names and I prefer meaningful file names (<code>cpi</code> instead of <code>VALUE</code>).</p>
+<p>Use <code>dplyr::rename(new_name = old_name)</code> to rename the variables.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">date =</span> DATE, <span class="dt">cpi =</span> VALUE) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span></code></pre>
+<p>Before I can average the monthly CPIs by year, I need to extract the 4-digit year from the <code>date</code> variable.</p>
+<p>Use <code>lubridate::year()</code> to extract the year from the date and <code>mutate()</code> to create the new <code>year</code> variable.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">year =</span> lubridate<span class="op">::</span><span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191...</span></code></pre>
+<p>Use <code>filter()</code> to omit 2019 data because we do not have a full year. Note the reduction in the number of observations.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">filter</span>(year <span class="op">!=</span><span class="st"> </span><span class="dv">2019</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 1,272</span>
+<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 1913, 191...</span></code></pre>
+<p>Use <code>arrange()</code> and <code>tail()</code> to confirm that 2018 is the final year.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(date) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()
+<span class="co">#&gt;            date     cpi year</span>
+<span class="co">#&gt; 1267 2018-07-01 252.006 2018</span>
+<span class="co">#&gt; 1268 2018-08-01 252.146 2018</span>
+<span class="co">#&gt; 1269 2018-09-01 252.439 2018</span>
+<span class="co">#&gt; 1270 2018-10-01 252.885 2018</span>
+<span class="co">#&gt; 1271 2018-11-01 252.038 2018</span>
+<span class="co">#&gt; 1272 2018-12-01 251.233 2018</span></code></pre>
+<p>Use <code>seplyr::group_summarize()</code> operation to determine the average annual CPI.</p>
+<pre class="sourceCode r"><code class="sourceCode r">grouping_variables &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;year&quot;</span>)
+cpi_<span class="dv">1984</span>_basis &lt;-<span class="st"> </span>seplyr<span class="op">::</span><span class="kw">group_summarize</span>(cpi, 
+                grouping_variables, 
+                <span class="dt">cpi =</span> <span class="kw">mean</span>(cpi)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 106</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 192...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.883333, 10.016667, 10.108333, 10.883333, 12.825000, 15....</span></code></pre>
+<p>We have an excess of significant digits. Use <code>round()</code> to reduce our annual CPI values to 2 digits.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">1984</span>_basis &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">cpi =</span> <span class="kw">round</span>(cpi, <span class="dv">2</span>)) <span class="op">%&gt;%</span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 106</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ year &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 192...</span>
+<span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.88, 10.02, 10.11, 10.88, 12.82, 15.04, 17.33, 20.04, 17...</span></code></pre>
+<p>These values can be displayed,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi_<span class="dv">1984</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span>  cpi)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;CPI with a 1983--1984 basis&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-121-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>As expected, in 1983–1984 (the basis years), CPI = 100. To shift the basis year to 2018, we extract the CPI for 2018,</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">2018</span> &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(cpi) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">unlist</span>(<span class="dt">use.names =</span> <span class="ot">FALSE</span>)
+
+cpi_<span class="dv">2018</span>
+<span class="co">#&gt; [1] 251.11</span></code></pre>
+<p>Then divide all CPI values by the 2018 value to create the price index with a 2018 basis. In the basis year, the index = 1.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi_<span class="dv">2018</span>_basis &lt;-<span class="st"> </span>cpi_<span class="dv">1984</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">index =</span> cpi <span class="op">/</span><span class="st"> </span>cpi_<span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 106</span>
+<span class="co">#&gt; Variables: 3</span>
+<span class="co">#&gt; $ year  &lt;dbl&gt; 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 19...</span>
+<span class="co">#&gt; $ cpi   &lt;dbl&gt; 9.88, 10.02, 10.11, 10.88, 12.82, 15.04, 17.33, 20.04, 1...</span>
+<span class="co">#&gt; $ index &lt;dbl&gt; 0.03934531, 0.03990283, 0.04026124, 0.04332763, 0.051053...</span></code></pre>
+<p>Graph the price index,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> cpi_<span class="dv">2018</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> index)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Price index with a 2018 basis&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-124-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>The price index is used to account for inflation for any US dollar amount from 1913 to 2018 and report the results in terms of constant 2018 dollars. One simply divides the nominal dollar value by the price index for that year.</p>
+<p>Now that the data are prepared, we write them to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(cpi_<span class="dv">2018</span>_basis, <span class="st">&quot;data/cpi.csv&quot;</span>)</code></pre>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+</div>
+<div id="example-normalized-housing-costs" class="section level2">
+<h2><span class="header-section-number">7.5</span> Example: Normalized housing costs</h2>
+<p>In this example we retrieve nominal US housing costs from the OECD database.</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-02.png" /></td>
+<td align="left"><strong>Step 1.</strong> Importing data</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The long URL string below retrieves US housing costs by year from the OECD database. These are nominal costs (not adjusted for inflation) and normalized to a basis year of 2015, that is, the median house price is 100 in 2015.</p>
+<p>We start by importing the data and writing it to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;https://stats.oecd.org/sdmx-json/data/DP_LIVE/USA.HOUSECOST.NOMINAL.IDX2015.A/OECD?contentType=csv&amp;detail=code&amp;separator=comma&amp;csv-lang=en&amp;startPeriod=1956&amp;endPeriod=2018&quot;</span>
+x &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(url, <span class="dt">format =</span> <span class="st">&quot;csv&quot;</span>)
+rio<span class="op">::</span><span class="kw">export</span>(x, <span class="st">&quot;data/housing-raw.csv&quot;</span>)</code></pre>
+<p>Again, after doing this once, we can comment-out these three lines of code so we don’t have to access the internet every time we <em>Source</em> this script.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># url &lt;- &quot;https://stats.oecd.org/sdmx-json/data/DP_LIVE/USA.HOUSECOST.NOMINAL.IDX2015.A/OECD?contentType=csv&amp;detail=code&amp;separator=comma&amp;csv-lang=en&amp;startPeriod=1956&amp;endPeriod=2018&quot;</span>
+<span class="co"># x &lt;- rio::import(url, format = &quot;csv&quot;)</span>
+<span class="co"># rio::export(x, &quot;data/housing-raw.csv&quot;)</span></code></pre>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-03.png" /></td>
+<td align="left"><strong>Step 2.</strong> Exploring data</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Read in the CSV file and examine it. Here, we have 49 observations of 8 variables in tidy form.</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/housing-raw.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 49</span>
+<span class="co">#&gt; Variables: 8</span>
+<span class="co">#&gt; $ LOCATION     &lt;chr&gt; &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, &quot;USA&quot;, ...</span>
+<span class="co">#&gt; $ INDICATOR    &lt;chr&gt; &quot;HOUSECOST&quot;, &quot;HOUSECOST&quot;, &quot;HOUSECOST&quot;, &quot;HOUSECOST...</span>
+<span class="co">#&gt; $ SUBJECT      &lt;chr&gt; &quot;NOMINAL&quot;, &quot;NOMINAL&quot;, &quot;NOMINAL&quot;, &quot;NOMINAL&quot;, &quot;NOMI...</span>
+<span class="co">#&gt; $ MEASURE      &lt;chr&gt; &quot;IDX2015&quot;, &quot;IDX2015&quot;, &quot;IDX2015&quot;, &quot;IDX2015&quot;, &quot;IDX2...</span>
+<span class="co">#&gt; $ FREQUENCY    &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;,...</span>
+<span class="co">#&gt; $ TIME         &lt;int&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1...</span>
+<span class="co">#&gt; $ Value        &lt;dbl&gt; 11.16166, 12.06250, 12.92855, 14.46220, 15.78472,...</span>
+<span class="co">#&gt; $ `Flag Codes` &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N...</span></code></pre>
+<p>We asked for data starting from 1956, but the US data in this database apparently starts in 1970, hence 49 observations, one per year, from 1970 to 2019.</p>
+<p>We have two numerical variables for year and normalized housing value; of the remaining variables, one is logical and the rest are categorical.</p>
+<p>We cam summarize the categorical variables using <code>inspect_cat()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_cat</span>(housing)
+<span class="co">#&gt; # A tibble: 6 x 5</span>
+<span class="co">#&gt;   col_name     cnt common    common_pcnt levels          </span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;list&gt;          </span>
+<span class="co">#&gt; 1 Flag Codes     1 &lt;NA&gt;              100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 2 FREQUENCY      1 A                 100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 3 INDICATOR      1 HOUSECOST         100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 4 LOCATION       1 USA               100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 5 MEASURE        1 IDX2015           100 &lt;tibble [1 x 3]&gt;</span>
+<span class="co">#&gt; 6 SUBJECT        1 NOMINAL           100 &lt;tibble [1 x 3]&gt;</span></code></pre>
+<p>Here, the count of the number of levels for every categorical variable is 1, e.g., indicator = house cost, location = US, etc, indicating that these variables have a constant value for all years.</p>
+<p>Memory usage is small and there are no missing values.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_mem</span>(housing)
+<span class="co">#&gt; # A tibble: 8 x 3</span>
+<span class="co">#&gt;   col_name   size       pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 INDICATOR  504 bytes 14.7 </span>
+<span class="co">#&gt; 2 LOCATION   496 bytes 14.5 </span>
+<span class="co">#&gt; 3 SUBJECT    496 bytes 14.5 </span>
+<span class="co">#&gt; 4 MEASURE    496 bytes 14.5 </span>
+<span class="co">#&gt; 5 FREQUENCY  496 bytes 14.5 </span>
+<span class="co">#&gt; 6 Value      440 bytes 12.9 </span>
+<span class="co">#&gt; 7 TIME       248 bytes  7.24</span>
+<span class="co">#&gt; 8 Flag Codes 248 bytes  7.24</span>
+<span class="kw">inspect_na</span>(housing)
+<span class="co">#&gt; # A tibble: 8 x 3</span>
+<span class="co">#&gt;   col_name     cnt  pcnt</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Flag Codes    49   100</span>
+<span class="co">#&gt; 2 LOCATION       0     0</span>
+<span class="co">#&gt; 3 INDICATOR      0     0</span>
+<span class="co">#&gt; 4 SUBJECT        0     0</span>
+<span class="co">#&gt; 5 MEASURE        0     0</span>
+<span class="co">#&gt; 6 FREQUENCY      0     0</span>
+<span class="co">#&gt; 7 TIME           0     0</span>
+<span class="co">#&gt; 8 Value          0     0</span></code></pre>
+<p>Summary</p>
+<ul>
+<li>49 observations, one per year, 1970–2019</li>
+<li>2 quantitative variables are of interest: <code>TIME</code> and <code>Value</code></li>
+<li>the remaining categorical and logical variables are not relevant to our inquiry</li>
+</ul>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-04.png" /></td>
+<td align="left"><strong>Step 3.</strong> Tidying data.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We want to keep the <code>TIME</code> and <code>Value</code> columns and rename them.</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_<span class="dv">2015</span>_basis &lt;-<span class="st"> </span>housing <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(TIME, Value) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">year =</span> TIME, <span class="dt">nominal =</span> Value) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">glimpse</span>()
+<span class="co">#&gt; Observations: 49</span>
+<span class="co">#&gt; Variables: 2</span>
+<span class="co">#&gt; $ year    &lt;int&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, ...</span>
+<span class="co">#&gt; $ nominal &lt;dbl&gt; 11.16166, 12.06250, 12.92855, 14.46220, 15.78472, 16.7...</span></code></pre>
+<p>The costs have been normalized with a 2015 basis, that is in 2015, the price is 100. I’d like to normalize these data to 2018 costs by dividing all nominal values by the one recorded for 2018, then multiply by 100, so that the $100 price value is in the same basis year as my price index.</p>
+<p>First, find the 2018 nominal house cost.</p>
+<pre class="sourceCode r"><code class="sourceCode r">nominal_<span class="dv">2018</span> &lt;-<span class="st"> </span>housing_<span class="dv">2015</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">filter</span>(year <span class="op">==</span><span class="st"> </span><span class="dv">2018</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(nominal) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">unlist</span>(<span class="dt">use.names =</span> <span class="ot">FALSE</span>)
+
+nominal_<span class="dv">2018</span>
+<span class="co">#&gt; [1] 120.3783</span></code></pre>
+<p>Then adjust the costs so that the basis year is 2018.</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_<span class="dv">2018</span>_basis &lt;-<span class="st"> </span>housing_<span class="dv">2015</span>_basis <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">nominal =</span> nominal <span class="op">/</span><span class="st"> </span>nominal_<span class="dv">2018</span> <span class="op">*</span><span class="st"> </span><span class="dv">100</span>)</code></pre>
+<p>Check the tail of the data frame to confirm that the 2018 value is 100.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(housing_<span class="dv">2018</span>_basis, <span class="dt">n =</span> 10L)
+<span class="co">#&gt;    year   nominal</span>
+<span class="co">#&gt; 40 2009  73.30078</span>
+<span class="co">#&gt; 41 2010  71.12164</span>
+<span class="co">#&gt; 42 2011  68.12677</span>
+<span class="co">#&gt; 43 2012  70.10484</span>
+<span class="co">#&gt; 44 2013  75.07875</span>
+<span class="co">#&gt; 45 2014  78.88267</span>
+<span class="co">#&gt; 46 2015  83.07147</span>
+<span class="co">#&gt; 47 2016  88.01283</span>
+<span class="co">#&gt; 48 2017  93.81684</span>
+<span class="co">#&gt; 49 2018 100.00000</span></code></pre>
+<p>We can graph this for a look at relative nominal housing costs in the US.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> housing_<span class="dv">2018</span>_basis, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> nominal)) <span class="op">+</span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Normalized US median housing cost&quot;</span>, 
+                <span class="dt">subtitle =</span> <span class="st">&quot;Not adjusted for inflation&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-137-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Now that the data are prepared, we write them to file.</p>
+<pre class="sourceCode r"><code class="sourceCode r">rio<span class="op">::</span><span class="kw">export</span>(housing_<span class="dv">2018</span>_basis, <span class="st">&quot;data/housing.csv&quot;</span>)</code></pre>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+</div>
+<div id="example-real-us-housing-costs" class="section level2">
+<h2><span class="header-section-number">7.6</span> Example: Real US housing costs</h2>
+<p>In this final example, we join the two data frames we created previously and adjust the US housing costs for inflation. The raw data have already been prepared, so we can continue step 3.</p>
+<p><br></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="figures/data-basics-04.png" /></td>
+<td align="left"><strong>Step 3.</strong> Tidying data.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Read in the two data frames we saved earlier. Recall that both have been transformed to use a 2018 basis.</p>
+<pre class="sourceCode r"><code class="sourceCode r">cpi     &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/cpi.csv&quot;</span>)
+housing &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/housing.csv&quot;</span>)</code></pre>
+<p>The CPI data spans 1913 to 2018, with the index = 1 in 2018.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(cpi)
+<span class="co">#&gt;   year   cpi      index</span>
+<span class="co">#&gt; 1 1913  9.88 0.03934531</span>
+<span class="co">#&gt; 2 1914 10.02 0.03990283</span>
+<span class="co">#&gt; 3 1915 10.11 0.04026124</span>
+<span class="co">#&gt; 4 1916 10.88 0.04332763</span>
+<span class="co">#&gt; 5 1917 12.82 0.05105332</span>
+<span class="co">#&gt; 6 1918 15.04 0.05989407</span>
+
+<span class="kw">tail</span>(cpi)
+<span class="co">#&gt;     year    cpi     index</span>
+<span class="co">#&gt; 101 2013 232.96 0.9277209</span>
+<span class="co">#&gt; 102 2014 236.74 0.9427741</span>
+<span class="co">#&gt; 103 2015 237.02 0.9438891</span>
+<span class="co">#&gt; 104 2016 240.01 0.9557963</span>
+<span class="co">#&gt; 105 2017 245.12 0.9761459</span>
+<span class="co">#&gt; 106 2018 251.11 1.0000000</span></code></pre>
+<p>The housing data spans 1970 to 2018, with nominal cost = 100 in 2018.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(housing)
+<span class="co">#&gt;   year   nominal</span>
+<span class="co">#&gt; 1 1970  9.272153</span>
+<span class="co">#&gt; 2 1971 10.020497</span>
+<span class="co">#&gt; 3 1972 10.739936</span>
+<span class="co">#&gt; 4 1973 12.013966</span>
+<span class="co">#&gt; 5 1974 13.112603</span>
+<span class="co">#&gt; 6 1975 13.930902</span>
+
+<span class="kw">tail</span>(housing)
+<span class="co">#&gt;    year   nominal</span>
+<span class="co">#&gt; 44 2013  75.07875</span>
+<span class="co">#&gt; 45 2014  78.88267</span>
+<span class="co">#&gt; 46 2015  83.07147</span>
+<span class="co">#&gt; 47 2016  88.01283</span>
+<span class="co">#&gt; 48 2017  93.81684</span>
+<span class="co">#&gt; 49 2018 100.00000</span></code></pre>
+<p>Use <code>left_join()</code> to combine the two data frames, joining <code>cpi</code> to <code>housing</code></p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_cpi &lt;-<span class="st"> </span><span class="kw">left_join</span>(housing, cpi, <span class="dt">by =</span> <span class="st">&quot;year&quot;</span>)
+
+<span class="kw">head</span>(housing_cpi)
+<span class="co">#&gt;   year   nominal   cpi     index</span>
+<span class="co">#&gt; 1 1970  9.272153 38.83 0.1546334</span>
+<span class="co">#&gt; 2 1971 10.020497 40.49 0.1612441</span>
+<span class="co">#&gt; 3 1972 10.739936 41.82 0.1665406</span>
+<span class="co">#&gt; 4 1973 12.013966 44.40 0.1768149</span>
+<span class="co">#&gt; 5 1974 13.112603 49.31 0.1963681</span>
+<span class="co">#&gt; 6 1975 13.930902 53.82 0.2143284</span>
+
+<span class="kw">tail</span>(housing_cpi)
+<span class="co">#&gt;    year   nominal    cpi     index</span>
+<span class="co">#&gt; 44 2013  75.07875 232.96 0.9277209</span>
+<span class="co">#&gt; 45 2014  78.88267 236.74 0.9427741</span>
+<span class="co">#&gt; 46 2015  83.07147 237.02 0.9438891</span>
+<span class="co">#&gt; 47 2016  88.01283 240.01 0.9557963</span>
+<span class="co">#&gt; 48 2017  93.81684 245.12 0.9761459</span>
+<span class="co">#&gt; 49 2018 100.00000 251.11 1.0000000</span></code></pre>
+<p>Usage: <code>left_join(x, y, by)</code> returns all rows from x and all columns from x and y. ‘by’ is a character vector of variables (column names) that x and y have in common used to join the two data frames.</p>
+<p>In this case, we left-join cpi (y) to housing (x) because housing has fewer years. Had we reversed the order of the two data frames, rows in x with no match in y will have NA values in the new columns, i.e.,</p>
+<pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">left_join</span>(cpi, housing, <span class="dt">by =</span> <span class="st">&quot;year&quot;</span>)
+
+<span class="kw">head</span>(test)
+<span class="co">#&gt;   year   cpi      index nominal</span>
+<span class="co">#&gt; 1 1913  9.88 0.03934531      NA</span>
+<span class="co">#&gt; 2 1914 10.02 0.03990283      NA</span>
+<span class="co">#&gt; 3 1915 10.11 0.04026124      NA</span>
+<span class="co">#&gt; 4 1916 10.88 0.04332763      NA</span>
+<span class="co">#&gt; 5 1917 12.82 0.05105332      NA</span>
+<span class="co">#&gt; 6 1918 15.04 0.05989407      NA</span>
+
+<span class="kw">tail</span>(test)
+<span class="co">#&gt;     year    cpi     index   nominal</span>
+<span class="co">#&gt; 101 2013 232.96 0.9277209  75.07875</span>
+<span class="co">#&gt; 102 2014 236.74 0.9427741  78.88267</span>
+<span class="co">#&gt; 103 2015 237.02 0.9438891  83.07147</span>
+<span class="co">#&gt; 104 2016 240.01 0.9557963  88.01283</span>
+<span class="co">#&gt; 105 2017 245.12 0.9761459  93.81684</span>
+<span class="co">#&gt; 106 2018 251.11 1.0000000 100.00000</span></code></pre>
+<p>The real housing cost is determined by dividing the nominal cost by the price index,</p>
+<pre class="sourceCode r"><code class="sourceCode r">housing_cpi &lt;-<span class="st"> </span>housing_cpi <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">real =</span> nominal <span class="op">/</span><span class="st"> </span>index)
+
+<span class="kw">head</span>(housing_cpi)
+<span class="co">#&gt;   year   nominal   cpi     index     real</span>
+<span class="co">#&gt; 1 1970  9.272153 38.83 0.1546334 59.96215</span>
+<span class="co">#&gt; 2 1971 10.020497 40.49 0.1612441 62.14490</span>
+<span class="co">#&gt; 3 1972 10.739936 41.82 0.1665406 64.48841</span>
+<span class="co">#&gt; 4 1973 12.013966 44.40 0.1768149 67.94656</span>
+<span class="co">#&gt; 5 1974 13.112603 49.31 0.1963681 66.77562</span>
+<span class="co">#&gt; 6 1975 13.930902 53.82 0.2143284 64.99793</span>
+
+<span class="kw">tail</span>(housing_cpi)
+<span class="co">#&gt;    year   nominal    cpi     index      real</span>
+<span class="co">#&gt; 44 2013  75.07875 232.96 0.9277209  80.92816</span>
+<span class="co">#&gt; 45 2014  78.88267 236.74 0.9427741  83.67080</span>
+<span class="co">#&gt; 46 2015  83.07147 237.02 0.9438891  88.00978</span>
+<span class="co">#&gt; 47 2016  88.01283 240.01 0.9557963  92.08325</span>
+<span class="co">#&gt; 48 2017  93.81684 245.12 0.9761459  96.10944</span>
+<span class="co">#&gt; 49 2018 100.00000 251.11 1.0000000 100.00000</span></code></pre>
+<p>Graphing normalized median US housing costs in real (constant 2018) dollars, we have,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> housing_cpi, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> real)) <span class="op">+</span>
+<span class="st">        </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Normalized US median housing cost&quot;</span>, 
+                <span class="dt">subtitle =</span> <span class="st">&quot;Constant 2018 dollars&quot;</span>)</code></pre>
+<p><img src="midfield-workshops_files/figure-html/unnamed-chunk-146-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>From the graph, a monthly housing cost of $100 in 2018 is equivalent to approximately $70 in 1995 and $60 in 1970, for the <em>same level of housing</em> in <em>constant 2018 dollars</em>. Inflation has been accounted for, so the rises and falls we see in the graph represents changes in the real cost of housing.</p>
+<p>The ratios hold for any amount, so a monthly housing cost of $1000 in 2018 is equivalent to approximately $700 in 1995 and $600 in 1970—again, in constant 2018 dollars.</p>
+<p>In summary, we have used the OECD housing index to account for the fluctuations in house prices and we have used the CPI to account for inflation.</p>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+</div>
+<div id="summary-of-functions-introduced" class="section level2">
+<h2><span class="header-section-number">7.7</span> Summary of functions introduced</h2>
+<p>Summary of the data preparation functions used in this tutorial, organized by package.</p>
+<p>dplyr</p>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/reference/arrange.html" target="_blank"><code>arrange()</code></a> order the rows of data frame<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/filter.html" target="_blank"><code>filter()</code></a> choose rows of a data frame that meet a condition, and omit all others</li>
+<li><a href="https://dplyr.tidyverse.org/reference/mutate.html" target="_blank"><code>mutate()</code></a> add new variables (columns) to a data frame<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/select.html" target="_blank"><code>select()</code></a> choose variables (columns) of a data frame and omit all others</li>
+<li><a href="https://dplyr.tidyverse.org/reference/select.html" target="_blank"><code>rename()</code></a> rename selected variables (columns) of a data frame and keep all others<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/reference/join.html" target="_blank"><code>left_join()</code></a> combine two data frames by variables they have in common</li>
+</ul>
+<p>rio</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/rio/vignettes/rio.html" target="_blank"><code>import()</code></a> read a data frame by URL or filename</li>
+<li><a href="https://cran.r-project.org/web/packages/rio/vignettes/rio.html" target="_blank"><code>export()</code></a> write a data frame as a specified type of file</li>
+</ul>
+<p>inspectdf</p>
+<ul>
+<li><a href="https://github.com/alastairrushworth/inspectdf" target="_blank"><code>inspect_mem()</code></a> summarize memory usage of a data frame<br />
+</li>
+<li><a href="https://github.com/alastairrushworth/inspectdf" target="_blank"><code>inspect_na()</code></a> summarize the rate of missingness of variables in a data frame<br />
+</li>
+<li><a href="https://github.com/alastairrushworth/inspectdf" target="_blank"><code>inspect_ cat()</code></a> summarize the levels within each categorical variable in a data frame</li>
+</ul>
+<p>lubridate</p>
+<ul>
+<li><a href="https://lubridate.tidyverse.org/reference/year.html" target="_blank"><code>year()</code></a> return the year as a number from a date object</li>
+</ul>
+<p>seplyr</p>
+<ul>
+<li><a href="https://winvector.github.io/seplyr/reference/group_summarize.html" target="_blank"><code>group_summarize()</code></a> perform summary operations on groups defined by selected variables</li>
+</ul>
+<p>base R</p>
+<ul>
+<li><a href="http://rfunction.com/archives/699" target="_blank"><code>head()</code></a> returns the first part of an R object</li>
+<li><a href="http://rfunction.com/archives/699" target="_blank"><code>tail()</code></a> returns the last part of an R object</li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/mean" target="_blank"><code>mean()</code></a> compute an arithmetic mean</li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/Round" target="_blank"><code>round()</code></a> round to a specified number of decimal places</li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/unlist" target="_blank"><code>unlist()</code></a> simplify a list to a vector of values</li>
+</ul>
+<p><br><br />
+<a href="data-basics.html#data-basics">▲ top of page</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="graph-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="day-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/403-data-basics.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["midfield-workshops.pdf", "midfield-workshops.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
