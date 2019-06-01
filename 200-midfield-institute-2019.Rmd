@@ -176,7 +176,7 @@ kable(agenda_day1)
 agenda_day2 <- build_frame(
         "Time", "Activities" |
         "8:00--9:00", "*Breakfast.* Provided in the workshop room." |
-        "9:00--10:00", "*Data visualization.* Deficiencies of common graphs. Creating more effective graphs." |
+        "9:00--10:00", "*Data visualization.* Elements of effective graphs. Expanding your graphical repertoire." |
         "", "Break" |
         "10:15--10:45", "*Explore data.* Finding and presenting stories in the data." |
         "10:45--12:15", "*Self-directed work.* Continue the collaborative work from Day 1. Produce data displays that address your research question." |
