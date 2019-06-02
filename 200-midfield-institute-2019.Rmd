@@ -40,7 +40,6 @@ Our learning objectives can be categorized in two broad classes: qualitative and
 1. Describe how the MIDFIELD data are organized  
 1. Describe key principles of effective data visualization  
 1. Identify deficiencies of common graph types  
-1. List potential resources beyond MIDFIELD that can contribute to answering research questions  
  
  Computationally, participants should be able use **midfieldr**, an R package specifically designed for use with MIDFIELD, to:
 
