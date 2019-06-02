@@ -1,0 +1,24 @@
+# After the workshop {#after-the-workshop} 
+
+<!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
+
+After the workshop, you may find these readings useful, from Layton's  introductory course in data visualizarion for R novices. 
+
+- [Managing files](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm501-proj-m-manage-files.md#managing-files) a highly opinionated guide to directory structure and naming things 
+- [Design basics](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm402-rhetoric-design-basics.md#design-basics) grounded in the rhetoric of science 
+- [R markdown basics](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm305-report-rmd-basics.md#R-markdown-basics) for writing reports in RStudio that commingle code and prose 
+- [RStudio tips](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm905-software-RStudio-tips.md#rstudio-tips)  
+- [Reshaping data](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm103-data-reshaping.md#reshaping-data)  
+- [Introducing factors](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm106-data-nature-of-factors.md#introducing-factors)  
+- [Working with factors](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm107-data-working-with-factors.md#working-with-factors) 
+- [Discovering stories](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm403-rhetoric-discovering-stories.md#discovering-stories) 
+- [Data carpentry with joins](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm105-data-joins.md#carpentry-with-joins) 
+- [Time and dates](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm109-data-time-dates.md#time-and-dates) 
+- [Time series data](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm110-data-time-series.md#time-series-data) 
+
+
+Online resources 
+
+- [R for Data Science](https://r4ds.had.co.nz/) the online text I use in my R courses for novices 
+- [Data sources](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm108-data-sources.md#data-sources) from around the world 
+- [R markdown basics](https://github.com/DSR-RHIT/me447-visualizing-data/blob/master/cm/cm305-report-rmd-basics.md#R-markdown-basics) 

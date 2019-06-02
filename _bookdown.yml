@@ -15,4 +15,5 @@ rmd_files: ["index.Rmd",
 "403-data-basics.Rmd",
 "500-day-01.Rmd",
 "600-day-02.Rmd",
+"700-after-the-workshop.Rmd",
 "900-appendices.Rmd"]

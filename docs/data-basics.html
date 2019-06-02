@@ -199,6 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="day-2.html"><a href="day-2.html"><i class="fa fa-check"></i><b>9</b> MIDFIELD Institute Day 2</a><ul>
 <li class="chapter" data-level="" data-path="day-2.html"><a href="day-2.html#prerequisites-4"><i class="fa fa-check"></i>Prerequisites</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="after-the-workshop.html"><a href="after-the-workshop.html"><i class="fa fa-check"></i><b>10</b> After the workshop</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -226,13 +227,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="figures/data-basics-00.png" alt="logo" style="left:0px; padding:10px; width:100%;"/>
 <p><a href="midfield-institute.html#day0agenda">Pre-Institute Workshop Agenda</a></p>
 <p>This tutorial is an introduction to data preparation using the tidyverse (and other packages) for importing data, exploring data, and tidying data. Our goal is to transform, reshape, and join data frames to obtain the form we need for analysis and graphs.</p>
-<p>We do the work in a reproducible form, by</p>
+<p>In an exercise like this one, we perform all the work in one script, unlike a major computational project in which tasks are separated into short scripts with specific inputs and outputs. Even in this exercise, however, we apply some tenets of reproducibility, by</p>
 <ul>
 <li>prescribing the file organization and file-naming scheme</li>
 <li>avoiding manual operations</li>
 <li>using explicit links and relative file paths</li>
+<li>writing intermediate results to file</li>
 </ul>
-<p>If the prerequisites have been met, the tutorial should take no longer than 50 minutes.</p>
+<p>If the prerequisites have been met, the tutorial should take about an hour.</p>
 <p><br></p>
 <div id="prerequisites-2" class="section level2">
 <h2><span class="header-section-number">7.1</span> Prerequisites</h2>
@@ -408,10 +410,10 @@ etc.
 <p><br></p>
 <p>Use <code>rio::import()</code> to read the raw data into the R workspace.</p>
 <pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>rio<span class="op">::</span><span class="kw">import</span>(<span class="st">&quot;data/cpi-raw.csv&quot;</span>)</code></pre>
-<p>Use <code>class()</code> to determine the R data structure—in this case, <code>cpi</code> is a tibble (a type of data frame).</p>
+<p>Use <code>class()</code> to determine the R data structure—in this case, <code>cpi</code> is a data frame.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cpi)
 <span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
-<p>Use <code>glimpse()</code> to examine the tibble—we discover the number of observations (1276), the number of variables (2), their names (DATE, VALUE), and their class or type (character, double).</p>
+<p>Use <code>glimpse()</code> to examine the data frame—we discover the number of observations (1276), the number of variables (2), their names (DATE, VALUE), and their class or type (character, double).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(cpi)
 <span class="co">#&gt; Observations: 1,276</span>
 <span class="co">#&gt; Variables: 2</span>
@@ -443,7 +445,8 @@ etc.
 <span class="co">#&gt; 2 VALUE        0     0</span></code></pre>
 <p>Summary</p>
 <ul>
-<li>1276 observations, one per month, 1913-01 to 2019-04</li>
+<li>1276 observations, one per month, Jan 1913 through Apr 2019<br />
+</li>
 <li>1 categorical variable <code>DATE</code></li>
 <li>1 quantitative variable <code>VALUE</code> (the CPI)</li>
 </ul>

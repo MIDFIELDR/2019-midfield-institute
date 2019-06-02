@@ -13,15 +13,15 @@ htmltools::img(src = knitr::include_graphics("figures/data-basics-00.png"),
 
 This tutorial is an introduction to data preparation using the tidyverse (and other packages) for importing data, exploring data, and tidying data. Our goal is to transform, reshape, and join data frames to obtain the form we need for analysis and graphs. 
 
-We do the work in a reproducible form, by  
+In an exercise like this one, we perform all the work in one script, unlike a major computational project in which tasks are separated into short scripts with specific inputs and outputs. Even in this exercise, however, we  apply some  tenets of reproducibility, by 
 
 - prescribing the file organization and file-naming scheme 
 - avoiding manual operations 
 - using explicit links and relative file paths 
+- writing intermediate results to file 
 
-If the prerequisites have been met, the tutorial should take no longer than 50 minutes.  
 
-
+If the prerequisites have been met, the tutorial should take about an hour. 
 
 
 
@@ -348,13 +348,13 @@ Use `rio::import()` to read the raw data into the R workspace.
 cpi <- rio::import("data/cpi-raw.csv")
 ```
 
-Use `class()` to determine the R data structure---in this case, `cpi` is a tibble (a type of data frame). 
+Use `class()` to determine the R data structure---in this case, `cpi` is a data frame. 
 
 ```{r}
 class(cpi)
 ```
 
-Use `glimpse()` to examine the tibble---we discover the number of observations (`r nrow(cpi)`), the number of variables (`r ncol(cpi)`), their names (`r names(cpi)[1]`, `r names(cpi)[2]`), and their class or type (`r class(cpi$DATE)`, `r typeof(cpi$VALUE)`).  
+Use `glimpse()` to examine the data frame---we discover the number of observations (`r nrow(cpi)`), the number of variables (`r ncol(cpi)`), their names (`r names(cpi)[1]`, `r names(cpi)[2]`), and their class or type (`r class(cpi$DATE)`, `r typeof(cpi$VALUE)`).  
 
 ```{r}
 glimpse(cpi)
@@ -384,7 +384,7 @@ inspect_na(cpi)    # NAs
 
 Summary 
 
-- 1276 observations, one per month, 1913-01 to 2019-04 
+- 1276 observations, one per month, Jan 1913 through Apr 2019  
 - 1 categorical variable  `DATE` 
 - 1 quantitative variable `VALUE` (the CPI) 
 
@@ -535,6 +535,7 @@ Now that the data are prepared, we write them to file.
 ```{r}
 rio::export(cpi_2018_basis, "data/cpi.csv")
 ```
+
 
 
 
@@ -885,3 +886,7 @@ base R
 
 
  
+
+
+
+

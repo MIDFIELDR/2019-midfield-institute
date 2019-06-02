@@ -31,8 +31,6 @@ suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("wrapr"))
 ```
 
-
-
 The *Multiple-Institution Database for Investigating Engineering Longitudinal Development* (MIDFIELD) is a partnership of higher education institutions with engineering programs. MIDFIELD contains student record data from 1988--2017 for approximately one million undergraduate, degree-seeking students at the partner institutions.
 
 This site provides access to workshop materials for studying how undergraduate students maneuver through their curricula using MIDFIELD data. 
