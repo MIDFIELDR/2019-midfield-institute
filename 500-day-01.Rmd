@@ -2,11 +2,105 @@
 
 <!-- This file is included in the book only if it is listed in the _bookdown.yml file. -->
 
+```{r echo = FALSE}
+opts_chunk$set(echo = TRUE)
+htmltools::img(src = knitr::include_graphics("figures/midfield-grad-logo.png"), 
+        alt = 'midfield logo', 
+        style = 'left:0px; padding:10px;',
+        width = 200)
+```
+
+
 Agenda [[link](#day1agenda)]
 
-## Prerequisites {-} 
 
-- We assume you have completed all of the [Getting started](#getting-started) instructions. 
-- Run `midfield_institute.Rproj` to start every work session 
+##  Guided practice
+
+The tutorial assumes that   
+
+- You completed the [Getting started](#getting-started) instructions  
+- You have successfully installed the midfielddata package and the midfieldr package. If not, ask for assistance from the facilitators. 
+
+
+
+### Initialize a script
+
+Run your `midfield_institute.Rproj` to start the R session. 
+
+Use *File &gt; New File &gt; R Script* to create a new R script
+
+- Name the script `04-getting-started-with-midfieldr.R`   
+- Save it in the `scripts` directory 
+- Add a minimal header at the top of the script (if you wish) as shown below
+
+
+```r
+# getting started with midfieldr
+# name 
+# date
+```
+
+- Use `library()` to load the packages we will use 
+
+```{r}
+library("dplyr")
+library("ggplot2")
+library("midfieldr")
+library("seplyr")
+```
+
+Use the pulldown menu labeled *Source* and select the option *Source with echo.* 
+
+Run the script by clicking the *Source* button. 
+
+If you see an error like this one, 
+
+    Error in library("pkg_name") : there is no package called 'pkg_name'
+
+then you should install the missing package(s) and run the script again. 
+
+[[To review how to install an R package]](#install-an-r-package)    
+
+
+
+
+
+
+### Getting started with midfieldr 
+
+To introduce using the package, we present a brief but thorough example that starts with student unit-record data and concludes with a graphical comparison of program “stickiness” with students grouped by program, race, and sex. Stickiness is the ratio of the number of students graduating from a program to the number ever enrolled in the program [@Ohland+Orr+Layton+Lord+Long:2012].
+
+
+Navigate to the [midfieldr webpage](https://midfieldr.github.io/midfieldr/index.html) and select the *Getting started* tab. 
+
+Starting at the *Select programs to study* heading, work through the example by 
+
+- Typing  a line or chunk of code then *File &gt; Save* (Copy and paste is also fine.) 
+- *Source* and confirm that your result matches the tutorial result.  
+- To learn more about any function or any R object, type a `?` in the Console followed by the name of the function or object 
+
+
+
+
+
+### Next steps
+
+There should be adequate time for everyone to complete the Guided Practice work.  
+
+If you finish early, select the *Vignettes* pull down menu to explore other functionality of the midfieldr package. These vignettes go into more detail than the getting started introduction. 
+
+For each vignette you work on, please consider opening a new R script. For example, you might call the script for the first vignette, 
+
+- `05-identify-programs.R`  
+
+And the second vignette, 
+
+- `06-select-programs.R`  
+
+and so on. 
+
+As you work on any of these, please feel free to experiment to investigate the data on your own using the vignette as a guide. 
+
+
 
 
