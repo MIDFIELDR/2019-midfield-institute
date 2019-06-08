@@ -1,0 +1,614 @@
+---
+title:     "Expanding your graphical repertoire"
+subtitle:  "2019 MIDFIELD Institute"
+author:    "Richard Layton"
+date:      "June 2019"
+output:
+  binb::metropolis:
+    includes:
+      in_header: "../manage/slides_preamble.tex"
+fontsize:   12pt
+bibliography: ["../references.bib", "../references447.bib"]
+link-citations: yes
+csl: "../manage/journal-of-glaciology.csl"
+nocite: | 
+---
+
+```{r include = FALSE}
+library("knitr")
+opts_knit$set(root.dir = "../")
+opts_chunk$set(echo = FALSE, 
+               warning = FALSE, 
+               message = FALSE, 
+               fig.asp = 1/2.5)
+```
+
+```{r echo = FALSE}
+library("tidyverse")
+library("forcats")
+library("midfieldr")
+library("bibtex")
+
+# theme for these slides 
+font_size  <- 20
+font_color <- rcb("dark_Gray")
+theme_slides <- theme_bw() + 
+        theme(panel.grid.minor = element_blank(),  
+              panel.grid.major = element_line(size = 1), 
+                text = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                plot.title = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                plot.subtitle = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                plot.caption  = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                axis.title    = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                axis.text     = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                legend.title  = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                legend.text   = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                strip.text    = element_text(size = font_size, 
+                        face = "plain", color = font_color, hjust = 0)
+        )
+```
+
+
+
+
+
+
+
+
+
+
+## \alert{Data structure} determines which graph types are feasible
+
+\bigskip
+\begin{adjustwidth}{-1.7em}{-1.7em}
+\begin{tabular}{@{} >{\raggedright\arraybackslash} m{39mm} m{30mm} m{37mm} @{}}
+&
+\includegraphics[width = 30mm]{visuals/sd011-14.png}  
+& 
+Number of variables?\newline
+Continuous or discrete?\newline
+\quad\\
+
+Number of observations?&&\\
+
+&
+\includegraphics[width = 30mm]{visuals/sd011-14b.png}  
+& 
+Number of variables?\newline
+Nominal or ordinal?\newline
+Number of levels each?
+\end{tabular}
+\end{adjustwidth}
+\FloatBarrier
+
+
+
+
+
+## \alert{Graphical repertoire} determines which graph types you explore
+
+\begin{adjustwidth}{-3em}{0em}
+\vertskip{-1.85} 
+\includegraphics[scale=0.776]{visuals/sd011-13.png}
+\end{adjustwidth}
+\FloatBarrier
+
+\vertskip{-13}
+\begin{columns}[onlytextwidth]
+
+   \begin{column}{0.58\textwidth}\bf\large
+   strip plot\\
+   box and whisker plot\\
+   multiway\\
+   scatterplot\\
+   dot plot\\
+   line graph\\
+   conditioning plot\\
+   scatterplot matrix\\
+   parallel coordinate plot
+   \end{column}
+
+   \begin{column}{0.45\textwidth}\bf\large
+   cycle plot\\
+   quantile-quantile plot\\
+   Sankey diagram\\
+   diverging stacked bar\\
+   multivariate bar\\
+   micromaps\\
+   proportional symbol map\\
+   dot density map\\
+   \quad\\
+   \end{column}
+
+\end{columns}
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Gallery of graph types 
+
+ 
+
+
+
+
+
+
+
+## Strip plot --- or jitter plot or 1D scatterplot
+
+```{r eval = TRUE}
+speed_ski <- readRDS("data/0302-strip-plot-speedski-data.rds")
+```
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Speed\newline    
+Categorical: Event, sex
+\end{adjustwidth}
+
+\begin{adjustwidth}{-3em}{0em}
+\vertskip{-0.5}
+\includegraphics[width = 1.15\textwidth]{visuals/0302-strip-plot-speedski-slides.png}
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{0.5}
+Data source [@Unwin:2015:GDAdata]
+
+
+
+
+
+
+
+
+
+## Box and whisker plot or box plot 
+
+```{r eval = TRUE}
+nontraditional <- readRDS("data/0305-boxplot-nontrad-data.rds")
+```
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Years enrolled\newline    
+Categorical: Path + sex
+\end{adjustwidth}
+
+\begin{adjustwidth}{-3em}{0em}
+\vertskip{-0.5}
+\includegraphics[width = 1.15\textwidth]{visuals/0305-boxplot-nontrad-slides.png}
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{0.5}
+Data source [@MIDFIELD:2019]
+
+
+
+
+
+
+
+
+## Multiway plot 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Graduation rate\newline   
+Categorical: Race/ethnicity/sex, major 
+
+\centering\includegraphics[height = 0.75\textheight]{visuals/fig004-grad-rate.png}
+\end{adjustwidth}
+
+
+\scriptsize\raggedright
+\vertskip{-1}
+Data source [@MIDFIELD:2019]
+
+
+
+
+
+
+
+## Scatterplot 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Migrators attracted, migrators graduated\newline    
+Categorical: Race/ethnicity, sex, major 
+
+\includegraphics[height = 0.7\textheight]{visuals/fig010-migr-yield.png}
+\end{adjustwidth}
+  
+\scriptsize\raggedright
+\vertskip{0}
+Data source [@MIDFIELD:2019]
+
+
+
+
+
+
+
+
+
+## Cleveland dot plot
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Stickiness\newline  
+Categorical: Race/ethnicity/sex, major, graduation destination\newline 
+
+\includegraphics[height = 0.45\textheight]{visuals/dot-plot-example.png}
+
+\end{adjustwidth}
+ 
+\scriptsize\raggedright
+\vertskip{0}
+Data source [@MIDFIELD:2019]
+
+
+
+
+
+## Line graph 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+
+\vertskip{0}
+\includegraphics[height = 0.95\textheight]{visuals/d4-pollutionMortality-1.png}
+
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{-2} 
+Image source [@Ryan:2019] 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+## Conditioning plot or co-plot 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Ozone, temperature, wind speed, solar radiation  
+
+\centering
+\includegraphics[height = 0.85\textheight]{visuals/co-plot.png}
+
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{-2}
+Data source [@R:2018]
+
+
+
+
+
+
+
+## Scatterplot matrix 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Six dimensions of Swiss banknotes 
+
+\centering
+\includegraphics[height = 0.8\textheight]{visuals/scatterplot-matrix.png}
+
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{-1}
+Data source [@R-gclus]
+
+
+
+
+
+
+## Parallel coordinate plot
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Six dimensions of Swiss banknotes \newline
+
+\centering
+\includegraphics[height = 0.65\textheight, trim = 0mm 0mm 0mm 7mm, clip = TRUE]{visuals/parallel-coord.png}
+
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{1}
+Data source [@R-gclus]
+
+
+
+
+
+## Cycle plot or month plot 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Number of wildlife strikes on aircraft \newline
+Categorical: Month, year 
+
+\centering
+\includegraphics[height = 0.68\textheight, trim = 0mm 0mm 0mm 22mm, clip = TRUE]{visuals/cycle-plot.png}
+
+\raggedright\scriptsize
+\vertskip{-1}
+Image source https://canonicalized.com/cycle-plots-tableau/
+\end{adjustwidth}
+
+
+
+
+
+
+
+
+## Quantile-quantile plot or q-q plot 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Years to graduate quantiles\newline   
+Categorical: Traditional students, nontraditional students 
+
+\centering\includegraphics[height = 0.75\textheight]{visuals/fig05-time-to-grad.png}
+
+\end{adjustwidth}
+
+\raggedright\scriptsize
+\vertskip{-1}
+Data source [@MIDFIELD:2019]
+
+
+
+
+
+
+
+
+
+
+## Sankey diagram 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Numbers of students\newline   
+Categorical: Starting major, destination major
+
+\centering\includegraphics[height = 0.75\textheight]{visuals/fig005_ise_female.png}
+
+\end{adjustwidth}
+
+\raggedright\scriptsize
+\vertskip{-1}
+Data source [@MIDFIELD:2019]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Diverging stacked bar chart 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+Quantitative: Frequency of response, count totals\newline   
+Categorical: Survey questions, level of confidence 
+
+\centering\includegraphics[height = 0.7\textheight]{visuals/diverging-stacked-bar.png}
+
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{0} 
+Image source [@Ryan:2019] 
+
+
+
+
+
+
+
+## Multivariate bar chart 
+
+\bigskip
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+
+Quantitative
+\begin{itemize}
+\item number of people
+\item percent became paralyzed
+\end{itemize}
+
+Categorical
+\begin{itemize}
+\item age group
+\item vaccination status
+\end{itemize}
+
+\end{column} 
+
+\begin{column}{0.55\textwidth}
+\includegraphics[width = 1\textwidth]{visuals/cm211-multivariate-bar.png}
+\end{column}
+\end{columns}
+
+\raggedright\scriptsize
+\vertskip{-1}
+Image source [@Few:2014] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Linked micromaps 
+
+```{r eval = FALSE}
+library("magick")
+im1 <- image_read("slides/visuals/d7-2.png")
+im1 <- image_scale(im1, "1200")
+im2 <- image_read("slides/visuals/d7-axis.png")
+im2 <- image_scale(im2, "1200")
+im  <- image_append(c(im1, im2), stack = TRUE)
+image_write(im, path = "slides/visuals/d7-partial.png", format = "png")
+```
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+
+\vertskip{0}
+\includegraphics[height = 0.9\textheight]{visuals/d7-partial.png}
+  
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{-1} 
+Image source [@Harrelson:2019] 
+
+
+
+
+
+
+
+## Proportional symbol map 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+
+
+\vertskip{-1} 
+\includegraphics[height = 0.95\textheight, trim = 0mm 0mm 0mm 12mm, clip = TRUE]{visuals/d5.png}
+ 
+\end{adjustwidth}
+
+\scriptsize\raggedright
+\vertskip{-2} 
+Image source [@Harrelson:2019] 
+
+
+
+
+
+
+
+## Dot density map 
+
+Quantitative: Latitude, longitude \newline
+Categorical: Race/ethnicity 
+
+\begin{adjustwidth}{-1.7em}{-1.7em}
+
+\vertskip{0} 
+\includegraphics[height = 0.75\textheight]{visuals/cm211-dot-density-map-01.png}
+
+\vertskip{-4} 
+\raggedleft\includegraphics[height = 0.2\textheight]{visuals/cm211-dot-density-map-01-legend.png}
+
+\scriptsize\raggedright 
+\vertskip{0} 
+Image source http://demographics.virginia.edu/DotMap/ 
+
+\end{adjustwidth}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## In summary, three precepts guide one's choice of graph type
+
+\vertskip{0.5}
+\begin{tabular}{@{} >{\centering\arraybackslash} m{42mm} m{66mm} @{}}
+
+ \includegraphics[width = 42mm]{visuals/sd011-34.png} 
+& \alertbf{Data structure} determines\newline which graph types are feasible\\
+
+\includegraphics[width = 42mm, trim = 3mm 10mm 10mm 17mm, clip = TRUE]{visuals/sd011-34b.png}
+& \alertbf{Graphical repertoire} determines\newline which graph types you explore\\
+
+\includegraphics[width = 42mm, trim = 0mm 5mm 0mm 6mm, clip = TRUE]{visuals/align-visual-with-verbal.png}
+& \alertbf{Design choices} align your visual argument\newline with your rhetorical goals 
+
+\end{tabular}
+
+
+## References
+\scriptsize
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+```{r}
+# pdf slide byproducts
+unlink("slides/*.tex")
+unlink("slides/*.aux")
+unlink("slides/*.snm")
+unlink("slides/*.toc")
+unlink("slides/*.out")
+unlink("slides/*.nav")
+unlink("slides/*.log")
+```
+

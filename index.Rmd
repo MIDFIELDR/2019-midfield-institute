@@ -5,7 +5,7 @@ output:
   bookdown::gitbook:
     pandoc_args: ["--csl", "journal-of-glaciology.csl"]
 documentclass: book
-bibliography: [references.bib, references447.bib, packages.bib]
+bibliography: [references.bib, references447.bib]
 link-citations: yes
 github-repo: MIDFIELDR/workshops
 description: "A public site for workshops for access to MIDFIELD"
@@ -16,7 +16,7 @@ nocite: |
 
 ```{r echo = FALSE}
 # create a bib database for R packages
-write_bib(c(.packages(), "tidyverse", "seplyr", "wrapr", "cdata", "knitr", "rio", "inspectdf", "socviz", "gapminder", "lubridate"), "packages.bib")
+# write_bib(c(.packages(), "packagename", "packagename"), "packages.bib")
 ```
 
 ```{r echo = FALSE}
@@ -53,7 +53,7 @@ This site provides access to workshop materials for studying how undergraduate s
 
 **Susan Lord** is Director of the MIDFIELD Institute and Professor and Chair of Engineering and Professor of Electrical Engineering at the University of San Diego.
 
-**Richard Layton** is the MIDFIELD Director of Data Display and Professor of Mechanical Engineering at Rose-Hulman. He is the lead developer of the R packages used in this workshop.
+**Richard Layton** is the MIDFIELD Data Display Specialist and Professor of Mechanical Engineering at Rose-Hulman. He is the lead developer of the R packages used in this workshop.
 
 
 

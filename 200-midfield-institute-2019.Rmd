@@ -124,29 +124,25 @@ kable(agenda_day0)
 ```{r}
 agenda_day1 <- build_frame(
         "Time", "Activities" |
-        "8:00-9:00", "*Breakfast.* Provided in the workshop room." | 
+        "8:30--9:00", "*Breakfast.* Provided in the workshop room." | 
                 
-        "9:00--10:00", "*Introductions.* Introduce presenters, participants, objectives, MIDFIELD, and persistence metrics we have found insightful." |
+        "9:00--10:00", "*Introductions.* Introduce facilitators, objectives, MIDFIELD. Introduce participants." |
                 
-          "", "Break" |
+        "10:00--12:00", "*Guided practice.* Introduction. Self-paced tutorials using midfieldr and midfielddata." |
                 
-        "10:15--12:15", "*Guided practice.* Self-paced tutorials using midfieldr and midfielddata." |
+        "12:00--1:00", "*Lunch.* Provided in the workshop room."  |
                 
-        "12:15--1:15", "*Lunch.* Provided in the workshop room."  |
+        "1:00--1:30", "*Metaphors and metrics.* Pipelines, pathways, and ecosystems." |
                 
-        "1:15--2:15", "*Defining your question.* Examples of things to look out for and consider when exploring research questions." |
+        "1:30--2:00", "*Defining your question.* Examples of things to look out for and consider when exploring research questions." |
+                
+        "2:00--4:30", "*Self-directed practice.* Define a problem involving the data that interests you. Form impromptu pairs around research areas." |
                 
         "", "Break" |
                 
-        "2:30--4:30", "*Self-directed practice.* Review the variables in midfielddata. Define a problem involving the data that interests you. Find a collaborator and begin exploring the problem." |
+        "5:00--6:00", "*Reception.* Purdue Union, Anniversary Drawing Room" |
                 
-        "4:30--4:45", "*Conclusion.* Reflection and discussion" |
-                
-          "", "Break" |
-                
-          "5:00--7:00", "*Reception.* Purdue Union, Anniversary Drawing Room" |
-                
-          "7:00", "*Adjourn.* Make your own dinner plans."
+        "6:00", "*Adjourn.* Make your own dinner plans."
 )
 kable(agenda_day1)
 ```
@@ -174,15 +170,23 @@ kable(agenda_day1)
 ```{r}
 agenda_day2 <- build_frame(
         "Time", "Activities" |
-        "8:00--9:00", "*Breakfast.* Provided in the workshop room." |
+        "8:30--9:00", "*Breakfast.* Provided in the workshop room." |
+                
         "9:00--10:00", "*Data visualization.* Elements of effective graphs. Expanding your graphical repertoire." |
-        "", "Break" |
+                
+        "", "Break and group photo" |
+                
         "10:15--10:45", "*Explore data.* Finding and presenting stories in the data." |
+                
         "10:45--12:15", "*Self-directed work.* Continue the collaborative work from Day 1. Produce data displays that address your research question." |
+                
         "12:15--3:15", "*Lunch and poster preparation.* Lunch provided in the workshop room. Participants make posters to display their work-in-progress." |
-        "3:15--4:15", "*Poster session.*" |
-        "4:15--5:00", "*Conclusion.* Summarize objectives. Plans for proposed 2020 FIE Special Session to showcase participants' work.  Assess MIDFIELD Institute." |
-        "5:00", "*Adjourn*"
+                
+        "3:15--4:00", "*Poster session.*" |
+                
+        "4:00--4:15", "*Conclusion.* Summarize objectives. Plans for proposed 2020 FIE Special Session to showcase participants' work.  Assess MIDFIELD Institute." |
+                
+        "4:15", "*Adjourn*"
 )
 kable(agenda_day2)
 ```

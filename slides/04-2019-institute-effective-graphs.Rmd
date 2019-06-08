@@ -1,0 +1,910 @@
+---
+title:     "Elements of effective graphs"
+subtitle:  "2019 MIDFIELD Institute"
+author:    "Richard Layton"
+date:      "June 2019"
+output:
+  binb::metropolis:
+    includes:
+      in_header: "../manage/slides_preamble.tex"
+fontsize:   12pt
+bibliography: ["../references447.bib"]
+csl: "../manage/journal-of-glaciology.csl"
+nocite: | 
+  @Tufte:1983, @Wainer:2000, @Robbins:2013, @Kostelnick+Hassett:2003
+---
+
+```{r include = FALSE}
+library("knitr")
+# opts_knit$set(root.dir = "../")
+opts_chunk$set(echo = FALSE, 
+               warning = FALSE, 
+               message = FALSE, 
+               fig.asp = 1/2.5)
+```
+
+
+```{r echo = FALSE}
+library("tidyverse")
+library("forcats")
+library("midfieldr")
+library("bibtex")
+
+# theme for these slides 
+font_size  <- 24
+font_color <- rcb("dark_Gray")
+theme_slides <- theme_bw() + 
+        theme(panel.grid.minor = element_blank(),  
+              panel.grid.major = element_line(size = 1), 
+                text = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                plot.title = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                plot.subtitle = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                plot.caption  = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                axis.title    = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                axis.text     = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                legend.title  = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                legend.text   = element_text(size = font_size, 
+                        face = "plain", color = font_color),
+                strip.text    = element_text(size = font_size, 
+                        face = "plain", color = font_color, hjust = 0)
+        )
+```
+
+
+
+
+
+## In your handout, list the slices A thru E from largest to smallest
+
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.6\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/slides-pie-1.pdf}
+  
+  \column{0.4\textwidth}
+  
+\begin{itemize}\Large
+  \item<2->  \alert {\bf B} (largest)
+  \item<3->  \alert {\bf D}
+  \item<3->  \alert {\bf A}
+  \item<3->  \alert {\bf C} 
+  \item<3->  \alert {\bf E} (smallest)
+\end{itemize}
+  
+\end{columns}
+
+\vspace{2\baselineskip}
+\scriptsize Adapted from [@Robbins:2013, Ch 2]
+
+
+
+
+
+
+
+## The same data arranged along a common axis  
+
+Comparing values along a common axis is a high-accuracy visual task. 
+  
+```{r}
+df2 <- tribble(~N, ~pie, 
+                23, "B", 
+                21, "D", 
+                20, "A", 
+                19, "C", 
+                17, "E") %>% 
+        mutate(pie = fct_reorder(pie, N)) 
+
+ggplot(df2, aes(x = N, y = pie)) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        labs(x = "", y = "") +
+        scale_x_continuous(breaks = c(17, 18, 19, 20, 21, 22, 23)) +
+        theme_slides
+```
+
+
+
+
+
+  
+## Structured data. What patterns do you see in these data? 
+
+
+\bigskip
+
+\includegraphics[width = 0.9\linewidth]{visuals/structured-data.png} 
+
+
+\vspace{0\baselineskip}
+\scriptsize Adapted from [@Robbins:2013, Ch 2] 
+
+
+
+
+
+
+
+## Structured data on a common scale. Any new observations? 
+
+```{r fig.asp = 1/2}
+df <- wrapr::build_frame(
+        "label"     ,"item" , "value" |
+        "Item 09"   ,   9   , 6.5     |
+        "Item 01"   ,   1   , 7       |
+        "Item 05"   ,   5   , 7.5     |
+        "Item 03"   ,   3   , 8       |
+        "Item 07"   ,   7   , 8.5     |
+        "Item 10"   ,  10   , 11.5    |
+        "Item 02"   ,   2   , 12      |
+        "Item 06"   ,   6   , 12.5    |   
+        "Item 04"   ,   4   , 13      |
+        "Item 08"   ,   8   , 13.5    )
+
+df <- df %>% 
+  mutate(oddeven = ifelse(item %% 2 == 0, "even", "odd")) %>% 
+  arrange(oddeven, value) %>% 
+  mutate(cycle = rep(1:5, 2))
+
+
+ggplot(data = df, mapping = aes(x = value, y = label)) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        labs(x = "", y = "") + 
+        scale_x_continuous(limits = c(0, 15)) +
+        theme_slides 
+```
+
+
+
+
+
+
+## Reorder the rows by the data values. New observations? 
+
+```{r fig.asp = 1/2}
+ggplot(data = df, mapping = aes(x = value, y = reorder(label, value))) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        labs(x = "", y = "") + 
+        scale_x_continuous(limits = c(0, 15)) +
+        theme_slides
+```
+
+
+
+
+
+
+
+
+
+## Suppose we move the item number to the data marker. 
+
+```{r fig.asp = 1/2}
+ggplot(data = df, mapping = aes(x = value, y = reorder(label, value))) +
+        geom_point(size = 11, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 11, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        geom_text(mapping = aes(x = value, y = reorder(label, value), label = item), size = 7.5) +
+        labs(x = "", y = "") + 
+        scale_x_continuous(limits = c(0, 15)) +
+        theme_slides 
+```
+
+
+
+
+
+
+## Even-odd pairs emerge 
+
+```{r fig.asp = 1/3}
+ggplot(data = df, mapping = aes(x = value, y = cycle)) +
+        geom_point(size = 11, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 11, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        geom_text(mapping = aes(x = value, y = cycle, label = item), 
+                  size = 7.5) +
+        labs(x = "", y = "") + 
+        scale_x_continuous(limits = c(0, 15)) +
+        scale_y_continuous(limits = c(0.5, 5.5)) +
+        theme_slides +
+        theme(axis.text.y = element_blank())
+```
+
+
+\bigskip 
+The greatest value of data visualization is when       
+\alertbf{it forces us to notice what we never expected to see}.    
+\raggedleft --- John Tukey (1915--2000)
+
+
+
+  
+ 
+## Slices are what percentage of the whole? 
+
+\bigskip
+
+\includegraphics[width=1\linewidth]{visuals/slides-3d-pie-1.pdf} 
+
+  \begin{tabular}{@{} lr @{}}
+    Fill in the blanks         & A. \Large\rule{0.5in}{0.5pt}\\
+    The total should be 100\%  & B. \Large\rule{0.5in}{0.5pt}\\
+                               & C. \Large\rule{0.5in}{0.5pt}\\
+                               & D. \Large\rule{0.5in}{0.5pt}\\
+  \end{tabular} 
+  
+\vspace{1\baselineskip}
+\scriptsize Adapted from [@Robbins:2013, Ch 2]  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+## 3D-effects distort our judgment  
+
+\bigskip
+
+\includegraphics[width=1\linewidth]{visuals/slides-3d-pie-1.pdf} 
+
+  \begin{tabular}{@{} lr @{}}
+    Fill in the blanks         & A. \quad \alert {\bf\Large 20\%}\\
+    The total should be 100\%  & B. \quad \alert {\bf\Large 20\%}\\
+                               & C. \quad \alert {\bf\Large 20\%}\\
+                               & D. \quad \alert {\bf\Large 40\%}\\
+  \end{tabular}  
+  
+\vspace{1\baselineskip}
+\scriptsize Adapted from [@Robbins:2013, Ch 2] 
+
+
+
+
+
+
+## Again, the same data arranged along a common axis  
+
+A high-accuracy visual task. 
+  
+```{r}
+df2 <- tribble(~N, ~pie, 
+                20, "A", 
+                20, "B", 
+                20, "C", 
+                40, "D") %>% 
+        mutate(pie = fct_reorder(pie, N)) 
+
+ggplot(df2, aes(x = N, y = pie)) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        labs(x = "", y = "") +
+        scale_x_continuous(limits = c(18, 42)) +
+        theme_slides
+```
+    
+  
+## Write down the heights of the bars 
+
+\bigskip
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.65\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/slides-3d-bar-1.pdf} 
+  
+  
+  \column{0.05\textwidth}
+  
+  \column{0.3\textwidth}
+  This is a visual inspection only. 
+  
+  \bigskip
+  
+  \begin{tabular}{@{} l @{}}
+  Fill in the blanks\\  
+  A. \Large\rule{0.5in}{0.5pt}\\
+  B. \Large\rule{0.5in}{0.5pt}\\
+  C. \Large\rule{0.5in}{0.5pt}\\
+  D. \Large\rule{0.5in}{0.5pt}\\
+  \end{tabular} 
+  
+\end{columns}
+
+\vspace{0\baselineskip}
+\scriptsize Adapted from [@Robbins:2013, p. 22]
+
+
+
+
+
+##  Again, 3D-effects distort our judgment 
+
+\bigskip
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.65\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/slides-3d-bar-1.pdf} 
+  
+  
+  \column{0.05\textwidth}
+  
+  \column{0.3\textwidth}
+  This is a visual inspection only. 
+  
+  \bigskip
+  
+  \begin{tabular}{@{} l @{}}
+  Fill in the blanks\\  
+  A. \quad \alert {\bf\Large 2}\\
+  B. \quad \alert {\bf\Large 4}\\
+  C. \quad \alert {\bf\Large 6}\\
+  D. \quad \alert {\bf\Large 8}\\
+  \end{tabular} 
+  
+\end{columns}
+  
+  
+  
+  
+
+
+<!-- ## Again, the same data arranged along a common axis   -->
+
+<!-- A high-accuracy visual task.  -->
+
+```{r}
+df2 <- tribble(~N, ~pie,
+                2, "A",
+                4, "B",
+                6, "C",
+                8, "D") %>%
+        mutate(pie = fct_reorder(pie, N))
+
+# ggplot(df2, aes(x = N, y = pie)) +
+#         geom_point(size = 7, alpha = 0.7, color = rcb("light_BG")) +
+#         geom_point(size = 7, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+#         labs(x = "", y = "") +
+#         # scale_x_continuous(limits = c(18, 42)) +
+#         theme_slides
+```
+
+    
+    
+    
+  
+## You can use bars, but must include zero
+
+```{r}
+bar1 <- ggplot(df2, aes(x = pie, y = N)) +
+        geom_col(color = rcb("mid_BG"), fill = rcb("mid_BG"), width = 0.35) +
+        labs(x = "", y = "") +
+        coord_flip() + 
+        theme_slides + 
+        theme(rect = element_rect(fill = "transparent"))
+bar1
+```
+
+
+
+
+
+
+
+##  If you mark the endpoints, you can omit the bar
+
+```{r}
+bar2 <- bar1 +
+        geom_col(color = rcb("light_BG"), fill = rcb("pale_BG"), width = 0.4) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG"))
+
+bar2
+```
+
+  
+  
+  
+  
+  
+  
+ 
+##  Producing a ``dot plot'' with rows ordered per the data 
+
+```{r}
+ggplot(df2, aes(x = N, y = pie)) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        scale_x_continuous(limits = c(0, 8)) +
+        labs(x = "", y = "") +
+        theme_slides
+```
+
+
+  
+  
+  
+  
+  
+  
+  
+## 1st attempt: Visually estimate the state areas  
+
+\bigskip
+
+Visual estimation of area is a low-accuracy task. 
+
+\bigskip
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.45\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/slides-states-1.pdf} 
+  
+  
+  \column{0.05\textwidth}
+  
+  \column{0.55\textwidth}
+South Carolina (SC) $\approx$ 83,000 sq km. 
+  
+  \bigskip
+  
+  \begin{tabular}{@{} l r l @{}}
+  FL & \Large\rule{0.5in}{0.5pt} & \normalsize x 1000 sq. km\\
+  GA & \Large\rule{0.5in}{0.5pt} &\normalsize x 1000 sq. km\\
+  AL & \Large\rule{0.5in}{0.5pt} &\normalsize x 1000 sq. km\\
+  SC & 83 &\normalsize x 1000 sq. km\\
+  \end{tabular}
+  
+\end{columns} 
+  
+  
+  
+\vspace{0\baselineskip}
+\scriptsize Adapted from [@Ihaka:2007] 
+  
+  
+  
+  
+  
+  
+  
+## 2nd attempt: Visually estimate the state areas  
+
+  
+```{r}
+df3 <- tribble(~area, ~state, 
+                82933, "SC", 
+                170312, "FL", 
+                153910, "GA", 
+                135767, "AL") %>% 
+        mutate(state = fct_reorder(state, area)) 
+
+fig3 <- ggplot(df3, aes(x = area/1000, y = state)) +
+        geom_point(size = 8, alpha = 0.7, color = rcb("light_BG")) +
+        geom_point(size = 8, shape = 1, stroke = 1.5, color = rcb("dark_BG")) +
+        labs(x = "", y = "") +
+        scale_x_continuous(limits = c(80, 180), 
+                breaks = c(80, 100, 120, 140, 160, 180)) +
+        theme_slides + 
+        theme(rect = element_rect(fill = "transparent"))
+
+ggsave(filename = "slides-my-states.png", 
+        path   = "visuals",
+        width  = 10, 
+        height = 10/3, 
+        units  = "in", # "in", "cm", or "mm"
+        dpi    = 600)
+```
+
+ 
+\bigskip
+
+\includegraphics[width=1\linewidth]{visuals/slides-my-states.png} 
+
+\begin{center}
+  \begin{tabular}{@{} l r l @{}}
+  FL & \Large\rule{0.5in}{0.5pt} & \normalsize x 1000 sq. km\\
+  GA & \Large\rule{0.5in}{0.5pt} & \normalsize x 1000 sq. km\\
+  AL & \Large\rule{0.5in}{0.5pt} & \normalsize x 1000 sq. km\\
+  SC & 83 & \normalsize x 1000 sq. km\\
+  \end{tabular}
+\end{center}
+  
+
+
+
+
+
+
+
+  
+## Your estimates have probably improved  
+
+\bigskip
+
+\includegraphics[width=1\linewidth]{visuals/slides-my-states.png} 
+
+\begin{center}
+  \begin{tabular}{@{} l r @{}}
+  FL & \alert {\bf\Large 170} \normalsize x 1000 sq. km\\
+  GA & \alert {\bf\Large 154} \normalsize x 1000 sq. km\\
+  AL & \alert {\bf\Large 136} \normalsize x 1000 sq. km\\
+  SC & \alert {\bf\Large 83} \normalsize x 1000 sq. km\\
+  \end{tabular}
+\end{center}
+
+
+
+
+
+
+
+## Color represents \alert{surface area}. What is the visual story?  
+
+\begin{adjustwidth}{-2.9em}{0em}
+\vertskip{13.3} 
+\includegraphics[scale = 0.595, trim = 0mm 0.3mm 0mm 4mm, clip = TRUE]{../figures/election-map-2016-county-area.png}
+\end{adjustwidth}
+\FloatBarrier
+
+
+## The visual \alert{ratio of surface areas} $\approx$ 1 : 4
+
+\begin{adjustwidth}{-2.9em}{0em}
+\vertskip{13.3} 
+\includegraphics[scale = 0.538, trim = 1.5mm 0mm 0mm 0mm, clip = TRUE]{../figures/election-map-2016-county-area-2.png}
+\end{adjustwidth}
+\FloatBarrier
+
+
+
+
+
+
+
+
+## The visual \alert{ratio of votes cast} $\approx$ 1.05 : 1 (65.9 M to 63.0 M)
+
+\begin{adjustwidth}{-2.9em}{0em}
+\vertskip{13.3} 
+\includegraphics[scale = 0.4, trim = 0mm 0mm 0mm 3mm, clip = TRUE]{../figures/election-map-2016-one-dot-one-vote.png}
+\end{adjustwidth}
+\FloatBarrier
+
+
+
+
+
+
+
+
+
+
+
+
+## Area is \alert{county GDP}. Color by party. What is the visual story?
+
+\begin{adjustwidth}{-2.9em}{0em}
+\vertskip{13.2} 
+\includegraphics[scale = 0.41, trim = 0mm 2mm 0mm 1mm, clip = TRUE]{../figures/election-map-2016-county-gdp.png}
+\end{adjustwidth}
+\FloatBarrier
+
+
+
+
+
+
+
+
+## The \alert{metric that matters}. What is the visual story?
+
+\begin{adjustwidth}{-2.9em}{0em}
+\vertskip{12} 
+\includegraphics[scale = 0.41, trim = 0mm 0mm 0mm 0mm, clip = TRUE]{../figures/election-map-2016-electoral-votes.png}
+\end{adjustwidth}
+\FloatBarrier
+
+
+
+
+
+
+
+
+## The previous graphs \alert{conceal what story} ?
+
+```{r fig.asp = 1/2.25}
+df <- wrapr::build_frame(
+                "voter", "pct" |
+                "Did not vote", 40  |
+                "Voted for Trump", 28 |
+                "Voted for Clinton", 29 |
+                "Voted for other candidates", 3) %>% 
+        mutate(voter = fct_reorder(voter, pct)) 
+
+my_color   <- c(rcb("dark_BG"), "#BF0A30", "#002868", rcb("mid_Gray"))
+
+ggplot(data = df, mapping = aes(x = pct, y = voter, color = voter)) +
+        geom_point(size = 8, alpha = 0.7) +
+        geom_point(size = 8, alpha = 1, shape = 1, stroke = 1.5) +
+        scale_x_continuous(limits = c(0, 45)) +
+        scale_color_manual(values = my_color) +
+        labs(x = "\nPercent of eligible voters", y = "") +
+        theme_slides +
+        theme(legend.position = "none")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The trouble with bars. What's wrong with this graph? 
+
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.6\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/science-bars-1.png}
+  
+  \column{0.45\textwidth}
+  
+
+\end{columns}
+
+\vspace{1\baselineskip}
+\scriptsize  Norman L. Fortenberry, Jacquelyn F. Sullivan, Peter N. Jordan, and Daniel W. Knight (2007), Engineering education research aids instruction, *Science*, 31:1175--1176. 
+
+
+
+
+
+
+
+
+
+## A nearly constant difference seems to increase in significance
+
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.6\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/science-bars-4.png}
+  
+  \column{0.45\textwidth}
+  
+\begin{itemize}
+  \item<2-> \alertbf{Can you identify the missing information?}
+\end{itemize}
+  
+\end{columns}
+
+\vspace{1\baselineskip}
+\scriptsize  Norman L. Fortenberry, Jacquelyn F. Sullivan, Peter N. Jordan, and Daniel W. Knight (2007), Engineering education research aids instruction, *Science*, 31:1175--1176. 
+
+
+
+
+
+
+
+
+
+
+
+## Redesigned, with full scales, a different story emerges
+
+\bigskip
+
+\begin{columns}[onlytextwidth]
+  
+  \column{0.6\textwidth}
+  
+  \bigskip
+  
+  \includegraphics[width=1\linewidth]{visuals/science-bars-3.png}
+  
+  \column{0.45\textwidth}
+  
+\begin{itemize}
+  \item<2-> FYEP impact is in the first year. 
+  \item<2-> Attrition rate afterwards is about the same for both groups.
+\end{itemize}
+  
+\end{columns}
+
+
+
+
+
+
+
+## The  experts tell us 
+
+\begin{columns}
+\column{0.4\linewidth}
+\includegraphics[width=1\linewidth]{visuals/cairo.png} 
+
+\column{0.6\linewidth}
+
+\hangquote``Graphicacy'' is as important as numeracy to the modern educated citizen
+
+$\qquad$
+
+Be aware that we all like charts that pander to our expectations or biases 
+
+\end{columns}
+
+\footnotesize 
+[@Cairo:2018:video]
+
+\tiny  Image from https://tinyurl.com/y5g7jbzt
+
+
+
+
+
+
+
+
+## The experts tell us 
+
+\begin{columns}
+\column{0.4\linewidth}
+\includegraphics[width=1\linewidth]{visuals/doumont.jpg} 
+
+\column{0.6\linewidth}
+Optimal design primarily depends on    
+
+\begin{itemize}
+\item The message to be conveyed    
+\item The variables to be shown   
+\end{itemize}
+
+\end{columns}
+
+      
+[@Doumont:2009]
+
+
+\tiny  Image from http://www.principiae.be/pdfs/Principiae-2014.pdf
+
+
+
+
+
+
+
+
+
+## The  experts tell us 
+
+\begin{columns}
+\column{0.4\linewidth}
+\includegraphics[width=1\linewidth]{visuals/tufte.jpg} 
+
+\column{0.6\linewidth}
+
+
+The task of the designer is to give visual access to the subtle and the difficult --- that is, reveal the complex.
+
+
+
+
+\end{columns}
+
+\footnotesize      
+[@Tufte:1983]
+
+\tiny  Image from https://en.wikipedia.org/wiki/Edward_Tufte
+
+
+
+
+
+
+
+
+## The  experts tell us 
+
+\begin{columns}
+\column{0.4\linewidth}
+\includegraphics[width=1\linewidth]{visuals/evergreen.jpg} 
+
+\column{0.6\linewidth}
+What’s your point? 
+
+$\qquad$
+
+Seriously, that's the most important question. 
+
+
+\end{columns}
+
+\footnotesize 
+[@Evergreen:2017]
+
+\tiny  Image from https://tei.cgu.edu/people/stephanie-evergreen-phd/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## References
+\scriptsize
+
+```{r}
+# pdf slide byproducts
+unlink("slides/*.tex")
+unlink("slides/*.aux")
+unlink("slides/*.snm")
+unlink("slides/*.toc")
+unlink("slides/*.out")
+unlink("slides/*.nav")
+unlink("slides/*.log")
+```
+
+
+

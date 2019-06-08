@@ -1,0 +1,269 @@
+---
+title:     "Introduction to midfieldr"
+subtitle:  "2019 MIDFIELD Institute"
+author:    "Richard Layton"
+date:      "June 2019"
+output:
+  binb::metropolis:
+    includes:
+      in_header: "../manage/slides_preamble.tex"
+fontsize:   12pt
+bibliography: ["../references447.bib"]
+csl: "../manage/journal-of-glaciology.csl"
+nocite: | 
+  @Layton+Long+Ohland:2018:midfielddata, @Layton+Long+Ohland:2018:midfieldr, @MIDFIELD:2019, @Ohland+Zhang+Thorndyke+Anderson:2004
+---
+
+```{r include = FALSE}
+library("knitr")
+# opts_knit$set(root.dir = "../")
+opts_chunk$set(echo = FALSE, 
+               warning = FALSE, 
+               message = FALSE, 
+               fig.asp = 1/2.5)
+library("tidyverse")
+library("forcats")
+library("midfieldr")
+library("bibtex")
+```
+
+## In education, cross-sectional designs are typical
+
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 55mm 75mm 45mm 70mm, width = \linewidth, keepaspectratio, clip = true]{visuals/cross-section-research.pdf}
+\end{adjustwidth}
+
+
+
+
+
+
+
+
+## Longitudinal studies offer some advantages
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 55mm 75mm 45mm 70mm, width = \linewidth, keepaspectratio, clip = true]{visuals/longitudinal-research.pdf}
+\end{adjustwidth}
+
+
+
+
+
+
+
+## MIDFIELD is a database for longitudinal studies
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 5mm 0mm 0mm, width = \linewidth, keepaspectratio,  clip = true]{visuals/midfieldfinal.pdf}
+\end{adjustwidth}
+
+\begin{itemize}
+  \item 2.2 M undergraduate students at 23 US institutions
+  \item Whole-population data from registrars, 1988--2017
+  \item For more information about MIDFIELD  \href{https://engineering.purdue.edu/MIDFIELD/}{(link)} 
+\end{itemize}
+
+
+
+
+
+
+## MIDFIELD data are curated in four categories
+
+\vertskip{-3.8}
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 85mm 0mm 45mm, width = 0.96\linewidth, keepaspectratio, clip = true]{visuals/make-figures-11.pdf}
+\end{adjustwidth}
+
+\begin{tabular}{@{} m{30mm} m{100mm} @{}}
+\raggedleft\raisebox{-1mm}{\includegraphics[height = 8mm]{visuals/logo-SAS.png}}
+&
+\LARGE\alertbf{2.2M students}
+\end{tabular}
+
+
+
+
+
+## R package midfielddata provides a stratified sample
+
+\vertskip{-3.8}
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 85mm 5mm 45mm, width = 0.96\linewidth, keepaspectratio, clip = true]{visuals/make-figures-11b.pdf}
+\end{adjustwidth}
+
+
+\begin{tabular}{@{} m{30mm} m{100mm} @{}}
+\raggedleft\raisebox{0mm}{\includegraphics[height = 10mm]{visuals/logo-R.png}}
+&
+\LARGE\alertbf{98,000 students}
+\end{tabular}
+
+
+
+
+
+
+
+## Each observation is \alert{a unique student}
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 30mm 5mm 45mm, width = 0.96\linewidth, keepaspectratio, clip=true]{visuals/make-figures-12.pdf}
+
+\footnotesize\raggedright
+\begin{tabular}{@{} p{0mm} p{1.2in} @{}}
+& \texttt{\textbf{midfieldstudents}}\\
+& 98,000 observations\\
+& 19 Mb of memory
+\end{tabular}
+\end{adjustwidth}
+
+
+
+
+
+
+
+## Each observation is \alert{one term for one student}
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 30mm 5mm 45mm, width = 0.96\linewidth, keepaspectratio, clip=true]{visuals/make-figures-13.pdf}
+
+\footnotesize\raggedright
+\begin{tabular}{@{} p{1.2in} p{1.1in}  @{}}
+ & \texttt{\textbf{midfieldterms}}\\
+ &   729,000 observations\\
+ &   82 Mb of memory\\
+\end{tabular}
+\end{adjustwidth}
+
+
+
+
+
+
+
+
+
+
+
+
+## Each observation is \alert{one course for one student}
+
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 30mm 5mm 45mm, width = 0.96\linewidth, keepaspectratio, clip = true]{visuals/make-figures-14.pdf}
+
+\footnotesize\raggedright
+\begin{tabular}{@{} p{2.4in} p{1.1in}  @{}}
+ & \texttt{\textbf{midfieldcourses}}\\
+ &   3.5 M observations\\
+ &   348 Mb of memory\\
+\end{tabular}
+\end{adjustwidth}
+
+
+
+
+
+
+## Each observation is \alert{a unique student}
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 0mm 30mm 5mm 45mm, width = 0.96\linewidth, keepaspectratio, clip = true]{visuals/make-figures-15.pdf}
+
+\footnotesize\raggedright
+\begin{tabular}{@{} p{3.6in} p{1.2in}  @{}}
+ & \texttt{\textbf{midfielddegrees}}\\
+ &   98,000 observations\\
+ &   10 Mb of memory
+\end{tabular}
+\end{adjustwidth}
+
+
+
+
+
+
+
+
+
+## \alert{midfieldr} provides the functions for working with \alert{midfieldddata} 
+
+\begin{adjustwidth}{-8mm}{-8mm}
+\centering
+\includegraphics[trim = 45mm 50mm 45mm 50mm, width = \linewidth, keepaspectratio, clip = true]{visuals/make-figures-02b-2.pdf}
+\end{adjustwidth}
+
+
+
+
+
+
+
+## For more information, see these package resources online 
+
+\begin{adjustwidth}{-6mm}{-6mm}
+
+\begin{tabular}{@{} p{7mm} p{200mm}  @{}}
+\raggedleft\raisebox{-18mm}{\includegraphics[width = 14mm]{visuals/logo-midfieldr.png}}
+ & 
+\begin{itemize}
+ \item  Package website \href{https://midfieldr.github.io/midfieldr/}{(link)} for more information and tutorials
+ \item  Package reference page \href{https://midfieldr.github.io/midfieldr/reference/}{(link)} for descriptions of functions
+ \item  Package source code \href{https://github.com/MIDFIELDR/midfieldr}{(link)} 
+\end{itemize}\\
+
+\raggedleft\raisebox{-18mm}{\includegraphics[width = 14mm]{visuals/logo-midfielddata.png}}
+ & 
+\begin{itemize}
+ \item  Package website \href{https://midfieldr.github.io/midfielddata/}{(link)} for more information   
+ \item  Package reference page \href{https://midfieldr.github.io/midfielddata/reference/}{(link)} for data dictionaries  
+  \item  Package source code \href{https://github.com/MIDFIELDR/midfielddata}{(link)} 
+\end{itemize}
+
+\end{tabular}
+
+\end{adjustwidth}
+
+
+
+
+
+
+
+
+
+
+
+
+
+## References
+\scriptsize
+
+
+```{r}
+# pdf slide byproducts
+unlink("slides/*.tex")
+unlink("slides/*.aux")
+unlink("slides/*.snm")
+unlink("slides/*.toc")
+unlink("slides/*.out")
+unlink("slides/*.nav")
+unlink("slides/*.log")
+```
+
+
