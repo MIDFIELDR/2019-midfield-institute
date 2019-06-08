@@ -114,7 +114,7 @@ As you work on any of these, please feel free to experiment to investigate the d
 
 ## Metaphors and metrics 
 
-- Beyond pipeline and pathways: Ecosystem mrtrics [[slides]()] 
+- Beyond pipeline and pathways: Ecosystem mrtrics [[slides](posted/03-2019-institute-metaphors-and-metrics.pdf)] 
 
 
 
@@ -124,7 +124,7 @@ As you work on any of these, please feel free to experiment to investigate the d
 ## Defining your questions
 
 
-- Defining your questions [[slides]()] 
+- Defining your questions [[slides](posted/04-2019-institute-define-a-question.pdf)] 
 
 
 ## Self-directed practice 
