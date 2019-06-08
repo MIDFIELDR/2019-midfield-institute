@@ -114,7 +114,7 @@ As you work on any of these, please feel free to experiment to investigate the d
 
 ## Metaphors and metrics 
 
-- Beyond pipeline and pathways: Ecosystem mrtrics [[slides](posted/03-2019-institute-metaphors-and-metrics.pdf)] 
+- Beyond pipeline and pathways: Ecosystem metrics [[slides](posted/03-2019-institute-metaphors-and-metrics.pdf)] 
 
 
 
