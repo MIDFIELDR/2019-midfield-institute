@@ -14,6 +14,14 @@ htmltools::img(src = knitr::include_graphics("figures/midfield-grad-logo.png"),
 Agenda [[link](#day1agenda)]
 
 
+
+
+## Introductions 
+
+- MIDFIELD Institute introduction [[slides](posted/01-2019-institute-introduction.pdf)] 
+- Introduce the midfieldr package [[slides](posted/02-2019-institute-introduce-midfieldr.pdf)] 
+
+
 ##  Guided practice
 
 The tutorial assumes that   
@@ -104,3 +112,19 @@ As you work on any of these, please feel free to experiment to investigate the d
 
 
 
+## Metaphors and metrics 
+
+- Beyond pipeline and pathways: Ecosystem mrtrics [[slides]()] 
+
+
+
+
+
+
+## Defining your questions
+
+
+- Defining your questions [[slides]()] 
+
+
+## Self-directed practice 

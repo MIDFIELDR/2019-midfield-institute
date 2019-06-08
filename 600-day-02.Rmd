@@ -4,8 +4,27 @@
 
 Agenda [[link](#day2agenda)]
 
-## Prerequisites {-} 
 
-- We assume you have completed all of the [Getting started](#getting-started) instructions. 
-- Run `midfield_institute.Rproj` to start every work session 
+## Data visualization 
 
+
+- Elements of effective graphs [[slides](posted/05-2019-institute-effective-graphs-posted.pdf)] 
+- Expanding your graphical repertoire [[slides](posted/06-2019-institute-graphical-repertoire.pdf)] 
+
+
+
+## Explore data 
+
+
+- Finding and presenting stories in the data [[slides](posted/07-2019-institute-exploring-data-posted.pdf)]  
+
+
+
+## Self-directed work 
+
+
+## Poster  
+
+
+
+## Conclusion 
