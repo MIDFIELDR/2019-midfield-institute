@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-06-08">
+<meta name="date" content="2019-06-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -161,15 +161,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="day-0.html"><a href="day-0.html"><i class="fa fa-check"></i><b>4</b> Pre-Institute Workshop</a></li>
 <li class="chapter" data-level="5" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>5</b> R basics</a><ul>
 <li class="chapter" data-level="5.1" data-path="r-basics.html"><a href="r-basics.html#prerequisites"><i class="fa fa-check"></i><b>5.1</b> Prerequisites</a></li>
-<li class="chapter" data-level="5.2" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>5.2</b> Everything in R has a name</a></li>
-<li class="chapter" data-level="5.3" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>5.3</b> Everything in R is an object</a></li>
-<li class="chapter" data-level="5.4" data-path="r-basics.html"><a href="r-basics.html#do-things-in-r-using-functions"><i class="fa fa-check"></i><b>5.4</b> Do things in R using functions</a></li>
-<li class="chapter" data-level="5.5" data-path="r-basics.html"><a href="r-basics.html#r-functions-come-in-packages"><i class="fa fa-check"></i><b>5.5</b> R functions come in packages</a></li>
-<li class="chapter" data-level="5.6" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-class"><i class="fa fa-check"></i><b>5.6</b> R objects have class</a></li>
-<li class="chapter" data-level="5.7" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-structure"><i class="fa fa-check"></i><b>5.7</b> R objects have structure</a></li>
-<li class="chapter" data-level="5.8" data-path="r-basics.html"><a href="r-basics.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>5.8</b> R does what you tell it</a></li>
-<li class="chapter" data-level="5.9" data-path="r-basics.html"><a href="r-basics.html#pipe-operator"><i class="fa fa-check"></i><b>5.9</b> Pipe operator</a></li>
-<li class="chapter" data-level="5.10" data-path="r-basics.html"><a href="r-basics.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>5.10</b> Keyboard shortcuts</a></li>
+<li class="chapter" data-level="5.2" data-path="r-basics.html"><a href="r-basics.html#style-guide"><i class="fa fa-check"></i><b>5.2</b> Style guide</a></li>
+<li class="chapter" data-level="5.3" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>5.3</b> Everything in R has a name</a></li>
+<li class="chapter" data-level="5.4" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>5.4</b> Everything in R is an object</a></li>
+<li class="chapter" data-level="5.5" data-path="r-basics.html"><a href="r-basics.html#do-things-in-r-using-functions"><i class="fa fa-check"></i><b>5.5</b> Do things in R using functions</a></li>
+<li class="chapter" data-level="5.6" data-path="r-basics.html"><a href="r-basics.html#r-functions-come-in-packages"><i class="fa fa-check"></i><b>5.6</b> R functions come in packages</a></li>
+<li class="chapter" data-level="5.7" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-class"><i class="fa fa-check"></i><b>5.7</b> R objects have class</a></li>
+<li class="chapter" data-level="5.8" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-structure"><i class="fa fa-check"></i><b>5.8</b> R objects have structure</a></li>
+<li class="chapter" data-level="5.9" data-path="r-basics.html"><a href="r-basics.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>5.9</b> R does what you tell it</a></li>
+<li class="chapter" data-level="5.10" data-path="r-basics.html"><a href="r-basics.html#pipe-operator"><i class="fa fa-check"></i><b>5.10</b> Pipe operator</a></li>
+<li class="chapter" data-level="5.11" data-path="r-basics.html"><a href="r-basics.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>5.11</b> Keyboard shortcuts</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="graph-basics.html"><a href="graph-basics.html"><i class="fa fa-check"></i><b>6</b> Graph basics</a><ul>
 <li class="chapter" data-level="6.1" data-path="graph-basics.html"><a href="graph-basics.html#prerequisites-1"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
@@ -425,9 +426,9 @@ etc.
 <p>Use <code>class()</code> to determine the R data structure—in this case, <code>cpi</code> is a data frame.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cpi)
 <span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
-<p>Use <code>glimpse()</code> to examine the data frame—we discover the number of observations (1276), the number of variables (2), their names (DATE, VALUE), and their class or type (character, double).</p>
+<p>Use <code>glimpse()</code> to examine the data frame—we discover the number of observations (1277), the number of variables (2), their names (DATE, VALUE), and their class or type (character, double).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(cpi)
-<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Observations: 1,277</span>
 <span class="co">#&gt; Variables: 2</span>
 <span class="co">#&gt; $ DATE  &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, ...</span>
 <span class="co">#&gt; $ VALUE &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1...</span></code></pre>
@@ -446,7 +447,7 @@ etc.
 <span class="co">#&gt; # A tibble: 2 x 3</span>
 <span class="co">#&gt;   col_name size      pcnt</span>
 <span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 DATE     89.77 Kb  90.0</span>
+<span class="co">#&gt; 1 DATE     89.84 Kb  90.0</span>
 <span class="co">#&gt; 2 VALUE    10.02 Kb  10.0</span></code></pre>
 <p>Summarize the rate of missingness. Here, there are no missing values.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inspect_na</span>(cpi)    <span class="co"># NAs</span>
@@ -491,7 +492,7 @@ etc.
 <pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">date =</span> DATE, <span class="dt">cpi =</span> VALUE) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">glimpse</span>()
-<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Observations: 1,277</span>
 <span class="co">#&gt; Variables: 2</span>
 <span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
 <span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span></code></pre>
@@ -500,7 +501,7 @@ etc.
 <pre class="sourceCode r"><code class="sourceCode r">cpi &lt;-<span class="st"> </span>cpi <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">mutate</span>(<span class="dt">year =</span> lubridate<span class="op">::</span><span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">        </span><span class="kw">glimpse</span>()
-<span class="co">#&gt; Observations: 1,276</span>
+<span class="co">#&gt; Observations: 1,277</span>
 <span class="co">#&gt; Variables: 3</span>
 <span class="co">#&gt; $ date &lt;chr&gt; &quot;1913-01-01&quot;, &quot;1913-02-01&quot;, &quot;1913-03-01&quot;, &quot;1913-04-01&quot;, &quot;...</span>
 <span class="co">#&gt; $ cpi  &lt;dbl&gt; 9.8, 9.8, 9.8, 9.8, 9.7, 9.8, 9.9, 9.9, 10.0, 10.0, 10.1,...</span>

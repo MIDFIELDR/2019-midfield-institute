@@ -292,17 +292,24 @@ In this case, for example, I would type in the Console,
 install.packages("digest")
 ```
 
+You can install multiple packages using a vector of package names, e.g., 
+
+```r
+install.packages(c("package-name", "another-package-name", "next-package-name"))
+```
+
 Next 
 
 - Attempt to install midfieldr again: `devtools::install_github(repo = "MIDFIELDR/midfieldr")` 
-- If the message appears, manually install all packages listed one at a time 
-- Repeat until the message no longer appears and the Console responds with a prompt. 
+- If the message reappears, manually install all packages listed. 
+- Repeat 
+
 
 Confirm the installation is successful by loading the package and checking the help page comes up. 
 
 ```r
 library("midfieldr")
-? midfieldr
+?midfieldr
 ```
 
 
@@ -370,13 +377,14 @@ In the dialog box that appears,
 
 While file organization is a matter of personal preference, we ask that you use the directory structure shown here for your work in the workshop. 
 
-Create three folders in the project main directory, where  `your_project` is the name you gave the project, for example, `midfield_institute` or `fie_workshop`.
+Create three folders in the project main directory, where  `your_project` is the name you gave the project, for example, `midfield-institute`, `fie-workshop`, `midfieldr-practice`, etc.
 
-<pre><code class=""><span class="line">your_project/
-</span><span class="line">    ├── data/
-</span><span class="line">    ├── figures/
-</span><span class="line">    ├── scripts/
-</span><span class="line">    └── your_project.Rproj</span></code></pre>
+`r "\U2003"`                          `your-project\`  
+`r "\U2003\U2003\U2003\U251C\U2500"`  `data\`  
+`r "\U2003\U2003\U2003\U251C\U2500"`  `results\`  
+`r "\U2003\U2003\U2003\U251C\U2500"`  `scripts\`  
+`r "\U2003\U2003\U2003\U2514\U2500"`  `your-project.Rproj`  
+`r "\U2003"`
 
 
 If you prefer your instructions with commentary  (please use headphones or ear-buds if you watch the video during the workshop),  

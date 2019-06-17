@@ -82,6 +82,152 @@ Guidelines
 
 
 
+## Style guide {#style-guide}
+
+A style guide is about making your script readable---which is particularly useful when you ask someone to help you with your script. The following guidelines are adapted from  McConnell [-@McConnell:2004] and Wickham [-@Wickham:2019:styleguide]. 
+
+
+
+
+
+**Spaces.** Usewhitespacetoenhancereadability. Place spaces around operators (`=`, `+`, `-`, `<-`, etc.). Always put a space after a comma, but never before (just like in regular English). 
+
+```r
+# good
+height <- (feet * 12) + inches
+mean(x, na.rm = 10)
+
+# poor
+height<-feet*12+inches
+mean(x,na.rm=10)
+```
+
+The exception to the "spaces around operators" rule are those with high precedence such as exponentiation (`^`), sequence (`:`), or accessors (`[[` or `$`). These operators are written without spaces,    
+
+```r
+# good
+sqrt(x^2 + y^2)
+x <- 1:10
+df$z
+
+# poor
+sqrt(x ^ 2 + y ^ 2)
+x <- 1 : 10
+df $ z
+```
+
+Adding extra spaces OK if it improves alignment of `=` or `<-`.
+
+```r
+# good
+list(
+    total = a + b + c,
+    mean  = (a + b + c) / n
+)
+
+# also fine
+list(
+    total = a + b + c,
+    mean = (a + b + c) / n
+)
+```
+
+
+
+
+**Comments.** Avoid block comments that are hard to maintain, e.g., 
+
+    ####################################################################### 
+    ##  class: GigaTron                                                  ## 
+    ##                                                                   ## 
+    ##  author: Dwight K. Coder                                          ## 
+    ##  date: July 4, 2014                                               ## 
+    ##                                                                   ## 
+    ##  Routines to control the twenty-first century's code evaluation   ## 
+    ##  tool. The entry point to these routines is the EvaluateCode()    ## 
+    ##  routine at the bottom of this file.                              ## 
+    ####################################################################### 
+
+A version of this comment block that is easier to revise and maintain is,  
+
+
+    #  GigaTron  
+    #  Dwight K. Coder  
+    #  2014-07-04  
+    # 
+    #  EvaluateCode() is the entry point for our code evaluation routines 
+
+Avoid writing comments that merely restate the code in English, e.g., 
+
+```r
+# set x equal to 1  (poor comment)
+x <- 1
+```
+
+Instead, write comments that describe the intent of a code paragraph. Such comments are particularly useful when someone other than the code's original author tries to modify the code. 
+
+```r
+# swap the roots (good comment)
+oldRoot <- root[0]
+root[0] <- root[1]
+root[1] <- oldRoot
+```
+
+Comments should focus on "why" rather than "how". 
+
+```r
+# if establishing a new account (good comment)
+if (account_type == "new_account") ...
+
+# if account flag is zero (poor comment) 
+if (account_flag == 0) ...
+```
+
+ 
+
+
+
+
+**Blank lines.** Group chunks of code into paragraphs separated by blank lines to reveal the structure of the program. 
+
+```r
+# poor 
+library("tidyverse");library("GDAdata")
+speed_ski<-SpeedSki%>%select(Event,Sex,Speed)%>%as_tibble()%>%
+rename(event=Event,sex=Sex,speed=Speed)%>%mutate(event=as_factor(event))%>%
+mutate(event=fct_reorder(event,speed))
+saveRDS(speed_ski,"data/speedski.rds")
+
+# good
+library("tidyverse")
+library("GDAdata")
+
+# leave the original data frame unaltered
+speed_ski <- SpeedSki
+
+# only three variables needed for analysis 
+speed_ski <- SpeedSki %>%
+    select(Event, Sex, Speed) %>%
+    as_tibble()
+
+# lowercase variable names preferred 
+speed_ski <- speed_ski %>%
+    rename(event = Event, sex = Sex, speed = Speed)
+
+# event ordered for graph conditioning
+speed_ski <- speed_ski %>%
+    mutate(event = as_factor(event)) %>%
+    mutate(event = fct_reorder(event, speed))
+
+# RDS format preserves factors
+saveRDS(speed_ski, "data/speedski.rds")
+```
+
+
+
+
+
+
 
 
 ## Everything in R has a name {} 
@@ -114,8 +260,8 @@ Names in R are case-sensitive
 
 If you want to know if a name has already been used in a package you have loaded, go to the RStudio console, type a question mark followed by the name, e.g., 
 
-- `? c()` 
-- `? mean()`
+- `?c()` 
+- `?mean()`
 
 If the name is in use, a help page appears in the RStudio Help pane.  
 
@@ -290,9 +436,9 @@ plot(LakeHuron)
 
 The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and *Enter* to see the function help page. 
 
-- `? mean()` 
-- `? sd()` 
-- `? summary()` 
+- `?mean()` 
+- `?sd()` 
+- `?summary()` 
 
 
 

@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2019-06-08">
+<meta name="date" content="2019-06-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -161,15 +161,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="day-0.html"><a href="day-0.html"><i class="fa fa-check"></i><b>4</b> Pre-Institute Workshop</a></li>
 <li class="chapter" data-level="5" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>5</b> R basics</a><ul>
 <li class="chapter" data-level="5.1" data-path="r-basics.html"><a href="r-basics.html#prerequisites"><i class="fa fa-check"></i><b>5.1</b> Prerequisites</a></li>
-<li class="chapter" data-level="5.2" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>5.2</b> Everything in R has a name</a></li>
-<li class="chapter" data-level="5.3" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>5.3</b> Everything in R is an object</a></li>
-<li class="chapter" data-level="5.4" data-path="r-basics.html"><a href="r-basics.html#do-things-in-r-using-functions"><i class="fa fa-check"></i><b>5.4</b> Do things in R using functions</a></li>
-<li class="chapter" data-level="5.5" data-path="r-basics.html"><a href="r-basics.html#r-functions-come-in-packages"><i class="fa fa-check"></i><b>5.5</b> R functions come in packages</a></li>
-<li class="chapter" data-level="5.6" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-class"><i class="fa fa-check"></i><b>5.6</b> R objects have class</a></li>
-<li class="chapter" data-level="5.7" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-structure"><i class="fa fa-check"></i><b>5.7</b> R objects have structure</a></li>
-<li class="chapter" data-level="5.8" data-path="r-basics.html"><a href="r-basics.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>5.8</b> R does what you tell it</a></li>
-<li class="chapter" data-level="5.9" data-path="r-basics.html"><a href="r-basics.html#pipe-operator"><i class="fa fa-check"></i><b>5.9</b> Pipe operator</a></li>
-<li class="chapter" data-level="5.10" data-path="r-basics.html"><a href="r-basics.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>5.10</b> Keyboard shortcuts</a></li>
+<li class="chapter" data-level="5.2" data-path="r-basics.html"><a href="r-basics.html#style-guide"><i class="fa fa-check"></i><b>5.2</b> Style guide</a></li>
+<li class="chapter" data-level="5.3" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-has-a-name"><i class="fa fa-check"></i><b>5.3</b> Everything in R has a name</a></li>
+<li class="chapter" data-level="5.4" data-path="r-basics.html"><a href="r-basics.html#everything-in-r-is-an-object"><i class="fa fa-check"></i><b>5.4</b> Everything in R is an object</a></li>
+<li class="chapter" data-level="5.5" data-path="r-basics.html"><a href="r-basics.html#do-things-in-r-using-functions"><i class="fa fa-check"></i><b>5.5</b> Do things in R using functions</a></li>
+<li class="chapter" data-level="5.6" data-path="r-basics.html"><a href="r-basics.html#r-functions-come-in-packages"><i class="fa fa-check"></i><b>5.6</b> R functions come in packages</a></li>
+<li class="chapter" data-level="5.7" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-class"><i class="fa fa-check"></i><b>5.7</b> R objects have class</a></li>
+<li class="chapter" data-level="5.8" data-path="r-basics.html"><a href="r-basics.html#r-objects-have-structure"><i class="fa fa-check"></i><b>5.8</b> R objects have structure</a></li>
+<li class="chapter" data-level="5.9" data-path="r-basics.html"><a href="r-basics.html#r-does-what-you-tell-it"><i class="fa fa-check"></i><b>5.9</b> R does what you tell it</a></li>
+<li class="chapter" data-level="5.10" data-path="r-basics.html"><a href="r-basics.html#pipe-operator"><i class="fa fa-check"></i><b>5.10</b> Pipe operator</a></li>
+<li class="chapter" data-level="5.11" data-path="r-basics.html"><a href="r-basics.html#keyboard-shortcuts"><i class="fa fa-check"></i><b>5.11</b> Keyboard shortcuts</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="graph-basics.html"><a href="graph-basics.html"><i class="fa fa-check"></i><b>6</b> Graph basics</a><ul>
 <li class="chapter" data-level="6.1" data-path="graph-basics.html"><a href="graph-basics.html#prerequisites-1"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
@@ -280,8 +281,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br><br />
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
+<div id="style-guide" class="section level2">
+<h2><span class="header-section-number">5.2</span> Style guide</h2>
+<p>A style guide is about making your script readable—which is particularly useful when you ask someone to help you with your script. The following guidelines are adapted from McConnell <span class="citation">(<a href="references.html#ref-McConnell:2004" role="doc-biblioref">2004</a>)</span> and Wickham <span class="citation">(<a href="references.html#ref-Wickham:2019:styleguide" role="doc-biblioref">2019</a>)</span>.</p>
+<p><strong>Spaces.</strong> Usewhitespacetoenhancereadability. Place spaces around operators (<code>=</code>, <code>+</code>, <code>-</code>, <code>&lt;-</code>, etc.). Always put a space after a comma, but never before (just like in regular English).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># good</span>
+height &lt;-<span class="st"> </span>(feet <span class="op">*</span><span class="st"> </span><span class="dv">12</span>) <span class="op">+</span><span class="st"> </span>inches
+<span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="dv">10</span>)
+
+<span class="co"># poor</span>
+height&lt;-feet<span class="op">*</span><span class="dv">12</span><span class="op">+</span>inches
+<span class="kw">mean</span>(x,<span class="dt">na.rm=</span><span class="dv">10</span>)</code></pre>
+<p>The exception to the “spaces around operators” rule are those with high precedence such as exponentiation (<code>^</code>), sequence (<code>:</code>), or accessors (<code>[[</code> or <code>$</code>). These operators are written without spaces,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># good</span>
+<span class="kw">sqrt</span>(x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>y<span class="op">^</span><span class="dv">2</span>)
+x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
+df<span class="op">$</span>z
+
+<span class="co"># poor</span>
+<span class="kw">sqrt</span>(x <span class="op">^</span><span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>y <span class="op">^</span><span class="st"> </span><span class="dv">2</span>)
+x &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">:</span><span class="st"> </span><span class="dv">10</span>
+df <span class="op">$</span><span class="st"> </span>z</code></pre>
+<p>Adding extra spaces OK if it improves alignment of <code>=</code> or <code>&lt;-</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># good</span>
+<span class="kw">list</span>(
+    <span class="dt">total =</span> a <span class="op">+</span><span class="st"> </span>b <span class="op">+</span><span class="st"> </span>c,
+    <span class="dt">mean  =</span> (a <span class="op">+</span><span class="st"> </span>b <span class="op">+</span><span class="st"> </span>c) <span class="op">/</span><span class="st"> </span>n
+)
+
+<span class="co"># also fine</span>
+<span class="kw">list</span>(
+    <span class="dt">total =</span> a <span class="op">+</span><span class="st"> </span>b <span class="op">+</span><span class="st"> </span>c,
+    <span class="dt">mean =</span> (a <span class="op">+</span><span class="st"> </span>b <span class="op">+</span><span class="st"> </span>c) <span class="op">/</span><span class="st"> </span>n
+)</code></pre>
+<p><strong>Comments.</strong> Avoid block comments that are hard to maintain, e.g.,</p>
+<pre><code>####################################################################### 
+##  class: GigaTron                                                  ## 
+##                                                                   ## 
+##  author: Dwight K. Coder                                          ## 
+##  date: July 4, 2014                                               ## 
+##                                                                   ## 
+##  Routines to control the twenty-first century&#39;s code evaluation   ## 
+##  tool. The entry point to these routines is the EvaluateCode()    ## 
+##  routine at the bottom of this file.                              ## 
+####################################################################### </code></pre>
+<p>A version of this comment block that is easier to revise and maintain is,</p>
+<pre><code>#  GigaTron  
+#  Dwight K. Coder  
+#  2014-07-04  
+# 
+#  EvaluateCode() is the entry point for our code evaluation routines </code></pre>
+<p>Avoid writing comments that merely restate the code in English, e.g.,</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set x equal to 1  (poor comment)</span>
+x &lt;-<span class="st"> </span><span class="dv">1</span></code></pre>
+<p>Instead, write comments that describe the intent of a code paragraph. Such comments are particularly useful when someone other than the code’s original author tries to modify the code.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># swap the roots (good comment)</span>
+oldRoot &lt;-<span class="st"> </span>root[<span class="dv">0</span>]
+root[<span class="dv">0</span>] &lt;-<span class="st"> </span>root[<span class="dv">1</span>]
+root[<span class="dv">1</span>] &lt;-<span class="st"> </span>oldRoot</code></pre>
+<p>Comments should focus on “why” rather than “how”.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># if establishing a new account (good comment)</span>
+<span class="cf">if</span> (account_type <span class="op">==</span><span class="st"> &quot;new_account&quot;</span>) ...
+
+<span class="co"># if account flag is zero (poor comment) </span>
+<span class="cf">if</span> (account_flag <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) ...</code></pre>
+<p><strong>Blank lines.</strong> Group chunks of code into paragraphs separated by blank lines to reveal the structure of the program.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># poor </span>
+<span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>);<span class="kw">library</span>(<span class="st">&quot;GDAdata&quot;</span>)
+speed_ski&lt;-SpeedSki<span class="op">%&gt;%</span><span class="kw">select</span>(Event,Sex,Speed)<span class="op">%&gt;%</span><span class="kw">as_tibble</span>()<span class="op">%&gt;%</span>
+<span class="kw">rename</span>(<span class="dt">event=</span>Event,<span class="dt">sex=</span>Sex,<span class="dt">speed=</span>Speed)<span class="op">%&gt;%</span><span class="kw">mutate</span>(<span class="dt">event=</span><span class="kw">as_factor</span>(event))<span class="op">%&gt;%</span>
+<span class="kw">mutate</span>(<span class="dt">event=</span><span class="kw">fct_reorder</span>(event,speed))
+<span class="kw">saveRDS</span>(speed_ski,<span class="st">&quot;data/speedski.rds&quot;</span>)
+
+<span class="co"># good</span>
+<span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;GDAdata&quot;</span>)
+
+<span class="co"># leave the original data frame unaltered</span>
+speed_ski &lt;-<span class="st"> </span>SpeedSki
+
+<span class="co"># only three variables needed for analysis </span>
+speed_ski &lt;-<span class="st"> </span>SpeedSki <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">select</span>(Event, Sex, Speed) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">as_tibble</span>()
+
+<span class="co"># lowercase variable names preferred </span>
+speed_ski &lt;-<span class="st"> </span>speed_ski <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">rename</span>(<span class="dt">event =</span> Event, <span class="dt">sex =</span> Sex, <span class="dt">speed =</span> Speed)
+
+<span class="co"># event ordered for graph conditioning</span>
+speed_ski &lt;-<span class="st"> </span>speed_ski <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">event =</span> <span class="kw">as_factor</span>(event)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">event =</span> <span class="kw">fct_reorder</span>(event, speed))
+
+<span class="co"># RDS format preserves factors</span>
+<span class="kw">saveRDS</span>(speed_ski, <span class="st">&quot;data/speedski.rds&quot;</span>)</code></pre>
+</div>
 <div id="everything-in-r-has-a-name" class="section level2">
-<h2><span class="header-section-number">5.2</span> Everything in R has a name</h2>
+<h2><span class="header-section-number">5.3</span> Everything in R has a name</h2>
 <p>In R, every object has a name.</p>
 <ul>
 <li>named entities, like <code>x</code> or <code>y</code><br />
@@ -312,15 +409,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>If you want to know if a name has already been used in a package you have loaded, go to the RStudio console, type a question mark followed by the name, e.g.,</p>
 <ul>
-<li><code>? c()</code></li>
-<li><code>? mean()</code></li>
+<li><code>?c()</code></li>
+<li><code>?mean()</code></li>
 </ul>
 <p>If the name is in use, a help page appears in the RStudio Help pane.</p>
 <p><br><br />
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="everything-in-r-is-an-object" class="section level2">
-<h2><span class="header-section-number">5.3</span> Everything in R is an object</h2>
+<h2><span class="header-section-number">5.4</span> Everything in R is an object</h2>
 <p>Origins of R objects</p>
 <ul>
 <li>Some objects are built in to R</li>
@@ -378,7 +475,7 @@ y
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="do-things-in-r-using-functions" class="section level2">
-<h2><span class="header-section-number">5.4</span> Do things in R using functions</h2>
+<h2><span class="header-section-number">5.5</span> Do things in R using functions</h2>
 <p>Functions do something useful</p>
 <ul>
 <li>functions are objects the perform actions for you</li>
@@ -418,15 +515,15 @@ LakeHuron[<span class="kw">seq</span>(<span class="dt">from =</span> <span class
 <p><img src="midfield-workshops_files/figure-html/unnamed-chunk-42-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>The help pages for functions are quickly accessed via the Console. In the Console type one line at a time and <em>Enter</em> to see the function help page.</p>
 <ul>
-<li><code>? mean()</code></li>
-<li><code>? sd()</code></li>
-<li><code>? summary()</code></li>
+<li><code>?mean()</code></li>
+<li><code>?sd()</code></li>
+<li><code>?summary()</code></li>
 </ul>
 <p><br><br />
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="r-functions-come-in-packages" class="section level2">
-<h2><span class="header-section-number">5.5</span> R functions come in packages</h2>
+<h2><span class="header-section-number">5.6</span> R functions come in packages</h2>
 <p>Functions are bundled in packages</p>
 <ul>
 <li>Families of useful functions are bundled into packages that you can install, load, and use</li>
@@ -456,7 +553,7 @@ x <span class="op">+</span><span class="st"> </span>x    <span class="co"># add 
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="r-objects-have-class" class="section level2">
-<h2><span class="header-section-number">5.6</span> R objects have class</h2>
+<h2><span class="header-section-number">5.7</span> R objects have class</h2>
 <p>Everything is an object and every object has a class.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
 <span class="co">#&gt; [1] &quot;numeric&quot;</span>
@@ -505,7 +602,7 @@ titanic_tb
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="r-objects-have-structure" class="section level2">
-<h2><span class="header-section-number">5.7</span> R objects have structure</h2>
+<h2><span class="header-section-number">5.8</span> R objects have structure</h2>
 <p>To see inside an object ask for its structure using the <code>str()</code> function.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(x)
 <span class="co">#&gt;  num [1:6] 1 2 3 1 3 25</span>
@@ -546,7 +643,7 @@ titanic_tb
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="r-does-what-you-tell-it" class="section level2">
-<h2><span class="header-section-number">5.8</span> R does what you tell it</h2>
+<h2><span class="header-section-number">5.9</span> R does what you tell it</h2>
 <p>Expect to make errors and don’t worry when that happens. You won’t break anything. Healy <span class="citation">(<a href="references.html#ref-Healy:2019" role="doc-biblioref">2019</a><a href="references.html#ref-Healy:2019" role="doc-biblioref">b</a>)</span> offers this advice for three specific things to watch out for:</p>
 <ul>
 <li>Make sure parentheses are balanced—that every opening <code>(</code> has a corresponding closing <code>)</code>.<br />
@@ -574,7 +671,7 @@ titanic_tb
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="pipe-operator" class="section level2">
-<h2><span class="header-section-number">5.9</span> Pipe operator</h2>
+<h2><span class="header-section-number">5.10</span> Pipe operator</h2>
 <p><code>%&gt;%</code> is the pipe operator from the magrittr package, part of the tidyverse suite of packages.</p>
 <p>The pipe takes the output of one statement and makes it the input of the next statement. You can think of it as the word “then”. In this example, we’ll use the <code>starwars</code> dataset from the dplyr package,</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(starwars)
@@ -646,7 +743,7 @@ titanic_tb
 <a href="r-basics.html#r-basics">▲ top of page</a></p>
 </div>
 <div id="keyboard-shortcuts" class="section level2">
-<h2><span class="header-section-number">5.10</span> Keyboard shortcuts</h2>
+<h2><span class="header-section-number">5.11</span> Keyboard shortcuts</h2>
 <p>In Windows,</p>
 <ul>
 <li><code>Ctrl L</code> clears the Console<br />
